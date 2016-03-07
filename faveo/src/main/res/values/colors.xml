@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#FFFFFF</color>
+    <color name="colorAccent">#FFFFFF</color>
+
+    <color name="error_red">#b71c1c</color>
+
+    <color name="theme">#3AA7D9</color>
+    <color name="blue">#2196F3</color>
+    <color name="blue_300">#64B5F6</color>
+    <color name="theme1_50">#e0f2f1</color>
+    <color name="theme1_900">#004d40</color>
+    <color name="theme2">#f44336</color>
+    <color name="theme2_50">#ffebee</color>
+    <color name="theme3">#33691e</color>
+    <color name="theme4">#2196f3</color>
+
+    <color name="shuffle">#3f51b5</color>
+    <color name="share">#43609c</color>
+    <color name="bookmark">#e91e63</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="shade_white">#f7f7f7</color>
+    <color name="black">#000000</color>
+    <color name="dark_grey">#333333</color>
+    <color name="grey_200">#eeeeee</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="translucent">#33FFFFFF</color>
+    <color name="dark_translucent">#55000000</color>
+
+</resources>

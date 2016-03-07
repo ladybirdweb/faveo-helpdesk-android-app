@@ -1,0 +1,36 @@
+<resources>
+
+    <string-array name="spinnerHelpTopics">
+        <item>Sales query</item>
+        <item>Support query</item>
+    </string-array>
+
+    <string-array name="spinnerSlaPlans">
+        <item>6 hours</item>
+        <item>12 hours</item>
+        <item>18 hours</item>
+    </string-array>
+
+    <string-array name="spinnerAssignTo">
+        <item>KARTHIK</item>
+        <item>SUJIT</item>
+        <item>VIJAY</item>
+        <item>SADA</item>
+    </string-array>
+
+    <string-array name="spinnerPriority">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+        <item>Emergency</item>
+    </string-array>
+
+    <string-array name="spinnerChangeStatus">
+        <item>Open</item>
+        <item>Close</item>
+        <item>Resolve</item>
+        <item>Delete</item>
+    </string-array>
+
+
+</resources>

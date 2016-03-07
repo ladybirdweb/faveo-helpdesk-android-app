@@ -1,0 +1,50 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/colorAccent"
+    android:padding="24dp"
+    tools:context="com.android.faveo.frontend.activities.SplashActivity">
+
+    <TextView
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:textSize="20sp"
+        android:text="Welcome!"
+        android:textStyle="bold"
+        android:alpha="0.8"/>
+
+    <TextView
+        android:padding="16dp"
+        android:lineSpacingExtra="5dp"
+        android:fontFamily="sans-serif-light"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start bui;ding your app\nin minutes with Washington"
+        android:alpha="0.3"/>
+
+    <ImageView
+        android:layout_weight="1"
+        android:padding="40dp"
+        android:src="@drawable/logo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="LOADING..."
+        android:textStyle="bold"
+        android:alpha="0.3"/>
+
+</LinearLayout>
