@@ -1,0 +1,109 @@
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    android:overScrollMode="never"
+    android:padding="24dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/conversation_wrapper"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="REPLY"/>
+
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="TO"
+            android:textStyle="bold"
+            android:alpha="0.3"/>
+
+        <EditText
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText_reply_to"
+            android:background="@drawable/edittext_modified_states"
+            android:textSize="14sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:layout_marginBottom="24dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext" />
+
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="MESSAGE"
+            android:textStyle="bold"
+            android:alpha="0.3"/>
+
+        <EditText
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/editText_reply_message"
+            android:background="@drawable/edittext_modified_states"
+            android:textSize="14sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:layout_marginBottom="24dp"
+            android:minLines="2"
+            android:maxLines="6"
+            android:imeOptions="actionNext" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="INTERNAL CONTENT"/>
+
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="MESSAGE"
+            android:textStyle="bold"
+            android:alpha="0.3"/>
+
+        <EditText
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText_content_message"
+            android:background="@drawable/edittext_modified_states"
+            android:textSize="14sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:minLines="2"
+            android:maxLines="6"
+            android:imeOptions="actionNext" />
+
+        <android.support.v7.widget.RecyclerView
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:id="@+id/cardList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</ScrollView>

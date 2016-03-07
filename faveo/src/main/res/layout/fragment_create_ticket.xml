@@ -1,0 +1,318 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context="com.android.faveo.frontend.fragments.CreateTicket">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:orientation="vertical"
+            tools:context="com.android.faveo.CreateNewTicketActivity">
+
+            <LinearLayout
+                android:padding="24dp"
+                android:orientation="vertical"
+                android:background="@color/shade_white"
+                android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Email"
+                    android:textStyle="bold"
+                    android:alpha="0.3"/>
+
+                <EditText
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_email"
+                    android:background="@drawable/edittext_modified_states"
+                    android:textSize="14sp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext" />
+
+                <TextView
+                    android:id="@+id/textView_error_email"
+                    android:layout_gravity="end"
+                    android:textColor="@color/error_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Name"
+                    android:textStyle="bold"
+                    android:alpha="0.3"/>
+
+                <EditText
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_name"
+                    android:background="@drawable/edittext_modified_states"
+                    android:textSize="14sp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext" />
+
+                <TextView
+                    android:id="@+id/textView_error_name"
+                    android:layout_gravity="end"
+                    android:textColor="@color/error_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Phone"
+                    android:textStyle="bold"
+                    android:alpha="0.3"/>
+
+                <EditText
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_phone"
+                    android:background="@drawable/edittext_modified_states"
+                    android:textSize="14sp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext" />
+
+                <TextView
+                    android:id="@+id/textView_error_phone"
+                    android:layout_gravity="end"
+                    android:textColor="@color/error_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginTop="24dp"
+                    android:text="HELP TOPICS"
+                    android:textStyle="bold"
+                    android:alpha="0.3"/>
+
+                <Spinner
+                    android:drawSelectorOnTop="true"
+                    android:entries="@array/spinnerHelpTopics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner_help_topics"
+                    android:background="@drawable/edittext_modified_states"
+                    android:textSize="14sp"
+                    android:paddingTop="24dp"
+                    android:paddingBottom="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext" />
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="SLA PLANS"
+                    android:textStyle="bold"
+                    android:alpha="0.3"/>
+
+                <Spinner
+                    android:entries="@array/spinnerSlaPlans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner_sla_plans"
+                    android:background="@drawable/edittext_modified_states"
+                    android:textSize="14sp"
+                    android:paddingTop="24dp"
+                    android:paddingBottom="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext" />
+
+<!--                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="DUE DATE"
+                    android:textStyle="bold"
+                    android:alpha="0.3"/>
+
+                <DatePicker
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:maxLength="20"
+                    android:ems="10"
+                    android:id="@+id/date_picker_due_date"
+                    android:background="@drawable/edittext_modified_states"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="24dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext" />-->
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="ASSIGN TO"
+                    android:textStyle="bold"
+                    android:alpha="0.3"/>
+
+                <Spinner
+                    android:entries="@array/spinnerAssignTo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner_assign_to"
+                    android:background="@drawable/edittext_modified_states"
+                    android:textSize="14sp"
+                    android:paddingTop="24dp"
+                    android:paddingBottom="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext" />
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="SUBJECT"
+                    android:textStyle="bold"
+                    android:alpha="0.3"/>
+
+                <EditText
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_subject"
+                    android:background="@drawable/edittext_modified_states"
+                    android:textSize="14sp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext" />
+
+                <TextView
+                    android:id="@+id/textView_error_subject"
+                    android:layout_gravity="end"
+                    android:textColor="@color/error_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="MESSAGE"
+                    android:textStyle="bold"
+                    android:alpha="0.3"/>
+
+                <EditText
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_message"
+                    android:background="@drawable/edittext_modified_states"
+                    android:textSize="14sp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:minLines="2"
+                    android:maxLines="6"
+                    android:imeOptions="actionNext" />
+
+                <TextView
+                    android:id="@+id/textView_error_message"
+                    android:layout_gravity="end"
+                    android:textColor="@color/error_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="PRIORITY"
+                    android:textStyle="bold"
+                    android:alpha="0.3"/>
+
+                <Spinner
+                    android:entries="@array/spinnerPriority"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner_priority"
+                    android:background="@drawable/edittext_modified_states"
+                    android:textSize="14sp"
+                    android:paddingTop="24dp"
+                    android:paddingBottom="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext" />
+
+                <Button
+                    android:id="@+id/button_submit"
+                    android:textAllCaps="false"
+                    android:layout_margin="32dp"
+                    android:background="@color/blue_300"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

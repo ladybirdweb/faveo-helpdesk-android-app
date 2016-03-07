@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@color/colorAccent" >
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/textView_ticket_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/textView_ticket_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:visibility="invisible"
+        android:layout_width="6dp"
+        android:layout_height="match_parent"
+        android:background="@color/blue"/>
+
+    <ImageView
+        android:layout_margin="16dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:alpha="0.27"
+        android:src="@drawable/done_black"/>
+
+    <TextView
+        android:id="@+id/textView_ticket_subject"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Increase sales value" />
+
+</LinearLayout>
