@@ -1,4 +1,5 @@
 language: android
+script: "./gradlew build"
 android:
   components:
     - tools
@@ -16,8 +17,6 @@ android:
     # if you need to run emulator(s) during your tests
     #- sys-img-armeabi-v7a-android-22
     #- sys-img-x86-android-22
-
-    script: "./gradlew build"
 
     # Emulator Management: Create, Start and Wait
 #    before_script:
