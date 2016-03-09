@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.android.faveo.Constants;
+import com.android.faveo.Preference;
 import com.android.faveo.R;
 import com.android.faveo.backend.api.v1.Helpdesk;
 import com.android.faveo.backend.database.DatabaseHandler;

@@ -40,4 +40,15 @@ public class Preference {
         authenticationEditor.apply();
     }
 
+    public static void setCompanyURL(String companyURL) {
+        SharedPreferences.Editor authenticationEditor = applicationContext.getSharedPreferences(Constants.PREFERENCE, 0).edit();
+        authenticationEditor.putString("COMPANY_URL", companyURL);
+        authenticationEditor.apply();
+    }
+
+    public static String getCompanyURL() {
+        SharedPreferences prefs = applicationContext.getSharedPreferences(Constants.PREFERENCE, 0);
+        return prefs.getString("COMPANY_URL", null);
+    }
+
 }

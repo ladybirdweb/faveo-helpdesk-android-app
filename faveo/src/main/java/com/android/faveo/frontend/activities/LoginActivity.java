@@ -10,13 +10,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewSwitcher;
 
 import com.android.faveo.Constants;
 import com.android.faveo.Preference;
 import com.android.faveo.R;
 import com.android.faveo.backend.api.v1.Authenticate;
+import com.android.faveo.backend.api.v1.Helpdesk;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,10 +27,13 @@ import org.json.JSONObject;
 public class LoginActivity extends AppCompatActivity {
 
     TextView textViewFieldError, textViewForgotPassword, textViewSignUp;
-    EditText editTextUsername, editTextPassword;
+    EditText editTextCompanyURL, editTextUsername, editTextPassword;
+    ViewSwitcher viewSwitcher;
+    ImageButton buttonVerifyURL;
     Button buttonSignIn;
     int paddingTop, paddingBottom;
-    ProgressDialog progressDialog;
+    ProgressDialog progressDialogVerifyURL;
+    ProgressDialog progressDialogSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +46,25 @@ public class LoginActivity extends AppCompatActivity {
         Boolean loginComplete = prefs.getBoolean("LOGIN_COMPLETE", false);
         if(loginComplete) {
             Intent intent = new Intent(LoginActivity.this, SplashActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             return;
         }
 
         setUpViews();
+
+        buttonVerifyURL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String companyURL = editTextCompanyURL.getText().toString();
+                if (companyURL.trim().length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Please enter a valid url", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                progressDialogVerifyURL.show();
+                new VerifyURL(LoginActivity.this, companyURL).execute();
+            }
+        });
 
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                     setErrorStates();
                     return;
                 }
-                progressDialog.show();
+                progressDialogSignIn.show();
                 new SignIn(LoginActivity.this, username, password).execute();
             }
         });
@@ -79,6 +99,31 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    public class VerifyURL extends AsyncTask<String, Void, String> {
+        Context context;
+        String companyURL;
+
+        public VerifyURL(Context context, String companyURL) {
+            this.context = context;
+            this.companyURL = companyURL;
+        }
+
+        protected String doInBackground(String... urls) {
+            return new Helpdesk().getBaseURL(companyURL);
+        }
+
+        protected void onPostExecute(String result) {
+            progressDialogVerifyURL.dismiss();
+            if (result.contains("success")) {
+                Preference.setCompanyURL(companyURL);
+                Constants.URL = companyURL + "api/v1/";
+                viewSwitcher.getNextView();
+            }
+            else
+                Toast.makeText(context, "Error verifying URL", Toast.LENGTH_LONG).show();
+        }
+    }
+
     public class SignIn extends AsyncTask<String, Void, String> {
         Context context;
         String username;
@@ -95,7 +140,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         protected void onPostExecute(String result) {
-            progressDialog.dismiss();
+            progressDialogSignIn.dismiss();
             if(result == null) {
                 Toast.makeText(LoginActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                 return;
@@ -112,6 +157,7 @@ public class LoginActivity extends AppCompatActivity {
                 authenticationEditor.putBoolean("LOGIN_COMPLETE", true);
                 authenticationEditor.apply();
                 Intent intent = new Intent(LoginActivity.this, SplashActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             } catch (JSONException e) {
                 Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
@@ -138,8 +184,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setUpViews() {
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Signing in");
+        progressDialogVerifyURL = new ProgressDialog(this);
+        progressDialogVerifyURL.setMessage("Verifying URL");
+        progressDialogSignIn = new ProgressDialog(this);
+        progressDialogSignIn.setMessage("Signing in");
+        editTextCompanyURL = (EditText) findViewById(R.id.editText_company_url);
+        viewSwitcher = (ViewSwitcher) findViewById(R.id.viewSwitcher);
+        buttonVerifyURL = (ImageButton) findViewById(R.id.imageButton_verify_url);
         textViewFieldError = (TextView) findViewById(R.id.textView_field_error);
         textViewForgotPassword = (TextView) findViewById(R.id.forgot_password);
         textViewSignUp = (TextView) findViewById(R.id.textView_sign_up);

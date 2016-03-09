@@ -23,18 +23,8 @@ public class Helpdesk {
         IP = null;
     }
 
-    public String getBaseURL(String apiKey, String IP) {
-        String parameters = null;
-        JSONObject obj = new JSONObject();
-        try {
-            obj.put("api_key", apiKey);
-            obj.put("ip", IP);
-            obj.put("token", token);
-            parameters = obj.toString();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return new HTTPConnection().HTTPResponseGet(Constants.URL + "helpdesk/url?api_key=" + apiKey + "&ip=" + IP + "&token=" + token);
+    public String getBaseURL(String companyURL) {
+        return new HTTPConnection().HTTPResponseGet(companyURL + "api/v1/helpdesk/url?api_key=" + apiKey + "&ip=" + IP);
     }
 
     public String postCreateTicket(int userID, String subject, String body, int helpTopic,
