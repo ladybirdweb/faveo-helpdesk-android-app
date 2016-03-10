@@ -29,8 +29,8 @@
             android:label="@string/title_activity_forgot_password" >
         </activity>
         <activity
-            android:noHistory="true"
             android:screenOrientation="portrait"
+            android:noHistory="true"
             android:name=".frontend.activities.SplashActivity"
             android:label="@string/title_activity_splash" >
         </activity>
