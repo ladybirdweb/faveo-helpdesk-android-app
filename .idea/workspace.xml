@@ -18,6 +18,7 @@
     <list default="true" id="f4461308-bb43-4293-85eb-e69f7d5296a4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="faveo-helpdesk-android-app.iws" />
@@ -144,11 +145,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82802546">
+            <state vertical-scroll-proportion="-17.305555">
               <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8982412">
+              <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -1551,11 +1562,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/frontend/activities/LoginActivity.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/backend/api/v1/Helpdesk.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/Constants.java" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -1664,7 +1675,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -1686,7 +1697,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2034,6 +2045,88 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/frontend/activities/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding>
+            <element signature="method#onCreate#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#VerifyURL#0;class#VerifyURL#0;class#LoginActivity#0" expanded="false" />
+            <element signature="class#SignIn#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#SignIn#0;class#SignIn#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#SignIn#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#SignIn#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#setNormalStates#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#setErrorStates#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#setUpViews#0;class#LoginActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/backend/api/v1/Helpdesk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding>
+            <element signature="docComment;class#Helpdesk#0" expanded="false" />
+            <element signature="method#Helpdesk#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#postCreateTicket#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#postReplyTicket#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#postEditTicket#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#postDeleteTicket#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getUnassignedTicket#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getClosedTicket#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getTicketDetail#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getAgents#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getTeams#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getCustomers#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getCustomersOverview#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getCustomer#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getTicket#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getTicketThread#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#postAssignTicket#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getInboxTicket#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getTrashTickets#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#nextPageURL#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getMyTickets#0;class#Helpdesk#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/backend/api/v1/HTTPConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="153" column="38" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/frontend/activities/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2410,13 +2503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_login.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2438,7 +2524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16443361">
           <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2532,8 +2617,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82802546">
+        <state vertical-scroll-proportion="-17.305555">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8982412">
+          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
           <folding />
         </state>
       </provider>
