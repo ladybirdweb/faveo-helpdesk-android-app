@@ -147,8 +147,8 @@
       <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7592357">
-              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.62165606">
+              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -1937,7 +1937,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457797261457</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Travis gradle permission config">
+      <created>1457797430129</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1457797430129</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1988,7 +1994,8 @@
     <MESSAGE value="initial" />
     <MESSAGE value="Merged develop to this" />
     <MESSAGE value="Gradle permission" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gradle permission" />
+    <MESSAGE value="Travis gradle permission config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Travis gradle permission config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2356,8 +2363,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7592357">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.62165606">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
           <folding />
         </state>
       </provider>
