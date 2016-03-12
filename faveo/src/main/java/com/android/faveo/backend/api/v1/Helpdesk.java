@@ -24,7 +24,7 @@ public class Helpdesk {
     }
 
     public String getBaseURL(String companyURL) {
-        return new HTTPConnection().HTTPResponseGet(companyURL + "api/v1/helpdesk/url?api_key=" + apiKey + "&ip=" + IP);
+        return new HTTPConnection().HTTPResponseGet(companyURL + "api/v1/helpdesk/url?url=" + companyURL + "&api_key=" + apiKey);
     }
 
     public String postCreateTicket(int userID, String subject, String body, int helpTopic,

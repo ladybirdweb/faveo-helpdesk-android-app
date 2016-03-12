@@ -5,6 +5,8 @@
       <root url="file://$PROJECT_DIR$/faveo/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/res" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/cardview-v7/23.1.1/cardview-v7-23.1.1-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
