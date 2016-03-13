@@ -2,9 +2,11 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:id="@+id/thread"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <RelativeLayout
+        android:animateLayoutChanges="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="18dp"
@@ -35,6 +37,7 @@
             android:fontFamily="sans-serif-medium"/>
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/textView_client_message_title"
             android:layout_below="@+id/textView_client_name"
             android:layout_width="wrap_content"
@@ -49,6 +52,7 @@
             android:textStyle="bold"/>
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/textView_client_message_body"
             android:layout_below="@+id/textView_client_message_title"
             android:layout_width="wrap_content"

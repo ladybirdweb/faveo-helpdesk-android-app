@@ -21,13 +21,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <ViewSwitcher
-            android:id="@+id/viewSwitcher"
+        <ViewFlipper
+            android:id="@+id/viewFlipper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:padding="24dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingTop="24dp"
+                android:layout_marginBottom="24dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,8 +61,9 @@
                         android:paddingBottom="16dp"
                         android:layout_marginBottom="24dp"
                         android:singleLine="true"
+                        android:inputType="textWebEditText"
                         android:textCursorDrawable="@drawable/color_cursor"
-                        android:imeOptions="actionNext" />
+                        android:imeOptions="actionDone" />
 
                     <ImageButton
                         android:id="@+id/imageButton_verify_url"
@@ -75,7 +79,10 @@
             </LinearLayout>
 
             <LinearLayout
-                android:padding="24dp"
+                android:paddingTop="24dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:layout_marginBottom="24dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -189,7 +196,7 @@
 
             </LinearLayout>
 
-        </ViewSwitcher>
+        </ViewFlipper>
 
     </LinearLayout>
 

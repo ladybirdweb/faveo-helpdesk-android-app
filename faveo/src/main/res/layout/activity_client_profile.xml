@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:background="@color/colorAccent"
         android:orientation="vertical"
-        tools:context="com.android.faveo.frontend.activities.ClientDetailActivity">
+        tools:context="co.helpdesk.faveo.frontend.activities.ClientDetailActivity">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
