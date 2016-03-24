@@ -113,12 +113,18 @@ public class Conversation extends Fragment {
                 for(int i = 0; i < jsonArray.length(); i++) {
                     TicketThread ticketThread = null;
                     try {
+                        String clientPicture = null;
+                        try {
+                            clientPicture = jsonArray.getJSONObject(i).getString("picture");
+                        } catch (Exception e) {
+
+                        }
                         String clientName = jsonArray.getJSONObject(i).getString("poster");
                         String messageTime = jsonArray.getJSONObject(i).getString("created_at");
                         String messageTitle = jsonArray.getJSONObject(i).getString("title");
                         String message = jsonArray.getJSONObject(i).getString("body");
                         message = URLDecoder.decode(message, "utf-8");
-                        ticketThread = new TicketThread(clientName, messageTime, messageTitle, message);
+                        ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     } catch (UnsupportedEncodingException e) {

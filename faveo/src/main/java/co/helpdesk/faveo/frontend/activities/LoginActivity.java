@@ -73,7 +73,10 @@ public class LoginActivity extends AppCompatActivity {
                 String username = editTextUsername.getText().toString();
                 String password = editTextPassword.getText().toString();
                 if (username.trim().length() == 0 || password.trim().length() == 0) {
-                    setErrorStates();
+                    if (username.trim().length() == 0)
+                        setUsernameErrorStates();
+                    else
+                        setPasswordErrorStates();
                     return;
                 }
                 progressDialogSignIn.show();
@@ -178,11 +181,17 @@ public class LoginActivity extends AppCompatActivity {
         editTextPassword.setPadding(0, paddingTop, 0, paddingBottom);
     }
 
-    private void setErrorStates() {
+    private void setUsernameErrorStates() {
+        textViewFieldError.setText("Please insert username");
         textViewFieldError.setVisibility(View.VISIBLE);
         editTextUsername.setBackgroundResource(R.drawable.edittext_error_state);
-        editTextPassword.setBackgroundResource(R.drawable.edittext_error_state);
         editTextUsername.setPadding(0, paddingTop, 0, paddingBottom);
+    }
+
+    private void setPasswordErrorStates() {
+        textViewFieldError.setText("Please insert password");
+        textViewFieldError.setVisibility(View.VISIBLE);
+        editTextPassword.setBackgroundResource(R.drawable.edittext_error_state);
         editTextPassword.setPadding(0, paddingTop, 0, paddingBottom);
     }
 

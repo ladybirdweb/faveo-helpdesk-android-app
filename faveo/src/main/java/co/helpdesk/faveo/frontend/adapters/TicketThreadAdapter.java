@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.makeramen.roundedimageview.RoundedImageView;
+import com.squareup.picasso.Picasso;
+
 import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.model.TicketThread;
@@ -31,6 +34,12 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         ticketViewHolder.textViewMessageTime.setText(Helper.parseDate(ticketThread.messageTime));
         ticketViewHolder.textViewMessageTitle.setText(ticketThread.messageTitle);
         ticketViewHolder.textViewMessage.setText(ticketThread.message.replace("<br>", "\n"));
+        if (ticketThread.clientPicture != null && ticketThread.clientPicture.trim().length() != 0)
+            Picasso.with(ticketViewHolder.roundedImageViewProfilePic.getContext())
+                    .load(ticketThread.clientPicture)
+                    .placeholder(R.drawable.default_pic)
+                    .error(R.drawable.default_pic)
+                    .into(ticketViewHolder.roundedImageViewProfilePic);
 
         ticketViewHolder.thread.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +68,7 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
     public static class TicketViewHolder extends RecyclerView.ViewHolder {
 
         protected View thread;
+        protected RoundedImageView roundedImageViewProfilePic;
         protected TextView textViewClientName;
         protected TextView textViewMessageTime;
         protected TextView textViewMessageTitle;
@@ -67,6 +77,7 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         public TicketViewHolder(View v) {
             super(v);
             thread = v.findViewById(R.id.thread);
+            roundedImageViewProfilePic = (RoundedImageView)  v.findViewById(R.id.imageView_default_profile);
             textViewClientName = (TextView)  v.findViewById(R.id.textView_client_name);
             textViewMessageTime = (TextView)  v.findViewById(R.id.textView_ticket_time);
             textViewMessageTitle = (TextView) v.findViewById(R.id.textView_client_message_title);

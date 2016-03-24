@@ -86,7 +86,7 @@ public class CreateTicket extends Fragment {
                     int priority = spinnerPriority.getSelectedItemPosition() + 1;
                     boolean allCorrect = true;
 
-                    if (email.trim().length() == 0) {
+                    if (email.trim().length() == 0 || android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                         setErrorState(editTextEmail, textViewErrorEmail, "Invalid email");
                         allCorrect = false;
                     }
@@ -97,17 +97,31 @@ public class CreateTicket extends Fragment {
                     }
 
                     if (phone.trim().length() == 0) {
-                        setErrorState(editTextPhone, textViewErrorPhone, "Invalid phone");
+                        setErrorState(editTextPhone, textViewErrorPhone, "Please fill the field");
                         allCorrect = false;
                     }
 
                     if (subject.trim().length() == 0) {
-                        setErrorState(editTextSubject, textViewErrorSubject, "Invalid subject");
+                        setErrorState(editTextSubject, textViewErrorSubject, "Please fill the field");
+                        allCorrect = false;
+                    }
+                    else if (subject.trim().length() < 5) {
+                        setErrorState(editTextSubject, textViewErrorSubject, "Subject should be minimum 5 characters");
                         allCorrect = false;
                     }
 
                     if (message.trim().length() == 0) {
-                        setErrorState(editTextMessage, textViewErrorMessage, "Invalid message");
+                        setErrorState(editTextMessage, textViewErrorMessage, "Please fill the field");
+                        allCorrect = false;
+                    }
+                    else if (message.trim().length() < 5) {
+                        setErrorState(editTextMessage, textViewErrorMessage, "Message should be minimum 5 characters");
+                        allCorrect = false;
+                    }
+
+                    if (spinnerAssignTo.getSelectedItemPosition() == 1) {
+                        Toast.makeText(getActivity(), "Invalid assignment", Toast.LENGTH_LONG).show();
+                        setErrorState(editTextMessage, textViewErrorMessage, "Invalid assign");
                         allCorrect = false;
                     }
 

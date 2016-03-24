@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -26,12 +27,13 @@ public class Detail extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    EditText editTextSubject, editTextSLA, editTextStatus, editTextPriority, editTextDepartment,
-            editTextHelpTopic, editTextName, editTextEmail, editTextSource, editTextLastMessage,
-            editTextDueDate, editTextCreatedDate, editTextLastResponseDate;
+    EditText editTextSubject, editTextStatus, editTextDepartment, editTextName, editTextEmail,
+            editTextSource, editTextLastMessage, editTextDueDate, editTextCreatedDate, editTextLastResponseDate;
 
-    Spinner spinnerAssignTo, spinnerChangeStatus;
+    Spinner spinnerSLAPlans, spinnerPriority, spinnerHelpTopics, spinnerAssignTo, spinnerChangeStatus;
     ProgressDialog progressDialog;
+
+    Button buttonSave;
 
     private String mParam1;
     private String mParam2;
@@ -68,6 +70,20 @@ public class Detail extends Fragment {
         progressDialog.setMessage("Fetching detail");
         progressDialog.show();
         new FetchTicketDetail(getActivity(), TicketDetailActivity.ticketID).execute();
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressDialog.setMessage("Updating ticket");
+                progressDialog.show();
+                new SaveTicket(getActivity(),
+                        Integer.parseInt(TicketDetailActivity.ticketID),
+                        editTextSubject.getText().toString(),
+                        spinnerSLAPlans.getSelectedItemPosition(),
+                        spinnerHelpTopics.getSelectedItemPosition(),
+                        Integer.parseInt(editTextSource.getText().toString()),
+                        spinnerPriority.getSelectedItemPosition()).execute();
+            }
+        });
         return rootView;
     }
 
@@ -100,19 +116,10 @@ public class Detail extends Fragment {
                 } catch (JSONException e) {
                     editTextSubject.setText("Not available");
                 }
-                switch (jsonObject.getString("sla")) {
-                    case "1":
-                        editTextSLA.setText("6 hours");
-                        break;
-                    case "2":
-                        editTextSLA.setText("12 hours");
-                        break;
-                    case "3":
-                        editTextSLA.setText("18 hours");
-                        break;
-                    default:
-                        editTextSLA.setText("Not available");
-                }
+                try {
+                    spinnerSLAPlans.setSelection(Integer.parseInt(jsonObject.getString("sla")));
+                } catch(Exception e) { }
+
                 switch (jsonObject.getString("status")) {
                     case "1":
                         editTextStatus.setText("Open");
@@ -129,33 +136,17 @@ public class Detail extends Fragment {
                     default:
                         editTextStatus.setText("Not available");
                 }
-                switch (jsonObject.getString("priority_id")) {
-                    case "1":
-                        editTextPriority.setText("Low");
-                        break;
-                    case "2":
-                        editTextPriority.setText("Medium");
-                        break;
-                    case "3":
-                        editTextPriority.setText("High");
-                        break;
-                    case "4":
-                        editTextPriority.setText("Emergency");
-                        break;
-                    default:
-                        editTextPriority.setText("Not available");
-                }
+
+                try {
+                    spinnerPriority.setSelection(Integer.parseInt(jsonObject.getString("priority_id")));
+                } catch(Exception e) { }
+
                 editTextDepartment.setText(jsonObject.getString("dept_id"));
-                switch (jsonObject.getString("help_topic_id")) {
-                    case "1":
-                        editTextStatus.setText("Sales query");
-                        break;
-                    case "2":
-                        editTextStatus.setText("Support query");
-                        break;
-                    default:
-                        editTextStatus.setText("Not available");
-                }
+
+                try {
+                    spinnerHelpTopics.setSelection(Integer.parseInt(jsonObject.getString("help_topic_id")));
+                } catch(Exception e) { }
+
                 editTextName.setText(jsonObject.getString("assigned_to"));
                 try {
                     editTextEmail.setText(jsonObject.getString("email"));
@@ -177,13 +168,53 @@ public class Detail extends Fragment {
         }
     }
 
+    public class SaveTicket extends AsyncTask<String, Void, String> {
+        Context context;
+        int ticketNumber;
+        String subject;
+        int slaPlan;
+        int helpTopic;
+        int ticketSource;
+        int ticketPriority;
+
+        public SaveTicket(Context context, int ticketNumber, String subject,
+                          int slaPlan, int helpTopic, int ticketSource, int ticketPriority) {
+            this.context = context;
+            this.ticketNumber = ticketNumber;
+            this.subject = subject;
+            this.slaPlan = slaPlan;
+            this.helpTopic = helpTopic;
+            this.ticketSource = ticketSource;
+            this.ticketPriority = ticketPriority;
+        }
+
+        protected String doInBackground(String... urls) {
+            if (subject.equals("Not available"))
+                subject = "";
+            return new Helpdesk().postEditTicket(ticketNumber, subject, slaPlan,
+                    helpTopic, ticketSource, ticketPriority);
+        }
+
+        protected void onPostExecute(String result) {
+            progressDialog.dismiss();
+            if (result == null) {
+                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (result.contains("ticket_id"))
+                Toast.makeText(getActivity(), "Update successful", Toast.LENGTH_LONG).show();
+            else
+                Toast.makeText(getActivity(), "Failed to update ticket", Toast.LENGTH_LONG).show();
+        }
+    }
+
     private void setUpViews(View rootView) {
         editTextSubject = (EditText) rootView.findViewById(R.id.editText_subject);
-        editTextSLA = (EditText) rootView.findViewById(R.id.editText_sla);
+        spinnerSLAPlans = (Spinner) rootView.findViewById(R.id.spinner_sla_plans);
         editTextStatus = (EditText) rootView.findViewById(R.id.editText_status);
-        editTextPriority = (EditText) rootView.findViewById(R.id.editText_priority);
+        spinnerPriority = (Spinner) rootView.findViewById(R.id.spinner_priority);
         editTextDepartment = (EditText) rootView.findViewById(R.id.editText_department);
-        editTextHelpTopic = (EditText) rootView.findViewById(R.id.editText_help_topic);
+        spinnerHelpTopics = (Spinner) rootView.findViewById(R.id.spinner_help_topics);
         editTextName = (EditText) rootView.findViewById(R.id.editText_name);
         editTextEmail = (EditText) rootView.findViewById(R.id.editText_email);
         editTextSource = (EditText) rootView.findViewById(R.id.editText_source);
@@ -193,6 +224,7 @@ public class Detail extends Fragment {
         editTextLastResponseDate = (EditText) rootView.findViewById(R.id.editText_last_response_date);
         spinnerAssignTo = (Spinner) rootView.findViewById(R.id.spinner_assign_to);
         spinnerChangeStatus = (Spinner) rootView.findViewById(R.id.spinner_change_status);
+        buttonSave = (Button) rootView.findViewById(R.id.button_save);
     }
 
     public void onButtonPressed(Uri uri) {

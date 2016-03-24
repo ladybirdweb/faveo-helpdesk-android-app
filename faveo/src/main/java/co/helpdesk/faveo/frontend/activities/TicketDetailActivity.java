@@ -18,9 +18,11 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import co.helpdesk.faveo.Constants;
+import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.fragments.ticketDetail.Conversation;
@@ -67,10 +69,11 @@ public class TicketDetailActivity extends AppCompatActivity implements
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         ticketID = getIntent().getStringExtra("TICKET_ID");
         ticketNumber = getIntent().getStringExtra("TICKET_NUMBER");
-        getSupportActionBar().setTitle(ticketNumber == null ? "Unknown" : ticketNumber);
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.title);
+        mTitle.setText(ticketNumber == null ? "Unknown" : ticketNumber);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
@@ -119,6 +122,10 @@ public class TicketDetailActivity extends AppCompatActivity implements
                     Toast.makeText(TicketDetailActivity.this, "Empty message", Toast.LENGTH_LONG).show();
                     return;
                 }
+                if (cc.length() > 0 && !Helper.isValidEmail(cc)) {
+                    Toast.makeText(TicketDetailActivity.this, "Invalid CC", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 SharedPreferences prefs = getSharedPreferences(Constants.PREFERENCE, 0);
                 String userID = prefs.getString("ID", "");
                 if (userID != null && userID.length() != 0) {
@@ -127,7 +134,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
-                    new ReplyTicket(Integer.parseInt(ticketID), replyMessage).execute();
+                    new ReplyTicket(Integer.parseInt(ticketID), cc, replyMessage).execute();
                     progressDialog.setMessage("Sending message");
                     progressDialog.show();
                 }
@@ -194,15 +201,17 @@ public class TicketDetailActivity extends AppCompatActivity implements
 
     public class ReplyTicket extends AsyncTask<String, Void, String> {
         int ticketID;
+        String cc;
         String replyContent;
 
-        public ReplyTicket(int ticketID, String replyContent) {
+        public ReplyTicket(int ticketID, String cc, String replyContent) {
             this.ticketID = ticketID;
+            this.cc = cc;
             this.replyContent = replyContent;
         }
 
         protected String doInBackground(String... urls) {
-            return new Helpdesk().postReplyTicket(ticketID, replyContent);
+            return new Helpdesk().postReplyTicket(ticketID, cc, replyContent);
         }
 
         protected void onPostExecute(String result) {
@@ -215,17 +224,32 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 TicketThread ticketThread;
                 JSONObject jsonObject = new JSONObject(result);
                 JSONObject res = jsonObject.getJSONObject("result");
+                String clientPicture = "";
+                try {
+                    clientPicture = res.getString("picture");
+                } catch (Exception e) {
+
+                }
+                String messageTitle = "";
+                try {
+                    messageTitle = res.getString("title");
+                } catch (Exception e) {
+
+                }
                 String clientName = res.getString("poster");
                 String messageTime = res.getString("created_at");
                 String message = res.getString("body");
                 message = URLDecoder.decode(message, "utf-8");
-                ticketThread = new TicketThread(clientName, messageTime, "Missing in response", message);
+                ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message);
                 if(fragmentConversation != null) {
                     exitReveal();
                     fragmentConversation.addThreadAndUpdate(ticketThread);
                 }
             } catch (JSONException e) {
-                Toast.makeText(TicketDetailActivity.this, "Failed parsing response", Toast.LENGTH_LONG).show();
+                Toast.makeText(TicketDetailActivity.this, "Failed parsing response.", Toast.LENGTH_LONG).show();
+                if(fragmentConversation != null) {
+                    exitReveal();
+                }
                 e.printStackTrace();
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();

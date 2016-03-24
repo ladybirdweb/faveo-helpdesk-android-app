@@ -5,16 +5,26 @@ package co.helpdesk.faveo.model;
  */
 public class TicketThread {
 
+    public String clientPicture;
     public String clientName;
     public String messageTime;
     public String messageTitle;
     public String message;
 
-    public TicketThread(String clientName, String messageTime, String messageTitle, String message) {
+    public TicketThread(String clientPicture, String clientName, String messageTime, String messageTitle, String message) {
+        this.clientPicture = clientPicture;
         this.clientName = clientName;
         this.messageTime = messageTime;
         this.messageTitle = messageTitle;
         this.message = message;
+    }
+
+    public String getClientPicture() {
+        return clientPicture;
+    }
+
+    public void setClientPicture(String clientPicture) {
+        this.clientPicture = clientPicture;
     }
 
     public String getClientName() {

@@ -75,24 +75,8 @@
         android:fontFamily="sans-serif-medium"/>
 
     <TextView
-        android:id="@+id/textView_client_name"
-        android:layout_below="@+id/textView_ticket_number"
-        android:layout_toRightOf="@+id/imageView_default_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="8dp"
-        android:text="Karthik Sen"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:layout_centerHorizontal="true"
-        android:singleLine="true"
-        android:fontFamily="sans-serif-bold" />
-
-    <TextView
         android:id="@+id/textView_ticket_subject"
-        android:layout_below="@+id/textView_client_name"
+        android:layout_below="@+id/textView_ticket_number"
         android:layout_toRightOf="@+id/imageView_default_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -107,8 +91,24 @@
         android:alpha=".54"
         android:fontFamily="sans-serif-medium"/>
 
-    <View
+    <TextView
+        android:id="@+id/textView_client_name"
         android:layout_below="@+id/textView_ticket_subject"
+        android:layout_toRightOf="@+id/imageView_default_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="8dp"
+        android:text="Karthik Sen"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:singleLine="true"
+        android:fontFamily="sans-serif-bold" />
+
+    <View
+        android:layout_below="@+id/textView_client_name"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="16dp"

@@ -5,6 +5,7 @@
     android:id="@+id/thread"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <RelativeLayout
         android:animateLayoutChanges="true"
         android:layout_width="match_parent"
@@ -12,13 +13,26 @@
         android:padding="18dp"
         android:background="@color/colorAccent" >
 
+        <com.makeramen.roundedimageview.RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageView_default_profile"
+            android:src="@drawable/default_pic"
+            app:riv_corner_radius="30dip"
+            app:riv_mutate_background="true"
+            app:riv_tile_mode="repeat"
+            app:riv_oval="true"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+
         <TextView
             android:textAllCaps="true"
+            android:layout_toRightOf="@+id/imageView_default_profile"
             android:id="@+id/textView_client_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Karthik Sen"
-            android:textSize="20sp"
+            android:textSize="16sp"
+            android:layout_marginLeft="18dp"
             android:alpha="0.54"
             android:textColor="@color/black"
             android:singleLine="true"

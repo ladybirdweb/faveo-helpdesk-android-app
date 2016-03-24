@@ -18,6 +18,14 @@
         <item>SADA</item>
     </string-array>
 
+    <string-array name="spinnerAssignToList">
+        <item> </item>
+        <item>KARTHIK</item>
+        <item>SUJIT</item>
+        <item>VIJAY</item>
+        <item>SADA</item>
+    </string-array>
+
     <string-array name="spinnerPriority">
         <item>Low</item>
         <item>Medium</item>

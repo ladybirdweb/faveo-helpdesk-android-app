@@ -23,7 +23,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="?attr/actionBarSize"
-                android:background="?attr/colorPrimary" />
+                android:background="?attr/colorPrimary" >
+
+                <TextView
+                    android:id="@+id/title"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:text="INBOX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/button_create_ticket"
+                    android:layout_gravity="right"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:background="@color/transparent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/add"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
 
         </LinearLayout>
 

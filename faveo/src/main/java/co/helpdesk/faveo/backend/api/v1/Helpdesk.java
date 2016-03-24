@@ -87,7 +87,7 @@ public class Helpdesk {
         return result;
     }
 
-    public String postReplyTicket(int ticketID, String replyContent) {
+    public String postReplyTicket(int ticketID, String cc, String replyContent) {
         String parameters = null;
         JSONObject obj = new JSONObject();
         try {
@@ -95,6 +95,7 @@ public class Helpdesk {
             obj.put("ip", IP);
             obj.put("token", token);
             obj.put("ticket_ID", ticketID);
+            obj.put("cc", cc);
             obj.put("reply_content", replyContent);
             parameters = obj.toString();
         } catch (JSONException e) {
@@ -105,9 +106,10 @@ public class Helpdesk {
                 "&ip=" + IP +
                 "&token=" + token +
                 "&ticket_ID=" + ticketID +
+                "&cc=" + cc +
                 "&reply_content=" + replyContent, parameters);
         if (result != null && result.equals("tokenRefreshed"))
-            postReplyTicket(ticketID, replyContent);
+            postReplyTicket(ticketID, cc, replyContent);
         return result;
     }
 
@@ -129,7 +131,19 @@ public class Helpdesk {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return new HTTPConnection().HTTPResponsePost(Constants.URL + "helpdesk/edit", parameters);
+        String result = new HTTPConnection().HTTPResponsePost(Constants.URL + "helpdesk/edit?" +
+                "api_key=" + apiKey +
+                "&ip=" + IP +
+                "&token=" + token +
+                "&ticket_id=" + ticketID +
+                "&subject=" + subject +
+                "&sla_plan=" + slaPlan +
+                "&help_topic=" + helpTopic +
+                "&ticket_source=" + ticketSource +
+                "&ticket_priority=" + ticketPriority, parameters);
+        if (result != null && result.equals("tokenRefreshed"))
+            postEditTicket(ticketID, subject, slaPlan, helpTopic, ticketSource, ticketPriority);
+        return result;
     }
 
     public String postDeleteTicket(int ticketID) {
@@ -393,7 +407,7 @@ public class Helpdesk {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        String result = new HTTPConnection().HTTPResponseGet(Constants.URL + "helpdesk/my-tickets?api_key=" + apiKey + "&ip=" + IP + "&token=" + token + "&user-id=" + userID);
+        String result = new HTTPConnection().HTTPResponseGet(Constants.URL + "helpdesk/my-tickets?api_key=" + apiKey + "&ip=" + IP + "&token=" + token + "&user_id=" + userID);
         if (result != null && result.equals("tokenRefreshed"))
             getMyTickets(userID);
         return result;

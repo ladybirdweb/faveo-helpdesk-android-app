@@ -55,21 +55,17 @@
             android:textStyle="bold"
             android:alpha="0.3"/>
 
-        <EditText
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:text="SLA plan"
+        <Spinner
+            android:entries="@array/spinnerSlaPlans"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText_sla"
+            android:id="@+id/spinner_sla_plans"
             android:background="@drawable/edittext_modified_states"
             android:textSize="14sp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
+            android:layout_marginBottom="24dp"
             android:singleLine="true"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
             android:imeOptions="actionNext" />
 
         <TextView
@@ -109,24 +105,17 @@
             android:textStyle="bold"
             android:alpha="0.3"/>
 
-        <EditText
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:text="Priority"
+        <Spinner
+            android:entries="@array/spinnerPriority"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLength="20"
-            android:ems="10"
-            android:id="@+id/editText_priority"
+            android:id="@+id/spinner_priority"
             android:background="@drawable/edittext_modified_states"
             android:textSize="14sp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
             android:layout_marginBottom="24dp"
             android:singleLine="true"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
             android:imeOptions="actionNext" />
 
         <TextView
@@ -167,24 +156,17 @@
             android:textStyle="bold"
             android:alpha="0.3"/>
 
-        <EditText
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:text="Help topic"
+        <Spinner
+            android:entries="@array/spinnerHelpTopics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLength="20"
-            android:ems="10"
-            android:id="@+id/editText_help_topic"
+            android:id="@+id/spinner_help_topics"
             android:background="@drawable/edittext_modified_states"
             android:textSize="14sp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
             android:layout_marginBottom="24dp"
             android:singleLine="true"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
             android:imeOptions="actionNext" />
 
         <TextView
@@ -255,12 +237,13 @@
             android:alpha="0.3"/>
 
         <EditText
+            android:digits="123456789"
             android:textCursorDrawable="@drawable/color_cursor"
-            android:text="Source"
+            android:text="Src"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLength="20"
-            android:ems="10"
+            android:maxLength="4"
+            android:ems="4"
             android:id="@+id/editText_source"
             android:background="@drawable/edittext_modified_states"
             android:textSize="14sp"
@@ -268,10 +251,6 @@
             android:paddingBottom="16dp"
             android:layout_marginBottom="24dp"
             android:singleLine="true"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
             android:imeOptions="actionNext" />
 
         <TextView
@@ -438,6 +417,16 @@
             android:layout_marginBottom="24dp"
             android:singleLine="true"
             android:imeOptions="actionNext" />
+
+        <Button
+            android:id="@+id/button_save"
+            android:textAllCaps="false"
+            android:layout_margin="32dp"
+            android:background="@color/blue_300"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"/>
 
     </LinearLayout>
 

@@ -55,8 +55,9 @@ public class ClientDetailActivity extends AppCompatActivity implements
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.title);
+        mTitle.setText("PROFILE");
 
         setUpViews();
         Intent intent = getIntent();

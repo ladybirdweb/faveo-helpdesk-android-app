@@ -15,10 +15,9 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
+            android:layout_gravity="center"
             android:src="@drawable/logo"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content" />
 
         <ViewFlipper
@@ -139,7 +138,7 @@
 
                     <TextView
                         android:visibility="invisible"
-                        android:text="Wrong username or password"
+                        android:text="Empty username"
                         android:id="@+id/textView_field_error"
                         android:textColor="@color/error_red"
                         android:layout_width="wrap_content"
@@ -169,6 +168,7 @@
                     android:text="Sign In"/>
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">

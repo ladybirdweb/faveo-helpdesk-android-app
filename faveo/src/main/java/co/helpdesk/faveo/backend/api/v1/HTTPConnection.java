@@ -108,7 +108,7 @@ public class HTTPConnection {
             is = connection.getInputStream();
             Log.e("Response Code", connection.getResponseCode() + "");
         } catch (IOException e) {
-            Log.e("error in chimney", e.getMessage());
+            Log.e("error in faveo", e.getMessage());
             e.printStackTrace();
         }
         try {
@@ -150,7 +150,7 @@ public class HTTPConnection {
             is = connection.getInputStream();
             Log.e("Response Code", connection.getResponseCode() + "");
         } catch (IOException e) {
-            Log.e("error in chimney", e.getMessage());
+            Log.e("error in faveo", e.getMessage());
             e.printStackTrace();
         }
         try {
