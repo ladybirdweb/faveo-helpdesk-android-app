@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences(Constants.PREFERENCE, 0);
         Boolean loginComplete = prefs.getBoolean("LOGIN_COMPLETE", false);
         if(loginComplete) {
+            Constants.URL = Preference.getCompanyURL();
             Intent intent = new Intent(LoginActivity.this, SplashActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
@@ -112,6 +113,8 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         protected String doInBackground(String... urls) {
+            if (!companyURL.endsWith("/"))
+                companyURL = companyURL.concat("/");
             return new Helpdesk().getBaseURL(companyURL);
         }
 
@@ -121,8 +124,8 @@ public class LoginActivity extends AppCompatActivity {
                 return;
 
             if (result.contains("success")) {
-                Preference.setCompanyURL(companyURL);
-                Constants.URL = companyURL + "api/v1/";
+                Preference.setCompanyURL(companyURL + "api/v1/");
+                Constants.URL = Preference.getCompanyURL();
                 viewflipper.showNext();
             }
             else

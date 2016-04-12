@@ -1,16 +1,21 @@
 package co.helpdesk.faveo.frontend.activities;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
@@ -60,6 +65,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
 
     public static String ticketID;
     public static String ticketNumber;
+    public static String ticketOpenedBy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +78,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         ticketID = getIntent().getStringExtra("TICKET_ID");
         ticketNumber = getIntent().getStringExtra("TICKET_NUMBER");
+        ticketOpenedBy = getIntent().getStringExtra("TICKET_OPENED_BY");
         TextView mTitle = (TextView) mToolbar.findViewById(R.id.title);
         mTitle.setText(ticketNumber == null ? "Unknown" : ticketNumber);
 
@@ -147,11 +154,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cx = (int) fabAdd.getX() + dpToPx(40);
-                cy = (int) fabAdd.getY();
-                fabExpanded = true;
-                fabAdd.hide();
-                enterReveal();
+                getCreateRequest();
             }
         });
 
@@ -163,6 +166,32 @@ public class TicketDetailActivity extends AppCompatActivity implements
             }
         });
 
+    }
+
+    private void getCreateRequest() {
+        final CharSequence[] items = {"Reply", "Internal notes"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(TicketDetailActivity.this);
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                dialog.dismiss();
+                if (items[item].equals("Reply")) {
+                    cx = (int) fabAdd.getX() + dpToPx(40);
+                    cy = (int) fabAdd.getY();
+                    fabExpanded = true;
+                    fabAdd.hide();
+                    enterReveal("Reply");
+                }
+                else {
+                    cx = (int) fabAdd.getX() + dpToPx(40);
+                    cy = (int) fabAdd.getY();
+                    fabExpanded = true;
+                    fabAdd.hide();
+                    enterReveal("Internal notes");
+                }
+            }
+        });
+        builder.show();
     }
 
     public class CreateInternalNote extends AsyncTask<String, Void, String> {
@@ -239,8 +268,12 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 String clientName = res.getString("poster");
                 String messageTime = res.getString("created_at");
                 String message = res.getString("body");
+                String isReply = "true";
+                try {
+                    isReply = res.getString("is_reply");
+                } catch(Exception e) {}
                 message = URLDecoder.decode(message, "utf-8");
-                ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message);
+                ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message, isReply);
                 if(fragmentConversation != null) {
                     exitReveal();
                     fragmentConversation.addThreadAndUpdate(ticketThread);
@@ -336,13 +369,24 @@ public class TicketDetailActivity extends AppCompatActivity implements
         }
     }
 
-    void enterReveal() {
+    void enterReveal(String type) {
         final View myView = findViewById(R.id.reveal);
         int finalRadius = Math.max(myView.getWidth(), myView.getHeight());
         SupportAnimator anim =
                 ViewAnimationUtils.createCircularReveal(myView, cx, cy, 0, finalRadius);
-        myView.setVisibility(View.VISIBLE);
-        overlay.setVisibility(View.VISIBLE);
+        if (type.equals("Reply")) {
+            myView.setVisibility(View.VISIBLE);
+            myView.findViewById(R.id.section_reply).setVisibility(View.VISIBLE);
+            myView.findViewById(R.id.section_internal_note).setVisibility(View.GONE);
+            overlay.setVisibility(View.VISIBLE);
+        }
+        else {
+            myView.setVisibility(View.VISIBLE);
+            myView.findViewById(R.id.section_reply).setVisibility(View.GONE);
+            myView.findViewById(R.id.section_internal_note).setVisibility(View.VISIBLE);
+            overlay.setVisibility(View.VISIBLE);
+        }
+
         anim.start();
     }
 

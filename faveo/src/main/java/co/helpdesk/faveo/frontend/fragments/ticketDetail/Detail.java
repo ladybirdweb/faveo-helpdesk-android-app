@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import co.helpdesk.faveo.Helper;
@@ -26,6 +27,8 @@ import org.json.JSONObject;
 public class Detail extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    TextView textViewOpenedBy;
 
     EditText editTextSubject, editTextStatus, editTextDepartment, editTextName, editTextEmail,
             editTextSource, editTextLastMessage, editTextDueDate, editTextCreatedDate, editTextLastResponseDate;
@@ -209,6 +212,8 @@ public class Detail extends Fragment {
     }
 
     private void setUpViews(View rootView) {
+        textViewOpenedBy = (TextView) rootView.findViewById(R.id.textView_opened_by);
+        textViewOpenedBy.setText(TicketDetailActivity.ticketOpenedBy);
         editTextSubject = (EditText) rootView.findViewById(R.id.editText_subject);
         spinnerSLAPlans = (Spinner) rootView.findViewById(R.id.spinner_sla_plans);
         editTextStatus = (EditText) rootView.findViewById(R.id.editText_status);

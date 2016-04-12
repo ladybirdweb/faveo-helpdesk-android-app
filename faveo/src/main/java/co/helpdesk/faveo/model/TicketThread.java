@@ -10,13 +10,15 @@ public class TicketThread {
     public String messageTime;
     public String messageTitle;
     public String message;
+    public String isReply;
 
-    public TicketThread(String clientPicture, String clientName, String messageTime, String messageTitle, String message) {
+    public TicketThread(String clientPicture, String clientName, String messageTime, String messageTitle, String message, String isReply) {
         this.clientPicture = clientPicture;
         this.clientName = clientName;
         this.messageTime = messageTime;
         this.messageTitle = messageTitle;
         this.message = message;
+        this.isReply = isReply;
     }
 
     public String getClientPicture() {
@@ -57,5 +59,13 @@ public class TicketThread {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getIsReply() {
+        return isReply;
+    }
+
+    public void setIsReply(String message) {
+        this.isReply = isReply;
     }
 }

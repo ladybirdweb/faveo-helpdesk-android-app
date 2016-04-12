@@ -69,6 +69,8 @@
                 android:fontFamily="sans-serif-bold" />
 
             <TextView
+                android:drawableLeft="@drawable/email"
+                android:drawablePadding="8dp"
                 android:id="@+id/textView_client_email"
                 android:layout_below="@+id/textView_client_name"
                 android:layout_toRightOf="@+id/imageView_default_profile"
@@ -85,6 +87,8 @@
                 android:fontFamily="sans-serif-medium"/>
 
             <TextView
+                android:drawableLeft="@drawable/phone"
+                android:drawablePadding="8dp"
                 android:id="@+id/textView_client_phone"
                 android:layout_below="@+id/textView_client_email"
                 android:layout_toRightOf="@+id/imageView_default_profile"

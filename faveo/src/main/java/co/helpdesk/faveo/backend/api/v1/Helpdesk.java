@@ -23,7 +23,7 @@ public class Helpdesk {
     }
 
     public String getBaseURL(String companyURL) {
-        return new HTTPConnection().HTTPResponseGet("http://www.faveohelpdesk.com/demo/api/v1/helpdesk/url?url=" + companyURL + "&api_key=" + apiKey);
+        return new HTTPConnection().HTTPResponseGet(companyURL + "api/v1/helpdesk/url?url=" + companyURL.substring(0, companyURL.length() - 1) + "&api_key=" + apiKey);
     }
 
     public String postCreateTicket(int userID, String subject, String body, int helpTopic,

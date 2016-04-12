@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -47,13 +48,15 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
                 if (ticketViewHolder.textViewMessageTitle.getVisibility() == View.GONE) {
                     ticketViewHolder.textViewMessageTitle.setVisibility(View.VISIBLE);
                     ticketViewHolder.textViewMessage.setVisibility(View.VISIBLE);
-                }
-                else {
+                } else {
                     ticketViewHolder.textViewMessageTitle.setVisibility(View.GONE);
                     ticketViewHolder.textViewMessage.setVisibility(View.GONE);
                 }
             }
         });
+
+        if (!ticketThread.getIsReply().equals("true"))
+            ticketViewHolder.imageViewType.setImageResource(R.drawable.note);
 
     }
 
@@ -73,6 +76,7 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         protected TextView textViewMessageTime;
         protected TextView textViewMessageTitle;
         protected TextView textViewMessage;
+        protected ImageView imageViewType;
 
         public TicketViewHolder(View v) {
             super(v);
@@ -82,6 +86,7 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
             textViewMessageTime = (TextView)  v.findViewById(R.id.textView_ticket_time);
             textViewMessageTitle = (TextView) v.findViewById(R.id.textView_client_message_title);
             textViewMessage = (TextView) v.findViewById(R.id.textView_client_message_body);
+            imageViewType = (ImageView) v.findViewById(R.id.imageView_type);
         }
 
     }

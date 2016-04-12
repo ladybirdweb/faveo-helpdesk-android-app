@@ -123,8 +123,12 @@ public class Conversation extends Fragment {
                         String messageTime = jsonArray.getJSONObject(i).getString("created_at");
                         String messageTitle = jsonArray.getJSONObject(i).getString("title");
                         String message = jsonArray.getJSONObject(i).getString("body");
+                        String isReply = "true";
+                        try {
+                            isReply = jsonArray.getJSONObject(i).getString("is_reply");
+                        } catch(Exception e) {}
                         message = URLDecoder.decode(message, "utf-8");
-                        ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message);
+                        ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message, isReply);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     } catch (UnsupportedEncodingException e) {

@@ -50,6 +50,7 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
                 Intent intent = new Intent(v.getContext(), TicketDetailActivity.class);
                 intent.putExtra("TICKET_ID", ticketOverview.ticketID + "");
                 intent.putExtra("TICKET_NUMBER", ticketOverview.ticketNumber);
+                intent.putExtra("TICKET_OPENED_BY", ticketOverview.clientName);
                 v.getContext().startActivity(intent);
             }
         });

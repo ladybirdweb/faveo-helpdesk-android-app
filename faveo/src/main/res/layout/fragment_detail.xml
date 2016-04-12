@@ -18,6 +18,22 @@
         android:orientation="vertical"
         tools:context="com.android.faveo.CreateNewTicketActivity">
 
+
+        <TextView
+            android:gravity="center"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textStyle="bold"
+            android:text="Client name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_opened_by"
+            android:textSize="14sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:layout_marginBottom="24dp"
+            android:textAllCaps="true"
+            android:singleLine="true" />
+
         <TextView
             android:textColor="@color/black"
             android:layout_width="wrap_content"
