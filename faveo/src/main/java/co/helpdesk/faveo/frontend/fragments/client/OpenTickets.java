@@ -70,8 +70,8 @@ public class OpenTickets extends Fragment {
         }
     }
 
-    public void populateData(List <TicketGlimpse> openTickets) {
-        ticketGlimpseAdapter = new TicketGlimpseAdapter(openTickets);
+    public void populateData(List <TicketGlimpse> openTickets, String clientName) {
+        ticketGlimpseAdapter = new TicketGlimpseAdapter(openTickets, clientName);
         if (recyclerView != null)
             recyclerView.setAdapter(ticketGlimpseAdapter);
     }

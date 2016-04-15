@@ -14,9 +14,11 @@ import java.util.List;
 
 public class TicketGlimpseAdapter extends RecyclerView.Adapter<TicketGlimpseAdapter.TicketViewHolder> {
     private List<TicketGlimpse> ticketGlimpseList;
+    final String clientName;
 
-    public TicketGlimpseAdapter(List<TicketGlimpse> ticketGlimpseList) {
+    public TicketGlimpseAdapter(List<TicketGlimpse> ticketGlimpseList, String clientName) {
         this.ticketGlimpseList = ticketGlimpseList;
+        this.clientName = clientName;
     }
 
     @Override
@@ -37,7 +39,7 @@ public class TicketGlimpseAdapter extends RecyclerView.Adapter<TicketGlimpseAdap
         View itemView = LayoutInflater.
         from(viewGroup.getContext()).
         inflate(co.helpdesk.faveo.R.layout.card_ticket_status, viewGroup, false);
-        return new TicketViewHolder(itemView);
+        return new TicketViewHolder(itemView, clientName);
     }
 
     public static class TicketViewHolder extends RecyclerView.ViewHolder {
@@ -46,7 +48,7 @@ public class TicketGlimpseAdapter extends RecyclerView.Adapter<TicketGlimpseAdap
         protected TextView textViewTicketNumber;
         protected TextView textViewSubject;
 
-        public TicketViewHolder(View v) {
+        public TicketViewHolder(View v, final String clientName) {
             super(v);
             textViewTicketID = (TextView)  v.findViewById(co.helpdesk.faveo.R.id.textView_ticket_id);
             textViewTicketNumber = (TextView)  v.findViewById(co.helpdesk.faveo.R.id.textView_ticket_number);
@@ -58,6 +60,8 @@ public class TicketGlimpseAdapter extends RecyclerView.Adapter<TicketGlimpseAdap
                     Intent intent = new Intent(v.getContext(), TicketDetailActivity.class);
                     intent.putExtra("TICKET_ID", textViewTicketID.getText().toString());
                     intent.putExtra("TICKET_NUMBER", textViewTicketNumber.getText().toString());
+                    intent.putExtra("TICKET_OPENED_BY", clientName);
+                    intent.putExtra("TICKET_SUBJECT", textViewSubject.getText().toString());
                     v.getContext().startActivity(intent);
                 }
             });

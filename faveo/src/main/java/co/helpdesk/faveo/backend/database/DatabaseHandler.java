@@ -119,7 +119,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(ID, ticketOverview.getTicketID());
-        values.put(CLIENT_PICTURE, ticketOverview.getTicketNumber());
+        values.put(CLIENT_PICTURE, ticketOverview.getClientPicture());
         values.put(TICKET_NUMBER, ticketOverview.getTicketNumber());
         values.put(CLIENT_NAME, ticketOverview.getClientName());
         values.put(TICKET_SUBJECT, ticketOverview.getTicketSubject());

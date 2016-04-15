@@ -43,13 +43,14 @@ public class Helper {
         try {
             String clientID = jsonArray.getJSONObject(i).getString("id");
             String clientPicture = jsonArray.getJSONObject(i).getString("picture");
+            String userName = jsonArray.getJSONObject(i).getString("user_name");
             String firstName = jsonArray.getJSONObject(i).getString("first_name");
             String lastName = jsonArray.getJSONObject(i).getString("last_name");
             String clientEmail = jsonArray.getJSONObject(i).getString("email");
             String clientPhone = jsonArray.getJSONObject(i).getString("phone_number");
 
             return new ClientOverview(Integer.parseInt(clientID), clientPicture,
-                    firstName + " " + lastName, clientEmail, clientPhone);
+                    userName, clientEmail, clientPhone);
 
         } catch (JSONException e) {
             e.printStackTrace();

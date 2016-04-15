@@ -70,8 +70,8 @@ public class ClosedTickets extends Fragment {
         }
     }
 
-    public void populateData(List <TicketGlimpse> closedTickets) {
-        ticketGlimpseAdapter = new TicketGlimpseAdapter(closedTickets);
+    public void populateData(List <TicketGlimpse> closedTickets, String clientName) {
+        ticketGlimpseAdapter = new TicketGlimpseAdapter(closedTickets, clientName);
         if (recyclerView != null)
             recyclerView.setAdapter(ticketGlimpseAdapter);
     }

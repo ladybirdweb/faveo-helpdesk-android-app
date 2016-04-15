@@ -114,11 +114,8 @@ public class Detail extends Fragment {
             try {
                 JSONObject jsonObjectResult = new JSONObject(result);
                 jsonObject = jsonObjectResult.getJSONObject("result");
-                try {
-                    editTextSubject.setText(jsonObject.getString("subject"));
-                } catch (JSONException e) {
-                    editTextSubject.setText("Not available");
-                }
+                editTextSubject.setText(TicketDetailActivity.ticketSubject);
+
                 try {
                     spinnerSLAPlans.setSelection(Integer.parseInt(jsonObject.getString("sla")));
                 } catch(Exception e) { }

@@ -413,4 +413,38 @@ public class Helpdesk {
         return result;
     }
 
+    public String getTicketsByAgent(String userID) {
+        String parameters = null;
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("api_key", apiKey);
+            obj.put("ip", IP);
+            obj.put("token", token);
+            parameters = obj.toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        String result = new HTTPConnection().HTTPResponseGet(Constants.URL + "helpdesk/my-tickets-agent?api_key=" + apiKey + "&ip=" + IP + "&token=" + token + "&user_id=" + userID);
+        if (result != null && result.equals("tokenRefreshed"))
+            getTicketsByAgent(userID);
+        return result;
+    }
+
+    public String getTicketsByUser(String userID) {
+        String parameters = null;
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("api_key", apiKey);
+            obj.put("ip", IP);
+            obj.put("token", token);
+            parameters = obj.toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        String result = new HTTPConnection().HTTPResponseGet(Constants.URL + "helpdesk/my-tickets-user?api_key=" + apiKey + "&ip=" + IP + "&token=" + token + "&user_id=" + userID);
+        if (result != null && result.equals("tokenRefreshed"))
+            getTicketsByUser(userID);
+        return result;
+    }
+
 }

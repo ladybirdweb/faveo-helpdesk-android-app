@@ -27,6 +27,7 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -82,7 +83,11 @@ public class Conversation extends Fragment {
             swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
-                    new FetchTicketThreads(getActivity()).execute();
+                    if (ticketThreadList.size()!= 0) {
+                        ticketThreadList.clear();
+                        ticketThreadAdapter.notifyDataSetChanged();
+                        new FetchTicketThreads(getActivity()).execute();
+                    }
                 }
             });
         }
@@ -120,13 +125,13 @@ public class Conversation extends Fragment {
 
                         }
                         String clientName = jsonArray.getJSONObject(i).getString("poster");
+                        if (clientName.equals("null") || clientName.equals(""))
+                            clientName = "NOTE";
                         String messageTime = jsonArray.getJSONObject(i).getString("created_at");
                         String messageTitle = jsonArray.getJSONObject(i).getString("title");
                         String message = jsonArray.getJSONObject(i).getString("body");
-                        String isReply = "true";
-                        try {
-                            isReply = jsonArray.getJSONObject(i).getString("is_reply");
-                        } catch(Exception e) {}
+                        String isReply = jsonArray.getJSONObject(i).getString("is_internal").equals("0") ? "false" : "true";
+
                         message = URLDecoder.decode(message, "utf-8");
                         ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message, isReply);
                     } catch (JSONException e) {

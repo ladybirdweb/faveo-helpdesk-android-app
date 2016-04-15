@@ -75,7 +75,7 @@ public class HTTPConnection {
             return null;
 
         String input = sb.toString();
-        if(input.contains("Token has expired")) {
+        if(input.contains("token_expired")) {
             if (refreshToken() == null)
                 return null;
             new Helpdesk();
@@ -127,7 +127,7 @@ public class HTTPConnection {
             return null;
 
         String input = sb.toString();
-        if(input.contains("Token has expired")) {
+        if(input.contains("token_expired")) {
             if (refreshToken() == null)
                 return null;
             new Helpdesk();
@@ -169,7 +169,7 @@ public class HTTPConnection {
             return null;
 
         String input = sb.toString();
-        if(input.contains("Token has expired")) {
+        if(input.contains("token_expired")) {
             if (refreshToken() == null)
                 return null;
             new Helpdesk();

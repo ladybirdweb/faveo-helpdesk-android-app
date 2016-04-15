@@ -94,7 +94,7 @@ public class InboxTickets extends Fragment {
             swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
-                    new ReadFromDatabase(getActivity()).execute();
+                    new FetchFirst(getActivity()).execute();
                 }
             });
 
@@ -190,6 +190,55 @@ public class InboxTickets extends Fragment {
             }
             ticketOverviewAdapter.notifyDataSetChanged();
             loading = true;
+        }
+    }
+
+    public class FetchFirst extends AsyncTask<String, Void, String> {
+        Context context;
+
+        public FetchFirst(Context context) {
+            this.context = context;
+        }
+
+        protected String doInBackground(String... urls) {
+            if (nextPageURL.equals("null")) {
+                return "all done";
+            }
+            String result = new Helpdesk().getInboxTicket();
+            if (result == null)
+                return null;
+            String data;
+            try {
+                JSONObject jsonObject = new JSONObject(result);
+                try {
+                    data = jsonObject.getString("data");
+                    nextPageURL = jsonObject.getString("next_page_url");
+                } catch (JSONException e) {
+                    data = jsonObject.getString("result");
+                }
+                JSONArray jsonArray = new JSONArray(data);
+                for(int i = 0; i < jsonArray.length(); i++) {
+                    TicketOverview ticketOverview = Helper.parseTicketOverview(jsonArray, i);
+                    if(ticketOverview != null)
+                        ticketOverviewList.add(ticketOverview);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return "success";
+        }
+
+        protected void onPostExecute(String result) {
+            if (swipeRefresh.isRefreshing())
+                swipeRefresh.setRefreshing(false);
+            if (progressDialog.isShowing())
+                progressDialog.dismiss();
+            if (result == null) {
+                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (result.equals("all done"))
+                Toast.makeText(context, "All tickets loaded", Toast.LENGTH_SHORT).show();
         }
     }
 

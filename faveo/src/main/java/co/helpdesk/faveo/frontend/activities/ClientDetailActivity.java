@@ -43,7 +43,7 @@ public class ClientDetailActivity extends AppCompatActivity implements
     ViewPagerAdapter adapter;
     OpenTickets fragmentOpenTickets;
     ClosedTickets fragmentClosedTickets;
-    String clientID;
+    String clientID, clientName;
     List<TicketGlimpse> listTicketGlimpse;
     ProgressDialog progressDialog;
 
@@ -62,7 +62,8 @@ public class ClientDetailActivity extends AppCompatActivity implements
         setUpViews();
         Intent intent = getIntent();
         clientID = intent.getStringExtra("CLIENT_ID");
-        textViewClientName.setText(intent.getStringExtra("CLIENT_NAME"));
+        clientName = intent.getStringExtra("CLIENT_NAME");
+        textViewClientName.setText(clientID);
         textViewClientEmail.setText(intent.getStringExtra("CLIENT_EMAIL"));
         textViewClientPhone.setText(intent.getStringExtra("CLIENT_PHONE"));
         String clientPictureUrl = intent.getStringExtra("CLIENT_PICTURE");
@@ -134,11 +135,11 @@ public class ClientDetailActivity extends AppCompatActivity implements
         protected void onPostExecute(String result) {
             progressDialog.dismiss();
             if (result == null) {
-                Toast.makeText(ClientDetailActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
+                Toast.makeText(ClientDetailActivity.this, "User is not Agent or admin", Toast.LENGTH_LONG).show();
                 return;
             }
-            fragmentOpenTickets.populateData(listOpenTicketGlimpse);
-            fragmentClosedTickets.populateData(listClosedTicketGlimpse);
+            fragmentOpenTickets.populateData(listOpenTicketGlimpse, clientName);
+            fragmentClosedTickets.populateData(listClosedTicketGlimpse, clientName);
         }
     }
 

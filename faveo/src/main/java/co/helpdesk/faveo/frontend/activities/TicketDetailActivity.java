@@ -66,6 +66,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
     public static String ticketID;
     public static String ticketNumber;
     public static String ticketOpenedBy;
+    public static String ticketSubject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +80,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
         ticketID = getIntent().getStringExtra("TICKET_ID");
         ticketNumber = getIntent().getStringExtra("TICKET_NUMBER");
         ticketOpenedBy = getIntent().getStringExtra("TICKET_OPENED_BY");
+        ticketSubject = getIntent().getStringExtra("TICKET_SUBJECT");
         TextView mTitle = (TextView) mToolbar.findViewById(R.id.title);
         mTitle.setText(ticketNumber == null ? "Unknown" : ticketNumber);
 
