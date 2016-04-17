@@ -55,6 +55,14 @@ public class HTTPConnection {
             is = connection.getInputStream();
             Log.e("Response Code", connection.getResponseCode() + "");
         } catch (IOException e) {
+            if (e.getMessage().contains("No authentication challenges found")) {
+                if (refreshToken() == null)
+                    return null;
+                new Helpdesk();
+                new Authenticate();
+                new Register();
+                return "tokenRefreshed";
+            }
             Log.e("error in faveo", e.getMessage());
             e.printStackTrace();
         }
@@ -108,6 +116,14 @@ public class HTTPConnection {
             is = connection.getInputStream();
             Log.e("Response Code", connection.getResponseCode() + "");
         } catch (IOException e) {
+            if (e.getMessage().contains("No authentication challenges found")) {
+                if (refreshToken() == null)
+                    return null;
+                new Helpdesk();
+                new Authenticate();
+                new Register();
+                return "tokenRefreshed";
+            }
             Log.e("error in faveo", e.getMessage());
             e.printStackTrace();
         }
@@ -150,6 +166,16 @@ public class HTTPConnection {
             is = connection.getInputStream();
             Log.e("Response Code", connection.getResponseCode() + "");
         } catch (IOException e) {
+
+            if (e.getMessage().contains("No authentication challenges found")) {
+                if (refreshToken() == null)
+                    return null;
+                new Helpdesk();
+                new Authenticate();
+                new Register();
+                return "tokenRefreshed";
+            }
+
             Log.e("error in faveo", e.getMessage());
             e.printStackTrace();
         }

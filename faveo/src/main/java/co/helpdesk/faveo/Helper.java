@@ -19,6 +19,7 @@ public class Helper {
         try {
             String firstName = jsonArray.getJSONObject(i).getString("first_name");
             String lastName = jsonArray.getJSONObject(i).getString("last_name");
+            String username = jsonArray.getJSONObject(i).getString("user_name");
             String email = jsonArray.getJSONObject(i).getString("email");
             String profilePic = jsonArray.getJSONObject(i).getString("profile_pic");
             String ticketNumber = jsonArray.getJSONObject(i).getString("ticket_number");
@@ -32,7 +33,7 @@ public class Helper {
             String ticketStatusName = jsonArray.getJSONObject(i).getString("ticket_status_name");
 
             return new TicketOverview(Integer.parseInt(ID), profilePic,
-                    ticketNumber, firstName + " " + lastName, title, createdAt, i + "");
+                    ticketNumber, username, title, createdAt, i + "");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -42,15 +43,17 @@ public class Helper {
     public static ClientOverview parseClientOverview(JSONArray jsonArray, int i) {
         try {
             String clientID = jsonArray.getJSONObject(i).getString("id");
-            String clientPicture = jsonArray.getJSONObject(i).getString("picture");
+            String clientPicture = jsonArray.getJSONObject(i).getString("profile_pic");
             String userName = jsonArray.getJSONObject(i).getString("user_name");
             String firstName = jsonArray.getJSONObject(i).getString("first_name");
             String lastName = jsonArray.getJSONObject(i).getString("last_name");
             String clientEmail = jsonArray.getJSONObject(i).getString("email");
             String clientPhone = jsonArray.getJSONObject(i).getString("phone_number");
+            String clientCompany = jsonArray.getJSONObject(i).getString("company");
+            String clientActive = jsonArray.getJSONObject(i).getString("active");
 
             return new ClientOverview(Integer.parseInt(clientID), clientPicture,
-                    userName, clientEmail, clientPhone);
+                    userName, clientEmail, clientPhone, clientCompany, clientActive);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -66,9 +69,11 @@ public class Helper {
             String lastName = jsonArray.getJSONObject(i).getString("last_name");
             String clientEmail = jsonArray.getJSONObject(i).getString("email");
             String clientPhone = jsonArray.getJSONObject(i).getString("phone_number");
+            String clientCompany = jsonArray.getJSONObject(i).getString("company");
+            String clientActive = jsonArray.getJSONObject(i).getString("active");
 
             return new ClientOverview(Integer.parseInt(clientID), clientPicture,
-                    firstName + " " + lastName, clientEmail, clientPhone);
+                    firstName + " " + lastName, clientEmail, clientPhone, clientCompany, clientActive);
 
         } catch (JSONException e) {
             e.printStackTrace();

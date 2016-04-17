@@ -25,6 +25,8 @@
             android:layout_height="32dp" />
 
         <TextView
+            android:layout_toLeftOf="@+id/imageView_type"
+            android:ellipsize="end"
             android:textAllCaps="true"
             android:layout_toRightOf="@+id/imageView_default_profile"
             android:id="@+id/textView_client_name"
@@ -64,7 +66,7 @@
             android:layout_below="@+id/textView_client_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="4dp"
             android:text="Dummy title"
             android:textSize="12sp"

@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         SharedPreferences.Editor editor = getApplicationContext().getSharedPreferences("FAVEO", MODE_PRIVATE).edit();
         editor.putBoolean("LOGIN_COMPLETE", true);
         editor.apply();
-
     }
 
     @Override

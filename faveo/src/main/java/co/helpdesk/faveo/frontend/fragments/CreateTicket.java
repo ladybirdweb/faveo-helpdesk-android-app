@@ -9,15 +9,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.Preference;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.activities.MainActivity;
+import co.helpdesk.faveo.frontend.activities.SplashActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -86,18 +89,13 @@ public class CreateTicket extends Fragment {
                     int priority = spinnerPriority.getSelectedItemPosition() + 1;
                     boolean allCorrect = true;
 
-                    if (email.trim().length() == 0 || android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    if (email.trim().length() == 0 || !Helper.isValidEmail(email)) {
                         setErrorState(editTextEmail, textViewErrorEmail, "Invalid email");
                         allCorrect = false;
                     }
 
                     if (name.trim().length() == 0) {
                         setErrorState(editTextName, textViewErrorName, "Wrong name");
-                        allCorrect = false;
-                    }
-
-                    if (phone.trim().length() == 0) {
-                        setErrorState(editTextPhone, textViewErrorPhone, "Please fill the field");
                         allCorrect = false;
                     }
 
@@ -223,10 +221,27 @@ public class CreateTicket extends Fragment {
         textViewErrorPhone = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_phone);
         textViewErrorSubject = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_subject);
         textViewErrorMessage = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_message);
+
         spinnerHelpTopic = (Spinner) rootView.findViewById(co.helpdesk.faveo.R.id.spinner_help_topics);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, SplashActivity.valueTopic.split(",")); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerHelpTopic.setAdapter(spinnerArrayAdapter);
+
         spinnerSLAPlans = (Spinner) rootView.findViewById(co.helpdesk.faveo.R.id.spinner_sla_plans);
+        spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, SplashActivity.valueSLA.split(",")); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSLAPlans.setAdapter(spinnerArrayAdapter);
+
         spinnerAssignTo = (Spinner) rootView.findViewById(co.helpdesk.faveo.R.id.spinner_assign_to);
+        spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, SplashActivity.valueDepartment.split(",")); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerAssignTo.setAdapter(spinnerArrayAdapter);
+
         spinnerPriority = (Spinner) rootView.findViewById(co.helpdesk.faveo.R.id.spinner_priority);
+        spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, SplashActivity.valuePriority.split(",")); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerPriority.setAdapter(spinnerArrayAdapter);
+
         buttonSubmit = (Button) rootView.findViewById(co.helpdesk.faveo.R.id.button_submit);
         paddingTop = editTextEmail.getPaddingTop();
         paddingBottom = editTextEmail.getPaddingBottom();

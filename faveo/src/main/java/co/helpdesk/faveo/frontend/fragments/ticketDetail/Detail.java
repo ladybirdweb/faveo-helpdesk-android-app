@@ -3,6 +3,7 @@ package co.helpdesk.faveo.frontend.fragments.ticketDetail;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,15 +11,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import co.helpdesk.faveo.Constants;
 import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
+import co.helpdesk.faveo.frontend.activities.SplashActivity;
 import co.helpdesk.faveo.frontend.activities.TicketDetailActivity;
 
 import org.json.JSONException;
@@ -30,10 +34,11 @@ public class Detail extends Fragment {
 
     TextView textViewOpenedBy;
 
-    EditText editTextSubject, editTextStatus, editTextDepartment, editTextName, editTextEmail,
-            editTextSource, editTextLastMessage, editTextDueDate, editTextCreatedDate, editTextLastResponseDate;
+    EditText editTextSubject, editTextName, editTextEmail,
+            editTextLastMessage, editTextDueDate, editTextCreatedDate, editTextLastResponseDate;
 
-    Spinner spinnerSLAPlans, spinnerPriority, spinnerHelpTopics, spinnerAssignTo, spinnerChangeStatus;
+    Spinner spinnerSLAPlans, spinnerDepartment, spinnerStatus, spinnerSource,
+            spinnerPriority, spinnerHelpTopics, spinnerAssignTo, spinnerChangeStatus;
     ProgressDialog progressDialog;
 
     Button buttonSave;
@@ -83,7 +88,7 @@ public class Detail extends Fragment {
                         editTextSubject.getText().toString(),
                         spinnerSLAPlans.getSelectedItemPosition(),
                         spinnerHelpTopics.getSelectedItemPosition(),
-                        Integer.parseInt(editTextSource.getText().toString()),
+                        spinnerSource.getSelectedItemPosition(),
                         spinnerPriority.getSelectedItemPosition()).execute();
             }
         });
@@ -120,45 +125,41 @@ public class Detail extends Fragment {
                     spinnerSLAPlans.setSelection(Integer.parseInt(jsonObject.getString("sla")));
                 } catch(Exception e) { }
 
-                switch (jsonObject.getString("status")) {
-                    case "1":
-                        editTextStatus.setText("Open");
-                        break;
-                    case "2":
-                        editTextStatus.setText("Closed");
-                        break;
-                    case "3":
-                        editTextStatus.setText("Resolved");
-                        break;
-                    case "4":
-                        editTextStatus.setText("Deleted");
-                        break;
-                    default:
-                        editTextStatus.setText("Not available");
+                try {
+                    spinnerStatus.setSelection(Integer.parseInt(jsonObject.getString("status")) - 1);
+                } catch(Exception e) { }
+
+                try {
+                    spinnerPriority.setSelection(Integer.parseInt(jsonObject.getString("priority_id")) - 1);
+                } catch(Exception e) { }
+
+                try {
+                    spinnerDepartment.setSelection(Integer.parseInt(jsonObject.getString("dept_id")) - 1);
+                } catch(Exception e) { }
+
+                try {
+                    spinnerHelpTopics.setSelection(Integer.parseInt(jsonObject.getString("help_topic_id")) - 1);
+                } catch(Exception e) { }
+
+                String assignedTo = jsonObject.getString("assigned_to");
+                if (assignedTo.equals("null") || assignedTo.equals("")) {
+                    editTextName.setText("Not assigned");
                 }
-
-                try {
-                    spinnerPriority.setSelection(Integer.parseInt(jsonObject.getString("priority_id")));
-                } catch(Exception e) { }
-
-                editTextDepartment.setText(jsonObject.getString("dept_id"));
-
-                try {
-                    spinnerHelpTopics.setSelection(Integer.parseInt(jsonObject.getString("help_topic_id")));
-                } catch(Exception e) { }
-
-                editTextName.setText(jsonObject.getString("assigned_to"));
                 try {
                     editTextEmail.setText(jsonObject.getString("email"));
                 } catch (JSONException e) {
                     editTextEmail.setText("Not available");
                 }
-                editTextSource.setText(jsonObject.getString("source"));
+
                 try {
-                    editTextLastMessage.setText(jsonObject.getString("last_message"));
-                } catch (JSONException e) {
-                    editTextLastMessage.setText("Not available");
+                    spinnerSource.setSelection(Integer.parseInt(jsonObject.getString("source")) - 1);
+                } catch(Exception e) { }
+
+                String lastMessage = jsonObject.getString("last_message");
+                if (lastMessage.equals("null") || lastMessage.equals("")) {
+                    editTextLastMessage.setText("No last message");
                 }
+
                 editTextDueDate.setText(Helper.parseDate(jsonObject.getString("duedate")));
                 editTextCreatedDate.setText(Helper.parseDate(jsonObject.getString("created_at")));
                 editTextLastResponseDate.setText(Helper.parseDate(jsonObject.getString("updated_at")));
@@ -212,14 +213,40 @@ public class Detail extends Fragment {
         textViewOpenedBy = (TextView) rootView.findViewById(R.id.textView_opened_by);
         textViewOpenedBy.setText(TicketDetailActivity.ticketOpenedBy);
         editTextSubject = (EditText) rootView.findViewById(R.id.editText_subject);
+
         spinnerSLAPlans = (Spinner) rootView.findViewById(R.id.spinner_sla_plans);
-        editTextStatus = (EditText) rootView.findViewById(R.id.editText_status);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, SplashActivity.valueSLA.split(",")); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSLAPlans.setAdapter(spinnerArrayAdapter);
+
+        spinnerStatus = (Spinner) rootView.findViewById(R.id.spinner_status);
+        spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, SplashActivity.valueStatus.split(",")); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerStatus.setAdapter(spinnerArrayAdapter);
+
         spinnerPriority = (Spinner) rootView.findViewById(R.id.spinner_priority);
-        editTextDepartment = (EditText) rootView.findViewById(R.id.editText_department);
+        spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, SplashActivity.valuePriority.split(",")); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerPriority.setAdapter(spinnerArrayAdapter);
+
+        spinnerDepartment = (Spinner) rootView.findViewById(R.id.spinner_department);
+        spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, SplashActivity.valueDepartment.split(",")); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerDepartment.setAdapter(spinnerArrayAdapter);
+
         spinnerHelpTopics = (Spinner) rootView.findViewById(R.id.spinner_help_topics);
+        spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, SplashActivity.valueTopic.split(",")); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerHelpTopics.setAdapter(spinnerArrayAdapter);
+
         editTextName = (EditText) rootView.findViewById(R.id.editText_name);
         editTextEmail = (EditText) rootView.findViewById(R.id.editText_email);
-        editTextSource = (EditText) rootView.findViewById(R.id.editText_source);
+
+        spinnerSource = (Spinner) rootView.findViewById(R.id.spinner_source);
+        spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, SplashActivity.valueSource.split(",")); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSource.setAdapter(spinnerArrayAdapter);
+
         editTextLastMessage = (EditText) rootView.findViewById(R.id.editText_last_message);
         editTextDueDate = (EditText) rootView.findViewById(R.id.editText_due_date);
         editTextCreatedDate = (EditText) rootView.findViewById(R.id.editText_created_date);

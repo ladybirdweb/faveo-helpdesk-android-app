@@ -94,22 +94,17 @@
             android:textStyle="bold"
             android:alpha="0.3"/>
 
-        <EditText
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:text="Status"
+        <Spinner
+            android:entries="@array/spinnerPriority"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText_status"
+            android:id="@+id/spinner_status"
             android:background="@drawable/edittext_modified_states"
             android:textSize="14sp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
             android:layout_marginBottom="24dp"
             android:singleLine="true"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
             android:imeOptions="actionNext" />
 
         <TextView
@@ -143,24 +138,16 @@
             android:textStyle="bold"
             android:alpha="0.3"/>
 
-        <EditText
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:text="Department"
+        <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLength="20"
-            android:ems="10"
-            android:id="@+id/editText_department"
+            android:id="@+id/spinner_department"
             android:background="@drawable/edittext_modified_states"
             android:textSize="14sp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
             android:layout_marginBottom="24dp"
             android:singleLine="true"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
             android:imeOptions="actionNext" />
 
         <TextView
@@ -252,19 +239,15 @@
             android:textStyle="bold"
             android:alpha="0.3"/>
 
-        <EditText
-            android:digits="123456789"
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:text="Src"
+        <Spinner
+            android:entries="@array/spinnerHelpTopics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLength="4"
-            android:ems="4"
-            android:id="@+id/editText_source"
+            android:id="@+id/spinner_source"
             android:background="@drawable/edittext_modified_states"
             android:textSize="14sp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
             android:layout_marginBottom="24dp"
             android:singleLine="true"
             android:imeOptions="actionNext" />
@@ -386,6 +369,7 @@
             android:imeOptions="actionNext" />
 
         <TextView
+            android:visibility="gone"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -395,6 +379,7 @@
             android:alpha="0.3"/>
 
         <Spinner
+            android:visibility="gone"
             android:entries="@array/spinnerAssignTo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

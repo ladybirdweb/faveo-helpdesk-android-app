@@ -106,7 +106,7 @@ public class MyTickets extends Fragment {
             if (nextPageURL.equals("null")) {
                 return "all done";
             }
-            String result = new Helpdesk().getMyTickets(Preference.getUserID());
+            String result = new Helpdesk().getTicketsByAgent(Preference.getUserID());
             if (result == null)
                 return null;
             String data;

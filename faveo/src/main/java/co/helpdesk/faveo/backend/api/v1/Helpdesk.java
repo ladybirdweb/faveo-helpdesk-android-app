@@ -447,4 +447,21 @@ public class Helpdesk {
         return result;
     }
 
+    public String getDependency() {
+        String parameters = null;
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("api_key", apiKey);
+            obj.put("ip", IP);
+            obj.put("token", token);
+            parameters = obj.toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        String result = new HTTPConnection().HTTPResponseGet(Constants.URL + "helpdesk/dependency?api_key=" + apiKey + "&ip=" + IP + "&token=" + token);
+        if (result != null && result.equals("tokenRefreshed"))
+            getDependency();
+        return result;
+    }
+
 }

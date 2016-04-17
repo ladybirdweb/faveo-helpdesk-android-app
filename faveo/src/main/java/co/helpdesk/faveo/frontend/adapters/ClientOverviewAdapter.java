@@ -50,6 +50,8 @@ public class ClientOverviewAdapter extends RecyclerView.Adapter<ClientOverviewAd
                 intent.putExtra("CLIENT_EMAIL", clientOverview.clientEmail);
                 intent.putExtra("CLIENT_PHONE", clientOverview.clientPhone);
                 intent.putExtra("CLIENT_PICTURE", clientOverview.clientPicture);
+                intent.putExtra("CLIENT_COMPANY", clientOverview.clientCompany);
+                intent.putExtra("CLIENT_ACTIVE", clientOverview.clientActive);
                 v.getContext().startActivity(intent);
             }
         });

@@ -10,13 +10,18 @@ public class ClientOverview {
     public String clientName;
     public String clientEmail;
     public String clientPhone;
+    public String clientCompany;
+    public String clientActive;
 
-    public ClientOverview(int clientID, String clientPicture, String clientName, String clientEmail, String clientPhone) {
+    public ClientOverview(int clientID, String clientPicture, String clientName,
+                          String clientEmail, String clientPhone, String clientCompany, String clientActive) {
         this.clientID = clientID;
         this.clientPicture = clientPicture;
         this.clientName = clientName;
         this.clientEmail = clientEmail;
         this.clientPhone = clientPhone;
+        this.clientCompany = clientCompany;
+        this.clientActive = clientActive;
     }
 
     public int getClientID() {
@@ -57,5 +62,21 @@ public class ClientOverview {
 
     public void setClientPhone(String clientPhone) {
         this.clientPhone = clientPhone;
+    }
+
+    public String getClientCompany() {
+        return clientCompany;
+    }
+
+    public void setClientCompany(String clientCompany) {
+        this.clientCompany = clientCompany;
+    }
+
+    public String getClientActive() {
+        return clientActive;
+    }
+
+    public void setClientActive(String clientActive) {
+        this.clientActive = clientActive;
     }
 }

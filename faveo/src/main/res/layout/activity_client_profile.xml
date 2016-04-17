@@ -113,6 +113,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/textView_client_company"
                 android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

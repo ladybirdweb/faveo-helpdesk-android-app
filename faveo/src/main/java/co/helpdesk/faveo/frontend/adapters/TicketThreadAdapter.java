@@ -1,6 +1,7 @@
 package co.helpdesk.faveo.frontend.adapters;
 
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,10 +35,12 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         ticketViewHolder.textViewClientName.setText(ticketThread.clientName);
         ticketViewHolder.textViewMessageTime.setText(Helper.parseDate(ticketThread.messageTime));
         ticketViewHolder.textViewMessageTitle.setText(ticketThread.messageTitle);
-        ticketViewHolder.textViewMessage.setText(ticketThread.message.replace("<br>", "\n"));
+        ticketViewHolder.textViewMessage.setText(Html.fromHtml(ticketThread.message));
         if (ticketThread.clientPicture != null && ticketThread.clientPicture.trim().length() != 0)
             Picasso.with(ticketViewHolder.roundedImageViewProfilePic.getContext())
                     .load(ticketThread.clientPicture)
+                    .resize(96, 96)
+                    .centerCrop()
                     .placeholder(R.drawable.default_pic)
                     .error(R.drawable.default_pic)
                     .into(ticketViewHolder.roundedImageViewProfilePic);

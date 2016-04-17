@@ -131,10 +131,18 @@ public class TicketDetailActivity extends AppCompatActivity implements
                     Toast.makeText(TicketDetailActivity.this, "Empty message", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if (cc.length() > 0 && !Helper.isValidEmail(cc)) {
-                    Toast.makeText(TicketDetailActivity.this, "Invalid CC", Toast.LENGTH_LONG).show();
-                    return;
+
+                cc = cc.replace(", ", ",");
+                if (cc.length() > 0) {
+                    String[] multipleEmails = cc.split(",");
+                    for (String email : multipleEmails) {
+                        if (email.length() > 0 && !Helper.isValidEmail(email)) {
+                            Toast.makeText(TicketDetailActivity.this, "Invalid CC", Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                    }
                 }
+
                 SharedPreferences prefs = getSharedPreferences(Constants.PREFERENCE, 0);
                 String userID = prefs.getString("ID", "");
                 if (userID != null && userID.length() != 0) {
@@ -257,7 +265,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 JSONObject res = jsonObject.getJSONObject("result");
                 String clientPicture = "";
                 try {
-                    clientPicture = res.getString("picture");
+                    clientPicture = res.getString("profile_pic");
                 } catch (Exception e) {
 
                 }
@@ -267,14 +275,15 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 } catch (Exception e) {
 
                 }
-                String clientName = res.getString("poster");
+                String clientName = res.getString("first_name");
+                if (clientName.equals("null") || clientName.equals(""))
+                    clientName = res.getString("user_name");
                 String messageTime = res.getString("created_at");
                 String message = res.getString("body");
                 String isReply = "true";
                 try {
                     isReply = res.getString("is_reply");
                 } catch(Exception e) {}
-                message = URLDecoder.decode(message, "utf-8");
                 ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message, isReply);
                 if(fragmentConversation != null) {
                     exitReveal();
@@ -285,8 +294,6 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 if(fragmentConversation != null) {
                     exitReveal();
                 }
-                e.printStackTrace();
-            } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
         }

@@ -38,7 +38,7 @@ public class ClientDetailActivity extends AppCompatActivity implements
         ClosedTickets.OnFragmentInteractionListener {
 
     ImageView imageViewClientPicture;
-    TextView textViewClientName, textViewClientEmail, textViewClientPhone, textViewClientStatus;
+    TextView textViewClientName, textViewClientEmail, textViewClientPhone, textViewClientStatus, textViewClientCompany;
     ViewPager viewPager;
     ViewPagerAdapter adapter;
     OpenTickets fragmentOpenTickets;
@@ -67,7 +67,8 @@ public class ClientDetailActivity extends AppCompatActivity implements
         textViewClientEmail.setText(intent.getStringExtra("CLIENT_EMAIL"));
         textViewClientPhone.setText(intent.getStringExtra("CLIENT_PHONE"));
         String clientPictureUrl = intent.getStringExtra("CLIENT_PICTURE");
-        textViewClientStatus.setText("ACTIVE");
+        textViewClientCompany.setText(intent.getStringExtra("CLIENT_COMPANY"));
+        textViewClientStatus.setText(intent.getStringExtra("CLIENT_ACTIVE").equals("1") ? "ACTIVE" : "INACTIVE");
 
         if (clientPictureUrl != null && clientPictureUrl.trim().length() != 0)
             Picasso.with(this)
@@ -104,14 +105,12 @@ public class ClientDetailActivity extends AppCompatActivity implements
 
         protected String doInBackground(String... urls) {
             listTicketGlimpse = new ArrayList<>();
-            String result = new Helpdesk().getMyTickets(clientID);
+            String result = new Helpdesk().getTicketsByUser(clientID);
             if (result == null)
                 return null;
             try {
-                JSONObject jsonObject = new JSONObject(result);
-                String data = jsonObject.getString("result");
-                JSONArray jsonArray = new JSONArray(data);
-                for(int i = 0; i < 10; i++) {
+                JSONArray jsonArray = new JSONArray(result);
+                for(int i = 0; i < jsonArray.length(); i++) {
                     int ticketID = Integer.parseInt(jsonArray.getJSONObject(i).getString("id"));
                     boolean isOpen = true;
                     String ticketSubject = jsonArray.getJSONObject(i).getString("title");
@@ -134,10 +133,7 @@ public class ClientDetailActivity extends AppCompatActivity implements
 
         protected void onPostExecute(String result) {
             progressDialog.dismiss();
-            if (result == null) {
-                Toast.makeText(ClientDetailActivity.this, "User is not Agent or admin", Toast.LENGTH_LONG).show();
-                return;
-            }
+            if (result == null) return;
             fragmentOpenTickets.populateData(listOpenTicketGlimpse, clientName);
             fragmentClosedTickets.populateData(listClosedTicketGlimpse, clientName);
         }
@@ -223,11 +219,12 @@ public class ClientDetailActivity extends AppCompatActivity implements
 
     private void setUpViews() {
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Fetching details");
+        progressDialog.setMessage("Fetching tickets");
         imageViewClientPicture = (ImageView) findViewById(R.id.imageView_default_profile);
         textViewClientName = (TextView) findViewById(R.id.textView_client_name);
         textViewClientEmail = (TextView) findViewById(R.id.textView_client_email);
         textViewClientPhone = (TextView) findViewById(R.id.textView_client_phone);
+        textViewClientCompany = (TextView) findViewById(R.id.textView_client_company);
         textViewClientStatus = (TextView) findViewById(R.id.textView_client_status);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
     }

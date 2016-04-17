@@ -7,7 +7,7 @@
         <option name="logMessagePattern" value="" />
         <option name="logTagPattern" value="" />
         <option name="name" value="Faveo" />
-        <option name="packageNamePattern" value="com.android.faveo" />
+        <option name="packageNamePattern" value="co.helpdesk.faveo" />
         <option name="pid" value="" />
       </filter>
     </filters>
@@ -47,28 +47,35 @@
       </layout>
     </layouts>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Faveo" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4461308-bb43-4293-85eb-e69f7d5296a4" name="Default" comment="Version 4 ALPHA. Bug fixes">
+    <list default="true" id="f4461308-bb43-4293-85eb-e69f7d5296a4" name="Default" comment="Version 5 ALPHA. Bug fixes">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/ClientDetailActivity.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/ClientDetailActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/ClosedTickets.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/ClosedTickets.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/model/ClientOverview.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/model/ClientOverview.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/ClientOverviewAdapter.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/ClientOverviewAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Conversation.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Conversation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/database/DatabaseHandler.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/database/DatabaseHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/CreateTicket.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/CreateTicket.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Detail.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Detail.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/HTTPConnection.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/HTTPConnection.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Helpdesk.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Helpdesk.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/Helper.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/Helper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/OpenTickets.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/OpenTickets.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/MainActivity.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/MyTickets.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/MyTickets.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/SplashActivity.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/SplashActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/TicketDetailActivity.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/TicketDetailActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketGlimpseAdapter.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketGlimpseAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketOverviewAdapter.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketOverviewAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketThreadAdapter.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketThreadAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/res/layout/activity_client_profile.xml" afterPath="$PROJECT_DIR$/faveo/src/main/res/layout/activity_client_profile.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/build.gradle" afterPath="$PROJECT_DIR$/faveo/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket.xml" afterPath="$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/res/layout/card_conversation.xml" afterPath="$PROJECT_DIR$/faveo/src/main/res/layout/card_conversation.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket_status.xml" afterPath="$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket_status.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/res/layout/fragment_detail.xml" afterPath="$PROJECT_DIR$/faveo/src/main/res/layout/fragment_detail.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="faveo-helpdesk-android-app.iws" />
@@ -111,71 +118,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ClientDetailActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/ClientDetailActivity.java">
+      <file leaf-file-name="CreateTicket.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/CreateTicket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="131" column="29" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.7040195">
+              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
               <folding>
-                <element signature="e#3783#3784#0" expanded="true" />
-                <element signature="e#3829#3830#0" expanded="true" />
-                <element signature="method#setupViewPager#0;class#ClientDetailActivity#0" expanded="false" />
-                <element signature="class#6350:6711" expanded="false" />
-                <element signature="method#onTabSelected#0;class#6350:6711" expanded="false" />
-                <element signature="method#onTabUnselected#0;class#6350:6711" expanded="false" />
-                <element signature="method#onTabReselected#0;class#6350:6711" expanded="false" />
-                <element signature="class#6776:7113" expanded="false" />
-                <element signature="method#onPageScrolled#0;class#6776:7113" expanded="false" />
-                <element signature="method#onPageSelected#0;class#6776:7113" expanded="false" />
-                <element signature="method#onPageScrollStateChanged#0;class#6776:7113" expanded="false" />
-                <element signature="method#onFragmentInteraction#0;class#ClientDetailActivity#0" expanded="false" />
-                <element signature="class#ViewPagerAdapter#0;class#ClientDetailActivity#0" expanded="false" />
-                <element signature="method#addFragment#0;class#ViewPagerAdapter#0;class#ClientDetailActivity#0" expanded="false" />
-                <element signature="method#setUpViews#0;class#ClientDetailActivity#0" expanded="false" />
+                <element signature="method#newInstance#0;class#CreateTicket#0" expanded="false" />
+                <element signature="method#CreateTicket#0;class#CreateTicket#0" expanded="false" />
+                <element signature="method#onCreate#0;class#CreateTicket#0" expanded="false" />
+                <element signature="method#CreateNewTicket#0;class#CreateNewTicket#0;class#CreateTicket#0" expanded="false" />
+                <element signature="method#onPostExecute#0;class#CreateNewTicket#0;class#CreateTicket#0" expanded="false" />
+                <element signature="method#resetViews#0;class#CreateTicket#0" expanded="false" />
+                <element signature="method#setErrorState#0;class#CreateTicket#0" expanded="false" />
+                <element signature="method#onButtonPressed#0;class#CreateTicket#0" expanded="false" />
+                <element signature="method#onAttach#0;class#CreateTicket#0" expanded="false" />
+                <element signature="method#onDetach#0;class#CreateTicket#0" expanded="false" />
+                <element signature="class#OnFragmentInteractionListener#0;class#CreateTicket#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/faveo/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32886723">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+            <state vertical-scroll-proportion="-11.88">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Helpdesk.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Helpdesk.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="439" column="40" selection-start-line="439" selection-start-column="40" selection-end-line="439" selection-end-column="40" />
-              <folding>
-                <element signature="docComment;class#Helpdesk#0" expanded="false" />
-                <element signature="method#postCreateTicket#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#postCreateInternalNote#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#postReplyTicket#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#postEditTicket#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#postDeleteTicket#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getOpenTicket#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getUnassignedTicket#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getClosedTicket#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getTicketDetail#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getAgents#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getTeams#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getCustomers#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getCustomersOverview#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getCustomer#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getTicket#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getTicketThread#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#postAssignTicket#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getInboxTicket#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getTrashTickets#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#nextPageURL#0;class#Helpdesk#0" expanded="false" />
-                <element signature="method#getMyTickets#0;class#Helpdesk#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1282,7 +1252,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4376031528566" />
+        <entry key="$PROJECT_DIR$" value="4376180295385" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1599,11 +1569,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/frontend/activities/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/frontend/activities/MainActivity.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/frontend/fragments/About.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/frontend/fragments/Settings.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/res/layout/fragment_recycler.xml" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/frontend/fragments/tickets/InboxTickets.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/frontend/fragments/tickets/ClosedTickets.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/com/android/faveo/frontend/fragments/tickets/MyTickets.java" />
@@ -1623,16 +1588,9 @@
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/ClosedTickets.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/faveo/src/main/res/layout/fragment_create_ticket.xml" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/CreateTicket.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/model/TicketThread.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketThreadAdapter.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/res/layout/card_conversation.xml" />
         <option value="$PROJECT_DIR$/faveo/src/main/res/layout/card_client.xml" />
-        <option value="$PROJECT_DIR$/faveo/src/main/res/layout/activity_client_profile.xml" />
-        <option value="$PROJECT_DIR$/faveo/src/main/res/layout/fragment_detail.xml" />
-        <option value="$PROJECT_DIR$/faveo/src/main/res/layout/activity_ticket_detail.xml" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/LoginActivity.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/database/DatabaseHandler.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java" />
@@ -1642,13 +1600,25 @@
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/model/TicketGlimpse.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/OpenTickets.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/ClosedTickets.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/HTTPConnection.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/TicketDetailActivity.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Detail.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Conversation.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/Helper.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Helpdesk.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/HTTPConnection.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketThreadAdapter.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Conversation.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/MyTickets.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/res/layout/activity_ticket_detail.xml" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/model/ClientOverview.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/ClientOverviewAdapter.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/res/layout/activity_client_profile.xml" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/Helper.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket_status.xml" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/ClientDetailActivity.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/SplashActivity.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Detail.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/res/layout/fragment_detail.xml" />
+        <option value="$PROJECT_DIR$/faveo/src/main/res/layout/card_conversation.xml" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/TicketDetailActivity.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/CreateTicket.java" />
         <option value="$PROJECT_DIR$/faveo/build.gradle" />
       </list>
     </option>
@@ -1688,32 +1658,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -1855,6 +1799,32 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo-helpdesk-android-app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo-helpdesk-android-app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2150,7 +2120,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460483776329</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Version 5 ALPHA. Bug fixes">
+      <created>1460745413119</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1460745413119</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2163,19 +2139,19 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983682" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3939394" sideWeight="0.49785176" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2820513" sideWeight="0.49785176" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33100232" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3951049" sideWeight="0.5021482" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33100232" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3951049" sideWeight="0.5021482" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32634032" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.493007" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32634032" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36363637" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21267454" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983682" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2206,28 +2182,19 @@
     <MESSAGE value="Version 2 ALPHA" />
     <MESSAGE value="Version 3 ALPHA. Bug fixes" />
     <MESSAGE value="Version 4 ALPHA. Bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 4 ALPHA. Bug fixes" />
+    <MESSAGE value="Version 5 ALPHA. Bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 5 ALPHA. Bug fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="113" />
+      <option name="time" value="163" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46487868">
-          <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/drawers/NavDrawerItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2235,24 +2202,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/fragment_create_ticket.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.552631">
-          <caret line="172" column="36" selection-start-line="172" selection-start-column="36" selection-end-line="172" selection-end-column="36" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_sign_up.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_sign_up.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41379312">
           <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="155" selection-end-column="36" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/SignUpActivity.java">
@@ -2269,21 +2226,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/values/array.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.95371497">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_forgot_password.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/ForgotPasswordActivity.java">
@@ -2294,77 +2244,32 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/fragment_recycler.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5862069">
           <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/card_conversation.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5789475">
-          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_client_profile.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47126436">
-          <caret line="83" column="34" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/card_client.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3678161">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="41" selection-end-column="37" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_ticket_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57471263">
-          <caret line="83" column="38" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
-          <folding>
-            <element signature="e#2208#2248#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_login.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="140" column="52" selection-start-line="140" selection-start-column="52" selection-end-line="140" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="76" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+          <caret line="140" column="52" selection-start-line="140" selection-start-column="52" selection-end-line="140" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -2372,7 +2277,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2383,18 +2287,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="76" selection-start-line="65" selection-start-column="76" selection-end-line="65" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/Preference.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2402,7 +2298,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="34" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2410,45 +2305,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/LoginActivity.java">
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/UnassignedTickets.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+          <caret line="103" column="56" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.16077954">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Authenticate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20097442">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/model/TicketThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65773445">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/ClosedTickets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="115" column="28" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="28" />
           <folding>
-            <element signature="method#VerifyURL#0;class#VerifyURL#0;class#LoginActivity#0" expanded="false" />
-            <element signature="class#SignIn#0;class#LoginActivity#0" expanded="false" />
-            <element signature="method#SignIn#0;class#SignIn#0;class#LoginActivity#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#SignIn#0;class#LoginActivity#0" expanded="false" />
-            <element signature="method#onPostExecute#0;class#SignIn#0;class#LoginActivity#0" expanded="false" />
-            <element signature="method#setNormalStates#0;class#LoginActivity#0" expanded="false" />
-            <element signature="method#setUsernameErrorStates#0;class#LoginActivity#0" expanded="false" />
-            <element signature="method#setPasswordErrorStates#0;class#LoginActivity#0" expanded="false" />
-            <element signature="method#setUpViews#0;class#LoginActivity#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3063#3064#0" expanded="false" />
+            <element signature="e#3142#3143#0" expanded="false" />
+            <element signature="e#3417#3418#0" expanded="false" />
+            <element signature="e#3463#3464#0" expanded="false" />
+            <element signature="e#6800#6801#0" expanded="false" />
+            <element signature="e#6846#6847#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50669914">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="206" column="48" selection-start-line="206" selection-start-column="48" selection-end-line="206" selection-end-column="48" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#newInstance#0;class#InboxTickets#0" expanded="false" />
             <element signature="method#InboxTickets#0;class#InboxTickets#0" expanded="false" />
             <element signature="method#onCreate#0;class#InboxTickets#0" expanded="false" />
             <element signature="method#onCreateView#0;class#InboxTickets#0" expanded="false" />
+            <element signature="e#3547#3548#0" expanded="false" />
+            <element signature="e#3626#3627#0" expanded="false" />
             <element signature="class#ReadFromDatabase#0;class#InboxTickets#0" expanded="false" />
+            <element signature="e#4853#4854#0" expanded="false" />
+            <element signature="e#4899#4900#0" expanded="false" />
             <element signature="method#doInBackground#0;class#ReadFromDatabase#0;class#InboxTickets#0" expanded="false" />
             <element signature="method#onPostExecute#0;class#ReadFromDatabase#0;class#InboxTickets#0" expanded="false" />
             <element signature="class#FetchNextPage#0;class#InboxTickets#0" expanded="false" />
+            <element signature="e#5725#5726#0" expanded="false" />
+            <element signature="e#5771#5772#0" expanded="false" />
             <element signature="method#doInBackground#0;class#FetchNextPage#0;class#InboxTickets#0" expanded="false" />
             <element signature="method#onPostExecute#0;class#FetchNextPage#0;class#InboxTickets#0" expanded="false" />
-            <element signature="class#FetchFirst#0;class#InboxTickets#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#FetchFirst#0;class#InboxTickets#0" expanded="false" />
+            <element signature="e#7639#7640#0" expanded="false" />
+            <element signature="e#7685#7686#0" expanded="false" />
             <element signature="method#onPostExecute#0;class#FetchFirst#0;class#InboxTickets#0" expanded="false" />
             <element signature="method#onButtonPressed#0;class#InboxTickets#0" expanded="false" />
             <element signature="method#onAttach#0;class#InboxTickets#0" expanded="false" />
@@ -2458,235 +2385,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/SplashActivity.java">
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
           <folding>
-            <element signature="method#onCreate#0;class#SplashActivity#0" expanded="false" />
+            <element signature="e#2960#3008#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/UnassignedTickets.java">
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/HTTPConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="103" column="56" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
+          <caret line="224" column="5" selection-start-line="224" selection-start-column="5" selection-end-line="224" selection-end-column="5" />
           <folding>
-            <element signature="method#newInstance#0;class#UnassignedTickets#0" expanded="false" />
-            <element signature="method#UnassignedTickets#0;class#UnassignedTickets#0" expanded="false" />
-            <element signature="method#onCreate#0;class#UnassignedTickets#0" expanded="false" />
-            <element signature="method#onCreateView#0;class#UnassignedTickets#0" expanded="false" />
-            <element signature="method#onPostExecute#0;class#FetchFirst#0;class#UnassignedTickets#0" expanded="false" />
-            <element signature="class#FetchNextPage#0;class#UnassignedTickets#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#FetchNextPage#0;class#UnassignedTickets#0" expanded="false" />
-            <element signature="method#onPostExecute#0;class#FetchNextPage#0;class#UnassignedTickets#0" expanded="false" />
-            <element signature="method#onButtonPressed#0;class#UnassignedTickets#0" expanded="false" />
-            <element signature="method#onAttach#0;class#UnassignedTickets#0" expanded="false" />
-            <element signature="method#onDetach#0;class#UnassignedTickets#0" expanded="false" />
-            <element signature="class#OnFragmentInteractionListener#0;class#UnassignedTickets#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/ClosedTickets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="115" column="28" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="28" />
-          <folding>
-            <element signature="method#newInstance#0;class#ClosedTickets#0" expanded="false" />
-            <element signature="method#ClosedTickets#0;class#ClosedTickets#0" expanded="false" />
-            <element signature="method#onCreate#0;class#ClosedTickets#0" expanded="false" />
-            <element signature="method#onCreateView#0;class#ClosedTickets#0" expanded="false" />
-            <element signature="method#onPostExecute#0;class#FetchFirst#0;class#ClosedTickets#0" expanded="false" />
-            <element signature="method#onPostExecute#0;class#FetchNextPage#0;class#ClosedTickets#0" expanded="false" />
-            <element signature="method#onButtonPressed#0;class#ClosedTickets#0" expanded="false" />
-            <element signature="method#onAttach#0;class#ClosedTickets#0" expanded="false" />
-            <element signature="method#onDetach#0;class#ClosedTickets#0" expanded="false" />
-            <element signature="class#OnFragmentInteractionListener#0;class#ClosedTickets#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47126436">
-          <caret line="80" column="38" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/CreateTicket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="74" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/model/TicketGlimpse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/OpenTickets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="79" selection-start-line="73" selection-start-column="79" selection-end-line="73" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/ClientOverviewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="68" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/ClosedTickets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="45" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketOverviewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.591961">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketGlimpseAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7563946">
-          <caret line="63" column="70" selection-start-line="63" selection-start-column="70" selection-end-line="63" selection-end-column="70" />
-          <folding>
-            <element signature="method#onBindViewHolder#0;class#TicketGlimpseAdapter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.16077954">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Authenticate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20097442">
-          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/fragment_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.263158">
-          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/TicketDetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39829478">
-          <caret line="84" column="46" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
-          <folding>
-            <element signature="method#getCreateRequest#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="class#CreateInternalNote#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="method#CreateInternalNote#0;class#CreateInternalNote#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#CreateInternalNote#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="method#onPostExecute#0;class#CreateInternalNote#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="class#ReplyTicket#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="method#ReplyTicket#0;class#ReplyTicket#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#ReplyTicket#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="method#onPostExecute#0;class#ReplyTicket#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="method#setupViewPager#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="class#12364:12725" expanded="false" />
-            <element signature="method#onTabSelected#0;class#12364:12725" expanded="false" />
-            <element signature="method#onTabUnselected#0;class#12364:12725" expanded="false" />
-            <element signature="method#onTabReselected#0;class#12364:12725" expanded="false" />
-            <element signature="class#12790:13127" expanded="false" />
-            <element signature="method#onPageScrolled#0;class#12790:13127" expanded="false" />
-            <element signature="method#onPageSelected#0;class#12790:13127" expanded="false" />
-            <element signature="method#onPageScrollStateChanged#0;class#12790:13127" expanded="false" />
-            <element signature="method#onFragmentInteraction#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="class#ViewPagerAdapter#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="method#addFragment#0;class#ViewPagerAdapter#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="method#enterReveal#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="method#exitReveal#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="class#15397:15942" expanded="false" />
-            <element signature="method#onAnimationStart#0;class#15397:15942" expanded="false" />
-            <element signature="method#onAnimationEnd#0;class#15397:15942" expanded="false" />
-            <element signature="method#onAnimationCancel#0;class#15397:15942" expanded="false" />
-            <element signature="method#onAnimationRepeat#0;class#15397:15942" expanded="false" />
-            <element signature="method#dpToPx#0;class#TicketDetailActivity#0" expanded="false" />
-            <element signature="method#onBackPressed#0;class#TicketDetailActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/model/TicketThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65773445">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketThreadAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Detail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding>
-            <element signature="method#newInstance#0;class#Detail#0" expanded="false" />
-            <element signature="method#Detail#0;class#Detail#0" expanded="false" />
-            <element signature="method#onCreate#0;class#Detail#0" expanded="false" />
-            <element signature="method#onCreateView#0;class#Detail#0" expanded="false" />
-            <element signature="method#FetchTicketDetail#0;class#FetchTicketDetail#0;class#Detail#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#FetchTicketDetail#0;class#Detail#0" expanded="false" />
-            <element signature="class#SaveTicket#0;class#Detail#0" expanded="false" />
-            <element signature="method#SaveTicket#0;class#SaveTicket#0;class#Detail#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#SaveTicket#0;class#Detail#0" expanded="false" />
-            <element signature="method#onPostExecute#0;class#SaveTicket#0;class#Detail#0" expanded="false" />
-            <element signature="method#setUpViews#0;class#Detail#0" expanded="false" />
-            <element signature="method#onButtonPressed#0;class#Detail#0" expanded="false" />
-            <element signature="method#onAttach#0;class#Detail#0" expanded="false" />
-            <element signature="method#onDetach#0;class#Detail#0" expanded="false" />
-            <element signature="class#OnFragmentInteractionListener#0;class#Detail#0" expanded="false" />
+            <element signature="docComment;class#HTTPConnection#0" expanded="false" />
+            <element signature="method#HTTPResponsePost#0;class#HTTPConnection#0" expanded="false" />
+            <element signature="method#HTTPResponsePut#0;class#HTTPConnection#0" expanded="false" />
+            <element signature="method#HTTPResponseGet#0;class#HTTPConnection#0" expanded="false" />
+            <element signature="method#refreshToken#0;class#HTTPConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Conversation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34226552">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="124" selection-end-column="91" />
           <folding>
             <element signature="method#newInstance#0;class#Conversation#0" expanded="false" />
             <element signature="method#Conversation#0;class#Conversation#0" expanded="false" />
@@ -2702,28 +2428,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/HTTPConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#HTTPConnection#0" expanded="false" />
-            <element signature="method#refreshToken#0;class#HTTPConnection#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/MyTickets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39342266">
-          <caret line="115" column="49" selection-start-line="115" selection-start-column="49" selection-end-line="115" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.5968331">
+          <caret line="120" column="47" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="47" />
           <folding>
             <element signature="method#newInstance#0;class#MyTickets#0" expanded="false" />
             <element signature="method#MyTickets#0;class#MyTickets#0" expanded="false" />
             <element signature="method#onCreate#0;class#MyTickets#0" expanded="false" />
             <element signature="method#onCreateView#0;class#MyTickets#0" expanded="false" />
-            <element signature="class#FetchNextPage#0;class#MyTickets#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#FetchNextPage#0;class#MyTickets#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#FetchFirst#0;class#MyTickets#0" expanded="false" />
             <element signature="method#onPostExecute#0;class#FetchNextPage#0;class#MyTickets#0" expanded="false" />
             <element signature="method#onButtonPressed#0;class#MyTickets#0" expanded="false" />
             <element signature="method#onAttach#0;class#MyTickets#0" expanded="false" />
@@ -2733,10 +2447,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/model/ClientOverview.java">
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/OpenTickets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16443361">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.73690623">
+          <caret line="72" column="82" selection-start-line="72" selection-start-column="82" selection-end-line="72" selection-end-column="82" />
+          <folding>
+            <element signature="method#newInstance#0;class#OpenTickets#0" expanded="false" />
+            <element signature="method#OpenTickets#0;class#OpenTickets#0" expanded="false" />
+            <element signature="method#onCreate#0;class#OpenTickets#0" expanded="false" />
+            <element signature="method#onCreateView#0;class#OpenTickets#0" expanded="false" />
+            <element signature="method#onButtonPressed#0;class#OpenTickets#0" expanded="false" />
+            <element signature="method#populateData#0;class#OpenTickets#0" expanded="false" />
+            <element signature="method#onAttach#0;class#OpenTickets#0" expanded="false" />
+            <element signature="method#onDetach#0;class#OpenTickets#0" expanded="false" />
+            <element signature="class#OnFragmentInteractionListener#0;class#OpenTickets#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_ticket_detail.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10344828">
+          <caret line="57" column="41" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="41" />
+          <folding>
+            <element signature="n#io.codetail.widget.RevealLinearLayout#0;n#RelativeLayout#0;n#android.support.design.widget.CoordinatorLayout#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_client_profile.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3678161">
+          <caret line="115" column="56" selection-start-line="115" selection-start-column="56" selection-end-line="115" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -2744,20 +2492,20 @@
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/Helper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ClientList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55693585">
-          <caret line="115" column="28" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
           <folding>
             <element signature="method#newInstance#0;class#ClientList#0" expanded="false" />
             <element signature="method#ClientList#0;class#ClientList#0" expanded="false" />
             <element signature="method#onCreate#0;class#ClientList#0" expanded="false" />
-            <element signature="method#onPostExecute#0;class#FetchClients#0;class#ClientList#0" expanded="false" />
+            <element signature="method#onCreateView#0;class#ClientList#0" expanded="false" />
             <element signature="class#FetchNextPage#0;class#ClientList#0" expanded="false" />
             <element signature="method#doInBackground#0;class#FetchNextPage#0;class#ClientList#0" expanded="false" />
             <element signature="method#onPostExecute#0;class#FetchNextPage#0;class#ClientList#0" expanded="false" />
@@ -2770,16 +2518,110 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/model/ClientOverview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="52" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/ClientOverviewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/model/TicketGlimpse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0880829">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket_status.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8421052">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketGlimpseAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/ClientDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4409257">
+          <caret line="221" column="37" selection-start-line="221" selection-start-column="37" selection-end-line="221" selection-end-column="37" />
+          <folding>
+            <element signature="class#FetchClientTickets#0;class#ClientDetailActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#FetchClientTickets#0;class#ClientDetailActivity#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#FetchClientTickets#0;class#ClientDetailActivity#0" expanded="false" />
+            <element signature="method#setupViewPager#0;class#ClientDetailActivity#0" expanded="false" />
+            <element signature="class#6268:6629" expanded="false" />
+            <element signature="method#onTabSelected#0;class#6268:6629" expanded="false" />
+            <element signature="method#onTabUnselected#0;class#6268:6629" expanded="false" />
+            <element signature="method#onTabReselected#0;class#6268:6629" expanded="false" />
+            <element signature="class#6694:7031" expanded="false" />
+            <element signature="method#onPageScrolled#0;class#6694:7031" expanded="false" />
+            <element signature="method#onPageSelected#0;class#6694:7031" expanded="false" />
+            <element signature="method#onPageScrollStateChanged#0;class#6694:7031" expanded="false" />
+            <element signature="method#onFragmentInteraction#0;class#ClientDetailActivity#0" expanded="false" />
+            <element signature="class#ViewPagerAdapter#0;class#ClientDetailActivity#0" expanded="false" />
+            <element signature="method#addFragment#0;class#ViewPagerAdapter#0;class#ClientDetailActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.0">
+          <caret line="45" column="74" selection-start-line="44" selection-start-column="8" selection-end-line="45" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#VerifyURL#0;class#VerifyURL#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#VerifyURL#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#SignIn#0;class#SignIn#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#SignIn#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#setNormalStates#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#setUsernameErrorStates#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#setPasswordErrorStates#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#setUpViews#0;class#LoginActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/values/array.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Helpdesk.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="439" column="40" selection-start-line="439" selection-start-column="40" selection-end-line="439" selection-end-column="40" />
+          <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
           <folding>
             <element signature="docComment;class#Helpdesk#0" expanded="false" />
+            <element signature="method#Helpdesk#0;class#Helpdesk#0" expanded="false" />
+            <element signature="method#getBaseURL#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#postCreateTicket#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#postCreateInternalNote#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#postReplyTicket#0;class#Helpdesk#0" expanded="false" />
-            <element signature="method#postEditTicket#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#postDeleteTicket#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#getOpenTicket#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#getUnassignedTicket#0;class#Helpdesk#0" expanded="false" />
@@ -2788,48 +2630,198 @@
             <element signature="method#getAgents#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#getTeams#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#getCustomers#0;class#Helpdesk#0" expanded="false" />
-            <element signature="method#getCustomersOverview#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#getCustomer#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#getTicket#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#getTicketThread#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#postAssignTicket#0;class#Helpdesk#0" expanded="false" />
-            <element signature="method#getInboxTicket#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#getTrashTickets#0;class#Helpdesk#0" expanded="false" />
             <element signature="method#nextPageURL#0;class#Helpdesk#0" expanded="false" />
-            <element signature="method#getMyTickets#0;class#Helpdesk#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/ClientDetailActivity.java">
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="131" column="29" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
           <folding>
-            <element signature="e#3783#3784#0" expanded="true" />
-            <element signature="e#3829#3830#0" expanded="true" />
-            <element signature="method#setupViewPager#0;class#ClientDetailActivity#0" expanded="false" />
-            <element signature="class#6350:6711" expanded="false" />
-            <element signature="method#onTabSelected#0;class#6350:6711" expanded="false" />
-            <element signature="method#onTabUnselected#0;class#6350:6711" expanded="false" />
-            <element signature="method#onTabReselected#0;class#6350:6711" expanded="false" />
-            <element signature="class#6776:7113" expanded="false" />
-            <element signature="method#onPageScrolled#0;class#6776:7113" expanded="false" />
-            <element signature="method#onPageSelected#0;class#6776:7113" expanded="false" />
-            <element signature="method#onPageScrollStateChanged#0;class#6776:7113" expanded="false" />
-            <element signature="method#onFragmentInteraction#0;class#ClientDetailActivity#0" expanded="false" />
-            <element signature="class#ViewPagerAdapter#0;class#ClientDetailActivity#0" expanded="false" />
-            <element signature="method#addFragment#0;class#ViewPagerAdapter#0;class#ClientDetailActivity#0" expanded="false" />
-            <element signature="method#setUpViews#0;class#ClientDetailActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#SplashActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#FetchDependency#0;class#SplashActivity#0" expanded="false" />
+            <element signature="class#FetchData#0;class#SplashActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#FetchData#0;class#SplashActivity#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#FetchData#0;class#SplashActivity#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/fragment_detail.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.842105">
+          <caret line="28" column="47" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/card_conversation.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketThreadAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8221681">
+          <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+          <folding>
+            <element signature="method#TicketThreadAdapter#0;class#TicketThreadAdapter#0" expanded="false" />
+            <element signature="method#onCreateViewHolder#0;class#TicketThreadAdapter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54022986">
+          <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketOverviewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11205847">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/ClosedTickets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5590743">
+          <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/TicketDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="138" column="77" selection-start-line="138" selection-start-column="51" selection-end-line="138" selection-end-column="77" />
+          <folding>
+            <element signature="method#getCreateRequest#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="class#CreateInternalNote#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="method#CreateInternalNote#0;class#CreateInternalNote#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#CreateInternalNote#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#CreateInternalNote#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="class#ReplyTicket#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="method#ReplyTicket#0;class#ReplyTicket#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#ReplyTicket#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#ReplyTicket#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="method#setupViewPager#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="class#12632:12993" expanded="false" />
+            <element signature="method#onTabSelected#0;class#12632:12993" expanded="false" />
+            <element signature="method#onTabUnselected#0;class#12632:12993" expanded="false" />
+            <element signature="method#onTabReselected#0;class#12632:12993" expanded="false" />
+            <element signature="class#13058:13395" expanded="false" />
+            <element signature="method#onPageScrolled#0;class#13058:13395" expanded="false" />
+            <element signature="method#onPageSelected#0;class#13058:13395" expanded="false" />
+            <element signature="method#onPageScrollStateChanged#0;class#13058:13395" expanded="false" />
+            <element signature="method#onFragmentInteraction#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="class#ViewPagerAdapter#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="method#addFragment#0;class#ViewPagerAdapter#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="method#enterReveal#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="method#exitReveal#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="class#15665:16210" expanded="false" />
+            <element signature="method#onAnimationStart#0;class#15665:16210" expanded="false" />
+            <element signature="method#onAnimationEnd#0;class#15665:16210" expanded="false" />
+            <element signature="method#onAnimationCancel#0;class#15665:16210" expanded="false" />
+            <element signature="method#onAnimationRepeat#0;class#15665:16210" expanded="false" />
+            <element signature="method#dpToPx#0;class#TicketDetailActivity#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#TicketDetailActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/fragment_create_ticket.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.868421">
+          <caret line="211" column="32" selection-start-line="211" selection-start-column="32" selection-end-line="211" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Detail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="229" selection-end-column="56" />
+          <folding>
+            <element signature="method#newInstance#0;class#Detail#0" expanded="false" />
+            <element signature="method#Detail#0;class#Detail#0" expanded="false" />
+            <element signature="method#onCreate#0;class#Detail#0" expanded="false" />
+            <element signature="method#onCreateView#0;class#Detail#0" expanded="false" />
+            <element signature="class#FetchTicketDetail#0;class#Detail#0" expanded="false" />
+            <element signature="method#FetchTicketDetail#0;class#FetchTicketDetail#0;class#Detail#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#FetchTicketDetail#0;class#Detail#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#FetchTicketDetail#0;class#Detail#0" expanded="false" />
+            <element signature="class#SaveTicket#0;class#Detail#0" expanded="false" />
+            <element signature="method#SaveTicket#0;class#SaveTicket#0;class#Detail#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#SaveTicket#0;class#Detail#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#SaveTicket#0;class#Detail#0" expanded="false" />
+            <element signature="method#onButtonPressed#0;class#Detail#0" expanded="false" />
+            <element signature="method#onAttach#0;class#Detail#0" expanded="false" />
+            <element signature="method#onDetach#0;class#Detail#0" expanded="false" />
+            <element signature="class#OnFragmentInteractionListener#0;class#Detail#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0682095">
+          <caret line="21" column="76" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32886723">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state vertical-scroll-proportion="-11.88">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/CreateTicket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7040195">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+          <folding>
+            <element signature="method#newInstance#0;class#CreateTicket#0" expanded="false" />
+            <element signature="method#CreateTicket#0;class#CreateTicket#0" expanded="false" />
+            <element signature="method#onCreate#0;class#CreateTicket#0" expanded="false" />
+            <element signature="method#CreateNewTicket#0;class#CreateNewTicket#0;class#CreateTicket#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#CreateNewTicket#0;class#CreateTicket#0" expanded="false" />
+            <element signature="method#resetViews#0;class#CreateTicket#0" expanded="false" />
+            <element signature="method#setErrorState#0;class#CreateTicket#0" expanded="false" />
+            <element signature="method#onButtonPressed#0;class#CreateTicket#0" expanded="false" />
+            <element signature="method#onAttach#0;class#CreateTicket#0" expanded="false" />
+            <element signature="method#onDetach#0;class#CreateTicket#0" expanded="false" />
+            <element signature="class#OnFragmentInteractionListener#0;class#CreateTicket#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
