@@ -63,7 +63,7 @@ public class ClientDetailActivity extends AppCompatActivity implements
         Intent intent = getIntent();
         clientID = intent.getStringExtra("CLIENT_ID");
         clientName = intent.getStringExtra("CLIENT_NAME");
-        textViewClientName.setText(clientID);
+        textViewClientName.setText(clientName);
         textViewClientEmail.setText(intent.getStringExtra("CLIENT_EMAIL"));
         textViewClientPhone.setText(intent.getStringExtra("CLIENT_PHONE"));
         String clientPictureUrl = intent.getStringExtra("CLIENT_PICTURE");
@@ -113,17 +113,18 @@ public class ClientDetailActivity extends AppCompatActivity implements
                 for(int i = 0; i < jsonArray.length(); i++) {
                     int ticketID = Integer.parseInt(jsonArray.getJSONObject(i).getString("id"));
                     boolean isOpen = true;
+                    String ticketNumber = jsonArray.getJSONObject(i).getString("ticket_number");
                     String ticketSubject = jsonArray.getJSONObject(i).getString("title");
                     try {
                         isOpen = jsonArray.getJSONObject(i).getString("ticket_status_name").equals("Open");
                         if (isOpen)
-                            listOpenTicketGlimpse.add(new TicketGlimpse(ticketID, ticketSubject, true));
+                            listOpenTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, true));
                         else
-                            listClosedTicketGlimpse.add(new TicketGlimpse(ticketID, ticketSubject, false));
+                            listClosedTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, false));
                     } catch (Exception e) {
-                        listOpenTicketGlimpse.add(new TicketGlimpse(ticketID, ticketSubject, true));
+                        listOpenTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, true));
                     }
-                    listTicketGlimpse.add(new TicketGlimpse(ticketID, ticketSubject, isOpen));
+                    listTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, isOpen));
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

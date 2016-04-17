@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String companyURL = editTextCompanyURL.getText().toString();
-                if (companyURL.trim().length() == 0) {
+                if (companyURL.trim().length() == 0 || !Patterns.WEB_URL.matcher(companyURL).matches()) {
                     Toast.makeText(getApplicationContext(), "Please enter a valid url", Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -120,8 +121,10 @@ public class LoginActivity extends AppCompatActivity {
 
         protected void onPostExecute(String result) {
             progressDialogVerifyURL.dismiss();
-            if (result == null)
+            if (result == null) {
+                Toast.makeText(context, "Invalid URL", Toast.LENGTH_LONG).show();
                 return;
+            }
 
             if (result.contains("success")) {
                 Preference.setCompanyURL(companyURL + "api/v1/");

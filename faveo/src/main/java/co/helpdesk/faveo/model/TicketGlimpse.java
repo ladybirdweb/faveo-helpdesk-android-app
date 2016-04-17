@@ -10,8 +10,9 @@ public class TicketGlimpse {
     public String ticketSubject;
     public boolean isTicketOpen;
 
-    public TicketGlimpse(int ticketID, String ticketSubject, boolean isTicketOpen) {
+    public TicketGlimpse(int ticketID, String ticketNumber, String ticketSubject, boolean isTicketOpen) {
         this.ticketID = ticketID;
+        this.ticketNumber = ticketNumber;
         this.ticketSubject = ticketSubject;
         this.isTicketOpen = isTicketOpen;
     }

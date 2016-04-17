@@ -19,18 +19,6 @@
         android:textStyle="bold"
         android:alpha="0.8"/>
 
-    <TextView
-        android:padding="16dp"
-        android:lineSpacingExtra="5dp"
-        android:fontFamily="sans-serif-light"
-        android:textSize="16sp"
-        android:gravity="center_horizontal"
-        android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start bui;ding your app\nin minutes with Washington"
-        android:alpha="0.3"/>
-
     <ImageView
         android:layout_weight="1"
         android:padding="40dp"
