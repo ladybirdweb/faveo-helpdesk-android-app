@@ -8,8 +8,8 @@ android {
         applicationId "co.helpdesk.faveo"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 7
-        versionName "0.0.7 ALPHA"
+        versionCode 8
+        versionName "0.0.8 ALPHA"
     }
     buildTypes {
         release {

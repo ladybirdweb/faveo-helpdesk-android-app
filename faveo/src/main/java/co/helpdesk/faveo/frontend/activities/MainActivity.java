@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         mCreateTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = getSupportFragmentManager().findFragmentByTag(title);
+                Fragment fragment = getSupportFragmentManager().findFragmentByTag(getString(R.string.create_ticket));
                 if (fragment == null)
                     fragment = new CreateTicket();
                 FragmentManager fragmentManager = getSupportFragmentManager();

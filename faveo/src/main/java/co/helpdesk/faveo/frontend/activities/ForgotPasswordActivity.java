@@ -22,7 +22,7 @@ import co.helpdesk.faveo.backend.api.v1.Authenticate;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
-    TextView textViewSignUp, textViewErrorEmail;
+    TextView textViewErrorEmail;
     EditText editTextEmail;
     Button buttonResetPassword;
 
@@ -40,7 +40,6 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     }
 
     private void setUpViews() {
-        textViewSignUp = (TextView) findViewById(R.id.textView_sign_up);
         textViewErrorEmail = (TextView) findViewById(R.id.textView_error_email);
         editTextEmail = (EditText) findViewById(R.id.editText_email);
         buttonResetPassword = (Button) findViewById(R.id.button_reset_password);

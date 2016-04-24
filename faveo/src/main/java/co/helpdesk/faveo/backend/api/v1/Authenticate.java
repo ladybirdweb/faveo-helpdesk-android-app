@@ -37,19 +37,4 @@ public class Authenticate {
         return new HTTPConnection().HTTPResponsePost(Constants.URL + "authenticate", parameters);
     }
 
-    public String getAuthenticatedUser() {
-        String parameters = null;
-        JSONObject obj = new JSONObject();
-        try {
-            obj.put("api_key", apiKey);
-            obj.put("ip", IP);
-            obj.put("token", token);
-            parameters = obj.toString();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return new HTTPConnection().HTTPResponseGet(Constants.URL + "authenticate/user?api_key=" + apiKey + "&ip=" + IP + "&token=" + token);
-    }
-
-
 }

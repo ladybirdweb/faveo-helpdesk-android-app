@@ -60,7 +60,6 @@ public class HTTPConnection {
                     return null;
                 new Helpdesk();
                 new Authenticate();
-                new Register();
                 return "tokenRefreshed";
             }
             Log.e("error in faveo", e.getMessage());
@@ -88,7 +87,6 @@ public class HTTPConnection {
                 return null;
             new Helpdesk();
             new Authenticate();
-            new Register();
             return "tokenRefreshed";
         }
         return sb.toString();
@@ -121,7 +119,6 @@ public class HTTPConnection {
                     return null;
                 new Helpdesk();
                 new Authenticate();
-                new Register();
                 return "tokenRefreshed";
             }
             Log.e("error in faveo", e.getMessage());
@@ -148,7 +145,6 @@ public class HTTPConnection {
                 return null;
             new Helpdesk();
             new Authenticate();
-            new Register();
             return "tokenRefreshed";
         }
         return sb.toString();
@@ -172,7 +168,6 @@ public class HTTPConnection {
                     return null;
                 new Helpdesk();
                 new Authenticate();
-                new Register();
                 return "tokenRefreshed";
             }
 
@@ -200,7 +195,6 @@ public class HTTPConnection {
                 return null;
             new Helpdesk();
             new Authenticate();
-            new Register();
             return "tokenRefreshed";
         }
         return sb.toString();
@@ -216,7 +210,6 @@ public class HTTPConnection {
             Preference.setToken(token);
             Authenticate.token = token;
             Helpdesk.token = token;
-            Register.token = token;
         } catch (JSONException e) {
             e.printStackTrace();
             return null;

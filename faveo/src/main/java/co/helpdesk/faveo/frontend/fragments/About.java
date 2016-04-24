@@ -1,12 +1,16 @@
 package co.helpdesk.faveo.frontend.fragments;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.frontend.activities.MainActivity;
@@ -45,10 +49,22 @@ public class About extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_about, container, false);
+
+        PackageInfo pInfo;
+        try {
+            pInfo = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0);
+            String version = pInfo.versionName;
+            ((TextView) rootView.findViewById(R.id.textView_version)).setText(version);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            ((TextView) rootView.findViewById(R.id.textView_version)).setText("");
+        }
+
         rootView.findViewById(R.id.button_website).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO goto website
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.faveohelpdesk.com/"));
+                startActivity(browserIntent);
             }
         });
         ((MainActivity) getActivity()).setActionBarTitle("About");

@@ -225,16 +225,8 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 Toast.makeText(TicketDetailActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
-            try {
-                JSONObject jsonObject = new JSONObject(result);
-                JSONObject res = jsonObject.getJSONObject("thread");
-                String threadID = res.getString("id");
-                Toast.makeText(TicketDetailActivity.this, "Successfully created " + threadID, Toast.LENGTH_LONG).show();
-                exitReveal();
-            } catch (JSONException e) {
-                Toast.makeText(TicketDetailActivity.this, "Failed parsing response", Toast.LENGTH_LONG).show();
-                e.printStackTrace();
-            }
+            Toast.makeText(TicketDetailActivity.this, "Internal notes posted", Toast.LENGTH_LONG).show();
+            exitReveal();
         }
     }
 

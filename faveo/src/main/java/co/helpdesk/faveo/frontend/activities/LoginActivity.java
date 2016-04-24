@@ -27,7 +27,7 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
 
-    TextView textViewFieldError, textViewForgotPassword, textViewSignUp;
+    TextView textViewFieldError, textViewForgotPassword;
     EditText editTextCompanyURL, editTextUsername, editTextPassword;
     ViewFlipper viewflipper;
     ImageButton buttonVerifyURL;
@@ -90,14 +90,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        textViewSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 startActivity(intent);
             }
         });
@@ -211,7 +203,6 @@ public class LoginActivity extends AppCompatActivity {
         buttonVerifyURL = (ImageButton) findViewById(R.id.imageButton_verify_url);
         textViewFieldError = (TextView) findViewById(R.id.textView_field_error);
         textViewForgotPassword = (TextView) findViewById(R.id.forgot_password);
-        textViewSignUp = (TextView) findViewById(R.id.textView_sign_up);
         editTextUsername = (EditText) findViewById(R.id.editText_username);
         editTextPassword = (EditText) findViewById(R.id.editText_password);
         buttonSignIn = (Button) findViewById(R.id.button_sign_in);

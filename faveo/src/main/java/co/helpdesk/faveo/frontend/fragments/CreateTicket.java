@@ -174,15 +174,7 @@ public class CreateTicket extends Fragment {
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
-            try {
-                JSONObject jsonObject = new JSONObject(result);
-                JSONObject res = jsonObject.getJSONObject("result");
-                String ticketID = res.getString("ticket_id");
-                Toast.makeText(getActivity(), "Successfully created " + ticketID, Toast.LENGTH_LONG).show();
-            } catch (JSONException e) {
-                Toast.makeText(getActivity(), "Failed parsing response", Toast.LENGTH_LONG).show();
-                e.printStackTrace();
-            }
+            Toast.makeText(getActivity(), "Ticket successfully created", Toast.LENGTH_LONG).show();
         }
     }
 

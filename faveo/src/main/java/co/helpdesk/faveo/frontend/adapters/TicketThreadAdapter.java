@@ -59,7 +59,7 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         });
 
         if (!ticketThread.getIsReply().equals("true"))
-            ticketViewHolder.imageViewType.setImageResource(R.drawable.note);
+            ticketViewHolder.textViewType.setText("");
 
     }
 
@@ -79,7 +79,7 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         protected TextView textViewMessageTime;
         protected TextView textViewMessageTitle;
         protected TextView textViewMessage;
-        protected ImageView imageViewType;
+        protected TextView textViewType;
 
         public TicketViewHolder(View v) {
             super(v);
@@ -89,7 +89,7 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
             textViewMessageTime = (TextView)  v.findViewById(R.id.textView_ticket_time);
             textViewMessageTitle = (TextView) v.findViewById(R.id.textView_client_message_title);
             textViewMessage = (TextView) v.findViewById(R.id.textView_client_message_body);
-            imageViewType = (ImageView) v.findViewById(R.id.imageView_type);
+            textViewType = (TextView) v.findViewById(R.id.textView_type);
         }
 
     }

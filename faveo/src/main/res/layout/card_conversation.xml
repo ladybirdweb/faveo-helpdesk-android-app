@@ -25,7 +25,7 @@
             android:layout_height="32dp" />
 
         <TextView
-            android:layout_toLeftOf="@+id/imageView_type"
+            android:layout_toLeftOf="@+id/textView_ticket_time"
             android:ellipsize="end"
             android:textAllCaps="true"
             android:layout_toRightOf="@+id/imageView_default_profile"
@@ -52,13 +52,15 @@
             android:alpha=".86"
             android:fontFamily="sans-serif-medium"/>
 
-        <ImageView
-            android:layout_marginRight="8dp"
-            android:layout_toLeftOf="@+id/textView_ticket_time"
-            android:src="@drawable/reply"
-            android:id="@+id/imageView_type"
-            android:layout_width="16dp"
-            android:layout_height="16dp" />
+        <TextView
+            android:textColor="@color/error_red"
+            android:textSize="12sp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView_ticket_time"
+            android:text="INTERNAL NOTE"
+            android:id="@+id/textView_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:visibility="gone"
