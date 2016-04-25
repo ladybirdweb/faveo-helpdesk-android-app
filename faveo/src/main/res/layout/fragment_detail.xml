@@ -18,7 +18,6 @@
         android:orientation="vertical"
         tools:context="com.android.faveo.CreateNewTicketActivity">
 
-
         <TextView
             android:gravity="center"
             android:textCursorDrawable="@drawable/color_cursor"
@@ -386,31 +385,6 @@
             android:maxLength="20"
             android:ems="10"
             android:id="@+id/spinner_assign_to"
-            android:background="@drawable/edittext_modified_states"
-            android:textSize="14sp"
-            android:paddingTop="24dp"
-            android:paddingBottom="24dp"
-            android:layout_marginBottom="24dp"
-            android:singleLine="true"
-            android:imeOptions="actionNext" />
-
-        <TextView
-            android:id="@+id/textView_change_status"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="CHANGE STATUS"
-            android:textStyle="bold"
-            android:alpha="0.3"/>
-
-        <Spinner
-            android:entries="@array/spinnerChangeStatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLength="20"
-            android:ems="10"
-            android:id="@+id/spinner_change_status"
             android:background="@drawable/edittext_modified_states"
             android:textSize="14sp"
             android:paddingTop="24dp"

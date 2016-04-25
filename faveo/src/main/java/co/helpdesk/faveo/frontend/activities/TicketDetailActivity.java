@@ -251,6 +251,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 Toast.makeText(TicketDetailActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
+            Toast.makeText(TicketDetailActivity.this, "Reply posted", Toast.LENGTH_LONG).show();
             try {
                 TicketThread ticketThread;
                 JSONObject jsonObject = new JSONObject(result);
@@ -282,7 +283,6 @@ public class TicketDetailActivity extends AppCompatActivity implements
                     fragmentConversation.addThreadAndUpdate(ticketThread);
                 }
             } catch (JSONException e) {
-                Toast.makeText(TicketDetailActivity.this, "Failed parsing response.", Toast.LENGTH_LONG).show();
                 if(fragmentConversation != null) {
                     exitReveal();
                 }

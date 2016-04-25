@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,7 @@ public class Detail extends Fragment {
             editTextLastMessage, editTextDueDate, editTextCreatedDate, editTextLastResponseDate;
 
     Spinner spinnerSLAPlans, spinnerDepartment, spinnerStatus, spinnerSource,
-            spinnerPriority, spinnerHelpTopics, spinnerAssignTo, spinnerChangeStatus;
+            spinnerPriority, spinnerHelpTopics, spinnerAssignTo;
     ProgressDialog progressDialog;
 
     Button buttonSave;
@@ -86,10 +87,11 @@ public class Detail extends Fragment {
                 new SaveTicket(getActivity(),
                         Integer.parseInt(TicketDetailActivity.ticketID),
                         editTextSubject.getText().toString(),
-                        spinnerSLAPlans.getSelectedItemPosition(),
-                        spinnerHelpTopics.getSelectedItemPosition(),
-                        spinnerSource.getSelectedItemPosition(),
-                        spinnerPriority.getSelectedItemPosition()).execute();
+                        Integer.parseInt(SplashActivity.keySLA.split(",")[spinnerSLAPlans.getSelectedItemPosition()]),
+                        Integer.parseInt(SplashActivity.keyTopic.split(",")[spinnerHelpTopics.getSelectedItemPosition()]),
+                        Integer.parseInt(SplashActivity.keySource.split(",")[spinnerSource.getSelectedItemPosition()]),
+                        Integer.parseInt(SplashActivity.keyPriority.split(",")[spinnerPriority.getSelectedItemPosition()]))
+                        .execute();
             }
         });
         return rootView;
@@ -115,54 +117,72 @@ public class Detail extends Fragment {
                 return;
             }
 
-            JSONObject jsonObject;
+            JSONObject jsonObject, jsonObject1, jsonObject2;
             try {
-                JSONObject jsonObjectResult = new JSONObject(result);
-                jsonObject = jsonObjectResult.getJSONObject("result");
-                editTextSubject.setText(TicketDetailActivity.ticketSubject);
+                jsonObject = new JSONObject(result);
+                jsonObject1 = jsonObject.getJSONObject("ticket");
+                jsonObject2 = jsonObject.getJSONObject("tickets");
+                editTextSubject.setText(jsonObject2.getString("title"));
 
                 try {
-                    spinnerSLAPlans.setSelection(Integer.parseInt(jsonObject.getString("sla")));
+                    spinnerSLAPlans.setSelection(Integer.parseInt(jsonObject1.getString("sla")));
                 } catch(Exception e) { }
 
                 try {
-                    spinnerStatus.setSelection(Integer.parseInt(jsonObject.getString("status")) - 1);
+                    spinnerStatus.setSelection(Integer.parseInt(jsonObject1.getString("status")) - 1);
                 } catch(Exception e) { }
 
                 try {
-                    spinnerPriority.setSelection(Integer.parseInt(jsonObject.getString("priority_id")) - 1);
+                    spinnerPriority.setSelection(Integer.parseInt(jsonObject1.getString("priority_id")) - 1);
                 } catch(Exception e) { }
 
                 try {
-                    spinnerDepartment.setSelection(Integer.parseInt(jsonObject.getString("dept_id")) - 1);
+                    spinnerDepartment.setSelection(Integer.parseInt(jsonObject1.getString("dept_id")) - 1);
                 } catch(Exception e) { }
 
                 try {
-                    spinnerHelpTopics.setSelection(Integer.parseInt(jsonObject.getString("help_topic_id")) - 1);
+                    spinnerHelpTopics.setSelection(Integer.parseInt(jsonObject1.getString("help_topic_id")) - 1);
                 } catch(Exception e) { }
 
-                String assignedTo = jsonObject.getString("assigned_to");
-                if (assignedTo.equals("null") || assignedTo.equals("")) {
-                    editTextName.setText("Not assigned");
-                }
+                String assignedTo = jsonObject2.getString("created_user_first_name")
+                        + " " + jsonObject2.getString("created_user_last_name");
+                editTextName.setText(assignedTo);
+
                 try {
-                    editTextEmail.setText(jsonObject.getString("email"));
+                    editTextEmail.setText(jsonObject2.getString("created_user_email"));
                 } catch (JSONException e) {
                     editTextEmail.setText("Not available");
                 }
 
                 try {
-                    spinnerSource.setSelection(Integer.parseInt(jsonObject.getString("source")) - 1);
+                    spinnerSource.setSelection(Integer.parseInt(jsonObject1.getString("source")) - 1);
                 } catch(Exception e) { }
 
-                String lastMessage = jsonObject.getString("last_message");
-                if (lastMessage.equals("null") || lastMessage.equals("")) {
-                    editTextLastMessage.setText("No last message");
+                try {
+                    String lastMessage = jsonObject2.getString("last_message_first_name")
+                            + " " + jsonObject2.getString("last_message_last_name");
+                    editTextLastMessage.setText(lastMessage);
+                } catch (Exception e) {
+
                 }
 
-                editTextDueDate.setText(Helper.parseDate(jsonObject.getString("duedate")));
-                editTextCreatedDate.setText(Helper.parseDate(jsonObject.getString("created_at")));
-                editTextLastResponseDate.setText(Helper.parseDate(jsonObject.getString("updated_at")));
+                if (jsonObject2.getString("duedate").equals("null"))
+                    editTextDueDate.setText("Not available");
+                else
+                    editTextDueDate.setText(jsonObject2.getString("duedate"));
+
+                if (jsonObject1.getString("created_at").equals("null"))
+                    editTextCreatedDate.setText("Not available");
+                else
+                    editTextCreatedDate.setText(Helper.parseDate(jsonObject1.getString("created_at")));
+
+                if (jsonObject1.getString("updated_at").equals("null"))
+                    editTextLastResponseDate.setText("Not available");
+                else
+                    editTextLastResponseDate.setText(Helper.parseDate(jsonObject1.getString("updated_at")));
+
+                Log.e("done", "done");
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -252,7 +272,6 @@ public class Detail extends Fragment {
         editTextCreatedDate = (EditText) rootView.findViewById(R.id.editText_created_date);
         editTextLastResponseDate = (EditText) rootView.findViewById(R.id.editText_last_response_date);
         spinnerAssignTo = (Spinner) rootView.findViewById(R.id.spinner_assign_to);
-        spinnerChangeStatus = (Spinner) rootView.findViewById(R.id.spinner_change_status);
         buttonSave = (Button) rootView.findViewById(R.id.button_save);
     }
 

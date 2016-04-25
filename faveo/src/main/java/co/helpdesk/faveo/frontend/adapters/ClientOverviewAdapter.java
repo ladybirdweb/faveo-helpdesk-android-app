@@ -33,7 +33,12 @@ public class ClientOverviewAdapter extends RecyclerView.Adapter<ClientOverviewAd
         clientViewHolder.textViewClientID.setText(clientOverview.clientID + "");
         clientViewHolder.textViewClientName.setText(clientOverview.clientName);
         clientViewHolder.textViewClientEmail.setText(clientOverview.clientEmail);
-        clientViewHolder.textViewClientPhone.setText(clientOverview.clientPhone);
+        if (clientOverview.clientPhone.equals("") || clientOverview.clientPhone.equals("null"))
+            clientViewHolder.textViewClientPhone.setVisibility(View.INVISIBLE);
+        else {
+            clientViewHolder.textViewClientPhone.setVisibility(View.VISIBLE);
+            clientViewHolder.textViewClientPhone.setText(clientOverview.clientPhone);
+        }
         if (clientOverview.clientPicture != null && clientOverview.clientPicture.trim().length() != 0)
             Picasso.with(clientViewHolder.roundedImageViewProfilePic.getContext())
                     .load(clientOverview.clientPicture)

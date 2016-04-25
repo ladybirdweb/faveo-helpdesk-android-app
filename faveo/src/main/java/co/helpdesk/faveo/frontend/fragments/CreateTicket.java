@@ -174,7 +174,9 @@ public class CreateTicket extends Fragment {
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
-            Toast.makeText(getActivity(), "Ticket successfully created", Toast.LENGTH_LONG).show();
+            if (result.contains("ticket_id")) {
+                Toast.makeText(getActivity(), "Ticket created", Toast.LENGTH_LONG).show();
+            }
         }
     }
 

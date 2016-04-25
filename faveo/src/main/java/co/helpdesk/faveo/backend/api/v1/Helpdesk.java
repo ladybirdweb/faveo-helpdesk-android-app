@@ -59,16 +59,16 @@ public class Helpdesk {
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&token=" + token +
-                "&ticketID=" + ticketID +
-                "&userID=" + userID +
+                "&ticketid=" + ticketID +
+                "&userid=" + userID +
                 "&body=" + note, null);
         if (result != null && result.equals("tokenRefreshed"))
             return new HTTPConnection().HTTPResponsePost(Constants.URL + "helpdesk/internal-note?" +
                     "api_key=" + apiKey +
                     "&ip=" + IP +
                     "&token=" + token +
-                    "&ticketID=" + ticketID +
-                    "&userID=" + userID +
+                    "&ticketid=" + ticketID +
+                    "&userid=" + userID +
                     "&body=" + note, null);
         return result;
     }

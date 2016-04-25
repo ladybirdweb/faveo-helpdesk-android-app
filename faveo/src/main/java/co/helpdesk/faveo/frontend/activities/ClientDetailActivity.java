@@ -14,6 +14,7 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -65,9 +66,15 @@ public class ClientDetailActivity extends AppCompatActivity implements
         clientName = intent.getStringExtra("CLIENT_NAME");
         textViewClientName.setText(clientName);
         textViewClientEmail.setText(intent.getStringExtra("CLIENT_EMAIL"));
-        textViewClientPhone.setText(intent.getStringExtra("CLIENT_PHONE"));
+        if (intent.getStringExtra("CLIENT_PHONE") == null || intent.getStringExtra("CLIENT_PHONE").equals(""))
+            textViewClientPhone.setVisibility(View.INVISIBLE);
+        else
+            textViewClientPhone.setText(intent.getStringExtra("CLIENT_PHONE"));
         String clientPictureUrl = intent.getStringExtra("CLIENT_PICTURE");
-        textViewClientCompany.setText(intent.getStringExtra("CLIENT_COMPANY"));
+        if (intent.getStringExtra("CLIENT_COMPANY").equals("null") || intent.getStringExtra("CLIENT_COMPANY").equals(""))
+            textViewClientCompany.setText("");
+        else
+            textViewClientCompany.setText(intent.getStringExtra("CLIENT_COMPANY"));
         textViewClientStatus.setText(intent.getStringExtra("CLIENT_ACTIVE").equals("1") ? "ACTIVE" : "INACTIVE");
 
         if (clientPictureUrl != null && clientPictureUrl.trim().length() != 0)

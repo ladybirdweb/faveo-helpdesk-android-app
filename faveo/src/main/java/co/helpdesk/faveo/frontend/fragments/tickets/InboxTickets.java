@@ -208,6 +208,7 @@ public class InboxTickets extends Fragment {
             if (result == null)
                 return null;
             String data;
+            ticketOverviewList.clear();
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 try {
@@ -229,6 +230,7 @@ public class InboxTickets extends Fragment {
         }
 
         protected void onPostExecute(String result) {
+            ticketOverviewAdapter.notifyDataSetChanged();
             if (swipeRefresh.isRefreshing())
                 swipeRefresh.setRefreshing(false);
             if (progressDialog.isShowing())
@@ -237,8 +239,35 @@ public class InboxTickets extends Fragment {
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
-            if (result.equals("all done"))
+            if (result.equals("all done")) {
                 Toast.makeText(context, "All tickets loaded", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            recyclerView = (RecyclerView) rootView.findViewById(R.id.cardList);
+            recyclerView.setHasFixedSize(false);
+            final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                @Override
+                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                    if (dy > 0) {
+                        visibleItemCount = linearLayoutManager.getChildCount();
+                        totalItemCount = linearLayoutManager.getItemCount();
+                        pastVisibleItems = linearLayoutManager.findFirstVisibleItemPosition();
+                        if (loading) {
+                            if ((visibleItemCount + pastVisibleItems) >= totalItemCount) {
+                                loading = false;
+                                new FetchNextPage(getActivity()).execute();
+                                Toast.makeText(getActivity(), "Loading!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }
+                }
+            });
+
+            ticketOverviewAdapter = new TicketOverviewAdapter(ticketOverviewList);
+            recyclerView.setAdapter(ticketOverviewAdapter);
         }
     }
 
