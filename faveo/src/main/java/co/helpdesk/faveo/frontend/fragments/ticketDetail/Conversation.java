@@ -15,22 +15,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import co.helpdesk.faveo.R;
-import co.helpdesk.faveo.backend.api.v1.Helpdesk;
-import co.helpdesk.faveo.frontend.adapters.TicketThreadAdapter;
-import co.helpdesk.faveo.frontend.activities.TicketDetailActivity;
-import co.helpdesk.faveo.model.TicketThread;
-
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import co.helpdesk.faveo.R;
+import co.helpdesk.faveo.backend.api.v1.Helpdesk;
+import co.helpdesk.faveo.frontend.activities.TicketDetailActivity;
+import co.helpdesk.faveo.frontend.adapters.TicketThreadAdapter;
+import co.helpdesk.faveo.model.TicketThread;
 
 public class Conversation extends Fragment {
     private static final String ARG_PARAM1 = "param1";

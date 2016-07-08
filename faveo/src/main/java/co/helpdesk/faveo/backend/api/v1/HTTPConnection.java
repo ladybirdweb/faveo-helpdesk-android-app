@@ -30,7 +30,7 @@ public class HTTPConnection {
     public String HTTPResponsePost(String stringURL, String parameters) {
         try {
             url = new URL(stringURL);
-            final HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestProperty("Offer-type", "application/json");
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
@@ -78,11 +78,11 @@ public class HTTPConnection {
         } catch (Exception e) {
             Log.e("log_tag", "Error converting result " + e.toString());
         }
-        if(sb == null)
+        if (sb == null)
             return null;
 
         String input = sb.toString();
-        if(input.contains("token_expired")) {
+        if (input.contains("token_expired")) {
             if (refreshToken() == null)
                 return null;
             new Helpdesk();
@@ -95,7 +95,7 @@ public class HTTPConnection {
     public String HTTPResponsePut(String stringURL, String parameters) {
         try {
             url = new URL(stringURL);
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestProperty("Offer-type", "application/json");
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
@@ -136,11 +136,11 @@ public class HTTPConnection {
         } catch (Exception e) {
             Log.e("log_tag", "Error converting result " + e.toString());
         }
-        if(sb == null)
+        if (sb == null)
             return null;
 
         String input = sb.toString();
-        if(input.contains("token_expired")) {
+        if (input.contains("token_expired")) {
             if (refreshToken() == null)
                 return null;
             new Helpdesk();
@@ -150,20 +150,22 @@ public class HTTPConnection {
         return sb.toString();
     }
 
-    public String HTTPResponseGet (String stringURL) {
+    public String HTTPResponseGet(String stringURL) {
         try {
             url = new URL(stringURL);
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestProperty("Offer-type", "application/json");
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
             connection.setRequestMethod("GET");
             connection.setDoInput(true);
             is = connection.getInputStream();
-            Log.e("Response Code", connection.getResponseCode() + "");
+            connection.getResponseCode();
+            Log.e("Response Codee", connection.getResponseCode() + "");
         } catch (IOException e) {
 
             if (e.getMessage().contains("No authentication challenges found")) {
+                Log.e("IOException", "contains(\"No authentication challenges found\")");
                 if (refreshToken() == null)
                     return null;
                 new Helpdesk();
@@ -186,11 +188,12 @@ public class HTTPConnection {
         } catch (Exception e) {
             Log.e("log_tag", "Error converting result " + e.toString());
         }
-        if(sb == null)
+        if (sb == null)
             return null;
 
         String input = sb.toString();
-        if(input.contains("token_expired")) {
+        Log.e("input", "" + input);
+        if (input.contains("token_expired")) {
             if (refreshToken() == null)
                 return null;
             new Helpdesk();
@@ -202,7 +205,7 @@ public class HTTPConnection {
 
     private String refreshToken() {
         String result = new Authenticate().postAuthenticateUser(Preference.getUsername(), Preference.getPassword());
-        if(result == null)
+        if (result == null)
             return null;
         try {
             JSONObject jsonObject = new JSONObject(result);

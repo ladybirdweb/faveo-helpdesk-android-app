@@ -3,9 +3,14 @@ package co.helpdesk.faveo;
 /**
  * Created by sumit on 3/13/2016.
  */
+
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 import java.io.File;
 
 import android.app.Application;
+
+import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
 
 public class FaveoApplication extends Application {
     private static FaveoApplication instance;
@@ -13,11 +18,16 @@ public class FaveoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
         instance = this;
     }
 
-    public static FaveoApplication getInstance() {
+    public static synchronized FaveoApplication getInstance() {
         return instance;
+    }
+
+    public void setInternetListener(InternetReceiver.InternetReceiverListener listener) {
+        InternetReceiver.internetReceiverListener = listener;
     }
 
     public void clearApplicationData() {

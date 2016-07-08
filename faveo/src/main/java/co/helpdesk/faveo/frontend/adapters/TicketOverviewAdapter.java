@@ -7,14 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import co.helpdesk.faveo.Helper;
-import co.helpdesk.faveo.R;
-import co.helpdesk.faveo.frontend.activities.TicketDetailActivity;
-import co.helpdesk.faveo.model.TicketOverview;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import co.helpdesk.faveo.Helper;
+import co.helpdesk.faveo.R;
+import co.helpdesk.faveo.frontend.activities.TicketDetailActivity;
+import co.helpdesk.faveo.model.TicketOverview;
 
 public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAdapter.TicketViewHolder> {
     private List<TicketOverview> ticketOverviewList;

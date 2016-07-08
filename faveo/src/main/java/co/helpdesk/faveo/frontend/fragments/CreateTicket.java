@@ -16,22 +16,20 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.Preference;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.activities.MainActivity;
 import co.helpdesk.faveo.frontend.activities.SplashActivity;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
 
 public class CreateTicket extends Fragment {
 
     EditText editTextEmail, editTextName, editTextPhone, editTextSubject, editTextMessage;
-    TextView textViewErrorEmail,textViewErrorName, textViewErrorPhone, textViewErrorSubject, textViewErrorMessage;
+    TextView textViewErrorEmail, textViewErrorName, textViewErrorPhone, textViewErrorSubject, textViewErrorMessage;
     Spinner spinnerHelpTopic, spinnerSLAPlans, spinnerAssignTo, spinnerPriority;
     Button buttonSubmit;
     ProgressDialog progressDialog;
@@ -102,8 +100,7 @@ public class CreateTicket extends Fragment {
                     if (subject.trim().length() == 0) {
                         setErrorState(editTextSubject, textViewErrorSubject, "Please fill the field");
                         allCorrect = false;
-                    }
-                    else if (subject.trim().length() < 5) {
+                    } else if (subject.trim().length() < 5) {
                         setErrorState(editTextSubject, textViewErrorSubject, "Subject should be minimum 5 characters");
                         allCorrect = false;
                     }
@@ -111,8 +108,7 @@ public class CreateTicket extends Fragment {
                     if (message.trim().length() == 0) {
                         setErrorState(editTextMessage, textViewErrorMessage, "Please fill the field");
                         allCorrect = false;
-                    }
-                    else if (message.trim().length() < 5) {
+                    } else if (message.trim().length() < 5) {
                         setErrorState(editTextMessage, textViewErrorMessage, "Message should be minimum 5 characters");
                         allCorrect = false;
                     }
@@ -124,17 +120,22 @@ public class CreateTicket extends Fragment {
                     }
 
                     if (allCorrect) {
-                        progressDialog = new ProgressDialog(getActivity());
-                        progressDialog.setMessage("Creating ticket");
-                        progressDialog.show();
-                        try {
-                            name = URLEncoder.encode(name, "utf-8");
-                            subject = URLEncoder.encode(subject, "utf-8");
-                            message = URLEncoder.encode(message, "utf-8");
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        }
-                        new CreateNewTicket(Integer.parseInt(Preference.getUserID()), subject, message, helpTopic, SLAPlans, priority, assignTo).execute();
+                        if (InternetReceiver.isConnected()) {
+                            progressDialog = new ProgressDialog(getActivity());
+                            progressDialog.setMessage("Creating ticket");
+                            progressDialog.show();
+                            try {
+                                name = URLEncoder.encode(name, "utf-8");
+                                subject = URLEncoder.encode(subject, "utf-8");
+                                message = URLEncoder.encode(message, "utf-8");
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            }
+
+                            new CreateNewTicket(Integer.parseInt(Preference.getUserID()), subject, message, helpTopic, SLAPlans, priority, assignTo).execute();
+
+                        } else
+                            Toast.makeText(v.getContext(), "Oops! No internet", Toast.LENGTH_LONG).show();
                     }
 
                 }

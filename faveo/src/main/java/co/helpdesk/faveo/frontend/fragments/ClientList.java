@@ -14,15 +14,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import co.helpdesk.faveo.Helper;
-import co.helpdesk.faveo.R;
-import co.helpdesk.faveo.backend.api.v1.Helpdesk;
-import co.helpdesk.faveo.frontend.activities.ClientDetailActivity;
-import co.helpdesk.faveo.frontend.activities.MainActivity;
-import co.helpdesk.faveo.frontend.adapters.ClientOverviewAdapter;
-import co.helpdesk.faveo.model.ClientOverview;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,12 +24,22 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientList extends Fragment implements View.OnClickListener{
+import co.helpdesk.faveo.Helper;
+import co.helpdesk.faveo.R;
+import co.helpdesk.faveo.backend.api.v1.Helpdesk;
+import co.helpdesk.faveo.frontend.activities.ClientDetailActivity;
+import co.helpdesk.faveo.frontend.activities.MainActivity;
+import co.helpdesk.faveo.frontend.adapters.ClientOverviewAdapter;
+import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
+import co.helpdesk.faveo.model.ClientOverview;
+
+public class ClientList extends Fragment implements View.OnClickListener {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
     static String nextPageURL = "";
 
+    TextView tv;
     RecyclerView recyclerView;
 
     ClientOverviewAdapter clientOverviewAdapter;
@@ -86,15 +89,25 @@ public class ClientList extends Fragment implements View.OnClickListener{
             recyclerView.setLayoutManager(linearLayoutManager);
             progressDialog = new ProgressDialog(getContext());
             progressDialog.setMessage("Fetching clients");
-            progressDialog.show();
-            new FetchClients(getActivity()).execute();
+            if (InternetReceiver.isConnected()) {
+                progressDialog.show();
+                new FetchClients(getActivity()).execute();
+            } else
+                Toast.makeText(getActivity(), "Oops! No internet", Toast.LENGTH_LONG).show();
+
             swipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefresh);
+            swipeRefresh.setColorSchemeResources(R.color.faveo_blue);
             swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
-                    new FetchClients(getActivity()).execute();
+                    if (InternetReceiver.isConnected()) {
+                        new FetchClients(getActivity()).execute();
+                    } else
+                        Toast.makeText(getActivity(), "Oops! No internet", Toast.LENGTH_LONG).show();
                 }
             });
+            tv = (TextView) rootView.findViewById(R.id.empty_view);
+            tv.setText("No Clients!");
         }
         ((MainActivity) getActivity()).setActionBarTitle("Client list");
         return rootView;
@@ -120,9 +133,9 @@ public class ClientList extends Fragment implements View.OnClickListener{
                 data = jsonObject.getString("data");
                 nextPageURL = jsonObject.getString("next_page_url");
                 JSONArray jsonArray = new JSONArray(data);
-                for(int i = 0; i < jsonArray.length(); i++) {
+                for (int i = 0; i < jsonArray.length(); i++) {
                     ClientOverview clientOverview = Helper.parseClientOverview(jsonArray, i);
-                    if(clientOverview != null)
+                    if (clientOverview != null)
                         clientOverviewList.add(clientOverview);
                 }
             } catch (JSONException e) {
@@ -141,8 +154,9 @@ public class ClientList extends Fragment implements View.OnClickListener{
                 return;
             }
             if (result.equals("all done")) {
-                Toast.makeText(context, "All clients loaded", Toast.LENGTH_SHORT).show();
-                return;
+
+                Toast.makeText(context, "All Done!", Toast.LENGTH_SHORT).show();
+                //return;
             }
             recyclerView = (RecyclerView) rootView.findViewById(R.id.cardList);
             recyclerView.setHasFixedSize(false);
@@ -168,6 +182,9 @@ public class ClientList extends Fragment implements View.OnClickListener{
             });
             clientOverviewAdapter = new ClientOverviewAdapter(clientOverviewList);
             recyclerView.setAdapter(clientOverviewAdapter);
+            if (clientOverviewAdapter.getItemCount() == 0) {
+                tv.setVisibility(View.VISIBLE);
+            } else tv.setVisibility(View.GONE);
         }
     }
 
@@ -191,9 +208,9 @@ public class ClientList extends Fragment implements View.OnClickListener{
                 data = jsonObject.getString("data");
                 nextPageURL = jsonObject.getString("next_page_url");
                 JSONArray jsonArray = new JSONArray(data);
-                for(int i = 0; i < jsonArray.length(); i++) {
+                for (int i = 0; i < jsonArray.length(); i++) {
                     ClientOverview clientOverview = Helper.parseClientOverview(jsonArray, i);
-                    if(clientOverview != null)
+                    if (clientOverview != null)
                         clientOverviewList.add(clientOverview);
                 }
             } catch (JSONException e) {

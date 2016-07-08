@@ -8,10 +8,12 @@ import android.content.SharedPreferences;
  */
 public class Preference {
 
+    private static boolean crashReport;
+
     public static Context applicationContext;
 
     public Preference(Context applicationContext) {
-        this.applicationContext = applicationContext;
+        Preference.applicationContext = applicationContext;
     }
 
     public static String getToken() {
@@ -49,6 +51,11 @@ public class Preference {
     public static String getCompanyURL() {
         SharedPreferences prefs = applicationContext.getSharedPreferences(Constants.PREFERENCE, 0);
         return prefs.getString("COMPANY_URL", null);
+    }
+
+    public static boolean isCrashReport() {
+        SharedPreferences prefs = applicationContext.getSharedPreferences(Constants.PREFERENCE, 0);
+        return prefs.getBoolean("CRASH_REPORT", true);
     }
 
 }

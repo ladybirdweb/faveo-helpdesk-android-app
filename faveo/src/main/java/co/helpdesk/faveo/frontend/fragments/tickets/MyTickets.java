@@ -13,16 +13,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import co.helpdesk.faveo.Preference;
-import co.helpdesk.faveo.R;
-import co.helpdesk.faveo.backend.api.v1.Helpdesk;
-import co.helpdesk.faveo.backend.database.DatabaseHandler;
-import co.helpdesk.faveo.frontend.activities.MainActivity;
-import co.helpdesk.faveo.model.TicketOverview;
-import co.helpdesk.faveo.Helper;
-import co.helpdesk.faveo.frontend.adapters.TicketOverviewAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,10 +23,19 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import co.helpdesk.faveo.Helper;
+import co.helpdesk.faveo.Preference;
+import co.helpdesk.faveo.R;
+import co.helpdesk.faveo.backend.api.v1.Helpdesk;
+import co.helpdesk.faveo.backend.database.DatabaseHandler;
+import co.helpdesk.faveo.frontend.activities.MainActivity;
+import co.helpdesk.faveo.frontend.adapters.TicketOverviewAdapter;
+import co.helpdesk.faveo.model.TicketOverview;
+
 public class MyTickets extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    TextView tv;
     RecyclerView recyclerView;
     int currentPage = 1;
     static String nextPageURL = "";
@@ -84,12 +85,14 @@ public class MyTickets extends Fragment {
             progressDialog.show();
             new FetchFirst(getActivity()).execute();
             swipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefresh);
+            swipeRefresh.setColorSchemeResources(R.color.faveo_blue);
             swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
                     new FetchFirst(getActivity()).execute();
                 }
             });
+            tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
         ((MainActivity) getActivity()).setActionBarTitle("My tickets");
         return rootView;
@@ -119,9 +122,9 @@ public class MyTickets extends Fragment {
                     data = jsonObject.getString("result");
                 }
                 JSONArray jsonArray = new JSONArray(data);
-                for(int i = 0; i < jsonArray.length(); i++) {
+                for (int i = 0; i < jsonArray.length(); i++) {
                     TicketOverview ticketOverview = Helper.parseTicketOverview(jsonArray, i);
-                    if(ticketOverview != null)
+                    if (ticketOverview != null)
                         ticketOverviewList.add(ticketOverview);
                 }
             } catch (JSONException e) {
@@ -140,8 +143,9 @@ public class MyTickets extends Fragment {
                 return;
             }
             if (result.equals("all done")) {
-                Toast.makeText(context, "All tickets loaded", Toast.LENGTH_SHORT).show();
-                return;
+
+                Toast.makeText(context, "All Done!", Toast.LENGTH_SHORT).show();
+                //return;
             }
             recyclerView = (RecyclerView) rootView.findViewById(R.id.cardList);
             recyclerView.setHasFixedSize(false);
@@ -168,6 +172,10 @@ public class MyTickets extends Fragment {
 
             ticketOverviewAdapter = new TicketOverviewAdapter(ticketOverviewList);
             recyclerView.setAdapter(ticketOverviewAdapter);
+
+            if (ticketOverviewAdapter.getItemCount() == 0) {
+                tv.setVisibility(View.VISIBLE);
+            } else tv.setVisibility(View.GONE);
         }
     }
 
@@ -192,9 +200,9 @@ public class MyTickets extends Fragment {
                 nextPageURL = jsonObject.getString("next_page_url");
                 String data = jsonObject.getString("data");
                 JSONArray jsonArray = new JSONArray(data);
-                for(int i = 0; i < jsonArray.length(); i++) {
+                for (int i = 0; i < jsonArray.length(); i++) {
                     TicketOverview ticketOverview = Helper.parseTicketOverview(jsonArray, i);
-                    if(ticketOverview != null) {
+                    if (ticketOverview != null) {
                         ticketOverviewList.add(ticketOverview);
                         databaseHandler.addTicketOverview(ticketOverview);
                     }

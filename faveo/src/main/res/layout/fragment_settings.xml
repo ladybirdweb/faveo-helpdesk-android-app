@@ -1,17 +1,16 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     android:padding="24dp"
     tools:context="co.helpdesk.faveo.frontend.fragments.Settings">
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:orientation="vertical"
         tools:context="com.android.faveo.SettingsActivity">
@@ -19,127 +18,168 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="20sp"
             android:fontFamily="sans-serif-light"
-            android:text="NOTIFICATIONS"/>
+            android:text="CRASH REPORTS"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <LinearLayout
-            android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="72dp">
+            android:layout_height="72dp"
+            android:gravity="center_vertical">
 
             <TextView
-                android:layout_weight="1"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="0.6"
+                android:text="Send crash reports "
+                android:textColor="@color/black"
                 android:textSize="14sp"
-                android:text="Status updated on my tickets"
-                android:textStyle="bold"
-                android:alpha="0.6"/>
+                android:textStyle="bold" />
 
             <android.support.v7.widget.SwitchCompat
-                android:id="@+id/switch_status"
+                android:id="@+id/switch_crash_reports"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 app:theme="@style/SwitchStyle" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="72dp">
-
-            <TextView
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="New response my tickets"
-                android:textStyle="bold"
-                android:alpha="0.6"/>
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/switch_response"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:theme="@style/SwitchStyle" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="72dp">
-
-            <TextView
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="New tickets created"
-                android:textStyle="bold"
-                android:alpha="0.6"/>
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/switch_created"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:theme="@style/SwitchStyle" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="72dp">
-
-            <TextView
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="Tickets assigned to my group"
-                android:textStyle="bold"
-                android:alpha="0.6"/>
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/switch_assigned_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:theme="@style/SwitchStyle" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="72dp">
-
-            <TextView
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="Tickets assigned to me"
-                android:textStyle="bold"
-                android:alpha="0.6"/>
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/switch_assigned_me"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:theme="@style/SwitchStyle" />
-
-        </LinearLayout>
-
     </LinearLayout>
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/colorAccent"-->
+    <!--android:orientation="vertical"-->
+    <!--tools:context="com.android.faveo.SettingsActivity">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:fontFamily="sans-serif-light"-->
+    <!--android:text="NOTIFICATIONS"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="20sp" />-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="72dp"-->
+    <!--android:gravity="center_vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:alpha="0.6"-->
+    <!--android:text="Status updated on my tickets"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="14sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<android.support.v7.widget.SwitchCompat-->
+    <!--android:id="@+id/switch_status"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:theme="@style/SwitchStyle" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="72dp"-->
+    <!--android:gravity="center_vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:alpha="0.6"-->
+    <!--android:text="New response my tickets"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="14sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<android.support.v7.widget.SwitchCompat-->
+    <!--android:id="@+id/switch_response"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:theme="@style/SwitchStyle" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="72dp"-->
+    <!--android:gravity="center_vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:alpha="0.6"-->
+    <!--android:text="New tickets created"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="14sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<android.support.v7.widget.SwitchCompat-->
+    <!--android:id="@+id/switch_created"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:theme="@style/SwitchStyle" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="72dp"-->
+    <!--android:gravity="center_vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:alpha="0.6"-->
+    <!--android:text="Tickets assigned to my group"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="14sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<android.support.v7.widget.SwitchCompat-->
+    <!--android:id="@+id/switch_assigned_group"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:theme="@style/SwitchStyle" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="72dp"-->
+    <!--android:gravity="center_vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:alpha="0.6"-->
+    <!--android:text="Tickets assigned to me"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="14sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<android.support.v7.widget.SwitchCompat-->
+    <!--android:id="@+id/switch_assigned_me"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:theme="@style/SwitchStyle" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
 
 
 </FrameLayout>

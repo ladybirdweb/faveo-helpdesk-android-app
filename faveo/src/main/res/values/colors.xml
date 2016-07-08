@@ -8,7 +8,8 @@
     <color name="colorAccent">#FFFFFF</color>
 
     <color name="error_red">#b71c1c</color>
-
+    <color name="faveo_blu">#00B3EB</color>
+    <color name="faveo_blue">#3AA7D9</color>
     <color name="theme">#3AA7D9</color>
     <color name="blue">#2196F3</color>
     <color name="blue_300">#64B5F6</color>

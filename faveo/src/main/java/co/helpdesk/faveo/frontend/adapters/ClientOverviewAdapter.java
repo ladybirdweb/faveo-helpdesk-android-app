@@ -7,13 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import co.helpdesk.faveo.R;
-import co.helpdesk.faveo.frontend.activities.ClientDetailActivity;
-import co.helpdesk.faveo.model.ClientOverview;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import co.helpdesk.faveo.R;
+import co.helpdesk.faveo.frontend.activities.ClientDetailActivity;
+import co.helpdesk.faveo.model.ClientOverview;
 
 public class ClientOverviewAdapter extends RecyclerView.Adapter<ClientOverviewAdapter.ClientViewHolder> {
     private List<ClientOverview> clientOverviewList;

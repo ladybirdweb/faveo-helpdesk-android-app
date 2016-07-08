@@ -17,7 +17,7 @@
         android:textSize="20sp"
         android:text="Welcome!"
         android:textStyle="bold"
-        android:alpha="0.8"/>
+        android:alpha="0.5"/>
 
     <ImageView
         android:layout_weight="1"
@@ -33,6 +33,6 @@
         android:textSize="14sp"
         android:text="LOADING..."
         android:textStyle="bold"
-        android:alpha="0.3"/>
+        android:alpha="0.5"/>
 
 </LinearLayout>

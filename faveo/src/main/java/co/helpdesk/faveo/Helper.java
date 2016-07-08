@@ -9,6 +9,7 @@ import org.json.JSONException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * Created by sumit on 1/26/2016.
@@ -17,6 +18,7 @@ public class Helper {
 
     public static TicketOverview parseTicketOverview(JSONArray jsonArray, int i) {
         try {
+            Date updated_at = null;
             String firstName = jsonArray.getJSONObject(i).getString("first_name");
             String lastName = jsonArray.getJSONObject(i).getString("last_name");
             String username = jsonArray.getJSONObject(i).getString("user_name");
@@ -31,9 +33,10 @@ public class Helper {
             String slaPlanName = jsonArray.getJSONObject(i).getString("sla_plan_name");
             String helpTopicName = jsonArray.getJSONObject(i).getString("help_topic_name");
             String ticketStatusName = jsonArray.getJSONObject(i).getString("ticket_status_name");
+            String updatedAt = jsonArray.getJSONObject(i).getString("updated_at");
 
             return new TicketOverview(Integer.parseInt(ID), profilePic,
-                    ticketNumber, username, title, createdAt, i + "");
+                    ticketNumber, username, title, updatedAt, i + "");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -83,9 +86,14 @@ public class Helper {
 
     public static String parseDate(String dateToParse) {
         try {
+
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            SimpleDateFormat output = new SimpleDateFormat("d MMM yyyy");
+            sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
             Date d = sdf.parse(dateToParse);
+
+            SimpleDateFormat output = new SimpleDateFormat("d MMM yyyy  HH:mm");
+            output.setTimeZone(TimeZone.getDefault());
+
             String formattedTime = output.format(d);
             SimpleDateFormat day = new SimpleDateFormat("dd");
             String formattedDay = day.format(d) + Helper.getDayOfMonthSuffix(Integer.parseInt(day.format(d)));
@@ -103,10 +111,14 @@ public class Helper {
             return "th";
         }
         switch (n % 10) {
-            case 1:  return "st";
-            case 2:  return "nd";
-            case 3:  return "rd";
-            default: return "th";
+            case 1:
+                return "st";
+            case 2:
+                return "nd";
+            case 3:
+                return "rd";
+            default:
+                return "th";
         }
     }
 

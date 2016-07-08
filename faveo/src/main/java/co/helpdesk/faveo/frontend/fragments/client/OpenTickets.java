@@ -10,11 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.frontend.adapters.TicketGlimpseAdapter;
 import co.helpdesk.faveo.model.TicketGlimpse;
-
-import java.util.List;
 
 public class OpenTickets extends Fragment {
     private static final String ARG_PARAM1 = "param1";

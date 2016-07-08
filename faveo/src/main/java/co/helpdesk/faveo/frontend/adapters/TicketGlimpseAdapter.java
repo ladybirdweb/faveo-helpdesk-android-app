@@ -7,10 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 import co.helpdesk.faveo.frontend.activities.TicketDetailActivity;
 import co.helpdesk.faveo.model.TicketGlimpse;
-
-import java.util.List;
 
 public class TicketGlimpseAdapter extends RecyclerView.Adapter<TicketGlimpseAdapter.TicketViewHolder> {
     private List<TicketGlimpse> ticketGlimpseList;

@@ -3,40 +3,46 @@ package co.helpdesk.faveo.frontend.activities;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import co.helpdesk.faveo.R;
-import co.helpdesk.faveo.backend.api.v1.Helpdesk;
-import co.helpdesk.faveo.frontend.fragments.client.ClosedTickets;
-import co.helpdesk.faveo.frontend.fragments.client.OpenTickets;
-import co.helpdesk.faveo.model.TicketGlimpse;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import co.helpdesk.faveo.FaveoApplication;
+import co.helpdesk.faveo.R;
+import co.helpdesk.faveo.backend.api.v1.Helpdesk;
+import co.helpdesk.faveo.frontend.fragments.client.ClosedTickets;
+import co.helpdesk.faveo.frontend.fragments.client.OpenTickets;
+import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
+import co.helpdesk.faveo.model.TicketGlimpse;
+
 
 public class ClientDetailActivity extends AppCompatActivity implements
         OpenTickets.OnFragmentInteractionListener,
-        ClosedTickets.OnFragmentInteractionListener {
+        ClosedTickets.OnFragmentInteractionListener, InternetReceiver.InternetReceiverListener {
 
     ImageView imageViewClientPicture;
     TextView textViewClientName, textViewClientEmail, textViewClientPhone, textViewClientStatus, textViewClientCompany;
@@ -48,6 +54,7 @@ public class ClientDetailActivity extends AppCompatActivity implements
     List<TicketGlimpse> listTicketGlimpse;
     ProgressDialog progressDialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +62,11 @@ public class ClientDetailActivity extends AppCompatActivity implements
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
         TextView mTitle = (TextView) mToolbar.findViewById(R.id.title);
         mTitle.setText("PROFILE");
 
@@ -77,28 +87,40 @@ public class ClientDetailActivity extends AppCompatActivity implements
             textViewClientCompany.setText(intent.getStringExtra("CLIENT_COMPANY"));
         textViewClientStatus.setText(intent.getStringExtra("CLIENT_ACTIVE").equals("1") ? "ACTIVE" : "INACTIVE");
 
-        if (clientPictureUrl != null && clientPictureUrl.trim().length() != 0)
+        if (clientPictureUrl != null && clientPictureUrl.trim().length() != 0) {
             Picasso.with(this)
                     .load(clientPictureUrl)
                     .placeholder(R.drawable.default_pic)
                     .error(R.drawable.default_pic)
                     .into(imageViewClientPicture);
+        }
+        if (InternetReceiver.isConnected()) {
+            progressDialog.show();
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    new FetchClientTickets(ClientDetailActivity.this).execute();
+                }
+            }, 3000);
 
-        progressDialog.show();
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                new FetchClientTickets(ClientDetailActivity.this).execute();
-            }
-        }, 3000);
+        } else Toast.makeText(this, "Oops! No internet", Toast.LENGTH_LONG).show();
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-
         setupViewPager();
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setOnTabSelectedListener(onTabSelectedListener);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public class FetchClientTickets extends AsyncTask<String, Void, String> {
@@ -117,7 +139,7 @@ public class ClientDetailActivity extends AppCompatActivity implements
                 return null;
             try {
                 JSONArray jsonArray = new JSONArray(result);
-                for(int i = 0; i < jsonArray.length(); i++) {
+                for (int i = 0; i < jsonArray.length(); i++) {
                     int ticketID = Integer.parseInt(jsonArray.getJSONObject(i).getString("id"));
                     boolean isOpen = true;
                     String ticketNumber = jsonArray.getJSONObject(i).getString("ticket_number");
@@ -134,6 +156,7 @@ public class ClientDetailActivity extends AppCompatActivity implements
                     listTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, isOpen));
                 }
             } catch (JSONException e) {
+                Toast.makeText(ClientDetailActivity.this, "Unexpected Error", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
             return "success";
@@ -235,6 +258,65 @@ public class ClientDetailActivity extends AppCompatActivity implements
         textViewClientCompany = (TextView) findViewById(R.id.textView_client_company);
         textViewClientStatus = (TextView) findViewById(R.id.textView_client_status);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // register connection status listener
+        FaveoApplication.getInstance().setInternetListener(this);
+        checkConnection();
+    }
+
+    private void checkConnection() {
+        boolean isConnected = InternetReceiver.isConnected();
+        showSnackIfNoInternet(isConnected);
+    }
+
+    private void showSnackIfNoInternet(boolean isConnected) {
+        if (!isConnected) {
+            final Snackbar snackbar = Snackbar
+                    .make(findViewById(android.R.id.content), "Sorry! Not connected to internet", Snackbar.LENGTH_INDEFINITE);
+
+            View sbView = snackbar.getView();
+            TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+            textView.setTextColor(Color.RED);
+            snackbar.setAction("X", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    snackbar.dismiss();
+                }
+            });
+            snackbar.show();
+        }
+
+    }
+
+    private void showSnack(boolean isConnected) {
+
+        if (isConnected) {
+
+            Snackbar snackbar = Snackbar
+                    .make(findViewById(android.R.id.content), "Connected to Internet", Snackbar.LENGTH_LONG);
+
+            View sbView = snackbar.getView();
+            TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+            textView.setTextColor(Color.WHITE);
+            snackbar.show();
+        } else {
+            showSnackIfNoInternet(false);
+        }
+
+    }
+
+    /**
+     * Callback will be triggered when there is change in
+     * network connection
+     */
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        showSnack(isConnected);
     }
 
 }
