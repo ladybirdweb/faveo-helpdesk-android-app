@@ -3,12 +3,12 @@ script: "./gradlew build"
 android:
   components:
     - tools
-    - build-tools-23.0.2
+    - build-tools-23.0.3
     - android-23
     - extra-android-m2repository
 
     # The BuildTools version used by your project
-    - build-tools-23.0.2
+    - build-tools-23.0.3
 
     # The SDK version used to compile your project
     - android-23
