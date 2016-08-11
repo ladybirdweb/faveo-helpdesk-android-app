@@ -1,99 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:id="@+id/thread"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:animateLayoutChanges="true"
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/thread"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="18dp"
-        android:background="@color/colorAccent" >
+        android:clickable="true"
+        android:background="#fff"
+        android:focusable="true">
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/imageView_default_profile"
-            android:src="@drawable/default_pic"
-            app:riv_corner_radius="30dip"
-            app:riv_mutate_background="true"
-            app:riv_tile_mode="repeat"
-            app:riv_oval="true"
-            android:layout_width="32dp"
-            android:layout_height="32dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:padding="18dp">
 
-        <TextView
-            android:layout_toLeftOf="@+id/textView_ticket_time"
-            android:ellipsize="end"
-            android:textAllCaps="true"
-            android:layout_toRightOf="@+id/imageView_default_profile"
-            android:id="@+id/textView_client_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Karthik Sen"
-            android:textSize="16sp"
-            android:layout_marginLeft="18dp"
-            android:alpha="0.54"
-            android:textColor="@color/black"
-            android:singleLine="true"
-            android:fontFamily="sans-serif-bold" />
+            <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/imageView_default_profile"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/default_pic"
+                app:riv_corner_radius="30dip"
+                app:riv_mutate_background="true"
+                app:riv_oval="true"
+                app:riv_tile_mode="repeat" />
 
-        <TextView
-            android:id="@+id/textView_ticket_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="6th Dec 2016"
-            android:textSize="12sp"
-            android:textColor="@color/black"
-            android:singleLine="true"
-            android:alpha=".86"
-            android:fontFamily="sans-serif-medium"/>
+            <TextView
+                android:id="@+id/textView_client_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_toLeftOf="@+id/textView_ticket_time"
+                android:layout_toRightOf="@+id/imageView_default_profile"
+                android:alpha="0.54"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-bold"
+                android:singleLine="true"
+                android:text="Karthik Sen"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-        <TextView
-            android:textColor="@color/error_red"
-            android:textSize="12sp"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/textView_ticket_time"
-            android:text="INTERNAL NOTE"
-            android:id="@+id/textView_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/textView_ticket_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:alpha=".86"
+                android:fontFamily="sans-serif-medium"
+                android:singleLine="true"
+                android:text="6th Dec 2016"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
 
-        <TextView
-            android:visibility="gone"
-            android:id="@+id/textView_client_message_title"
-            android:layout_below="@+id/textView_client_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="4dp"
-            android:text="Dummy title"
-            android:textSize="12sp"
-            android:textColor="@color/black"
-            android:alpha=".67"
-            android:fontFamily="sans-serif-medium"
-            android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textView_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView_ticket_time"
+                android:text="INTERNAL NOTE"
+                android:textColor="@color/error_red"
+                android:textSize="12sp" />
 
-        <TextView
-            android:visibility="gone"
-            android:id="@+id/textView_client_message_body"
-            android:layout_below="@+id/textView_client_message_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:fontFamily="sans-serif-medium"/>
 
-    </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView_client_message_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:alpha=".67"
+        android:fontFamily="sans-serif-medium"
+        android:text="Dummy title"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:background="@color/grey_200"
+        android:textSize="16sp"
+        android:visibility="gone" />
 
     <View
-        android:layout_below="@+id/textView_ticket_subject"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/grey_200"/>
-
+        android:layout_height="0.5dp"
+        android:background="@color/grey_200" />
 </LinearLayout>

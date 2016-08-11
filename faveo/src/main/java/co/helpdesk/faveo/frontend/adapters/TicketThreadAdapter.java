@@ -1,15 +1,14 @@
 package co.helpdesk.faveo.frontend.adapters;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
 import co.helpdesk.faveo.Helper;
@@ -34,7 +33,9 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         ticketViewHolder.textViewClientName.setText(ticketThread.clientName);
         ticketViewHolder.textViewMessageTime.setText(Helper.parseDate(ticketThread.messageTime));
         ticketViewHolder.textViewMessageTitle.setText(ticketThread.messageTitle);
-        ticketViewHolder.textViewMessage.setText(Html.fromHtml(ticketThread.message));
+        //ticketViewHolder.textViewMessage.setText(Html.fromHtml(ticketThread.message));
+        ticketViewHolder.webView.loadDataWithBaseURL(null, ticketThread.message, "text/html", "utf-8", null);
+
         if (ticketThread.clientPicture != null && ticketThread.clientPicture.trim().length() != 0)
             Picasso.with(ticketViewHolder.roundedImageViewProfilePic.getContext())
                     .load(ticketThread.clientPicture)
@@ -49,10 +50,10 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
             public void onClick(View v) {
                 if (ticketViewHolder.textViewMessageTitle.getVisibility() == View.GONE) {
                     ticketViewHolder.textViewMessageTitle.setVisibility(View.VISIBLE);
-                    ticketViewHolder.textViewMessage.setVisibility(View.VISIBLE);
+                    ticketViewHolder.webView.setVisibility(View.VISIBLE);
                 } else {
                     ticketViewHolder.textViewMessageTitle.setVisibility(View.GONE);
-                    ticketViewHolder.textViewMessage.setVisibility(View.GONE);
+                    ticketViewHolder.webView.setVisibility(View.GONE);
                 }
             }
         });
@@ -65,8 +66,8 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
     @Override
     public TicketViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.
-        from(viewGroup.getContext()).
-        inflate(R.layout.card_conversation, viewGroup, false);
+                from(viewGroup.getContext()).
+                inflate(R.layout.card_conversation, viewGroup, false);
         return new TicketViewHolder(itemView);
     }
 
@@ -77,18 +78,20 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         protected TextView textViewClientName;
         protected TextView textViewMessageTime;
         protected TextView textViewMessageTitle;
-        protected TextView textViewMessage;
+        //  protected TextView textViewMessage;
         protected TextView textViewType;
+        protected WebView webView;
 
         public TicketViewHolder(View v) {
             super(v);
             thread = v.findViewById(R.id.thread);
-            roundedImageViewProfilePic = (RoundedImageView)  v.findViewById(R.id.imageView_default_profile);
-            textViewClientName = (TextView)  v.findViewById(R.id.textView_client_name);
-            textViewMessageTime = (TextView)  v.findViewById(R.id.textView_ticket_time);
+            roundedImageViewProfilePic = (RoundedImageView) v.findViewById(R.id.imageView_default_profile);
+            textViewClientName = (TextView) v.findViewById(R.id.textView_client_name);
+            textViewMessageTime = (TextView) v.findViewById(R.id.textView_ticket_time);
             textViewMessageTitle = (TextView) v.findViewById(R.id.textView_client_message_title);
-            textViewMessage = (TextView) v.findViewById(R.id.textView_client_message_body);
+            //  textViewMessage = (TextView) v.findViewById(R.id.textView_client_message_body);
             textViewType = (TextView) v.findViewById(R.id.textView_type);
+            webView = (WebView) v.findViewById(R.id.webView);
         }
 
     }
