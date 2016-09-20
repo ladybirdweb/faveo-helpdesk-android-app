@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/faveo/faveo.iml" filepath="$PROJECT_DIR$/faveo/faveo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/faveo-helpdesk-android-app.iml" filepath="$PROJECT_DIR$/faveo-helpdesk-android-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/faveo-helpdesk-android-community.iml" filepath="$PROJECT_DIR$/faveo-helpdesk-android-community.iml" />
     </modules>
   </component>
 </project>

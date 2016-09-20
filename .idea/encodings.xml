@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-hdpi" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-hdpi/edittext_default.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-hdpi/edittext_error.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-hdpi/edittext_focus.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-mdpi" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-mdpi/edittext_default.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-mdpi/edittext_error.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-mdpi/edittext_focus.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-xhdpi" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-xhdpi/edittext_default.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-xhdpi/edittext_error.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-xhdpi/edittext_focus.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-xxhdpi" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-xxhdpi/edittext_default.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-xxhdpi/edittext_error.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable-xxhdpi/edittext_focus.9.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable/edittext_error_state.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable/edittext_modified_states.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/faveo/src/main/res/drawable/edittext_theme_states.xml" charset="UTF-8" />
+  <component name="Encoding">
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
