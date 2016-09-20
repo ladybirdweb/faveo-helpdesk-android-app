@@ -22,7 +22,7 @@
     <ImageView
         android:layout_weight="1"
         android:padding="40dp"
-        android:src="@drawable/new_logo"
+        android:src="@drawable/community"
         android:layout_width="match_parent"
         android:layout_height="0dp" />
 

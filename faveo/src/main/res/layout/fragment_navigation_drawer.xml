@@ -16,7 +16,7 @@
 
         <ImageView
             android:padding="36dp"
-            android:src="@drawable/new_logo"
+            android:src="@drawable/community"
             android:layout_width="match_parent"
             android:layout_height="160dp" />
 
