@@ -27,7 +27,7 @@ public class HTTPConnection {
     private InputStream is = null;
     private URL url;
 
-    public String HTTPResponsePost(String stringURL, String parameters) {
+    String HTTPResponsePost(String stringURL, String parameters) {
         try {
             url = new URL(stringURL);
             final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -150,7 +150,7 @@ public class HTTPConnection {
         return sb.toString();
     }
 
-    public String HTTPResponseGet(String stringURL) {
+    String HTTPResponseGet(String stringURL) {
         try {
             url = new URL(stringURL);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
