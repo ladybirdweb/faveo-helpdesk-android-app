@@ -297,8 +297,8 @@ public class Detail extends Fragment {
         int ticketPriority;
         int ticketStatus;
 
-        public SaveTicket(Context context, int ticketNumber, String subject,
-                          int slaPlan, int helpTopic, int ticketSource, int ticketPriority, int ticketStatus) {
+        SaveTicket(Context context, int ticketNumber, String subject,
+                   int slaPlan, int helpTopic, int ticketSource, int ticketPriority, int ticketStatus) {
             this.context = context;
             this.ticketNumber = ticketNumber;
             this.subject = subject;
