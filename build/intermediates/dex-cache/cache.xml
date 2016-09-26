@@ -3,15 +3,6 @@
 
     <item
         is-multidex="false"
-        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.1.1_69bdfc36a4617f407b33abd433f0a07499b74ac9.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.crashlytics.sdk.android/beta/1.2.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -21,21 +12,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.1.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/internal_impl-23.1.1_16919e9f8f712816eb97064e467e7fed17579654.jar" />
+        sha1="787871951412550519b0222aba3c9df4cea49875">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.1.1_90c24794a707f123428baf590dd9574c591ccbdd.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.1.1_fa916c6c45b1fd21d947678244756d7316afe4ff.jar" />
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.1.1_d6fdb55d5fe092c4504be2477699cf937e0e15ca.jar" />
     </item>
     <item
         is-multidex="false"
@@ -48,12 +39,57 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.1.1_186456686812f2c99269767646ac1be9982c33d1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/design/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e195bd694d5389acfba27ff4fdfa64c4c65b2c05">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-design-24.1.1_4b70767a75d3b1ce0138773bb65d21a6841de7a9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/libs/internal_impl-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/internal_impl-24.1.1_d7e27467dc9c1bbbab5b94144e155208877e0393.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/narendra/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.1.1/support-annotations-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/support-annotations-24.1.1_297e725d7a3c1d9dfca36d53debe3d068c293f00.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/narendra/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
         sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
         <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/picasso-2.5.2_25088ab90857acbab8c1c3d8e06c26e764daeb77.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.1.1_6c8b28a13136b001b7f4bfc36cb32ce9f953601f.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,12 +111,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars/classes.jar"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.1.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
-        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
-        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.1.1_b6a356cb6a9e57b30692af4b88bf9da7c3a55977.jar" />
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.1.1_f51d891b5a1d9f8b1227be2b531f867e712923b1.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,12 +129,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.1.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-design-23.1.1_c6bd9ed22015de85c40aa560a5ccb2481349f46d.jar" />
+        sha1="4add8aa95c9f4e9a2ad64b7e2bf08e97e28955c1">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-24.1.1_6b1486620aa84cdc1e3e2f097eb992bf111e8024.jar" />
     </item>
     <item
         is-multidex="false"
@@ -126,24 +162,6 @@
         revision="23.0.3"
         sha1="2f9a9b21b70965cde70f6eb8f2ee68794fb482e6">
         <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.crashlytics.sdk.android-crashlytics-core-2.3.10_e7ae1297ac9b6c0c5c3217252ba4128f50cbb016.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/narendra/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/support-annotations-23.1.1_48a9d6bcdd39d6ce3b8d63b965db51ebe2c75f2d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_ab79cf0784702e577d2d1f88375d30357ebe18b5.jar" />
     </item>
 
 </items>
