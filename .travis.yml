@@ -3,15 +3,15 @@ script: "./gradlew build"
 android:
   components:
     - tools
-    - build-tools-23.0.3
-    - android-23
+    - build-tools-24.0.1
+    - android-24
     - extra-android-m2repository
 
     # The BuildTools version used by your project
-    - build-tools-23.0.3
+    - build-tools-24.0.1
 
     # The SDK version used to compile your project
-    - android-23
+    - android-24
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
