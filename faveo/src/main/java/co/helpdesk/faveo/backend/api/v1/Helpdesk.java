@@ -138,7 +138,7 @@ public class Helpdesk {
                 "&ip=" + IP +
                 "&token=" + token +
                 "&ticket_id=" + ticketID +
-                "&subject=" + subject +
+                "&subject=" + Uri.encode(subject)+
                 "&sla_plan=" + slaPlan +
                 "&help_topic=" + helpTopic +
                 "&ticket_source=" + ticketSource +
@@ -150,7 +150,7 @@ public class Helpdesk {
                     "&ip=" + IP +
                     "&token=" + token +
                     "&ticket_id=" + ticketID +
-                    "&subject=" + subject +
+                    "&subject=" + Uri.encode(subject)+
                     "&sla_plan=" + slaPlan +
                     "&help_topic=" + helpTopic +
                     "&ticket_source=" + ticketSource +
