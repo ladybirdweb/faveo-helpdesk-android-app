@@ -225,7 +225,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
         int userID;
         String note;
 
-        public CreateInternalNote(int ticketID, int userID, String note) {
+        CreateInternalNote(int ticketID, int userID, String note) {
             this.ticketID = ticketID;
             this.userID = userID;
             this.note = note;
@@ -251,7 +251,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
         String cc;
         String replyContent;
 
-        public ReplyTicket(int ticketID, String cc, String replyContent) {
+        ReplyTicket(int ticketID, String cc, String replyContent) {
             this.ticketID = ticketID;
             this.cc = cc;
             this.replyContent = replyContent;
@@ -276,13 +276,13 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 try {
                     clientPicture = res.getString("profile_pic");
                 } catch (Exception e) {
-
+                    e.printStackTrace();
                 }
                 String messageTitle = "";
                 try {
                     messageTitle = res.getString("title");
                 } catch (Exception e) {
-
+                    e.printStackTrace();
                 }
                 String clientName = res.getString("first_name");
                 if (clientName.equals("null") || clientName.equals(""))
@@ -293,6 +293,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 try {
                     isReply = res.getString("is_reply");
                 } catch (Exception e) {
+                    e.printStackTrace();
                 }
                 ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message, isReply);
                 if (fragmentConversation != null) {
@@ -304,7 +305,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
                     exitReveal();
                 }
                 e.printStackTrace();
-                Toast.makeText(TicketDetailActivity.this, "Unexpected Error ", Toast.LENGTH_LONG).show();
+               // Toast.makeText(TicketDetailActivity.this, "Unexpected Error ", Toast.LENGTH_LONG).show();
             }
         }
     }

@@ -15,7 +15,7 @@
         tools:context="com.android.faveo.DashboardActivity">
 
         <ImageView
-            android:padding="36dp"
+            android:padding="10dp"
             android:src="@drawable/community"
             android:layout_width="match_parent"
             android:layout_height="160dp" />

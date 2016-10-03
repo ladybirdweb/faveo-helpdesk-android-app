@@ -67,7 +67,7 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
         return new TicketViewHolder(itemView);
     }
 
-    public static class TicketViewHolder extends RecyclerView.ViewHolder {
+    static class TicketViewHolder extends RecyclerView.ViewHolder {
 
         protected View ticket;
         protected RoundedImageView roundedImageViewProfilePic;
@@ -78,7 +78,7 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
         protected TextView textViewTime;
         protected TextView textViewNewNotification;
 
-        public TicketViewHolder(View v) {
+        TicketViewHolder(View v) {
             super(v);
             ticket =  v.findViewById(R.id.ticket);
             roundedImageViewProfilePic =  (RoundedImageView) v.findViewById(R.id.imageView_default_profile);

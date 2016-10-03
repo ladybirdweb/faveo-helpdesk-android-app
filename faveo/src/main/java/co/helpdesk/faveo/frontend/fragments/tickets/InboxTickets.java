@@ -126,7 +126,7 @@ public class InboxTickets extends Fragment {
     public class ReadFromDatabase extends AsyncTask<String, Void, String> {
         Context context;
 
-        public ReadFromDatabase(Context context) {
+        ReadFromDatabase(Context context) {
             this.context = context;
         }
 
@@ -153,7 +153,7 @@ public class InboxTickets extends Fragment {
     public class FetchNextPage extends AsyncTask<String, Void, String> {
         Context context;
 
-        public FetchNextPage(Context context) {
+        FetchNextPage(Context context) {
             this.context = context;
         }
 
@@ -202,7 +202,7 @@ public class InboxTickets extends Fragment {
     public class FetchFirst extends AsyncTask<String, Void, String> {
         Context context;
 
-        public FetchFirst(Context context) {
+        FetchFirst(Context context) {
             this.context = context;
         }
 
