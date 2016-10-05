@@ -1,78 +1,77 @@
-<ScrollView
-    android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:fillViewport="true"
-    android:scrollbars="none"
     android:overScrollMode="never"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    android:scrollbars="none">
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:orientation="vertical"
         tools:context="com.android.faveo.DashboardActivity">
 
         <ImageView
-            android:padding="10dp"
-            android:src="@drawable/community"
             android:layout_width="match_parent"
-            android:layout_height="160dp" />
+            android:layout_height="160dp"
+            android:padding="10dp"
+            android:src="@drawable/community" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grey_200"/>
+            android:background="@color/grey_200" />
 
         <LinearLayout
             android:id="@+id/create_ticket"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/colorAccent" >
+            android:background="@color/colorAccent">
 
             <ImageView
-                android:layout_margin="22dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/create_ticket"/>
+                android:layout_margin="22dp"
+                android:src="@drawable/create_ticket" />
 
             <TextView
-                android:fontFamily="sans-serif-bold"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Create ticket" />
+                android:fontFamily="sans-serif-bold"
+                android:gravity="center"
+                android:text="Create ticket"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grey_200"/>
+            android:background="@color/grey_200" />
 
         <LinearLayout
             android:id="@+id/ticket_list"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/colorAccent" >
+            android:background="@color/colorAccent">
 
             <ImageView
-                android:layout_margin="22dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/ticket_list"/>
+                android:layout_margin="22dp"
+                android:src="@drawable/ticket_list" />
 
             <TextView
-                android:fontFamily="sans-serif-bold"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Ticket list" />
+                android:fontFamily="sans-serif-bold"
+                android:gravity="center"
+                android:text="Ticket list"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -80,25 +79,25 @@
             android:id="@+id/inbox_tickets"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/colorAccent" >
+            android:background="@color/colorAccent">
 
             <ImageView
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="22dp"
-                android:layout_marginRight="22dp"
-                android:layout_marginLeft="42dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/inbox_tickets"/>
+                android:layout_marginBottom="22dp"
+                android:layout_marginLeft="42dp"
+                android:layout_marginRight="22dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/inbox_tickets" />
 
             <TextView
-                android:fontFamily="sans-serif-bold"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Inbox tickets" />
+                android:fontFamily="sans-serif-bold"
+                android:gravity="center"
+                android:text="Inbox tickets"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -106,25 +105,25 @@
             android:id="@+id/my_tickets"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/colorAccent" >
+            android:background="@color/colorAccent">
 
             <ImageView
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="22dp"
-                android:layout_marginRight="22dp"
-                android:layout_marginLeft="42dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/my_ticket"/>
+                android:layout_marginBottom="22dp"
+                android:layout_marginLeft="42dp"
+                android:layout_marginRight="22dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/my_ticket" />
 
             <TextView
-                android:fontFamily="sans-serif-bold"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="My tickets" />
+                android:fontFamily="sans-serif-bold"
+                android:gravity="center"
+                android:text="My tickets"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -132,25 +131,25 @@
             android:id="@+id/unassigned_tickets"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/colorAccent" >
+            android:background="@color/colorAccent">
 
             <ImageView
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="22dp"
-                android:layout_marginRight="22dp"
-                android:layout_marginLeft="42dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/unassigned_ticket"/>
+                android:layout_marginBottom="22dp"
+                android:layout_marginLeft="42dp"
+                android:layout_marginRight="22dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/unassigned_ticket" />
 
             <TextView
-                android:fontFamily="sans-serif-bold"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Unassigned tickets" />
+                android:fontFamily="sans-serif-bold"
+                android:gravity="center"
+                android:text="Unassigned tickets"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -158,25 +157,25 @@
             android:id="@+id/closed_tickets"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/colorAccent" >
+            android:background="@color/colorAccent">
 
             <ImageView
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="22dp"
-                android:layout_marginRight="22dp"
-                android:layout_marginLeft="42dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/closed_ticket"/>
+                android:layout_marginBottom="22dp"
+                android:layout_marginLeft="42dp"
+                android:layout_marginRight="22dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/closed_ticket" />
 
             <TextView
-                android:fontFamily="sans-serif-bold"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Closed tickets" />
+                android:fontFamily="sans-serif-bold"
+                android:gravity="center"
+                android:text="Closed tickets"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -184,53 +183,53 @@
             android:id="@+id/trash_tickets"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/colorAccent" >
+            android:background="@color/colorAccent">
 
             <ImageView
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="22dp"
-                android:layout_marginRight="22dp"
-                android:layout_marginLeft="42dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/trash_ticket"/>
+                android:layout_marginBottom="22dp"
+                android:layout_marginLeft="42dp"
+                android:layout_marginRight="22dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/trash_ticket" />
 
             <TextView
-                android:fontFamily="sans-serif-bold"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Trash" />
+                android:fontFamily="sans-serif-bold"
+                android:gravity="center"
+                android:text="Trash"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grey_200"/>
+            android:background="@color/grey_200" />
 
         <LinearLayout
             android:id="@+id/client_list"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/colorAccent" >
+            android:background="@color/colorAccent">
 
             <ImageView
-                android:layout_margin="22dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/client_list"/>
+                android:layout_margin="22dp"
+                android:src="@drawable/client_list" />
 
             <TextView
-                android:fontFamily="sans-serif-bold"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Client list" />
+                android:fontFamily="sans-serif-bold"
+                android:gravity="center"
+                android:text="Client list"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -265,63 +264,63 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grey_200"/>
+            android:background="@color/grey_200" />
 
         <LinearLayout
             android:id="@+id/about"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/colorAccent" >
+            android:background="@color/colorAccent">
 
             <ImageView
-                android:layout_margin="22dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/about"/>
+                android:layout_margin="22dp"
+                android:src="@drawable/about" />
 
             <TextView
-                android:fontFamily="sans-serif-bold"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="About" />
+                android:fontFamily="sans-serif-bold"
+                android:gravity="center"
+                android:text="About"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grey_200"/>
+            android:background="@color/grey_200" />
 
         <LinearLayout
             android:id="@+id/logout"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/colorAccent" >
+            android:background="@color/colorAccent">
 
             <ImageView
-                android:layout_margin="22dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/organisation_list"/>
+                android:layout_margin="22dp"
+                android:src="@drawable/organisation_list" />
 
             <TextView
-                android:fontFamily="sans-serif-bold"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Logout" />
+                android:fontFamily="sans-serif-bold"
+                android:gravity="center"
+                android:text="Logout"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/grey_200"/>
+            android:background="@color/grey_200" />
 
     </LinearLayout>
 

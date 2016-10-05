@@ -1,25 +1,24 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:overScrollMode="never"
-    android:scrollbars="none"
-    android:fillViewport="true">
+    android:scrollbars="none">
 
 
     <LinearLayout
-        android:background="@color/colorAccent"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:orientation="vertical">
 
         <ImageView
-            android:layout_gravity="center"
-            android:src="@drawable/community"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="30dp"/>
+            android:layout_gravity="center"
+            android:padding="30dp"
+            android:src="@drawable/community" />
 
         <ViewFlipper
             android:id="@+id/viewFlipper"
@@ -27,146 +26,146 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical"
                 android:paddingLeft="24dp"
                 android:paddingRight="24dp"
                 android:paddingTop="24dp"
-                android:layout_marginBottom="24dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 tools:context=".LoginActivity">
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:alpha="0.3"
                     android:text="COMPANY'S URL"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <EditText
-                        android:layout_weight="1"
+                        android:id="@+id/editText_company_url"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/editText_company_url"
-                        android:background="@drawable/edittext_modified_states"
-                        android:textSize="14sp"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="16dp"
                         android:layout_marginBottom="24dp"
-                        android:singleLine="true"
-                        android:inputType="textWebEditText"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_modified_states"
+                        android:imeOptions="actionDone"
+                        android:inputType="textUri"
+                        android:maxLines="1"
+                        android:paddingBottom="16dp"
+                        android:paddingTop="16dp"
                         android:textCursorDrawable="@drawable/color_cursor"
-                        android:imeOptions="actionDone" />
+                        android:textSize="14sp" />
 
                     <ImageButton
                         android:id="@+id/imageButton_verify_url"
-                        android:scaleType="fitXY"
-                        android:padding="12dp"
-                        android:background="@color/transparent"
-                        android:src="@drawable/company_url"
                         android:layout_width="48dp"
-                        android:layout_height="48dp" />
+                        android:layout_height="48dp"
+                        android:background="@color/transparent"
+                        android:padding="12dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/company_url" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:paddingTop="24dp"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:layout_marginBottom="24dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingTop="24dp"
                 tools:context=".LoginActivity">
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:alpha="0.3"
                     android:text="USERNAME"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/editText_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText_username"
-                    android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
                     android:layout_marginBottom="24dp"
-                    android:singleLine="true"
+                    android:background="@drawable/edittext_modified_states"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:paddingBottom="16dp"
+                    android:paddingTop="16dp"
                     android:textCursorDrawable="@drawable/color_cursor"
-                    android:imeOptions="actionNext" />
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:alpha="0.3"
                     android:text="PASSWORD"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/editText_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText_password"
-                    android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
-                    android:textCursorDrawable="@drawable/color_cursor"
                     android:layout_marginBottom="24dp"
-                    android:singleLine="true"
+                    android:background="@drawable/edittext_modified_states"
                     android:imeOptions="actionDone"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingBottom="16dp"
+                    android:paddingTop="16dp"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:visibility="invisible"
-                        android:text="Empty username"
                         android:id="@+id/textView_field_error"
-                        android:textColor="@color/error_red"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp" />
+                        android:text="Empty username"
+                        android:textColor="@color/error_red"
+                        android:textSize="12sp"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/forgot_password"
-                        android:textSize="14sp"
-                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:alpha="0.87"
                         android:gravity="end"
                         android:text="Forgot password?"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/button_sign_in"
-                    android:textAllCaps="false"
-                    android:layout_margin="32dp"
-                    android:background="@color/blue_300"
-                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sign In"/>
+                    android:layout_margin="32dp"
+                    android:background="@color/blue_300"
+                    android:text="Sign In"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 

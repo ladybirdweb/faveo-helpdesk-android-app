@@ -32,8 +32,8 @@ public class CreateTicket extends Fragment {
     TextView textViewErrorEmail, textViewErrorName, textViewErrorPhone, textViewErrorSubject, textViewErrorMessage;
     Spinner spinnerHelpTopic, spinnerSLAPlans, spinnerAssignTo, spinnerPriority;
     Button buttonSubmit;
-    ProgressDialog progressDialog;
 
+    ProgressDialog progressDialog;
     int paddingTop, paddingBottom;
     View rootView;
 
@@ -266,7 +266,7 @@ public class CreateTicket extends Fragment {
     }
 
     public interface OnFragmentInteractionListener {
-        public void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(Uri uri);
     }
 
 }
