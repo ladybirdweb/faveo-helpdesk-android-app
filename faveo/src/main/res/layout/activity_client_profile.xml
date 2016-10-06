@@ -1,14 +1,12 @@
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorAccent"
@@ -19,119 +17,117 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            android:background="?attr/colorPrimary" >
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize">
 
             <TextView
                 android:id="@+id/title"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:text="PROFILE"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="PROFILE"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </android.support.v7.widget.Toolbar>
 
-        <RelativeLayout
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/client4"
-            android:padding="8dp"
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent" >
+            android:background="@color/colorAccent"
+            android:padding="8dp">
 
-            <com.makeramen.roundedimageview.RoundedImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+            <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imageView_default_profile"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerVertical="true"
                 android:src="@drawable/default_pic"
                 app:riv_corner_radius="30dip"
                 app:riv_mutate_background="true"
-                app:riv_tile_mode="repeat"
                 app:riv_oval="true"
-                android:layout_width="64dp"
-                android:layout_centerVertical="true"
-                android:layout_height="64dp" />
+                app:riv_tile_mode="repeat" />
 
             <TextView
                 android:id="@+id/textView_client_name"
-                android:layout_toRightOf="@+id/imageView_default_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="18dp"
-                android:text="Karthik Sen"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:layout_centerHorizontal="true"
+                android:layout_toRightOf="@+id/imageView_default_profile"
+                android:fontFamily="sans-serif-bold"
                 android:singleLine="true"
-                android:fontFamily="sans-serif-bold" />
+                android:text="Karthik Sen"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <TextView
-                android:drawableLeft="@drawable/email"
-                android:drawablePadding="8dp"
                 android:id="@+id/textView_client_email"
-                android:layout_below="@+id/textView_client_name"
-                android:layout_toRightOf="@+id/imageView_default_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_client_name"
+                android:layout_centerHorizontal="true"
                 android:layout_marginLeft="18dp"
                 android:layout_marginTop="8dp"
-                android:text="karthiksen@ladybirdweb.com"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:layout_centerHorizontal="true"
-                android:singleLine="true"
+                android:layout_toRightOf="@+id/imageView_default_profile"
                 android:alpha=".54"
-                android:fontFamily="sans-serif-medium"/>
+                android:drawableLeft="@drawable/email"
+                android:drawablePadding="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:singleLine="true"
+                android:text="karthiksen@ladybirdweb.com"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <TextView
-                android:drawableLeft="@drawable/phone"
-                android:drawablePadding="8dp"
                 android:id="@+id/textView_client_phone"
-                android:layout_below="@+id/textView_client_email"
-                android:layout_toRightOf="@+id/imageView_default_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="18dp"
-                android:text="9876543210"
-                android:textSize="16sp"
-                android:textColor="@color/black"
+                android:layout_below="@+id/textView_client_email"
                 android:layout_centerHorizontal="true"
-                android:singleLine="true"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@+id/imageView_default_profile"
                 android:alpha=".54"
-                android:fontFamily="sans-serif-medium"/>
+                android:drawableLeft="@drawable/phone"
+                android:drawablePadding="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:singleLine="true"
+                android:text="9876543210"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </RelativeLayout>
 
         <LinearLayout
-            android:padding="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/textView_client_company"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:alpha="0.3"
                 android:text="LADY WEB SOLUTION"
-                android:textStyle="bold"
-                android:alpha="0.3"/>
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView_client_status"
-                android:gravity="right"
-                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:alpha="0.3"
+                android:gravity="right"
                 android:text="STATUS"
-                android:textStyle="bold"
-                android:alpha="0.3"/>
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -139,15 +135,15 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabGravity="fill"
             app:tabIndicatorColor="@color/blue"
-            app:tabMode="fixed"
-            app:tabGravity="fill"/>
+            app:tabMode="fixed" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </LinearLayout>
 

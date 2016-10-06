@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
     android:overScrollMode="never"
     android:scrollbars="none">
@@ -17,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="30dp"
+            android:padding="40dp"
             android:src="@drawable/community" />
 
         <ViewFlipper
@@ -32,7 +33,7 @@
                 android:orientation="vertical"
                 android:paddingLeft="24dp"
                 android:paddingRight="24dp"
-                android:paddingTop="24dp"
+                android:paddingTop="8dp"
                 tools:context=".LoginActivity">
 
                 <TextView
@@ -53,25 +54,26 @@
                         android:id="@+id/editText_company_url"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="24dp"
                         android:layout_weight="1"
                         android:background="@drawable/edittext_modified_states"
                         android:imeOptions="actionDone"
                         android:inputType="textUri"
                         android:maxLines="1"
                         android:paddingBottom="16dp"
-                        android:paddingTop="16dp"
+                        android:paddingEnd="4dp"
+                        android:paddingRight="4dp"
+                        android:paddingTop="12dp"
                         android:textCursorDrawable="@drawable/color_cursor"
                         android:textSize="14sp" />
 
-                    <ImageButton
+                    <android.support.design.widget.FloatingActionButton
                         android:id="@+id/imageButton_verify_url"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:background="@color/transparent"
-                        android:padding="12dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/company_url" />
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_done_white_24dp"
+                        app:fabSize="mini"
+                        android:layout_marginRight="4dp"/>
 
                 </LinearLayout>
 

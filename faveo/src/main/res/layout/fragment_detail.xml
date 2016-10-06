@@ -24,7 +24,7 @@
             android:gravity="center"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:singleLine="true"
+            android:maxLines="1"
             android:text="Client name"
             android:textAllCaps="true"
             android:textCursorDrawable="@drawable/color_cursor"
@@ -53,8 +53,8 @@
             android:imeOptions="actionNext"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:singleLine="true"
-            android:text="Subject of the ticket"
+            android:maxLines="1"
+            android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -78,7 +78,7 @@
             android:imeOptions="actionNext"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:singleLine="true"
+            android:maxLines="1"
             android:textSize="14sp" />
 
         <TextView
@@ -100,7 +100,7 @@
             android:imeOptions="actionNext"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:singleLine="true"
+            android:maxLines="1"
             android:textSize="14sp" />
 
         <TextView
@@ -122,7 +122,7 @@
             android:imeOptions="actionNext"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:singleLine="true"
+            android:maxLines="1"
             android:textSize="14sp" />
 
         <TextView
@@ -144,7 +144,7 @@
             android:imeOptions="actionNext"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:singleLine="true"
+            android:maxLines="1"
             android:textSize="14sp" />
 
         <TextView
@@ -167,7 +167,7 @@
             android:imeOptions="actionNext"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:singleLine="true"
+            android:maxLines="1"
             android:textSize="14sp" />
 
         <TextView
@@ -193,8 +193,8 @@
             android:imeOptions="actionNext"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:singleLine="true"
-            android:text="Name"
+            android:maxLines="1"
+            android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp" />
 
@@ -221,8 +221,8 @@
             android:imeOptions="actionNext"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:singleLine="true"
-            android:text="Email"
+            android:maxLines="1"
+            android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp" />
 
@@ -245,7 +245,7 @@
             android:imeOptions="actionNext"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:singleLine="true"
+            android:maxLines="1"
             android:textSize="14sp" />
 
         <!--<TextView-->
@@ -301,8 +301,8 @@
             android:maxLength="20"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:singleLine="true"
-            android:text="Due date"
+            android:maxLines="1"
+            android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp" />
 
@@ -330,16 +330,16 @@
             android:maxLength="20"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:singleLine="true"
-            android:text="Created date"
+            android:maxLines="1"
+            android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="wrap_content"  android:text="LAST RESPONSE DATE"
             android:alpha="0.3"
-            android:text="LAST RESPONSE DATE"
+
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -359,8 +359,8 @@
             android:maxLength="20"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:singleLine="true"
-            android:text="Last response date"
+            android:maxLines="1"
+            android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp" />
 
@@ -386,7 +386,7 @@
             android:maxLength="20"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:singleLine="true"
+            android:maxLines="1"
             android:textSize="14sp"
             android:visibility="gone" />
 
