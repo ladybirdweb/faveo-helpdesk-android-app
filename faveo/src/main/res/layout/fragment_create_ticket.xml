@@ -75,11 +75,11 @@
                     android:background="@drawable/edittext_modified_states"
                     android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
                     android:paddingBottom="16dp"
                     android:paddingTop="16dp"
                     android:textCursorDrawable="@drawable/color_cursor"
-                    android:textSize="14sp"
-                    android:inputType="textPersonName"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/textView_error_firstname"
@@ -100,13 +100,13 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:inputType="textPersonName"
                     android:id="@+id/editText_lastname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_modified_states"
                     android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
                     android:paddingBottom="16dp"
                     android:paddingTop="16dp"
                     android:textCursorDrawable="@drawable/color_cursor"
@@ -125,31 +125,53 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:alpha="0.3"
-                    android:text="Phone"
+                    android:text="Phone (Optional)"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/editText_phone"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_modified_states"
-                    android:digits="0123456789+"
-                    android:imeOptions="actionNext"
-                    android:paddingBottom="16dp"
-                    android:paddingTop="16dp"
-                    android:inputType="phone"
-                    android:textCursorDrawable="@drawable/color_cursor"
-                    android:textSize="14sp" />
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spinner_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/edittext_modified_states"
+                        android:drawSelectorOnTop="true"
+                        android:entries="@array/spinnerCountryCodes"
+                        android:imeOptions="actionNext"
+                        android:paddingBottom="16dp"
+                        android:textSize="14sp"
+                        android:layout_marginRight="8dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_modified_states"
+                        android:digits="0123456789+"
+                        android:imeOptions="actionNext"
+                        android:inputType="phone"
+                        android:paddingBottom="16dp"
+                        android:paddingTop="16dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/textView_error_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:textSize="12sp"
-                    android:text="EX:+91 9999999999"/>
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text="EX:+91 9999999999"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -291,8 +313,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_modified_states"
                     android:imeOptions="actionNext"
-                    android:maxLines="6"
                     android:inputType="textLongMessage"
+                    android:maxLines="6"
                     android:minLines="1"
                     android:paddingBottom="16dp"
                     android:paddingTop="16dp"

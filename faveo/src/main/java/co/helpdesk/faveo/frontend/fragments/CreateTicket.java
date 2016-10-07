@@ -2,10 +2,12 @@ package co.helpdesk.faveo.frontend.fragments;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ import java.net.URLEncoder;
 
 import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.Preference;
+import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.activities.MainActivity;
 import co.helpdesk.faveo.frontend.activities.SplashActivity;
@@ -30,7 +33,7 @@ public class CreateTicket extends Fragment {
 
     EditText editTextEmail, editTextLastName, editTextFirstName, editTextPhone, editTextSubject, editTextMessage;
     TextView textViewErrorEmail, textViewErrorLastName, textViewErrorFirstName, textViewErrorPhone, textViewErrorSubject, textViewErrorMessage;
-    Spinner spinnerHelpTopic, spinnerSLAPlans, spinnerAssignTo, spinnerPriority;
+    Spinner spinnerHelpTopic, spinnerSLAPlans, spinnerAssignTo, spinnerPriority, spinnerCountryCode;
     Button buttonSubmit;
 
     ProgressDialog progressDialog;
@@ -66,6 +69,26 @@ public class CreateTicket extends Fragment {
         }
     }
 
+    public int GetCountryZipCode() {
+        String CountryID = "";
+        String CountryZipCode = "";
+        int code = 0;
+
+        TelephonyManager manager = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+        //getNetworkCountryIso
+        CountryID = manager.getSimCountryIso().toUpperCase();
+        String[] rl = this.getResources().getStringArray(R.array.spinnerCountryCodes);
+        for (int i = 0; i < rl.length; i++) {
+            String[] g = rl[i].split(",");
+            if (g[1].trim().equals(CountryID.trim())) {
+                CountryZipCode = g[0];
+                code = i;
+                break;
+            }
+        }
+        return code;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -86,6 +109,9 @@ public class CreateTicket extends Fragment {
                     int SLAPlans = spinnerSLAPlans.getSelectedItemPosition() + 1;
                     int assignTo = spinnerAssignTo.getSelectedItemPosition() + 1;
                     int priority = spinnerPriority.getSelectedItemPosition() + 1;
+                    String countrycode = spinnerCountryCode.getSelectedItem().toString();
+                    String[] cc = countrycode.split(",");
+                    countrycode = cc[0];
                     boolean allCorrect = true;
 
                     if (email.trim().length() == 0 || !Helper.isValidEmail(email)) {
@@ -140,7 +166,7 @@ public class CreateTicket extends Fragment {
                                 e.printStackTrace();
                             }
 
-                            new CreateNewTicket(Integer.parseInt(Preference.getUserID()), subject, message, helpTopic, SLAPlans, priority, assignTo, phone, fname, lname, email).execute();
+                            new CreateNewTicket(Integer.parseInt(Preference.getUserID()), subject, message, helpTopic, SLAPlans, priority, assignTo, phone, fname, lname, email, countrycode).execute();
 
                         } else
                             Toast.makeText(v.getContext(), "Oops! No internet", Toast.LENGTH_LONG).show();
@@ -162,9 +188,10 @@ public class CreateTicket extends Fragment {
         int SLA;
         int priority;
         int dept;
+        String code;
 
         CreateNewTicket(int userID, String subject, String body,
-                        int helpTopic, int SLA, int priority, int dept, String phone, String fname, String lname, String email) {
+                        int helpTopic, int SLA, int priority, int dept, String phone, String fname, String lname, String email, String code) {
             this.userID = userID;
             this.subject = subject;
             this.body = body;
@@ -176,10 +203,11 @@ public class CreateTicket extends Fragment {
             this.lname = lname;
             this.fname = fname;
             this.email = email;
+            this.code = code;
         }
 
         protected String doInBackground(String... urls) {
-            return new Helpdesk().postCreateTicket(userID, subject, body, helpTopic, SLA, priority, dept, fname, lname, phone, email);
+            return new Helpdesk().postCreateTicket(userID, subject, body, helpTopic, SLA, priority, dept, fname, lname, phone, email, code);
         }
 
         protected void onPostExecute(String result) {
@@ -210,7 +238,7 @@ public class CreateTicket extends Fragment {
         textViewErrorEmail.setText("");
         textViewErrorFirstName.setText("");
         textViewErrorLastName.setText("");
-        textViewErrorPhone.setText("");
+        // textViewErrorPhone.setText("");
         textViewErrorSubject.setText("");
         textViewErrorMessage.setText("");
 
@@ -257,6 +285,8 @@ public class CreateTicket extends Fragment {
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPriority.setAdapter(spinnerArrayAdapter);
 
+        spinnerCountryCode = (Spinner) rootView.findViewById(R.id.spinner_code);
+        spinnerCountryCode.setSelection(GetCountryZipCode());
         buttonSubmit = (Button) rootView.findViewById(co.helpdesk.faveo.R.id.button_submit);
         paddingTop = editTextEmail.getPaddingTop();
         paddingBottom = editTextEmail.getPaddingBottom();
