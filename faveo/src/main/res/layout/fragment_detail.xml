@@ -53,7 +53,7 @@
             android:imeOptions="actionNext"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:maxLines="1"
+           android:inputType="textEmailSubject"
             android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp"
@@ -174,13 +174,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="NAME"
+            android:text="FIRST NAME"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText_name"
+            android:id="@+id/editText_ticketDetail_firstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/edittext_modified_states"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:imeOptions="actionNext"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            android:maxLines="1"
+            android:text="Not Available"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.3"
+            android:text="LAST NAME"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editText_ticketDetail_lastname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"

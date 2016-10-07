@@ -1,20 +1,18 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     tools:context="co.helpdesk.faveo.frontend.fragments.CreateTicket">
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:scrollbars="none"
-        android:overScrollMode="never">
+        android:overScrollMode="never"
+        android:scrollbars="none">
 
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -23,293 +21,323 @@
             tools:context="com.android.faveo.CreateNewTicketActivity">
 
             <LinearLayout
-                android:padding="24dp"
-                android:orientation="vertical"
-                android:background="@color/shade_white"
                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@color/shade_white"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingTop="24dp">
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:alpha="0.3"
                     android:text="Email"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <EditText
-                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:id="@+id/editText_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText_email"
                     android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
-                    android:paddingTop="16dp"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
                     android:paddingBottom="16dp"
-                    android:singleLine="true"
-                    android:imeOptions="actionNext" />
+                    android:paddingTop="16dp"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/textView_error_email"
-                    android:layout_gravity="end"
-                    android:textColor="@color/error_red"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="end"
                     android:layout_marginBottom="12dp"
+                    android:textColor="@color/error_red"
                     android:textSize="12sp" />
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:text="First Name"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:text="Name"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/editText_firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_modified_states"
                     android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                    android:textCursorDrawable="@drawable/color_cursor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText_name"
-                    android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
-                    android:paddingTop="16dp"
+                    android:imeOptions="actionNext"
                     android:paddingBottom="16dp"
-                    android:maxLines="1"
-                    android:imeOptions="actionNext" />
+                    android:paddingTop="16dp"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp"
+                    android:inputType="textPersonName"/>
 
                 <TextView
-                    android:id="@+id/textView_error_name"
-                    android:layout_gravity="end"
-                    android:textColor="@color/error_red"
+                    android:id="@+id/textView_error_firstname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="end"
                     android:layout_marginBottom="12dp"
+                    android:textColor="@color/error_red"
                     android:textSize="12sp" />
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:text="Last Name"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:text="Phone"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textStyle="bold" />
 
                 <EditText
-                    android:digits="0123456789"
-                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:inputType="textPersonName"
+                    android:id="@+id/editText_lastname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText_phone"
                     android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
-                    android:paddingTop="16dp"
+                    android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:imeOptions="actionNext"
                     android:paddingBottom="16dp"
-                    android:maxLines="1"
-                    android:imeOptions="actionNext" />
+                    android:paddingTop="16dp"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textView_error_lastname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/error_red"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:text="Phone"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editText_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_modified_states"
+                    android:digits="0123456789+"
+                    android:imeOptions="actionNext"
+                    android:paddingBottom="16dp"
+                    android:paddingTop="16dp"
+                    android:inputType="phone"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/textView_error_phone"
-                    android:layout_gravity="end"
-                    android:textColor="@color/error_red"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp" />
+                    android:layout_gravity="end"
+                    android:textSize="12sp"
+                    android:text="EX:+91 9999999999"/>
 
             </LinearLayout>
 
             <LinearLayout
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp">
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
                     android:layout_marginTop="24dp"
+                    android:alpha="0.3"
                     android:text="HELP TOPICS"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <Spinner
+                    android:id="@+id/spinner_help_topics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/edittext_modified_states"
                     android:drawSelectorOnTop="true"
                     android:entries="@array/spinnerHelpTopics"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/spinner_help_topics"
-                    android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
-                    android:paddingTop="24dp"
+                    android:imeOptions="actionNext"
                     android:paddingBottom="24dp"
-                    android:layout_marginBottom="24dp"
-                    android:maxLines="1"
-                    android:imeOptions="actionNext" />
+                    android:paddingTop="24dp"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:alpha="0.3"
                     android:text="SLA PLANS"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <Spinner
-                    android:entries="@array/spinnerSlaPlans"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:id="@+id/spinner_sla_plans"
-                    android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
-                    android:paddingTop="24dp"
-                    android:paddingBottom="24dp"
-                    android:layout_marginBottom="24dp"
-                    android:maxLines="1"
-                    android:imeOptions="actionNext" />
-
-<!--                <TextView
-                    android:textColor="@color/black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:text="DUE DATE"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
-
-                <DatePicker
                     android:layout_width="match_parent"
-                    android:layout_height="64dp"
-                    android:maxLength="20"
-                    android:ems="10"
-                    android:id="@+id/date_picker_due_date"
-                    android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
-                    android:singleLine="true"
-                    android:imeOptions="actionNext" />-->
+                    android:background="@drawable/edittext_modified_states"
+                    android:entries="@array/spinnerSlaPlans"
+                    android:imeOptions="actionNext"
+                    android:paddingBottom="24dp"
+                    android:paddingTop="24dp"
+                    android:textSize="14sp" />
+
+                <!--                <TextView
+                                    android:textColor="@color/black"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14sp"
+                                    android:text="DUE DATE"
+                                    android:textStyle="bold"
+                                    android:alpha="0.3"/>
+
+                                <DatePicker
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:maxLength="20"
+                                    android:ems="10"
+                                    android:id="@+id/date_picker_due_date"
+                                    android:background="@drawable/edittext_modified_states"
+                                    android:textSize="14sp"
+                                    android:layout_marginBottom="24dp"
+                                    android:singleLine="true"
+                                    android:imeOptions="actionNext" />-->
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:alpha="0.3"
                     android:text="DEPARTMENT"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <Spinner
-                    android:entries="@array/spinnerAssignTo"
+                    android:id="@+id/spinner_assign_to"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner_assign_to"
-                    android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
-                    android:paddingTop="24dp"
-                    android:paddingBottom="24dp"
                     android:layout_marginBottom="24dp"
-                    android:maxLines="1"
-                    android:imeOptions="actionNext" />
+                    android:background="@drawable/edittext_modified_states"
+                    android:entries="@array/spinnerAssignTo"
+                    android:imeOptions="actionNext"
+                    android:paddingBottom="24dp"
+                    android:paddingTop="24dp"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:alpha="0.3"
                     android:text="SUBJECT"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <EditText
-                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:id="@+id/editText_subject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText_subject"
                     android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
-                    android:paddingTop="16dp"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailSubject"
                     android:paddingBottom="16dp"
-                    android:maxLines="1"
-                    android:imeOptions="actionNext" />
+                    android:paddingTop="16dp"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/textView_error_subject"
-                    android:layout_gravity="end"
-                    android:textColor="@color/error_red"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="end"
                     android:layout_marginBottom="12dp"
+                    android:textColor="@color/error_red"
                     android:textSize="12sp" />
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:alpha="0.3"
                     android:text="MESSAGE"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <EditText
-                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:id="@+id/editText_message"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText_message"
                     android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
-                    android:minLines="2"
+                    android:imeOptions="actionNext"
                     android:maxLines="6"
-                    android:imeOptions="actionNext" />
+                    android:inputType="textLongMessage"
+                    android:minLines="1"
+                    android:paddingBottom="16dp"
+                    android:paddingTop="16dp"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/textView_error_message"
-                    android:layout_gravity="end"
-                    android:textColor="@color/error_red"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="end"
                     android:layout_marginBottom="12dp"
+                    android:textColor="@color/error_red"
                     android:textSize="12sp" />
 
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:alpha="0.3"
                     android:text="PRIORITY"
-                    android:textStyle="bold"
-                    android:alpha="0.3"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <Spinner
-                    android:entries="@array/spinnerPriority"
+                    android:id="@+id/spinner_priority"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner_priority"
-                    android:background="@drawable/edittext_modified_states"
-                    android:textSize="14sp"
-                    android:paddingTop="24dp"
-                    android:paddingBottom="24dp"
                     android:layout_marginBottom="24dp"
-                    android:maxLines="1"
-                    android:imeOptions="actionNext" />
+                    android:background="@drawable/edittext_modified_states"
+                    android:entries="@array/spinnerPriority"
+                    android:imeOptions="actionNext"
+                    android:paddingBottom="24dp"
+                    android:paddingTop="24dp"
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/button_submit"
-                    android:textAllCaps="false"
-                    android:layout_margin="32dp"
-                    android:background="@color/blue_300"
-                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Submit"/>
+                    android:layout_margin="32dp"
+                    android:background="@color/blue_300"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 

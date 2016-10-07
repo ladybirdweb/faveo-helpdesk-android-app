@@ -1,8 +1,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
     android:overScrollMode="never"
     android:scrollbars="none">
@@ -58,7 +58,6 @@
                         android:background="@drawable/edittext_modified_states"
                         android:imeOptions="actionDone"
                         android:inputType="textUri"
-                        android:maxLines="1"
                         android:paddingBottom="16dp"
                         android:paddingEnd="4dp"
                         android:paddingRight="4dp"
@@ -68,12 +67,12 @@
 
                     <android.support.design.widget.FloatingActionButton
                         android:id="@+id/imageButton_verify_url"
-                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
                         android:src="@drawable/ic_done_white_24dp"
-                        app:fabSize="mini"
-                        android:layout_marginRight="4dp"/>
+                        app:fabSize="mini" />
 
                 </LinearLayout>
 
@@ -105,7 +104,7 @@
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/edittext_modified_states"
                     android:imeOptions="actionNext"
-                    android:maxLines="1"
+                    android:inputType="textPersonName"
                     android:paddingBottom="16dp"
                     android:paddingTop="16dp"
                     android:textCursorDrawable="@drawable/color_cursor"
@@ -128,7 +127,6 @@
                     android:background="@drawable/edittext_modified_states"
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
-                    android:maxLines="1"
                     android:paddingBottom="16dp"
                     android:paddingTop="16dp"
                     android:textCursorDrawable="@drawable/color_cursor"

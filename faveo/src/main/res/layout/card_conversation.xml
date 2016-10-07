@@ -10,9 +10,10 @@
         android:id="@+id/thread"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
         android:background="#fff"
-        android:focusable="true">
+        android:clickable="true"
+        android:focusable="true"
+        card_view:cardElevation="4dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -96,8 +97,8 @@
         android:textSize="16sp"
         android:visibility="gone" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/grey_200" />
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0.5dp"-->
+    <!--android:background="@color/grey_200" />-->
 </LinearLayout>

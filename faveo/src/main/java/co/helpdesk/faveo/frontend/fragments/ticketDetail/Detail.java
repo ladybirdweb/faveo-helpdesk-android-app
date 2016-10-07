@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -34,7 +32,7 @@ public class Detail extends Fragment {
     TextView tv_helpTopic, tv_dept;
     TextView textViewOpenedBy;
 
-    EditText editTextSubject, editTextName, editTextEmail,
+    EditText editTextSubject, editTextFirstName, editTextLastName, editTextEmail,
             editTextLastMessage, editTextDueDate, editTextCreatedDate, editTextLastResponseDate;
 
     Spinner spinnerSLAPlans, spinnerDepartment, spinnerStatus, spinnerSource,
@@ -101,7 +99,7 @@ public class Detail extends Fragment {
         Context context;
         String ticketNumber;
 
-        public FetchTicketDetail(Context context, String ticketNumber) {
+        FetchTicketDetail(Context context, String ticketNumber) {
             this.context = context;
             this.ticketNumber = ticketNumber;
         }
@@ -163,6 +161,21 @@ public class Detail extends Fragment {
                     e.printStackTrace();
                 }
 
+                if (jsonObject1.getString("first_name").equals("null")) {
+                    editTextFirstName.setText("Not available");
+                } else
+                    editTextFirstName.setText(jsonObject1.getString("first_name"));
+
+                if (jsonObject1.getString("last_name").equals("null")) {
+                    editTextLastName.setText("Not available");
+                } else
+                    editTextLastName.setText(jsonObject1.getString("last_name"));
+
+                if (jsonObject1.getString("email").equals("null")) {
+                    editTextEmail.setText("Not available");
+                } else
+                    editTextEmail.setText(jsonObject1.getString("email"));
+
                 if (jsonObject1.getString("duedate").equals("null")) {
                     editTextDueDate.setText("Not available");
                 } else {
@@ -186,105 +199,13 @@ public class Detail extends Fragment {
 //                } else
 //                    editTextLastMessage.setText(jsonObject1.getString("last_message"));
 
-                if (jsonObject1.getString("user_name").equals("null")) {
-                    editTextName.setText("Not available");
-                } else
-                    editTextName.setText(jsonObject1.getString("user_name"));
 
-                if (jsonObject1.getString("email").equals("null")) {
-                    editTextEmail.setText("Not available");
-                } else
-                    editTextEmail.setText(jsonObject1.getString("email"));
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
 
-//        protected void onPostExecute(String result) {
-//            progressDialog.dismiss();
-//            if (result == null) {
-//                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
-//                return;
-//            }
-//
-//            JSONObject jsonObject, jsonObject1, jsonObject2;
-//            try {
-//                Log.d("result", "" + result);
-//                jsonObject = new JSONObject(result);
-//                jsonObject1 = jsonObject.getJSONObject("ticket");
-//                jsonObject2 = jsonObject.getJSONObject("tickets");
-//                editTextSubject.setText(jsonObject2.getString("title"));
-//
-//                try {
-//                    spinnerSLAPlans.setSelection(Integer.parseInt(jsonObject1.getString("sla")));
-//                } catch (Exception e) {
-//                }
-//
-//                try {
-//                    spinnerStatus.setSelection(Integer.parseInt(jsonObject1.getString("status")) - 1);
-//                } catch (Exception e) {
-//                }
-//
-//                try {
-//                    spinnerPriority.setSelection(Integer.parseInt(jsonObject1.getString("priority_id")) - 1);
-//                } catch (Exception e) {
-//                }
-//
-//                try {
-//                    spinnerDepartment.setSelection(Integer.parseInt(jsonObject1.getString("dept_id")) - 1);
-//                } catch (Exception e) {
-//                }
-//
-//                try {
-//                    spinnerHelpTopics.setSelection(Integer.parseInt(jsonObject1.getString("help_topic_id")) - 1);
-//                } catch (Exception e) {
-//                }
-//
-//                String assignedTo = jsonObject2.getString("created_user_first_name")
-//                        + " " + jsonObject2.getString("created_user_last_name");
-//                editTextName.setText(assignedTo);
-//
-//                try {
-//                    editTextEmail.setText(jsonObject2.getString("created_user_email"));
-//                } catch (JSONException e) {
-//                    editTextEmail.setText("Not available");
-//                }
-//
-//                try {
-//                    spinnerSource.setSelection(Integer.parseInt(jsonObject1.getString("source")) - 1);
-//                } catch (Exception e) {
-//                }
-//
-//                try {
-//                    String lastMessage = jsonObject2.getString("last_message_first_name")
-//                            + " " + jsonObject2.getString("last_message_last_name");
-//                    editTextLastMessage.setText(lastMessage);
-//                } catch (Exception e) {
-//
-//                }
-//
-//                if (jsonObject2.getString("duedate").equals("null"))
-//                    editTextDueDate.setText("Not available");
-//                else
-//                    editTextDueDate.setText(jsonObject2.getString("duedate"));
-//
-//                if (jsonObject1.getString("created_at").equals("null"))
-//                    editTextCreatedDate.setText("Not available");
-//                else
-//                    editTextCreatedDate.setText(Helper.parseDate(jsonObject1.getString("created_at")));
-//
-//                if (jsonObject1.getString("updated_at").equals("null"))
-//                    editTextLastResponseDate.setText("Not available");
-//                else
-//                    editTextLastResponseDate.setText(Helper.parseDate(jsonObject1.getString("updated_at")));
-//
-//                Log.e("done", "done");
-//
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//        }
     }
 
     public class SaveTicket extends AsyncTask<String, Void, String> {
@@ -322,7 +243,7 @@ public class Detail extends Fragment {
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
-            if (result.contains("ticket_id"))
+            if (result.contains("dept_id"))
                 Toast.makeText(getActivity(), "Update successful", Toast.LENGTH_LONG).show();
             else
                 Toast.makeText(getActivity(), "Failed to update ticket", Toast.LENGTH_LONG).show();
@@ -361,7 +282,8 @@ public class Detail extends Fragment {
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerHelpTopics.setAdapter(spinnerArrayAdapter);
 
-        editTextName = (EditText) rootView.findViewById(R.id.editText_name);
+        editTextFirstName = (EditText) rootView.findViewById(R.id.editText_ticketDetail_firstname);
+        editTextLastName = (EditText) rootView.findViewById(R.id.editText_ticketDetail_lastname);
         editTextEmail = (EditText) rootView.findViewById(R.id.editText_email);
 
         spinnerSource = (Spinner) rootView.findViewById(R.id.spinner_source);

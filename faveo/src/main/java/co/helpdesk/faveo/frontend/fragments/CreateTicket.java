@@ -28,8 +28,8 @@ import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
 
 public class CreateTicket extends Fragment {
 
-    EditText editTextEmail, editTextName, editTextPhone, editTextSubject, editTextMessage;
-    TextView textViewErrorEmail, textViewErrorName, textViewErrorPhone, textViewErrorSubject, textViewErrorMessage;
+    EditText editTextEmail, editTextLastName, editTextFirstName, editTextPhone, editTextSubject, editTextMessage;
+    TextView textViewErrorEmail, textViewErrorLastName, textViewErrorFirstName, textViewErrorPhone, textViewErrorSubject, textViewErrorMessage;
     Spinner spinnerHelpTopic, spinnerSLAPlans, spinnerAssignTo, spinnerPriority;
     Button buttonSubmit;
 
@@ -77,7 +77,8 @@ public class CreateTicket extends Fragment {
                 public void onClick(View v) {
                     resetViews();
                     String email = editTextEmail.getText().toString();
-                    String name = editTextName.getText().toString();
+                    String fname = editTextFirstName.getText().toString();
+                    String lname = editTextLastName.getText().toString();
                     String phone = editTextPhone.getText().toString();
                     String subject = editTextSubject.getText().toString();
                     String message = editTextMessage.getText().toString();
@@ -92,8 +93,12 @@ public class CreateTicket extends Fragment {
                         allCorrect = false;
                     }
 
-                    if (name.trim().length() == 0) {
-                        setErrorState(editTextName, textViewErrorName, "Wrong name");
+                    if (fname.trim().length() == 0) {
+                        setErrorState(editTextFirstName, textViewErrorFirstName, "Fill FirstName");
+                        allCorrect = false;
+                    }
+                    if (lname.trim().length() == 0) {
+                        setErrorState(editTextLastName, textViewErrorLastName, "Fill LastName");
                         allCorrect = false;
                     }
 
@@ -125,19 +130,21 @@ public class CreateTicket extends Fragment {
                             progressDialog.setMessage("Creating ticket");
                             progressDialog.show();
                             try {
-                                name = URLEncoder.encode(name, "utf-8");
+                                fname = URLEncoder.encode(fname, "utf-8");
+                                lname = URLEncoder.encode(lname, "utf-8");
                                 subject = URLEncoder.encode(subject, "utf-8");
                                 message = URLEncoder.encode(message, "utf-8");
+                                email = URLEncoder.encode(email, "utf-8");
+                                phone = URLEncoder.encode(phone, "utf-8");
                             } catch (UnsupportedEncodingException e) {
                                 e.printStackTrace();
                             }
 
-                            new CreateNewTicket(Integer.parseInt(Preference.getUserID()), subject, message, helpTopic, SLAPlans, priority, assignTo).execute();
+                            new CreateNewTicket(Integer.parseInt(Preference.getUserID()), subject, message, helpTopic, SLAPlans, priority, assignTo, phone, fname, lname, email).execute();
 
                         } else
                             Toast.makeText(v.getContext(), "Oops! No internet", Toast.LENGTH_LONG).show();
                     }
-
                 }
             });
         }
@@ -147,15 +154,17 @@ public class CreateTicket extends Fragment {
 
     public class CreateNewTicket extends AsyncTask<String, Void, String> {
         int userID;
+        String phone;
         String subject;
         String body;
+        String fname, lname, email;
         int helpTopic;
         int SLA;
         int priority;
         int dept;
 
-        public CreateNewTicket(int userID, String subject, String body,
-                               int helpTopic, int SLA, int priority, int dept) {
+        CreateNewTicket(int userID, String subject, String body,
+                        int helpTopic, int SLA, int priority, int dept, String phone, String fname, String lname, String email) {
             this.userID = userID;
             this.subject = subject;
             this.body = body;
@@ -163,10 +172,14 @@ public class CreateTicket extends Fragment {
             this.SLA = SLA;
             this.priority = priority;
             this.dept = dept;
+            this.phone = phone;
+            this.lname = lname;
+            this.fname = fname;
+            this.email = email;
         }
 
         protected String doInBackground(String... urls) {
-            return new Helpdesk().postCreateTicket(userID, subject, body, helpTopic, SLA, priority, dept);
+            return new Helpdesk().postCreateTicket(userID, subject, body, helpTopic, SLA, priority, dept, fname, lname, phone, email);
         }
 
         protected void onPostExecute(String result) {
@@ -175,7 +188,7 @@ public class CreateTicket extends Fragment {
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
-            if (result.contains("ticket_id")) {
+            if (result.contains("Ticket created successfully!")) {
                 Toast.makeText(getActivity(), "Ticket created", Toast.LENGTH_LONG).show();
             }
         }
@@ -184,8 +197,10 @@ public class CreateTicket extends Fragment {
     private void resetViews() {
         editTextEmail.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
         editTextEmail.setPadding(0, paddingTop, 0, paddingBottom);
-        editTextName.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
-        editTextName.setPadding(0, paddingTop, 0, paddingBottom);
+        editTextFirstName.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
+        editTextFirstName.setPadding(0, paddingTop, 0, paddingBottom);
+        editTextLastName.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
+        editTextLastName.setPadding(0, paddingTop, 0, paddingBottom);
         editTextPhone.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
         editTextPhone.setPadding(0, paddingTop, 0, paddingBottom);
         editTextSubject.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
@@ -193,10 +208,12 @@ public class CreateTicket extends Fragment {
         editTextMessage.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
         editTextMessage.setPadding(0, paddingTop, 0, paddingBottom);
         textViewErrorEmail.setText("");
-        textViewErrorName.setText("");
+        textViewErrorFirstName.setText("");
+        textViewErrorLastName.setText("");
         textViewErrorPhone.setText("");
         textViewErrorSubject.setText("");
         textViewErrorMessage.setText("");
+
     }
 
     private void setErrorState(EditText editText, TextView textViewError, String error) {
@@ -207,12 +224,15 @@ public class CreateTicket extends Fragment {
 
     private void setUpViews(View rootView) {
         editTextEmail = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_email);
-        editTextName = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_name);
+        editTextFirstName = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_firstname);
+        editTextLastName = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_lastname);
         editTextPhone = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_phone);
+        // editTextPhone.setText("91");
         editTextSubject = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_subject);
         editTextMessage = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_message);
         textViewErrorEmail = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_email);
-        textViewErrorName = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_name);
+        textViewErrorFirstName = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_firstname);
+        textViewErrorLastName = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_lastname);
         textViewErrorPhone = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_phone);
         textViewErrorSubject = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_subject);
         textViewErrorMessage = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_message);

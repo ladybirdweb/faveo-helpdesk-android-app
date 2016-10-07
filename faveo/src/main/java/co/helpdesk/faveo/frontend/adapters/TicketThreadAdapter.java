@@ -48,7 +48,7 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         ticketViewHolder.thread.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ticketViewHolder.textViewMessageTitle.getVisibility() == View.GONE) {
+                if (ticketViewHolder.textViewMessageTitle.getVisibility()==View.GONE) {
                     ticketViewHolder.textViewMessageTitle.setVisibility(View.VISIBLE);
                     ticketViewHolder.webView.setVisibility(View.VISIBLE);
                 } else {

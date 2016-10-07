@@ -4,11 +4,11 @@ package co.helpdesk.faveo.backend.api.v1;
 import android.net.Uri;
 import android.util.Log;
 
-import co.helpdesk.faveo.Constants;
-import co.helpdesk.faveo.Preference;
-
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import co.helpdesk.faveo.Constants;
+import co.helpdesk.faveo.Preference;
 
 /**
  * Created by Sumit
@@ -30,40 +30,54 @@ public class Helpdesk {
     }
 
     public String postCreateTicket(int userID, String subject, String body, int helpTopic,
-                                   int sla, int priority, int dept) {
+                                   int sla, int priority, int dept, String fname, String lname, String phone, String email) {
         Log.d("postCreateTicketAPI", Constants.URL + "helpdesk/create?" +
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&user_id=" + userID +
-                "&subject=" + Uri.encode(subject)+
+                "&subject=" + Uri.encode(subject) +
                 "&body=" + body +
                 "&helptopic=" + helpTopic +
                 "&sla=" + sla +
                 "&priority=" + priority +
                 "&dept=" + dept +
+                "&first_name=" + fname +
+                "&last_name=" + lname +
+                "&phone=" + phone +
+                "&email=" + email +
                 "&token=" + token);
+
         String result = new HTTPConnection().HTTPResponsePost(Constants.URL + "helpdesk/create?" +
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&user_id=" + userID +
-                "&subject=" + Uri.encode(subject)+
+                "&subject=" + Uri.encode(subject) +
                 "&body=" + body +
                 "&helptopic=" + helpTopic +
                 "&sla=" + sla +
                 "&priority=" + priority +
                 "&dept=" + dept +
+                "&first_name=" + fname +
+                "&last_name=" + lname +
+                "&phone=" + phone +
+                "&email=" + email +
                 "&token=" + token, null);
+
         if (result != null && result.equals("tokenRefreshed"))
             return new HTTPConnection().HTTPResponsePost(Constants.URL + "helpdesk/create?" +
                     "api_key=" + apiKey +
                     "&ip=" + IP +
                     "&user_id=" + userID +
-                    "&subject=" + Uri.encode(subject)+
+                    "&subject=" + Uri.encode(subject) +
                     "&body=" + body +
                     "&helptopic=" + helpTopic +
                     "&sla=" + sla +
                     "&priority=" + priority +
                     "&dept=" + dept +
+                    "&first_name=" + fname +
+                    "&last_name=" + lname +
+                    "&phone=" + phone +
+                    "&email=" + email +
                     "&token=" + token, null);
         return result;
     }
@@ -138,7 +152,7 @@ public class Helpdesk {
                 "&ip=" + IP +
                 "&token=" + token +
                 "&ticket_id=" + ticketID +
-                "&subject=" + Uri.encode(subject)+
+                "&subject=" + Uri.encode(subject) +
                 "&sla_plan=" + slaPlan +
                 "&help_topic=" + helpTopic +
                 "&ticket_source=" + ticketSource +
@@ -150,7 +164,7 @@ public class Helpdesk {
                     "&ip=" + IP +
                     "&token=" + token +
                     "&ticket_id=" + ticketID +
-                    "&subject=" + Uri.encode(subject)+
+                    "&subject=" + Uri.encode(subject) +
                     "&sla_plan=" + slaPlan +
                     "&help_topic=" + helpTopic +
                     "&ticket_source=" + ticketSource +
