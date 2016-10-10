@@ -48,6 +48,6 @@ public class FaveoApplication extends Application {
             for (String aChildren : children)
                 return deleteDir(new File(dir, aChildren));
         }
-        return dir.delete();
+        return dir != null && dir.delete();
     }
 }

@@ -79,7 +79,7 @@ public class Conversation extends Fragment {
             swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
-                    if (ticketThreadList.size()!= 0) {
+                    if (ticketThreadList.size() != 0) {
                         ticketThreadList.clear();
                         ticketThreadAdapter.notifyDataSetChanged();
                         new FetchTicketThreads(getActivity()).execute();
@@ -104,14 +104,14 @@ public class Conversation extends Fragment {
                 return null;
             try {
                 JSONArray jsonArray = new JSONArray(result);
-                for(int i = 0; i < jsonArray.length(); i++) {
+                for (int i = 0; i < jsonArray.length(); i++) {
                     TicketThread ticketThread = null;
                     try {
                         String clientPicture = null;
                         try {
                             clientPicture = jsonArray.getJSONObject(i).getString("profile_pic");
                         } catch (Exception e) {
-
+                            e.printStackTrace();
                         }
 /*                        String clientName = jsonArray.getJSONObject(i).getString("poster");
                         if (clientName.equals("null") || clientName.equals(""))
@@ -127,7 +127,7 @@ public class Conversation extends Fragment {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    if(ticketThread != null)
+                    if (ticketThread != null)
                         ticketThreadList.add(ticketThread);
                 }
             } catch (JSONException e) {

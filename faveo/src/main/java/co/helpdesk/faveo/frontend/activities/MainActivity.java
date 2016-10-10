@@ -1,10 +1,8 @@
 package co.helpdesk.faveo.frontend.activities;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
@@ -16,14 +14,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.crashlytics.android.Crashlytics;
-import com.crashlytics.android.core.BuildConfig;
-import com.crashlytics.android.core.CrashlyticsCore;
-import com.crashlytics.android.core.CrashlyticsListener;
 
 import co.helpdesk.faveo.FaveoApplication;
 import co.helpdesk.faveo.Preference;
@@ -59,13 +52,17 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         boolean enabledAnalytics = Preference.isCrashReport();
         Log.d("Crash Preference", Preference.isCrashReport() + "");
 
         if (enabledAnalytics) {
             Fabric.with(this, new Crashlytics());
             Log.d("Crash REport", "enabled");
-        }else  Log.d("Crash REport", "disabled");
+        } else Log.d("Crash REport", "disabled");
+
+        // TODO: Move this to where you establish a user session
+        logUser();
 
         setContentView(R.layout.activity_main);
 
@@ -95,6 +92,17 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         editor.putBoolean("LOGIN_COMPLETE", true);
         editor.apply();
 
+    }
+
+    private void logUser() {
+        // TODO: Use the current user's information
+        // You can call any combination of these three methods
+        if (Preference.getUserID() != null) {
+            Crashlytics.setUserIdentifier(Preference.getUserID());
+            Log.d("user id", Preference.getUserID());
+        }
+//        Crashlytics.setUserEmail("user@fabric.io");
+//        Crashlytics.setUserName("Test User");
     }
 
 

@@ -2,13 +2,11 @@ package co.helpdesk.faveo.frontend.activities;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -272,21 +270,27 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 TicketThread ticketThread;
                 JSONObject jsonObject = new JSONObject(result);
                 JSONObject res = jsonObject.getJSONObject("result");
-                String clientPicture = "";
+//                String clientPicture = "";
+//                try {
+//                    clientPicture = res.getString("profile_pic");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//                String messageTitle = "";
+//                try {
+//                    messageTitle = res.getString("title");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+                String clientName = "";
                 try {
-                    clientPicture = res.getString("profile_pic");
+                    clientName = res.getString("first_name");
+                    if (clientName.equals("") || clientName == null)
+                        clientName = res.getString("user_name");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                String messageTitle = "";
-                try {
-                    messageTitle = res.getString("title");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                String clientName = res.getString("first_name");
-                if (clientName.equals("null") || clientName.equals(""))
-                    clientName = res.getString("user_name");
+
                 String messageTime = res.getString("created_at");
                 String message = res.getString("body");
                 String isReply = "true";
@@ -295,7 +299,9 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message, isReply);
+                // ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message, isReply);
+                ticketThread = new TicketThread(clientName, messageTime, message, isReply);
+
                 if (fragmentConversation != null) {
                     exitReveal();
                     fragmentConversation.addThreadAndUpdate(ticketThread);
@@ -305,7 +311,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
                     exitReveal();
                 }
                 e.printStackTrace();
-               // Toast.makeText(TicketDetailActivity.this, "Unexpected Error ", Toast.LENGTH_LONG).show();
+                // Toast.makeText(TicketDetailActivity.this, "Unexpected Error ", Toast.LENGTH_LONG).show();
             }
         }
     }

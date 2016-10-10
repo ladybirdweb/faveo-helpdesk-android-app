@@ -12,6 +12,13 @@ public class TicketThread {
     public String message;
     public String isReply;
 
+    public TicketThread(String clientName, String messageTime, String message, String isReply) {
+        this.messageTime = messageTime;
+        this.message = message;
+        this.isReply = isReply;
+        this.clientName = clientName;
+    }
+
     public TicketThread(String clientPicture, String clientName, String messageTime, String messageTitle, String message, String isReply) {
         this.clientPicture = clientPicture;
         this.clientName = clientName;
@@ -65,7 +72,7 @@ public class TicketThread {
         return isReply;
     }
 
-    public void setIsReply(String message) {
+    public void setIsReply(String isReply) {
         this.isReply = isReply;
     }
 }

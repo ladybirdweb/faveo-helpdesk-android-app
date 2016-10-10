@@ -35,7 +35,7 @@ public class Helpdesk {
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&user_id=" + userID +
-                "&subject=" + Uri.encode(subject) +
+                "&subject=" + subject +
                 "&body=" + body +
                 "&helptopic=" + helpTopic +
                 "&sla=" + sla +
@@ -52,7 +52,7 @@ public class Helpdesk {
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&user_id=" + userID +
-                "&subject=" + Uri.encode(subject) +
+                "&subject=" + subject+
                 "&body=" + body +
                 "&helptopic=" + helpTopic +
                 "&sla=" + sla +
@@ -70,7 +70,7 @@ public class Helpdesk {
                     "api_key=" + apiKey +
                     "&ip=" + IP +
                     "&user_id=" + userID +
-                    "&subject=" + Uri.encode(subject) +
+                    "&subject=" + subject +
                     "&body=" + body +
                     "&helptopic=" + helpTopic +
                     "&sla=" + sla +

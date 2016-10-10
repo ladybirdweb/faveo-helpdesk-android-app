@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -161,44 +162,44 @@ public class Detail extends Fragment {
                     e.printStackTrace();
                 }
 
-                if (jsonObject1.getString("first_name").equals("null")) {
+                if (jsonObject1.getString("first_name").equals("") || jsonObject1.getString("first_name") == null) {
                     editTextFirstName.setText("Not available");
                 } else
                     editTextFirstName.setText(jsonObject1.getString("first_name"));
 
-                if (jsonObject1.getString("last_name").equals("null")) {
+                if (jsonObject1.getString("last_name").equals("") || jsonObject1.getString("last_name") == null) {
                     editTextLastName.setText("Not available");
                 } else
                     editTextLastName.setText(jsonObject1.getString("last_name"));
 
-                if (jsonObject1.getString("email").equals("null")) {
+                if (jsonObject1.getString("email").equals("") || jsonObject1.getString("email") == null) {
                     editTextEmail.setText("Not available");
                 } else
                     editTextEmail.setText(jsonObject1.getString("email"));
 
-                if (jsonObject1.getString("duedate").equals("null")) {
+                if (jsonObject1.getString("duedate").equals("") || jsonObject1.getString("duedate") == null) {
                     editTextDueDate.setText("Not available");
                 } else {
                     editTextDueDate.setText(Helper.parseDate(jsonObject1.getString("duedate")));
                 }
 
-                if (jsonObject1.getString("created_at").equals("null")) {
+                if (jsonObject1.getString("created_at").equals("") || jsonObject1.getString("created_at") == null) {
                     editTextCreatedDate.setText("Not available");
                 } else {
                     editTextCreatedDate.setText(Helper.parseDate(jsonObject1.getString("created_at")));
                 }
 
-                if (jsonObject1.getString("updated_at").equals("null")) {
+                if (jsonObject1.getString("updated_at").equals("") || jsonObject1.getString("updated_at") == null) {
                     editTextLastResponseDate.setText("Not available");
                 } else {
                     editTextLastResponseDate.setText(Helper.parseDate(jsonObject1.getString("updated_at")));
                 }
 
+
 //                if (jsonObject1.getString("last_message").equals("null")) {
 //                    editTextLastMessage.setText("Not available");
 //                } else
 //                    editTextLastMessage.setText(jsonObject1.getString("last_message"));
-
 
 
             } catch (JSONException e) {
@@ -239,11 +240,12 @@ public class Detail extends Fragment {
 
         protected void onPostExecute(String result) {
             progressDialog.dismiss();
+            Log.d("edit ticket result", result + "");
             if (result == null) {
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
-            if (result.contains("dept_id"))
+            if (result.contains("ticket_id"))
                 Toast.makeText(getActivity(), "Update successful", Toast.LENGTH_LONG).show();
             else
                 Toast.makeText(getActivity(), "Failed to update ticket", Toast.LENGTH_LONG).show();
