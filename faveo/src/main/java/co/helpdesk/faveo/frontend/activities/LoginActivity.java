@@ -19,10 +19,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import com.crashlytics.android.Crashlytics;
-import com.crashlytics.android.core.CrashlyticsCore;
-import com.crashlytics.android.core.CrashlyticsListener;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,7 +29,6 @@ import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Authenticate;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
-import io.fabric.sdk.android.Fabric;
 
 public class LoginActivity extends AppCompatActivity implements InternetReceiver.InternetReceiverListener {
 
@@ -45,7 +40,6 @@ public class LoginActivity extends AppCompatActivity implements InternetReceiver
     int paddingTop, paddingBottom;
     ProgressDialog progressDialogVerifyURL;
     ProgressDialog progressDialogSignIn;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +106,6 @@ public class LoginActivity extends AppCompatActivity implements InternetReceiver
         });
 
     }
-
 
     public class VerifyURL extends AsyncTask<String, Void, String> {
         Context context;
@@ -226,8 +219,12 @@ public class LoginActivity extends AppCompatActivity implements InternetReceiver
     private void setUpViews() {
         progressDialogVerifyURL = new ProgressDialog(this);
         progressDialogVerifyURL.setMessage("Verifying URL");
+        progressDialogVerifyURL.setCancelable(false);
+
         progressDialogSignIn = new ProgressDialog(this);
         progressDialogSignIn.setMessage("Signing in");
+        progressDialogSignIn.setCancelable(false);
+
         editTextCompanyURL = (EditText) findViewById(R.id.editText_company_url);
         if (editTextCompanyURL != null) {
             editTextCompanyURL.setText("http://");

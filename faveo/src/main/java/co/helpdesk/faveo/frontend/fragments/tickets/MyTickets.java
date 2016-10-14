@@ -94,7 +94,7 @@ public class MyTickets extends Fragment {
             });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
-        ((MainActivity) getActivity()).setActionBarTitle("My tickets");
+        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.my_tickets));
         return rootView;
     }
 

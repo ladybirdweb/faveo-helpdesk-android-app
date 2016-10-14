@@ -93,7 +93,7 @@ public class ClosedTickets extends Fragment {
             });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
-        ((MainActivity) getActivity()).setActionBarTitle("Closed tickets");
+        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.closed_tickets));
         return rootView;
     }
 

@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -71,6 +70,8 @@ public class SplashActivity extends AppCompatActivity implements InternetReceive
                 Toast.makeText(SplashActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
+            new FetchData(context).execute();
+
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 JSONObject jsonObject1 = jsonObject.getJSONObject("result");
@@ -123,7 +124,7 @@ public class SplashActivity extends AppCompatActivity implements InternetReceive
                     valueSource += jsonArraySources.getJSONObject(i).getString("name") + ",";
                 }
 
-                new FetchData(context).execute();
+//                 new FetchData(context).execute();
 
             } catch (JSONException e) {
                 Toast.makeText(SplashActivity.this, "Error", Toast.LENGTH_LONG).show();
@@ -171,6 +172,7 @@ public class SplashActivity extends AppCompatActivity implements InternetReceive
                 Toast.makeText(SplashActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
+            Log.e("nextpageURL_splash", nextPageURL);
             Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             intent.putExtra("nextPageURL", nextPageURL);
             startActivity(intent);

@@ -1,8 +1,7 @@
 package co.helpdesk.faveo.backend.api.v1;
 
 import android.util.Log;
-
-import co.helpdesk.faveo.Preference;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,6 +16,9 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import co.helpdesk.faveo.FaveoApplication;
+import co.helpdesk.faveo.Preference;
 
 /**
  * Created by Sumit
@@ -161,7 +163,7 @@ public class HTTPConnection {
             connection.setDoInput(true);
             is = connection.getInputStream();
             connection.getResponseCode();
-            Log.e("Response Codee", connection.getResponseCode() + "");
+            Log.e("Response Code GET()", connection.getResponseCode() + "");
         } catch (IOException e) {
 
             if (e.getMessage().contains("No authentication challenges found")) {
@@ -171,6 +173,8 @@ public class HTTPConnection {
                 new Helpdesk();
                 new Authenticate();
                 return "tokenRefreshed";
+            } else if (e.getMessage().contains("404 Not Found error")) {
+                Toast.makeText(FaveoApplication.getInstance(), "Oops! File not found", Toast.LENGTH_LONG).show();
             }
 
             Log.e("error in faveo", e.getMessage());

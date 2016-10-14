@@ -93,7 +93,7 @@ public class UnassignedTickets extends Fragment {
             });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
-        ((MainActivity) getActivity()).setActionBarTitle("Unassigned tickets");
+        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.unassigned_tickets));
         return rootView;
     }
 

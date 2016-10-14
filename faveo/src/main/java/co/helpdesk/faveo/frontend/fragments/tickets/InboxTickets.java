@@ -38,6 +38,7 @@ public class InboxTickets extends Fragment {
     RecyclerView recyclerView;
     int currentPage = 1;
     static String nextPageURL = "";
+    static String firstPageURl = "";
     View rootView;
     ProgressDialog progressDialog;
     SwipeRefreshLayout swipeRefresh;
@@ -81,6 +82,7 @@ public class InboxTickets extends Fragment {
             rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
             if (getArguments() != null)
                 nextPageURL = getArguments().getString("nextPageURL");
+
             recyclerView = (RecyclerView) rootView.findViewById(R.id.cardList);
             recyclerView.setHasFixedSize(false);
             final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
@@ -119,7 +121,7 @@ public class InboxTickets extends Fragment {
             });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
-        ((MainActivity) getActivity()).setActionBarTitle("Inbox");
+        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.inbox_tickets));
         return rootView;
     }
 

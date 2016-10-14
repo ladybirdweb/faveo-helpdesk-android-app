@@ -93,7 +93,7 @@ public class TrashTickets extends Fragment {
             });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
-        ((MainActivity) getActivity()).setActionBarTitle("Trash");
+        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.trash_tickets));
         return rootView;
     }
 
