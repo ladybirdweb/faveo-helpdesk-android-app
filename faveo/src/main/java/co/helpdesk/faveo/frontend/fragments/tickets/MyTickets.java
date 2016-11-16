@@ -94,7 +94,7 @@ public class MyTickets extends Fragment {
             });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
-        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.my_tickets));
+      //  ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.my_tickets));
         return rootView;
     }
 
@@ -247,6 +247,7 @@ public class MyTickets extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        nextPageURL="";
     }
 
     public interface OnFragmentInteractionListener {

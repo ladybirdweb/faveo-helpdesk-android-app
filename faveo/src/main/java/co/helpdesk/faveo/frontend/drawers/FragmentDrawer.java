@@ -73,7 +73,9 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         context = getActivity().getApplicationContext();
+
         layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         layout.findViewById(R.id.create_ticket).setOnClickListener(this);
         layout.findViewById(R.id.inbox_tickets).setOnClickListener(this);
@@ -130,55 +132,55 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
             case R.id.create_ticket:
                 title = getString(R.string.create_ticket);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
-                if (fragment == null)
+//                if (fragment == null)
                     fragment = new CreateTicket();
                 break;
             case R.id.inbox_tickets:
                 title = getString(R.string.inbox_tickets);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
-                if (fragment == null)
+//                if (fragment == null)
                     fragment = new InboxTickets();
                 break;
             case R.id.my_tickets:
                 title = getString(R.string.my_tickets);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
-                if (fragment == null)
+//                if (fragment == null)
                     fragment = new MyTickets();
                 break;
             case R.id.unassigned_tickets:
                 title = getString(R.string.unassigned_tickets);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
-                if (fragment == null)
+//                if (fragment == null)
                     fragment = new UnassignedTickets();
                 break;
             case R.id.closed_tickets:
                 title = getString(R.string.closed_tickets);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
-                if (fragment == null)
+//                if (fragment == null)
                     fragment = new ClosedTickets();
                 break;
             case R.id.trash_tickets:
                 title = getString(R.string.trash_tickets);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
-                if (fragment == null)
+//                if (fragment == null)
                     fragment = new TrashTickets();
                 break;
             case R.id.client_list:
                 title = getString(R.string.client_list);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
-                if (fragment == null)
+//                if (fragment == null)
                     fragment = new ClientList();
                 break;
             case R.id.settings:
                 title = getString(R.string.settings);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
-                if (fragment == null)
+//                if (fragment == null)
                     fragment = new Settings();
                 break;
             case R.id.about:
                 title = getString(R.string.about);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
-                if (fragment == null)
+//                if (fragment == null)
                     fragment = new About();
                 break;
             case R.id.logout:
@@ -188,6 +190,8 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                break;
+            default:
                 break;
         }
         if (fragment != null) {

@@ -1,39 +1,52 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
     android:background="@color/colorAccent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     android:padding="24dp"
     tools:context="co.helpdesk.faveo.frontend.activities.SplashActivity">
 
     <TextView
-        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:textSize="20sp"
+        android:alpha="0.5"
         android:text="Welcome!"
-        android:textStyle="bold"
-        android:alpha="0.5"/>
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <ImageView
-        android:layout_weight="1"
-        android:padding="40dp"
-        android:src="@drawable/community"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:scaleType="center"/>
+        android:layout_weight="1"
+        android:padding="40dp"
+        android:scaleType="center"
+        android:src="@drawable/community" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:indeterminateOnly="true" />
 
     <TextView
-        android:textColor="@color/black"
+        android:id="@+id/loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:layout_gravity="center_horizontal"
+        android:alpha="0.5"
         android:text="LOADING..."
-        android:textStyle="bold"
-        android:alpha="0.5"/>
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
 
 </LinearLayout>

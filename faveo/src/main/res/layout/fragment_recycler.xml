@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="No Tickets!"
+        android:text="No Records!"
         android:textSize="28sp"
         android:textStyle="bold"
         android:visibility="gone" />

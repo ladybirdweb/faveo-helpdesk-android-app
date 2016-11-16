@@ -93,7 +93,7 @@ public class ClosedTickets extends Fragment {
             });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
-        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.closed_tickets));
+      //  ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.closed_tickets));
         return rootView;
     }
 
@@ -244,6 +244,7 @@ public class ClosedTickets extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        nextPageURL="";
     }
 
     public interface OnFragmentInteractionListener {

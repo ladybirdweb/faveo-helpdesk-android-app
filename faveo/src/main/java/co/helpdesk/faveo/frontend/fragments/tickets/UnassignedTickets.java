@@ -77,6 +77,7 @@ public class UnassignedTickets extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
             progressDialog = new ProgressDialog(getActivity());
@@ -93,7 +94,7 @@ public class UnassignedTickets extends Fragment {
             });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
-        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.unassigned_tickets));
+       // ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.unassigned_tickets));
         return rootView;
     }
 
@@ -245,6 +246,7 @@ public class UnassignedTickets extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        nextPageURL="";
     }
 
     public interface OnFragmentInteractionListener {

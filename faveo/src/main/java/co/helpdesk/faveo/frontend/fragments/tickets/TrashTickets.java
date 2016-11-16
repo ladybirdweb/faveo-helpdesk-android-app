@@ -93,7 +93,7 @@ public class TrashTickets extends Fragment {
             });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
-        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.trash_tickets));
+       // ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.trash_tickets));
         return rootView;
     }
 
@@ -246,6 +246,7 @@ public class TrashTickets extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        nextPageURL="";
     }
 
     public interface OnFragmentInteractionListener {

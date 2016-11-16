@@ -70,7 +70,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_done_white_24dp"
+                        android:src="@mipmap/ic_arrow_forward_white_24dp"
                         app:fabSize="mini"
                         android:layout_marginRight="8dp"
                         android:fadingEdgeLength="1dp"/>

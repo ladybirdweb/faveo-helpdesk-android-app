@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class OpenTickets extends Fragment {
 
     private String mParam1;
     private String mParam2;
+    TextView tv;
 
     View rootView;
     RecyclerView recyclerView;
@@ -60,6 +62,7 @@ public class OpenTickets extends Fragment {
             final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
             linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
             recyclerView.setLayoutManager(linearLayoutManager);
+            tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
         return rootView;
     }
@@ -70,10 +73,14 @@ public class OpenTickets extends Fragment {
         }
     }
 
-    public void populateData(List <TicketGlimpse> openTickets, String clientName) {
+    public void populateData(List<TicketGlimpse> openTickets, String clientName) {
         ticketGlimpseAdapter = new TicketGlimpseAdapter(openTickets, clientName);
-        if (recyclerView != null)
+        if (recyclerView != null) {
             recyclerView.setAdapter(ticketGlimpseAdapter);
+            if (ticketGlimpseAdapter.getItemCount() == 0) {
+                tv.setVisibility(View.VISIBLE);
+            } else tv.setVisibility(View.GONE);
+        }
     }
 
     @Override

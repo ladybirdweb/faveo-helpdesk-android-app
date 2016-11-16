@@ -92,7 +92,7 @@ public class InboxTickets extends Fragment {
             progressDialog.setMessage("Fetching tickets");
             progressDialog.show();
             new ReadFromDatabase(getActivity()).execute();
-
+           // new FetchFirst(getActivity()).execute();
             swipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefresh);
             swipeRefresh.setColorSchemeResources(R.color.faveo_blue);
             swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -121,7 +121,7 @@ public class InboxTickets extends Fragment {
             });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
-        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.inbox_tickets));
+       // ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.inbox_tickets));
         return rootView;
     }
 
@@ -306,6 +306,7 @@ public class InboxTickets extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        nextPageURL="";
     }
 
     public interface OnFragmentInteractionListener {

@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -22,6 +23,8 @@ public class ClosedTickets extends Fragment {
 
     private String mParam1;
     private String mParam2;
+
+    TextView tv;
 
     View rootView;
     RecyclerView recyclerView;
@@ -60,7 +63,9 @@ public class ClosedTickets extends Fragment {
             final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
             linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
             recyclerView.setLayoutManager(linearLayoutManager);
+            tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
+
         return rootView;
     }
 
@@ -70,10 +75,14 @@ public class ClosedTickets extends Fragment {
         }
     }
 
-    public void populateData(List <TicketGlimpse> closedTickets, String clientName) {
+    public void populateData(List<TicketGlimpse> closedTickets, String clientName) {
         ticketGlimpseAdapter = new TicketGlimpseAdapter(closedTickets, clientName);
-        if (recyclerView != null)
+        if (recyclerView != null) {
             recyclerView.setAdapter(ticketGlimpseAdapter);
+            if (ticketGlimpseAdapter.getItemCount() == 0) {
+                tv.setVisibility(View.VISIBLE);
+            } else tv.setVisibility(View.GONE);
+        }
     }
 
     @Override
