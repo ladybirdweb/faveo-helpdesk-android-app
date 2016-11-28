@@ -126,7 +126,6 @@ public class SplashActivity extends AppCompatActivity implements InternetReceive
                     valueSource += jsonArraySources.getJSONObject(i).getString("name") + ",";
                 }
 
-//                 new FetchData(context).execute();
 
             } catch (JSONException e) {
                 Toast.makeText(SplashActivity.this, "Error", Toast.LENGTH_LONG).show();
@@ -176,7 +175,7 @@ public class SplashActivity extends AppCompatActivity implements InternetReceive
                 Toast.makeText(SplashActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
-            Log.e("nextpageURL_splash", nextPageURL);
+            Log.e("nextpageURL_splash", nextPageURL+"");
             Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             intent.putExtra("nextPageURL", nextPageURL);
             startActivity(intent);

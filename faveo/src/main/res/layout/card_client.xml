@@ -1,10 +1,9 @@
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/client"
-    android:padding="8dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorAccent" >
+    android:background="@color/colorAccent"
+    android:padding="8dp">
 
     <TextView
         android:id="@+id/textView_client_id"
@@ -12,66 +11,72 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true" />
 
-    <com.makeramen.roundedimageview.RoundedImageView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/imageView_default_profile"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerVertical="true"
         android:src="@drawable/default_pic"
         app:riv_corner_radius="30dip"
         app:riv_mutate_background="true"
-        app:riv_tile_mode="repeat"
         app:riv_oval="true"
-        android:layout_width="64dp"
-        android:layout_centerVertical="true"
-        android:layout_height="64dp" />
+        app:riv_tile_mode="repeat" />
 
     <TextView
         android:id="@+id/textView_client_name"
-        android:layout_toRightOf="@+id/imageView_default_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
-        android:text="Karthik Sen"
-        android:textSize="20sp"
-        android:textColor="@color/black"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/imageView_default_profile"
+        android:fontFamily="sans-serif-bold"
         android:singleLine="true"
-        android:fontFamily="sans-serif-bold" />
+        android:text="Karthik Sen"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <TextView
-        android:drawableLeft="@drawable/email"
-        android:drawablePadding="8dp"
         android:id="@+id/textView_client_email"
-        android:layout_below="@+id/textView_client_name"
-        android:layout_toRightOf="@+id/imageView_default_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_client_name"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="8dp"
-        android:text="karthiksen@ladybirdweb.com"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:layout_centerHorizontal="true"
-        android:singleLine="true"
+        android:layout_toRightOf="@+id/imageView_default_profile"
         android:alpha=".54"
-        android:fontFamily="sans-serif-medium"/>
+        android:drawableLeft="@drawable/email"
+        android:drawablePadding="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:singleLine="true"
+        android:text="karthiksen@ladybirdweb.com"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <TextView
-        android:drawableLeft="@drawable/phone"
-        android:drawablePadding="8dp"
         android:id="@+id/textView_client_phone"
-        android:layout_below="@+id/textView_client_email"
-        android:layout_toRightOf="@+id/imageView_default_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="18dp"
-        android:text="9876543210"
-        android:textSize="16sp"
-        android:textColor="@color/black"
+        android:layout_below="@+id/textView_client_email"
         android:layout_centerHorizontal="true"
-        android:singleLine="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@+id/imageView_default_profile"
         android:alpha=".54"
-        android:fontFamily="sans-serif-medium"/>
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:singleLine="true"
+        android:text="9876543210"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/textView_client_phone"
+        android:layout_marginTop="16dp"
+        android:background="@color/grey_200" />
 
 </RelativeLayout>

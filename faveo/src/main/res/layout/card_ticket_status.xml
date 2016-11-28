@@ -1,46 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="64dp"
-    android:background="@color/colorAccent" >
+    android:background="@color/colorAccent">
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/textView_ticket_id"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/textView_ticket_number"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
     <View
-        android:visibility="invisible"
         android:layout_width="6dp"
         android:layout_height="match_parent"
-        android:background="@color/blue"/>
+        android:background="@color/blue"
+        android:visibility="invisible" />
 
     <ImageView
-        android:layout_margin="16dp"
         android:layout_width="32dp"
         android:layout_height="32dp"
+        android:layout_margin="16dp"
         android:alpha="0.27"
-        android:src="@drawable/done_black"/>
+        android:src="@drawable/done_black"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/textView_ticket_subject"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="14sp"
-        android:gravity="center"
-        android:textColor="@color/black"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="Increase sales value"
-        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_ticket_id"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="75dp"
+        android:layout_marginStart="75dp"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_toRightOf="@+id/imageView"
         android:ellipsize="end"
-        android:layout_marginRight="8dp"/>
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="Increase sales value"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        tools:ignore="HardcodedText,UnknownId" />
 
-</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey_200" />
+
+</RelativeLayout>

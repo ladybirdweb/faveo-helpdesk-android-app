@@ -252,6 +252,7 @@ public class ClientList extends Fragment implements View.OnClickListener {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        nextPageURL="";
     }
 
     @Override

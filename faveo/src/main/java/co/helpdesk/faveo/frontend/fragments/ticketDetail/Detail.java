@@ -143,6 +143,7 @@ public class Detail extends Fragment {
                 }
 
                 try {
+                   // spinnerDepartment.setPrompt();
                     spinnerDepartment.setSelection(Integer.parseInt(jsonObject1.getString("dept_id")) - 1);
                 } catch (Exception e) {
                     tv_dept.setVisibility(View.GONE);
