@@ -89,14 +89,14 @@ public class Helper {
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-            Date d = sdf.parse(dateToParse);
+            Date dAte = sdf.parse(dateToParse);
 
             SimpleDateFormat output = new SimpleDateFormat("d MMM yyyy  HH:mm");
             output.setTimeZone(TimeZone.getDefault());
 
-            String formattedTime = output.format(d);
+            String formattedTime = output.format(dAte);
             SimpleDateFormat day = new SimpleDateFormat("dd");
-            String formattedDay = day.format(d) + Helper.getDayOfMonthSuffix(Integer.parseInt(day.format(d)));
+            String formattedDay = day.format(dAte) + Helper.getDayOfMonthSuffix(Integer.parseInt(day.format(dAte)));
             formattedTime = formattedTime.replaceFirst(formattedTime.substring(0, formattedTime.indexOf(" ")), formattedDay);
             sdf.parse(dateToParse);
             return formattedTime;
