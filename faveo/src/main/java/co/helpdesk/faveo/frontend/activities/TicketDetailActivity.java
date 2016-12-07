@@ -80,10 +80,10 @@ public class TicketDetailActivity extends AppCompatActivity implements
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
-        ticketID = getIntent().getStringExtra("TICKET_ID");
-        ticketNumber = getIntent().getStringExtra("TICKET_NUMBER");
-        ticketOpenedBy = getIntent().getStringExtra("TICKET_OPENED_BY");
-        ticketSubject = getIntent().getStringExtra("TICKET_SUBJECT");
+        ticketID = getIntent().getStringExtra("ticket_id");
+        ticketNumber = getIntent().getStringExtra("ticket_number");
+        ticketOpenedBy = getIntent().getStringExtra("ticket_opened_by");
+        ticketSubject = getIntent().getStringExtra("ticket_subject");
         TextView mTitle = (TextView) mToolbar.findViewById(R.id.title);
         mTitle.setText(ticketNumber == null ? "Unknown" : ticketNumber);
 

@@ -42,6 +42,7 @@ public class Detail extends Fragment {
 
     ArrayAdapter<String> spinnerSlaArrayAdapter,spinnerAssignToArrayAdapter,spinnerStatusArrayAdapter,
     spinnerSourceArrayAdapter,spinnerHelpArrayAdapter,spinnerDeptArrayAdapter,spinnerPriArrayAdapter;
+
     ProgressDialog progressDialog;
 
     Button buttonSave;

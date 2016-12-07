@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,9 +100,18 @@ public class Conversation extends Fragment {
         }
 
         protected String doInBackground(String... urls) {
-            String result = new Helpdesk().getTicketThread(TicketDetailActivity.ticketID);
-            if (result == null)
-                return null;
+            return new Helpdesk().getTicketThread(TicketDetailActivity.ticketID);
+        }
+
+        protected void onPostExecute(String result) {
+            if (swipeRefresh.isRefreshing())
+                swipeRefresh.setRefreshing(false);
+            if (progressDialog.isShowing())
+                progressDialog.dismiss();
+            if (result == null) {
+                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
+                return;
+            }
             try {
                 JSONArray jsonArray = new JSONArray(result);
                 for (int i = 0; i < jsonArray.length(); i++) {
@@ -122,6 +132,7 @@ public class Conversation extends Fragment {
                         String messageTime = jsonArray.getJSONObject(i).getString("created_at");
                         String messageTitle = jsonArray.getJSONObject(i).getString("title");
                         String message = jsonArray.getJSONObject(i).getString("body");
+                        Log.d("body:", message);
                         String isReply = jsonArray.getJSONObject(i).getString("is_internal").equals("0") ? "false" : "true";
                         ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message, isReply);
                     } catch (JSONException e) {
@@ -133,18 +144,7 @@ public class Conversation extends Fragment {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            return "success";
-        }
 
-        protected void onPostExecute(String result) {
-            if (swipeRefresh.isRefreshing())
-                swipeRefresh.setRefreshing(false);
-            if (progressDialog.isShowing())
-                progressDialog.dismiss();
-            if (result == null) {
-                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
-                return;
-            }
             recyclerView = (RecyclerView) rootView.findViewById(R.id.cardList);
             recyclerView.setHasFixedSize(false);
             final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
@@ -155,7 +155,6 @@ public class Conversation extends Fragment {
             recyclerView.setAdapter(ticketThreadAdapter);
         }
     }
-
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);

@@ -36,8 +36,8 @@ public class Helpdesk {
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&user_id=" + userID +
-                "&subject=" + subject +
-                "&body=" + body +
+                "&subject=" + Uri.encode(subject) +
+                "&body=" +Uri.encode(body) +
                 "&helptopic=" + helpTopic +
                 "&sla=" + sla +
                 "&priority=" + priority +
@@ -53,8 +53,8 @@ public class Helpdesk {
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&user_id=" + userID +
-                "&subject=" + subject+
-                "&body=" + body +
+                "&subject=" +Uri.encode(subject)+
+                "&body=" + Uri.encode(body) +
                 "&helptopic=" + helpTopic +
                 "&sla=" + sla +
                 "&priority=" + priority +
@@ -71,8 +71,8 @@ public class Helpdesk {
                     "api_key=" + apiKey +
                     "&ip=" + IP +
                     "&user_id=" + userID +
-                    "&subject=" + subject +
-                    "&body=" + body +
+                    "&subject=" + Uri.encode(subject) +
+                    "&body=" + Uri.encode(body) +
                     "&helptopic=" + helpTopic +
                     "&sla=" + sla +
                     "&priority=" + priority +
@@ -93,14 +93,14 @@ public class Helpdesk {
                 "&token=" + token +
                 "&ticketid=" + ticketID +
                 "&userid=" + userID +
-                "&body=" + note);
+                "&body=" + Uri.encode(note));
         String result = new HTTPConnection().HTTPResponsePost(Constants.URL + "helpdesk/internal-note?" +
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&token=" + token +
                 "&ticketid=" + ticketID +
                 "&userid=" + userID +
-                "&body=" + note, null);
+                "&body=" + Uri.encode(note), null);
         if (result != null && result.equals("tokenRefreshed"))
             return new HTTPConnection().HTTPResponsePost(Constants.URL + "helpdesk/internal-note?" +
                     "api_key=" + apiKey +
@@ -108,7 +108,7 @@ public class Helpdesk {
                     "&token=" + token +
                     "&ticketid=" + ticketID +
                     "&userid=" + userID +
-                    "&body=" + note, null);
+                    "&body=" + Uri.encode(note), null);
         return result;
     }
 
@@ -119,14 +119,15 @@ public class Helpdesk {
                 "&token=" + token +
                 "&ticket_ID=" + ticketID +
                 "&cc=" + cc +
-                "&reply_content=" + replyContent);
+                "&reply_content=" +Uri.encode(replyContent));
         String result = new HTTPConnection().HTTPResponsePost(Constants.URL + "helpdesk/reply?" +
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&token=" + token +
                 "&ticket_ID=" + ticketID +
                 "&cc=" + cc +
-                "&reply_content=" + replyContent, null);
+                "&reply_content=" + Uri.encode(replyContent),
+                null);
         if (result != null && result.equals("tokenRefreshed"))
             return new HTTPConnection().HTTPResponsePost(Constants.URL + "helpdesk/reply?" +
                     "api_key=" + apiKey +
@@ -134,7 +135,7 @@ public class Helpdesk {
                     "&token=" + token +
                     "&ticket_ID=" + ticketID +
                     "&cc=" + cc +
-                    "&reply_content=" + replyContent, null);
+                    "&reply_content=" + Uri.encode(replyContent), null);
         return result;
     }
 
