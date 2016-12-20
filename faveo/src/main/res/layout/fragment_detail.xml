@@ -22,11 +22,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:gravity="center"
+            android:maxLines="1"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:maxLines="1"
             android:text="Client name"
-            android:textAllCaps="true"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -46,14 +45,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
-            android:clickable="true"
             android:cursorVisible="true"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
             android:imeOptions="actionNext"
+            android:maxLines="3"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-           android:inputType="textEmailSubject"
             android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp"
@@ -76,9 +72,9 @@
             android:background="@drawable/edittext_modified_states"
             android:entries="@array/spinnerSlaPlans"
             android:imeOptions="actionNext"
+            android:maxLines="1"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:maxLines="1"
             android:textSize="14sp" />
 
         <TextView
@@ -98,9 +94,9 @@
             android:background="@drawable/edittext_modified_states"
             android:entries="@array/spinnerPriority"
             android:imeOptions="actionNext"
+            android:maxLines="1"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:maxLines="1"
             android:textSize="14sp" />
 
         <TextView
@@ -120,9 +116,9 @@
             android:background="@drawable/edittext_modified_states"
             android:entries="@array/spinnerPriority"
             android:imeOptions="actionNext"
+            android:maxLines="1"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:maxLines="1"
             android:textSize="14sp" />
 
         <TextView
@@ -142,9 +138,9 @@
             android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:imeOptions="actionNext"
+            android:maxLines="1"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:maxLines="1"
             android:textSize="14sp" />
 
         <TextView
@@ -165,9 +161,9 @@
             android:background="@drawable/edittext_modified_states"
             android:entries="@array/spinnerHelpTopics"
             android:imeOptions="actionNext"
+            android:maxLines="1"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:maxLines="1"
             android:textSize="14sp" />
 
         <TextView
@@ -191,12 +187,13 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
+            android:maxLines="1"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:maxLines="1"
             android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -218,9 +215,9 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
+            android:maxLines="1"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:maxLines="1"
             android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp" />
@@ -246,9 +243,9 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
+            android:maxLines="1"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:maxLines="1"
             android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp" />
@@ -270,9 +267,9 @@
             android:background="@drawable/edittext_modified_states"
             android:entries="@array/spinnerHelpTopics"
             android:imeOptions="actionNext"
+            android:maxLines="1"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:maxLines="1"
             android:textSize="14sp" />
 
         <!--<TextView-->
@@ -326,9 +323,9 @@
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
             android:maxLength="20"
+            android:maxLines="1"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:maxLines="1"
             android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp" />
@@ -355,17 +352,18 @@
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
             android:maxLength="20"
+            android:maxLines="1"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:maxLines="1"
             android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"  android:text="LAST RESPONSE DATE"
+            android:layout_height="wrap_content"
             android:alpha="0.3"
+            android:text="LAST RESPONSE DATE"
 
             android:textColor="@color/black"
             android:textSize="14sp"
@@ -384,9 +382,9 @@
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
             android:maxLength="20"
+            android:maxLines="1"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:maxLines="1"
             android:text="Not Available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp" />
@@ -411,24 +409,24 @@
             android:entries="@array/spinnerAssignTo"
             android:imeOptions="actionNext"
             android:maxLength="20"
+            android:maxLines="1"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:maxLines="1"
             android:textSize="14sp"
             android:visibility="gone" />
 
         <Button
             android:id="@+id/button_save"
             android:layout_width="180dp"
-            android:layout_gravity="center"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="32dp"
             android:background="@color/blue_300"
             android:text="Save"
-            android:textStyle="bold"
-            android:textSize="16sp"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

@@ -284,7 +284,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
 //                }
                 String clientName = "";
                 try {
-                    clientName = res.getString("first_name");
+                    clientName = res.getString("first_name") + " " + res.getString("last_name");
                     if (clientName.equals("") || clientName == null)
                         clientName = res.getString("user_name");
                 } catch (Exception e) {

@@ -93,6 +93,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_b0b69ac59eb78d4478380ccab48323ea529350ad/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/narendra/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
         jumboMode="true"
         optimize="true"

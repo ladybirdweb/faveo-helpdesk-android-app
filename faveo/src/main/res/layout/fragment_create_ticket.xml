@@ -39,12 +39,12 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:inputType="textEmailAddress"
                     android:id="@+id/editText_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_modified_states"
                     android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
                     android:paddingBottom="16dp"
                     android:paddingTop="16dp"
                     android:textCursorDrawable="@drawable/color_cursor"
@@ -139,13 +139,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
+                        android:layout_marginRight="8dp"
                         android:background="@drawable/edittext_modified_states"
                         android:drawSelectorOnTop="true"
                         android:entries="@array/spinnerCountryCodes"
                         android:imeOptions="actionNext"
                         android:paddingBottom="16dp"
-                        android:textSize="14sp"
-                        android:layout_marginRight="8dp"/>
+                        android:textSize="14sp" />
 
                     <EditText
                         android:id="@+id/editText_phone"
@@ -167,8 +167,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:paddingTop="2dp"
                     android:paddingBottom="2dp"
+                    android:paddingTop="2dp"
                     android:text="EX:+91 9999999999"
                     android:textSize="12sp" />
 
@@ -282,7 +282,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_modified_states"
                     android:imeOptions="actionNext"
-                    android:inputType="text"
+                    android:maxLines="3"
                     android:paddingBottom="16dp"
                     android:paddingTop="16dp"
                     android:textCursorDrawable="@drawable/color_cursor"
@@ -311,10 +311,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_modified_states"
-                    android:imeOptions="actionNext"
-                    android:inputType="textLongMessage"
-                    android:maxLines="6"
-                    android:minLines="2"
+                    android:imeOptions="actionDone"
+                    android:inputType="textMultiLine"
+                    android:isScrollContainer="true"
+                    android:maxLength="2000"
+                    android:maxLines="10"
                     android:paddingBottom="16dp"
                     android:paddingTop="16dp"
                     android:textCursorDrawable="@drawable/color_cursor"
@@ -354,9 +355,9 @@
                     android:id="@+id/button_submit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginBottom="54dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:background="@color/blue_300"
                     android:text="Submit"
                     android:textAllCaps="false"

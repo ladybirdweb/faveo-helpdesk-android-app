@@ -170,7 +170,6 @@ public class SplashActivity extends AppCompatActivity implements InternetReceive
         protected void onPostExecute(String result) {
             progressDialog.setVisibility(View.GONE);
             loading.setText("Done Loading!");
-            Log.d("Data Response code : ", result);
             if (result == null) {
                 Toast.makeText(SplashActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
                 return;

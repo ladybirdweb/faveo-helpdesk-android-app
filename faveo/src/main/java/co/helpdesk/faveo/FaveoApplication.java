@@ -4,20 +4,24 @@ package co.helpdesk.faveo;
  * Created by sumit on 3/13/2016.
  */
 
+
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
+
 import com.crashlytics.android.Crashlytics;
-import io.fabric.sdk.android.Fabric;
+
 import java.io.File;
 
-import android.app.Application;
-
 import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
+import io.fabric.sdk.android.Fabric;
 
-public class FaveoApplication extends Application {
+public class FaveoApplication extends MultiDexApplication {
     private static FaveoApplication instance;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        MultiDex.install(this);
         Fabric.with(this, new Crashlytics());
         instance = this;
     }

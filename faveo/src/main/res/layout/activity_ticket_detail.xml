@@ -1,5 +1,4 @@
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,10 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorAccent"
@@ -23,17 +21,17 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="?attr/actionBarSize"
-                android:background="?attr/colorPrimary" >
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize">
 
                 <TextView
                     android:id="@+id/title"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:textColor="@color/black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </android.support.v7.widget.Toolbar>
 
@@ -41,163 +39,168 @@
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:tabGravity="fill"
                 app:tabIndicatorColor="@color/blue"
-                app:tabMode="fixed"
-                app:tabGravity="fill"/>
+                app:tabMode="fixed" />
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         </LinearLayout>
 
         <View
             android:id="@+id/overlay"
-            android:visibility="invisible"
-            android:clickable="true"
-            android:background="@color/transparent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:clickable="true"
+            android:visibility="invisible" />
 
-        <io.codetail.widget.RevealLinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <io.codetail.widget.RevealLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true">
 
             <LinearLayout
-                android:visibility="gone"
-                android:background="@color/grey_200"
-                android:clickable="true"
-                android:paddingTop="24dp"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:orientation="vertical"
                 android:id="@+id/reveal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/grey_200"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingTop="24dp"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:id="@+id/section_internal_note"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="12dp"
+                    android:orientation="vertical">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:textColor="@color/black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
                         android:text="Internal note"
-                        android:textStyle="bold"/>
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="14sp"
+                        android:alpha="0.3"
                         android:text="MESSAGE"
-                        android:textStyle="bold"
-                        android:alpha="0.3"/>
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <EditText
-                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:id="@+id/editText_internal_note"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/editText_internal_note"
                         android:background="@drawable/edittext_modified_states"
-                        android:textSize="14sp"
-                        android:paddingTop="16dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="textMultiLine"
+                        android:isScrollContainer="true"
+                        android:maxLength="2000"
+                        android:maxLines="10"
                         android:paddingBottom="16dp"
-                        android:maxLines="1"
-                        android:imeOptions="actionNext" />
+                        android:paddingTop="16dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="14sp" />
 
                     <Button
                         android:id="@+id/button_create"
-                        android:textAllCaps="false"
-                        android:background="@color/blue_300"
-                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:layout_margin="12dp"
-                        android:text="Create"/>
+                        android:background="@color/blue_300"
+                        android:text="Create"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/section_reply"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:textColor="@color/black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
                         android:text="Reply"
-                        android:textStyle="bold"/>
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="14sp"
+                        android:alpha="0.3"
                         android:text="CC"
-                        android:textStyle="bold"
-                        android:alpha="0.3"/>
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <EditText
-                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:id="@+id/editText_cc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/editText_cc"
                         android:background="@drawable/edittext_modified_states"
-                        android:textSize="14sp"
-                        android:paddingTop="16dp"
+                        android:imeOptions="actionNext"
+                        android:maxLines="3"
                         android:paddingBottom="16dp"
-                        android:singleLine="true"
-                        android:imeOptions="actionNext" />
+                        android:paddingTop="16dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="14sp" />
 
 
                     <TextView
-                        android:layout_marginTop="8dp"
-                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="14sp"
+                        android:layout_marginTop="8dp"
+                        android:alpha="0.3"
                         android:text="MESSAGE"
-                        android:textStyle="bold"
-                        android:alpha="0.3"/>
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <EditText
-                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:id="@+id/editText_reply_message"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/editText_reply_message"
                         android:background="@drawable/edittext_modified_states"
-                        android:textSize="14sp"
-                        android:paddingTop="16dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="textMultiLine"
+                        android:isScrollContainer="true"
+                        android:maxLength="2000"
+                        android:maxLines="10"
                         android:paddingBottom="16dp"
-                        android:maxLines="1"
-                        android:imeOptions="actionNext" />
+                        android:paddingTop="16dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="14sp" />
 
                     <Button
                         android:id="@+id/button_send"
-                        android:textAllCaps="false"
-                        android:background="@color/blue_300"
-                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:layout_margin="12dp"
-                        android:text="Send"/>
+                        android:background="@color/blue_300"
+                        android:text="Send"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
@@ -211,10 +214,10 @@
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@drawable/l"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/l"
         app:backgroundTint="@color/colorPrimary" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -26,7 +26,7 @@ public class Helpdesk {
     }
 
     public String getBaseURL(String companyURL) {
-        Log.d("verifyURLAPI",companyURL + "api/v1/helpdesk/url?url=" + companyURL.substring(0, companyURL.length() - 1) + "&api_key=" + apiKey);
+        Log.d("verifyURLAPI", companyURL + "api/v1/helpdesk/url?url=" + companyURL.substring(0, companyURL.length() - 1) + "&api_key=" + apiKey);
         return new HTTPConnection().HTTPResponseGet(companyURL + "api/v1/helpdesk/url?url=" + companyURL.substring(0, companyURL.length() - 1) + "&api_key=" + apiKey);
     }
 
@@ -36,8 +36,8 @@ public class Helpdesk {
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&user_id=" + userID +
-                "&subject=" + subject +
-                "&body=" +body +
+                "&subject=" + Uri.encode(subject) +
+                "&body=" + Uri.encode(body) +
                 "&helptopic=" + helpTopic +
                 "&sla=" + sla +
                 "&priority=" + priority +
@@ -53,8 +53,8 @@ public class Helpdesk {
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&user_id=" + userID +
-                "&subject=" +subject+
-                "&body=" + body +
+                "&subject=" + Uri.encode(subject) +
+                "&body=" + Uri.encode(body) +
                 "&helptopic=" + helpTopic +
                 "&sla=" + sla +
                 "&priority=" + priority +
@@ -71,8 +71,8 @@ public class Helpdesk {
                     "api_key=" + apiKey +
                     "&ip=" + IP +
                     "&user_id=" + userID +
-                    "&subject=" + subject +
-                    "&body=" + body +
+                    "&subject=" + Uri.encode(subject) +
+                    "&body=" + Uri.encode(body) +
                     "&helptopic=" + helpTopic +
                     "&sla=" + sla +
                     "&priority=" + priority +
@@ -119,14 +119,14 @@ public class Helpdesk {
                 "&token=" + token +
                 "&ticket_ID=" + ticketID +
                 "&cc=" + cc +
-                "&reply_content=" +replyContent);
+                "&reply_content=" + replyContent);
         String result = new HTTPConnection().HTTPResponsePost(Constants.URL + "helpdesk/reply?" +
-                "api_key=" + apiKey +
-                "&ip=" + IP +
-                "&token=" + token +
-                "&ticket_ID=" + ticketID +
-                "&cc=" + cc +
-                "&reply_content=" +replyContent,
+                        "api_key=" + apiKey +
+                        "&ip=" + IP +
+                        "&token=" + token +
+                        "&ticket_ID=" + ticketID +
+                        "&cc=" + cc +
+                        "&reply_content=" + replyContent,
                 null);
         if (result != null && result.equals("tokenRefreshed"))
             return new HTTPConnection().HTTPResponsePost(Constants.URL + "helpdesk/reply?" +
@@ -135,18 +135,18 @@ public class Helpdesk {
                     "&token=" + token +
                     "&ticket_ID=" + ticketID +
                     "&cc=" + cc +
-                    "&reply_content=" +replyContent, null);
+                    "&reply_content=" + replyContent, null);
         return result;
     }
 
-    public String postEditTicket(int ticketID, String subject, int slaPlan, int helpTopic,
+    public String postE0ditTicket(int ticketID, String subject, int slaPlan, int helpTopic,
                                  int ticketSource, int ticketPriority, int ticketStatus) {
         Log.d("EditTicketAPI", Constants.URL + "helpdesk/edit?" +
                 "api_key=" + apiKey +
                 "&ip=" + IP +
                 "&token=" + token +
                 "&ticket_id=" + ticketID +
-                "&subject=" + subject +
+                "&subject=" + Uri.encode(subject) +
                 "&sla_plan=" + slaPlan +
                 "&help_topic=" + helpTopic +
                 "&ticket_source=" + ticketSource +
@@ -157,7 +157,7 @@ public class Helpdesk {
                 "&ip=" + IP +
                 "&token=" + token +
                 "&ticket_id=" + ticketID +
-                "&subject=" + subject +
+                "&subject=" + Uri.encode(subject) +
                 "&sla_plan=" + slaPlan +
                 "&help_topic=" + helpTopic +
                 "&ticket_source=" + ticketSource +
@@ -169,7 +169,7 @@ public class Helpdesk {
                     "&ip=" + IP +
                     "&token=" + token +
                     "&ticket_id=" + ticketID +
-                    "&subject=" + subject +
+                    "&subject=" + Uri.encode(subject) +
                     "&sla_plan=" + slaPlan +
                     "&help_topic=" + helpTopic +
                     "&ticket_source=" + ticketSource +

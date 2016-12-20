@@ -53,14 +53,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        boolean enabledAnalytics = Preference.isCrashReport();
-        Log.d("Crash Preference", Preference.isCrashReport() + "");
-
-        if (enabledAnalytics) {
-            Fabric.with(this, new Crashlytics());
-            Log.d("Crash REport", "enabled");
-        } else Log.d("Crash REport", "disabled");
-
         // TODO: Move this to where you establish a user session
         logUser();
 

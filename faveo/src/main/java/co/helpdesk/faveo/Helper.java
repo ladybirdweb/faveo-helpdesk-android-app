@@ -1,8 +1,5 @@
 package co.helpdesk.faveo;
 
-import co.helpdesk.faveo.model.ClientOverview;
-import co.helpdesk.faveo.model.TicketOverview;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -10,6 +7,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
+
+import co.helpdesk.faveo.model.ClientOverview;
+import co.helpdesk.faveo.model.TicketOverview;
 
 /**
  * Created by sumit on 1/26/2016.
@@ -36,7 +36,7 @@ public class Helper {
             String updatedAt = jsonArray.getJSONObject(i).getString("updated_at");
 
             return new TicketOverview(Integer.parseInt(ID), profilePic,
-                    ticketNumber, username, title, updatedAt, i + "");
+                    ticketNumber, firstName + " " + lastName, title, updatedAt, i + "");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -56,7 +56,7 @@ public class Helper {
             String clientActive = jsonArray.getJSONObject(i).getString("active");
 
             return new ClientOverview(Integer.parseInt(clientID), clientPicture,
-                    userName, clientEmail, clientPhone, clientCompany, clientActive);
+                    firstName + " " + lastName, clientEmail, clientPhone, clientCompany, clientActive);
 
         } catch (JSONException e) {
             e.printStackTrace();

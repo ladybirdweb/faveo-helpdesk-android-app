@@ -21,6 +21,9 @@ android {
         versionCode 17
         versionName "1.7"
     }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -57,4 +60,5 @@ dependencies {
     compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
         transitive = true;
     }
+    compile 'com.android.support:multidex:1.0.1'
 }
