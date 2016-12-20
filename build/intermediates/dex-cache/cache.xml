@@ -169,7 +169,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="669b77997494b60e6ab1fc50c2aa614b2eab86cf">
+        sha1="461400e9a0d5612e0f440b34e97980e4152f55aa">
         <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ff61581380186a4d46563f2e872c569c91d4050c/classes.dex" />
     </item>
     <item
@@ -232,7 +232,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="755f0cd2f3330f0de1d173a98bb17f01a4007294">
+        sha1="eaf546c8b220b444ac26c7578d7194df54737432">
         <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_58a513c743e119e667b988ff33196ed725a6947b/classes.dex" />
     </item>
     <item

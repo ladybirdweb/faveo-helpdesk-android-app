@@ -14,6 +14,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.net.CookieHandler;
+import java.net.CookieManager;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -28,6 +30,12 @@ public class HTTPConnection {
     private StringBuilder sb = null;
     private InputStream is = null;
     private URL url;
+
+    HTTPConnection() {
+
+        CookieManager cookieManager = new CookieManager();
+        CookieHandler.setDefault(cookieManager);
+    }
 
     String HTTPResponsePost(String stringURL, String parameters) {
         try {
