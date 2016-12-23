@@ -24,7 +24,9 @@
         <ViewFlipper
             android:id="@+id/viewFlipper"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:inAnimation="@anim/abc_fade_in"
+            android:outAnimation="@anim/abc_fade_out">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,6 +56,7 @@
                         android:id="@+id/editText_company_url"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
                         android:layout_marginRight="4dp"
                         android:layout_weight="1"
                         android:background="@drawable/edittext_modified_states"
@@ -61,7 +64,6 @@
                         android:inputType="textUri"
                         android:paddingBottom="16dp"
                         android:paddingTop="12dp"
-                        android:layout_marginBottom="8dp"
                         android:textCursorDrawable="@drawable/color_cursor"
                         android:textSize="14sp" />
 
@@ -70,10 +72,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@mipmap/ic_arrow_forward_white_24dp"
-                        app:fabSize="mini"
                         android:layout_marginRight="8dp"
-                        android:fadingEdgeLength="1dp"/>
+                        android:fadingEdgeLength="1dp"
+                        android:src="@mipmap/ic_arrow_forward_white_24dp"
+                        app:fabSize="mini" />
 
                 </LinearLayout>
 
