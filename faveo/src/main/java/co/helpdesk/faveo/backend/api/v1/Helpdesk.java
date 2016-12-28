@@ -139,7 +139,7 @@ public class Helpdesk {
         return result;
     }
 
-    public String postE0ditTicket(int ticketID, String subject, int slaPlan, int helpTopic,
+    public String postEditTicket(int ticketID, String subject, int slaPlan, int helpTopic,
                                  int ticketSource, int ticketPriority, int ticketStatus) {
         Log.d("EditTicketAPI", Constants.URL + "helpdesk/edit?" +
                 "api_key=" + apiKey +

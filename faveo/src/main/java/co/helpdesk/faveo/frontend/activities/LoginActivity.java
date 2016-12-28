@@ -125,7 +125,7 @@ public class LoginActivity extends AppCompatActivity implements InternetReceiver
         protected void onPostExecute(String result) {
             progressDialogVerifyURL.dismiss();
 
-            Log.d("result veryfurl", result+"");
+            Log.d("result veryfurl", result + "");
             if (result == null) {
 
                 Toast.makeText(context, "Invalid URL", Toast.LENGTH_LONG).show();
