@@ -3,8 +3,8 @@ script: "./gradlew build"
 android:
   components:
     - tools
-    - build-tools-24.0.1
-    - android-24
+    - build-tools-24.0.3
+    - android-25
     - extra-android-support # because I'm use support library
     - extra-android-m2repository
     - extra-google-google_play_services
