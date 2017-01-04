@@ -1,0 +1,16 @@
+|======================================================
+| v1.8
+|======================================================
+
+Bugs Fixed
+    
+    "Message" text field in Create Ticket page 
+    Ticket detail page showing unknown while opening from client list tickets
+    Trash page issue because of cache data
+    Closed ticket api issue
+    
+Enhancements
+
+    Fab animation has added for better UI/UX
+    
+   
