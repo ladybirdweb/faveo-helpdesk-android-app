@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,11 +21,13 @@ import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.gordonwong.materialsheetfab.MaterialSheetFab;
+import com.gordonwong.materialsheetfab.MaterialSheetFabEventListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,6 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.helpdesk.faveo.Constants;
+import co.helpdesk.faveo.Fab;
 import co.helpdesk.faveo.FaveoApplication;
 import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.R;
@@ -58,10 +62,13 @@ public class TicketDetailActivity extends AppCompatActivity implements
     Boolean fabExpanded = false;
     FloatingActionButton fabAdd;
     int cx, cy;
+    Fab fab;
+    private MaterialSheetFab materialSheetFab;
     View overlay;
     EditText editTextInternalNote, editTextCC, editTextReplyMessage;
     Button buttonCreate, buttonSend;
     ProgressDialog progressDialog;
+    private int statusBarColor;
 
     public static String ticketID;
     public static String ticketNumber;
@@ -72,7 +79,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_detail);
-
+        setupFab();
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {
@@ -165,14 +172,14 @@ public class TicketDetailActivity extends AppCompatActivity implements
             }
         });
 
-        fabAdd = (FloatingActionButton) findViewById(R.id.fab_add);
-        fabAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getCreateRequest();
-            }
-        });
-
+//        fabAdd = (FloatingActionButton) findViewById(R.id.fab);
+//        fabAdd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                getCreateRequest();
+//            }
+//        });
+//
         overlay = findViewById(R.id.overlay);
         overlay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,6 +188,72 @@ public class TicketDetailActivity extends AppCompatActivity implements
             }
         });
 
+    }
+
+
+    /**
+     * Sets up the Floating action button.
+     */
+    private void setupFab() {
+
+        fab = (Fab) findViewById(R.id.fab);
+        View sheetView = findViewById(R.id.fab_sheet);
+        View overlay1 = findViewById(R.id.overlay1);
+        int sheetColor = getResources().getColor(R.color.background_card);
+        int fabColor = getResources().getColor(R.color.theme_accent);
+
+        // Create material sheet FAB
+        materialSheetFab = new MaterialSheetFab<>(fab, sheetView, overlay1, sheetColor, fabColor);
+
+        // Set material sheet event listener
+        materialSheetFab.setEventListener(new MaterialSheetFabEventListener() {
+            @Override
+            public void onShowSheet() {
+                // Save current status bar color
+                statusBarColor = getStatusBarColor();
+                // Set darker status bar color to match the dim overlay
+                setStatusBarColor(getResources().getColor(R.color.theme_primary_dark2));
+            }
+
+            @Override
+            public void onHideSheet() {
+                // Restore status bar color
+                setStatusBarColor(statusBarColor);
+            }
+        });
+
+        // Set material sheet item click listeners
+        findViewById(R.id.fab_sheet_item_reply).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                materialSheetFab.hideSheetThenFab();
+
+                enterReveal("Reply");
+            }
+        });
+        findViewById(R.id.fab_sheet_item_note).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                materialSheetFab.hideSheetThenFab();
+
+                enterReveal("Internal notes");
+            }
+        });
+//        findViewById(R.id.fab_sheet_item_photo).setOnClickListener(this);
+//        findViewById(R.id.fab_sheet_item_note).setOnClickListener(this);
+    }
+
+    private int getStatusBarColor() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return getWindow().getStatusBarColor();
+        }
+        return 0;
+    }
+
+    private void setStatusBarColor(int color) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(color);
+        }
     }
 
     @Override
@@ -352,7 +425,15 @@ public class TicketDetailActivity extends AppCompatActivity implements
 
         @Override
         public void onPageSelected(int position) {
+            switch (position) {
+                case 0:
+                    fab.show();
+                    break;
 
+                default:
+                    fab.hide();
+                    break;
+            }
         }
 
         @Override
@@ -396,6 +477,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
     }
 
     void enterReveal(String type) {
+        fab.setVisibility(View.GONE);
         final View myView = findViewById(R.id.reveal);
         int finalRadius = Math.max(myView.getWidth(), myView.getHeight());
         SupportAnimator anim =
@@ -416,39 +498,44 @@ public class TicketDetailActivity extends AppCompatActivity implements
     }
 
     void exitReveal() {
-        final View myView = findViewById(R.id.reveal);
-        int finalRadius = Math.max(myView.getWidth(), myView.getHeight());
-        SupportAnimator animator = ViewAnimationUtils.createCircularReveal(myView, cx, cy, 0, finalRadius);
-        animator.setInterpolator(new AccelerateDecelerateInterpolator());
-        animator.setDuration(300);
-        animator = animator.reverse();
-        animator.addListener(new SupportAnimator.AnimatorListener() {
 
-            @Override
-            public void onAnimationStart() {
-
-            }
-
-            @Override
-            public void onAnimationEnd() {
-                fabAdd.show();
-                fabExpanded = false;
-                myView.setVisibility(View.GONE);
-                overlay.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onAnimationCancel() {
-
-            }
-
-            @Override
-            public void onAnimationRepeat() {
-
-            }
-
-        });
-        animator.start();
+        View myView = findViewById(R.id.reveal);
+        fab.show();
+        fabExpanded = false;
+        myView.setVisibility(View.GONE);
+        overlay.setVisibility(View.GONE);
+//        int finalRadius = Math.max(myView.getWidth(), myView.getHeight());
+//        SupportAnimator animator = ViewAnimationUtils.createCircularReveal(myView, cx, cy, 0, finalRadius);
+//        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+//        animator.setDuration(300);
+//        animator = animator.reverse();
+//        animator.addListener(new SupportAnimator.AnimatorListener() {
+//
+//            @Override
+//            public void onAnimationStart() {
+//
+//            }
+//
+//            @Override
+//            public void onAnimationEnd() {
+//                fab.show();
+//                fabExpanded = false;
+//                myView.setVisibility(View.GONE);
+//               // overlay.setVisibility(View.GONE);
+//            }
+//
+//            @Override
+//            public void onAnimationCancel() {
+//
+//            }
+//
+//            @Override
+//            public void onAnimationRepeat() {
+//
+//            }
+//
+//        });
+//        animator.start();
 
     }
 
@@ -459,9 +546,14 @@ public class TicketDetailActivity extends AppCompatActivity implements
 
     @Override
     public void onBackPressed() {
-        if (fabExpanded)
-            exitReveal();
-        else super.onBackPressed();
+        if (materialSheetFab.isSheetVisible()) {
+            materialSheetFab.hideSheet();
+        } else {
+            super.onBackPressed();
+        }
+//        if (fabExpanded)
+//            exitReveal();
+//        else super.onBackPressed();
     }
 
     @Override

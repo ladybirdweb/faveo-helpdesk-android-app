@@ -22,6 +22,7 @@ public class FaveoApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         MultiDex.install(this);
+        //AndroidNetworking.initialize(getApplicationContext());
         Fabric.with(this, new Crashlytics());
         instance = this;
     }

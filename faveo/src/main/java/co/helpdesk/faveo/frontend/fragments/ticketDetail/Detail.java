@@ -21,6 +21,9 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.Utils;
@@ -40,8 +43,8 @@ public class Detail extends Fragment {
     Spinner spinnerSLAPlans, spinnerDepartment, spinnerStatus, spinnerSource,
             spinnerPriority, spinnerHelpTopics, spinnerAssignTo;
 
-    ArrayAdapter<String> spinnerSlaArrayAdapter,spinnerAssignToArrayAdapter,spinnerStatusArrayAdapter,
-    spinnerSourceArrayAdapter,spinnerHelpArrayAdapter,spinnerDeptArrayAdapter,spinnerPriArrayAdapter;
+    ArrayAdapter<String> spinnerSlaArrayAdapter, spinnerAssignToArrayAdapter, spinnerStatusArrayAdapter,
+            spinnerSourceArrayAdapter, spinnerHelpArrayAdapter, spinnerDeptArrayAdapter, spinnerPriArrayAdapter;
 
     ProgressDialog progressDialog;
 
@@ -87,15 +90,20 @@ public class Detail extends Fragment {
             public void onClick(View v) {
                 progressDialog.setMessage("Updating ticket");
                 progressDialog.show();
-                new SaveTicket(getActivity(),
-                        Integer.parseInt(TicketDetailActivity.ticketID),
-                        editTextSubject.getText().toString(),
-                        Integer.parseInt(Utils.removeDuplicates(SplashActivity.keySLA.split(","))[spinnerSLAPlans.getSelectedItemPosition()]),
-                        Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyTopic.split(","))[spinnerHelpTopics.getSelectedItemPosition()]),
-                        Integer.parseInt(Utils.removeDuplicates(SplashActivity.keySource.split(","))[spinnerSource.getSelectedItemPosition()]),
-                        Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyPriority.split(","))[spinnerPriority.getSelectedItemPosition()]),
-                        Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyStatus.split(","))[spinnerStatus.getSelectedItemPosition()]))
-                        .execute();
+
+                try {
+                    new SaveTicket(getActivity(),
+                            Integer.parseInt(TicketDetailActivity.ticketID),
+                            URLEncoder.encode(editTextSubject.getText().toString(), "utf-8"),
+                            Integer.parseInt(Utils.removeDuplicates(SplashActivity.keySLA.split(","))[spinnerSLAPlans.getSelectedItemPosition()]),
+                            Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyTopic.split(","))[spinnerHelpTopics.getSelectedItemPosition()]),
+                            Integer.parseInt(Utils.removeDuplicates(SplashActivity.keySource.split(","))[spinnerSource.getSelectedItemPosition()]),
+                            Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyPriority.split(","))[spinnerPriority.getSelectedItemPosition()]),
+                            Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyStatus.split(","))[spinnerStatus.getSelectedItemPosition()]))
+                            .execute();
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
             }
         });
         return rootView;
@@ -127,7 +135,7 @@ public class Detail extends Fragment {
                 try {
                     if (jsonObject1.getString("sla_name") != null) {
                         //spinnerSLAPlans.setSelection(Integer.parseInt(jsonObject1.getString("sla")) - 1);
-                       // spinnerSLAPlans.setSelection(adapter.getPosition("YOUR_VALUE"));
+                        // spinnerSLAPlans.setSelection(adapter.getPosition("YOUR_VALUE"));
                         spinnerSLAPlans.setSelection(spinnerSlaArrayAdapter.getPosition(jsonObject1.getString("sla_name")));
                     }
                 } catch (JSONException | NumberFormatException e) {
@@ -143,7 +151,7 @@ public class Detail extends Fragment {
                 }
                 try {
                     if (jsonObject1.getString("priority_name") != null) {
-                       // spinnerPriority.setSelection(Integer.parseInt(jsonObject1.getString("priority_id")) - 1);
+                        // spinnerPriority.setSelection(Integer.parseInt(jsonObject1.getString("priority_id")) - 1);
                         spinnerPriority.setSelection(spinnerPriArrayAdapter.getPosition(jsonObject1.getString("priority_name")));
                     }
                 } catch (JSONException | NumberFormatException e) {
@@ -152,7 +160,7 @@ public class Detail extends Fragment {
 
                 try {
 
-                   // spinnerDepartment.setSelection(Integer.parseInt(jsonObject1.getString("dept_id")) - 1);
+                    // spinnerDepartment.setSelection(Integer.parseInt(jsonObject1.getString("dept_id")) - 1);
                     spinnerDepartment.setSelection(spinnerDeptArrayAdapter.getPosition(jsonObject1.getString("dept_name")));
                 } catch (Exception e) {
                     tv_dept.setVisibility(View.GONE);
@@ -169,7 +177,7 @@ public class Detail extends Fragment {
                 try {
                     if (jsonObject1.getString("source_name") != null)
                         //spinnerSource.setSelection(Integer.parseInt(jsonObject1.getString("source")) - 1);
-                    spinnerSource.setSelection(spinnerSourceArrayAdapter.getPosition(jsonObject1.getString("source_name")));
+                        spinnerSource.setSelection(spinnerSourceArrayAdapter.getPosition(jsonObject1.getString("source_name")));
                 } catch (JSONException | NumberFormatException e) {
                     e.printStackTrace();
                 }

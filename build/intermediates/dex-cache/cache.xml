@@ -3,6 +3,15 @@
 
     <item
         is-multidex="true"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.github.asyl.animation/arcanimator/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="31dbe885ef6a9d6a88412750e85784f60b95cb90">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.asyl.animation-arcanimator-1.0.0_5468db37caa5adbc9ff84c024e08c9a23e7b6b5a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -21,11 +30,20 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.github.curioustechizen.android-ago/library/1.3.2/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5c1ecffa54b1222e8a50e9263c8ecba5d8caefc5">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.curioustechizen.android-ago-library-1.3.2_17c21c778123b1c728473912196521c414287039/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="fe983d9c2bb9d9bbc36536c7d0c58217ee28f20a">
+        sha1="bab463b76dc5cfd2e72fecba45f37a28616a284e">
         <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_58a513c743e119e667b988ff33196ed725a6947b/classes.dex" />
     </item>
     <item
@@ -79,7 +97,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="c355fc2e8168c0f56481b042883f79b8db0b5859">
+        sha1="ba102875bdfb13ee518e1a62e6d0f6c2f5740da5">
         <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ff61581380186a4d46563f2e872c569c91d4050c/classes.dex" />
     </item>
     <item
@@ -210,6 +228,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/narendra/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_36fb3eff3e61fa4775eb9d3d10bf7ad6400eae17/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -234,6 +261,15 @@
         revision="24.0.1"
         sha1="814fc0c3ec69a944add398217d90077301501a74">
         <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/com.makeramen-roundedimageview-2.2.1_2587fdf4c087cfc6630d6ba19590dcdc5929649d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.gordonwong/material-sheet-fab/1.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="34fc70f7f1d882154d876ea763f05977d9945699">
+        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/com.gordonwong-material-sheet-fab-1.2.1_5fd61b8ec48a8af4e0ea47b06819cb35d6dd8145/classes.dex" />
     </item>
     <item
         is-multidex="true"

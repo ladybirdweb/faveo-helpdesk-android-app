@@ -133,55 +133,55 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
                 title = getString(R.string.create_ticket);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
 //                if (fragment == null)
-                    fragment = new CreateTicket();
+                fragment = new CreateTicket();
                 break;
             case R.id.inbox_tickets:
                 title = getString(R.string.inbox_tickets);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
 //                if (fragment == null)
-                    fragment = new InboxTickets();
+                fragment = new InboxTickets();
                 break;
             case R.id.my_tickets:
                 title = getString(R.string.my_tickets);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
 //                if (fragment == null)
-                    fragment = new MyTickets();
+                fragment = new MyTickets();
                 break;
             case R.id.unassigned_tickets:
                 title = getString(R.string.unassigned_tickets);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
 //                if (fragment == null)
-                    fragment = new UnassignedTickets();
+                fragment = new UnassignedTickets();
                 break;
             case R.id.closed_tickets:
                 title = getString(R.string.closed_tickets);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
 //                if (fragment == null)
-                    fragment = new ClosedTickets();
+                fragment = new ClosedTickets();
                 break;
             case R.id.trash_tickets:
                 title = getString(R.string.trash_tickets);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
 //                if (fragment == null)
-                    fragment = new TrashTickets();
+                fragment = new TrashTickets();
                 break;
             case R.id.client_list:
                 title = getString(R.string.client_list);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
 //                if (fragment == null)
-                    fragment = new ClientList();
+                fragment = new ClientList();
                 break;
             case R.id.settings:
                 title = getString(R.string.settings);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
 //                if (fragment == null)
-                    fragment = new Settings();
+                fragment = new Settings();
                 break;
             case R.id.about:
                 title = getString(R.string.about);
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
 //                if (fragment == null)
-                    fragment = new About();
+                fragment = new About();
                 break;
             case R.id.logout:
                 FaveoApplication.getInstance().clearApplicationData();

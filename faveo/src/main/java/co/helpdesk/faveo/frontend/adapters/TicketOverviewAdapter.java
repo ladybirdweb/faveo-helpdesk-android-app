@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.github.curioustechizen.ago.RelativeTimeTextView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 
@@ -37,7 +38,7 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
         ticketViewHolder.textViewTicketNumber.setText(ticketOverview.ticketNumber);
         ticketViewHolder.textViewClientName.setText(ticketOverview.clientName);
         ticketViewHolder.textViewSubject.setText(ticketOverview.ticketSubject);
-        ticketViewHolder.textViewTime.setText(Helper.parseDate(ticketOverview.ticketTime));
+        ticketViewHolder.textViewTime.setReferenceTime(Helper.relativeTime(ticketOverview.ticketTime));
         if (ticketOverview.clientPicture != null && ticketOverview.clientPicture.trim().length() != 0)
             Picasso.with(ticketViewHolder.roundedImageViewProfilePic.getContext())
                     .load(ticketOverview.clientPicture)
@@ -62,31 +63,31 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
     @Override
     public TicketViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.
-        from(viewGroup.getContext()).
-        inflate(R.layout.card_ticket, viewGroup, false);
+                from(viewGroup.getContext()).
+                inflate(R.layout.card_ticket, viewGroup, false);
         return new TicketViewHolder(itemView);
     }
 
     static class TicketViewHolder extends RecyclerView.ViewHolder {
 
         protected View ticket;
-        protected RoundedImageView roundedImageViewProfilePic;
-        protected TextView textViewTicketID;
-        protected TextView textViewTicketNumber;
-        protected TextView textViewClientName;
-        protected TextView textViewSubject;
-        protected TextView textViewTime;
-        protected TextView textViewNewNotification;
+        RoundedImageView roundedImageViewProfilePic;
+        TextView textViewTicketID;
+        TextView textViewTicketNumber;
+        TextView textViewClientName;
+        TextView textViewSubject;
+        RelativeTimeTextView textViewTime;
+        TextView textViewNewNotification;
 
         TicketViewHolder(View v) {
             super(v);
-            ticket =  v.findViewById(R.id.ticket);
-            roundedImageViewProfilePic =  (RoundedImageView) v.findViewById(R.id.imageView_default_profile);
-            textViewTicketID = (TextView)  v.findViewById(R.id.textView_ticket_id);
-            textViewTicketNumber = (TextView)  v.findViewById(R.id.textView_ticket_number);
-            textViewClientName = (TextView)  v.findViewById(R.id.textView_client_name);
+            ticket = v.findViewById(R.id.ticket);
+            roundedImageViewProfilePic = (RoundedImageView) v.findViewById(R.id.imageView_default_profile);
+            textViewTicketID = (TextView) v.findViewById(R.id.textView_ticket_id);
+            textViewTicketNumber = (TextView) v.findViewById(R.id.textView_ticket_number);
+            textViewClientName = (TextView) v.findViewById(R.id.textView_client_name);
             textViewSubject = (TextView) v.findViewById(R.id.textView_ticket_subject);
-            textViewTime = (TextView) v.findViewById(R.id.textView_ticket_time);
+            textViewTime = (RelativeTimeTextView) v.findViewById(R.id.textView_ticket_time);
             textViewNewNotification = (TextView) v.findViewById(R.id.textView_ticket_bubble);
         }
 

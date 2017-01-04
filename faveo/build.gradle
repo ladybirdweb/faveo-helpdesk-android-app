@@ -18,8 +18,8 @@ android {
         applicationId "co.helpdesk.faveo"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 17
-        versionName "1.7"
+        versionCode 18
+        versionName "1.8"
     }
     dexOptions {
         javaMaxHeapSize "4g"
@@ -60,5 +60,8 @@ dependencies {
     compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
         transitive = true;
     }
+   
+    compile 'com.gordonwong:material-sheet-fab:1.2.1'
     compile 'com.android.support:multidex:1.0.1'
+    compile 'com.github.curioustechizen.android-ago:library:+'
 }

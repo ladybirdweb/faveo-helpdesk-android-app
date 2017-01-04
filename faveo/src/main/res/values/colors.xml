@@ -33,4 +33,11 @@
     <color name="translucent">#33FFFFFF</color>
     <color name="dark_translucent">#55000000</color>
 
+    <color name="background_card">#fff</color>
+    <color name="background_snackbar">#323232</color>
+    <color name="theme_accent">#00B3EB</color>
+    <color name="theme_primary_dark2">#006064</color>
+
+    <color name="text_black_87">#de000000</color>
+    <color name="text_white_87">#deFFFFFF</color>
 </resources>

@@ -28,7 +28,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp" />
 
-    <TextView
+    <com.github.curioustechizen.ago.RelativeTimeTextView
         android:id="@+id/textView_ticket_time"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
         android:textSize="12sp"
         android:textColor="@color/black"
         android:layout_centerHorizontal="true"
-        android:singleLine="true"
+        android:maxLines="1"
         android:alpha=".54"
         android:fontFamily="sans-serif-medium"/>
 

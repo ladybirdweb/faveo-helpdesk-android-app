@@ -106,8 +106,11 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.crashlytics.sdk.android/beta/1.2.2/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.crashlytics.sdk.android/crashlytics-core/2.3.14/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.crashlytics.sdk.android/crashlytics/2.6.5/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.github.asyl.animation/arcanimator/1.0.0/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.github.curioustechizen.android-ago/library/1.3.2/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.github.ozodrukh/CircularReveal/1.3.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.github.rahatarmanahmed/circularprogressview/2.4.0/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.gordonwong/material-sheet-fab/1.2.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.2.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.3.14/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
@@ -131,29 +134,33 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="support-annotations-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="design-25.1.0" level="project" />
+    <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
+    <orderEntry type="library" exported="" name="transition-25.1.0" level="project" />
+    <orderEntry type="library" exported="" name="support-fragment-25.1.0" level="project" />
+    <orderEntry type="library" exported="" name="crashlytics-core-2.3.14" level="project" />
+    <orderEntry type="library" exported="" name="cardview-v7-25.1.0" level="project" />
+    <orderEntry type="library" exported="" name="library-1.3.2" level="project" />
+    <orderEntry type="library" exported="" name="support-core-ui-25.1.0" level="project" />
+    <orderEntry type="library" exported="" name="CircularReveal-1.3.1" level="project" />
+    <orderEntry type="library" exported="" name="support-core-utils-25.1.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-25.1.0" level="project" />
+    <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="fabric-1.3.14" level="project" />
     <orderEntry type="library" exported="" name="crashlytics-2.6.5" level="project" />
-    <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
     <orderEntry type="library" exported="" name="circularprogressview-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="roundedimageview-2.2.1" level="project" />
     <orderEntry type="library" exported="" name="beta-1.2.2" level="project" />
+    <orderEntry type="library" exported="" name="material-sheet-fab-1.2.1" level="project" />
     <orderEntry type="library" exported="" name="answers-1.3.10" level="project" />
-    <orderEntry type="library" exported="" name="transition-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-compat-25.1.0" level="project" />
-    <orderEntry type="library" exported="" name="support-fragment-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="animated-vector-drawable-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-25.1.0" level="project" />
-    <orderEntry type="library" exported="" name="crashlytics-core-2.3.14" level="project" />
-    <orderEntry type="library" exported="" name="cardview-v7-25.1.0" level="project" />
+    <orderEntry type="library" exported="" name="arcanimator-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="support-core-ui-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-media-compat-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-25.1.0" level="project" />
-    <orderEntry type="library" exported="" name="CircularReveal-1.3.1" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-25.1.0" level="project" />
-    <orderEntry type="library" exported="" name="support-core-utils-25.1.0" level="project" />
   </component>
 </module>

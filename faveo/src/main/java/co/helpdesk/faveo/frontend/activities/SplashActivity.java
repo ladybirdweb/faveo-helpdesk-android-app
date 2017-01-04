@@ -50,14 +50,14 @@ public class SplashActivity extends AppCompatActivity implements InternetReceive
         if (InternetReceiver.isConnected()) {
             progressDialog.setVisibility(View.VISIBLE);
             new FetchDependency(this).execute();
-            new FetchData(this).execute();
+            // new FetchData(this).execute();
         } else Toast.makeText(this, "Oops! No internet", Toast.LENGTH_LONG).show();
     }
 
     public class FetchDependency extends AsyncTask<String, Void, String> {
         Context context;
 
-        public FetchDependency(Context context) {
+        FetchDependency(Context context) {
             this.context = context;
         }
 
@@ -131,6 +131,12 @@ public class SplashActivity extends AppCompatActivity implements InternetReceive
                 Toast.makeText(SplashActivity.this, "Error", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
+
+            progressDialog.setVisibility(View.GONE);
+            loading.setText("Done Loading!");
+            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+            // intent.putExtra("nextPageURL", nextPageURL);
+            startActivity(intent);
         }
     }
 
@@ -174,7 +180,7 @@ public class SplashActivity extends AppCompatActivity implements InternetReceive
                 Toast.makeText(SplashActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
-            Log.e("nextpageURL_splash", nextPageURL+"");
+            Log.e("nextpageURL_splash", nextPageURL + "");
             Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             intent.putExtra("nextPageURL", nextPageURL);
             startActivity(intent);

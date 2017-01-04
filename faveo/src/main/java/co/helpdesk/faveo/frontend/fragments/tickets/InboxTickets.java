@@ -80,8 +80,8 @@ public class InboxTickets extends Fragment {
                              Bundle savedInstanceState) {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
-            if (getArguments() != null)
-                nextPageURL = getArguments().getString("nextPageURL");
+//            if (getArguments() != null)
+//                nextPageURL = getArguments().getString("nextPageURL");
 
             recyclerView = (RecyclerView) rootView.findViewById(R.id.cardList);
             recyclerView.setHasFixedSize(false);
@@ -91,8 +91,8 @@ public class InboxTickets extends Fragment {
             progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Fetching tickets");
             progressDialog.show();
-            new ReadFromDatabase(getActivity()).execute();
-           // new FetchFirst(getActivity()).execute();
+           // new ReadFromDatabase(getActivity()).execute();
+            new FetchFirst(getActivity()).execute();
             swipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefresh);
             swipeRefresh.setColorSchemeResources(R.color.faveo_blue);
             swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -102,55 +102,55 @@ public class InboxTickets extends Fragment {
                 }
             });
 
-            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                @Override
-                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                    if (dy > 0) {
-                        visibleItemCount = linearLayoutManager.getChildCount();
-                        totalItemCount = linearLayoutManager.getItemCount();
-                        pastVisibleItems = linearLayoutManager.findFirstVisibleItemPosition();
-                        if (loading) {
-                            if ((visibleItemCount + pastVisibleItems) >= totalItemCount) {
-                                loading = false;
-                                new FetchNextPage(getActivity()).execute();
-                                Toast.makeText(getActivity(), "Loading!", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }
-                }
-            });
+//            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//                @Override
+//                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                    if (dy > 0) {
+//                        visibleItemCount = linearLayoutManager.getChildCount();
+//                        totalItemCount = linearLayoutManager.getItemCount();
+//                        pastVisibleItems = linearLayoutManager.findFirstVisibleItemPosition();
+//                        if (loading) {
+//                            if ((visibleItemCount + pastVisibleItems) >= totalItemCount) {
+//                                loading = false;
+//                                new FetchNextPage(getActivity()).execute();
+//                                Toast.makeText(getActivity(), "Loading!", Toast.LENGTH_SHORT).show();
+//                            }
+//                        }
+//                    }
+//                }
+//            });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
        // ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.inbox_tickets));
         return rootView;
     }
 
-    public class ReadFromDatabase extends AsyncTask<String, Void, String> {
-        Context context;
-
-        ReadFromDatabase(Context context) {
-            this.context = context;
-        }
-
-        protected String doInBackground(String... urls) {
-            DatabaseHandler databaseHandler = new DatabaseHandler(context);
-            ticketOverviewList = databaseHandler.getTicketOverview();
-            databaseHandler.close();
-            return "success";
-        }
-
-        protected void onPostExecute(String result) {
-            if (swipeRefresh.isRefreshing())
-                swipeRefresh.setRefreshing(false);
-            if (progressDialog.isShowing())
-                progressDialog.dismiss();
-            ticketOverviewAdapter = new TicketOverviewAdapter(ticketOverviewList);
-            recyclerView.setAdapter(ticketOverviewAdapter);
-            if (ticketOverviewAdapter.getItemCount() == 0) {
-                tv.setVisibility(View.VISIBLE);
-            } else tv.setVisibility(View.GONE);
-        }
-    }
+//    public class ReadFromDatabase extends AsyncTask<String, Void, String> {
+//        Context context;
+//
+//        ReadFromDatabase(Context context) {
+//            this.context = context;
+//        }
+//
+//        protected String doInBackground(String... urls) {
+//            DatabaseHandler databaseHandler = new DatabaseHandler(context);
+//            ticketOverviewList = databaseHandler.getTicketOverview();
+//            databaseHandler.close();
+//            return "success";
+//        }
+//
+//        protected void onPostExecute(String result) {
+//            if (swipeRefresh.isRefreshing())
+//                swipeRefresh.setRefreshing(false);
+//            if (progressDialog.isShowing())
+//                progressDialog.dismiss();
+//            ticketOverviewAdapter = new TicketOverviewAdapter(ticketOverviewList);
+//            recyclerView.setAdapter(ticketOverviewAdapter);
+//            if (ticketOverviewAdapter.getItemCount() == 0) {
+//                tv.setVisibility(View.VISIBLE);
+//            } else tv.setVisibility(View.GONE);
+//        }
+//    }
 
     public class FetchNextPage extends AsyncTask<String, Void, String> {
         Context context;
@@ -166,8 +166,8 @@ public class InboxTickets extends Fragment {
             String result = new Helpdesk().nextPageURL(nextPageURL);
             if (result == null)
                 return null;
-            DatabaseHandler databaseHandler = new DatabaseHandler(context);
-            databaseHandler.recreateTable();
+            //DatabaseHandler databaseHandler = new DatabaseHandler(context);
+            //databaseHandler.recreateTable();
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 nextPageURL = jsonObject.getString("next_page_url");
@@ -177,13 +177,13 @@ public class InboxTickets extends Fragment {
                     TicketOverview ticketOverview = Helper.parseTicketOverview(jsonArray, i);
                     if (ticketOverview != null) {
                         ticketOverviewList.add(ticketOverview);
-                        databaseHandler.addTicketOverview(ticketOverview);
+                        //databaseHandler.addTicketOverview(ticketOverview);
                     }
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            databaseHandler.close();
+           // databaseHandler.close();
             return "success";
         }
 
@@ -216,7 +216,7 @@ public class InboxTickets extends Fragment {
             if (result == null)
                 return null;
             String data;
-            ticketOverviewList.clear();
+           // ticketOverviewList.clear();
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 try {
@@ -238,7 +238,7 @@ public class InboxTickets extends Fragment {
         }
 
         protected void onPostExecute(String result) {
-            ticketOverviewAdapter.notifyDataSetChanged();
+           // ticketOverviewAdapter.notifyDataSetChanged();
             if (swipeRefresh.isRefreshing())
                 swipeRefresh.setRefreshing(false);
             if (progressDialog.isShowing())
@@ -247,10 +247,6 @@ public class InboxTickets extends Fragment {
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
                 return;
             }
-//            if (result.equals("all done")) {
-//                Toast.makeText(context, "All tickets loaded", Toast.LENGTH_SHORT).show();
-//                return;
-//            }
 
             if (result.equals("all done")) {
 
@@ -282,6 +278,10 @@ public class InboxTickets extends Fragment {
 
             ticketOverviewAdapter = new TicketOverviewAdapter(ticketOverviewList);
             recyclerView.setAdapter(ticketOverviewAdapter);
+
+            if (ticketOverviewAdapter.getItemCount() == 0) {
+                tv.setVisibility(View.VISIBLE);
+            } else tv.setVisibility(View.GONE);
         }
     }
 

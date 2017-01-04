@@ -95,7 +95,7 @@ public class Conversation extends Fragment {
     public class FetchTicketThreads extends AsyncTask<String, Void, String> {
         Context context;
 
-        public FetchTicketThreads(Context context) {
+        FetchTicketThreads(Context context) {
             this.context = context;
         }
 

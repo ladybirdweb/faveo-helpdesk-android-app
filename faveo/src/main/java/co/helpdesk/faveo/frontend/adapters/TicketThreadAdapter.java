@@ -7,8 +7,10 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.TextView;
 
+import com.github.curioustechizen.ago.RelativeTimeTextView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import co.helpdesk.faveo.Helper;
@@ -31,7 +33,7 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
     public void onBindViewHolder(final TicketViewHolder ticketViewHolder, int i) {
         TicketThread ticketThread = ticketThreadList.get(i);
         ticketViewHolder.textViewClientName.setText(ticketThread.clientName);
-        ticketViewHolder.textViewMessageTime.setText(Helper.parseDate(ticketThread.messageTime));
+        ticketViewHolder.textViewMessageTime.setReferenceTime(Helper.relativeTime(ticketThread.messageTime));
         ticketViewHolder.textViewMessageTitle.setText(ticketThread.messageTitle);
         //ticketViewHolder.textViewMessage.setText(Html.fromHtml(ticketThread.message));
         ticketViewHolder.webView.loadDataWithBaseURL(null, ticketThread.message, "text/html", "utf-8", null);
@@ -48,7 +50,7 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         ticketViewHolder.thread.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ticketViewHolder.textViewMessageTitle.getVisibility()==View.GONE) {
+                if (ticketViewHolder.textViewMessageTitle.getVisibility() == View.GONE) {
                     ticketViewHolder.textViewMessageTitle.setVisibility(View.VISIBLE);
                     ticketViewHolder.webView.setVisibility(View.VISIBLE);
                 } else {
@@ -71,23 +73,23 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         return new TicketViewHolder(itemView);
     }
 
-    public static class TicketViewHolder extends RecyclerView.ViewHolder {
+    static class TicketViewHolder extends RecyclerView.ViewHolder {
 
         protected View thread;
-        protected RoundedImageView roundedImageViewProfilePic;
-        protected TextView textViewClientName;
-        protected TextView textViewMessageTime;
-        protected TextView textViewMessageTitle;
+        RoundedImageView roundedImageViewProfilePic;
+        TextView textViewClientName;
+        RelativeTimeTextView textViewMessageTime;
+        TextView textViewMessageTitle;
         //  protected TextView textViewMessage;
-        protected TextView textViewType;
-        protected WebView webView;
+        TextView textViewType;
+        WebView webView;
 
-        public TicketViewHolder(View v) {
+        TicketViewHolder(View v) {
             super(v);
             thread = v.findViewById(R.id.thread);
             roundedImageViewProfilePic = (RoundedImageView) v.findViewById(R.id.imageView_default_profile);
             textViewClientName = (TextView) v.findViewById(R.id.textView_client_name);
-            textViewMessageTime = (TextView) v.findViewById(R.id.textView_ticket_time);
+            textViewMessageTime = (RelativeTimeTextView) v.findViewById(R.id.textView_ticket_time);
             textViewMessageTitle = (TextView) v.findViewById(R.id.textView_client_message_title);
             //  textViewMessage = (TextView) v.findViewById(R.id.textView_client_message_body);
             textViewType = (TextView) v.findViewById(R.id.textView_type);

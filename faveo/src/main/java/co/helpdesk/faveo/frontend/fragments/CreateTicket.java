@@ -39,8 +39,8 @@ public class CreateTicket extends Fragment {
     Spinner spinnerHelpTopic, spinnerSLAPlans, spinnerAssignTo, spinnerPriority, spinnerCountryCode;
     Button buttonSubmit;
 
-    ArrayAdapter<String> spinnerSlaArrayAdapter,spinnerAssignToArrayAdapter,
-          spinnerHelpArrayAdapter,spinnerDeptArrayAdapter,spinnerPriArrayAdapter;
+    ArrayAdapter<String> spinnerSlaArrayAdapter, spinnerAssignToArrayAdapter,
+            spinnerHelpArrayAdapter, spinnerDeptArrayAdapter, spinnerPriArrayAdapter;
 
     ProgressDialog progressDialog;
     int paddingTop, paddingBottom;
@@ -145,8 +145,8 @@ public class CreateTicket extends Fragment {
                     if (message.trim().length() == 0) {
                         setErrorState(editTextMessage, textViewErrorMessage, "Please fill the field");
                         allCorrect = false;
-                    } else if (message.trim().length() < 5) {
-                        setErrorState(editTextMessage, textViewErrorMessage, "Message should be minimum 5 characters");
+                    } else if (message.trim().length() < 10) {
+                        setErrorState(editTextMessage, textViewErrorMessage, "Message should be minimum 10 characters");
                         allCorrect = false;
                     }
 
@@ -217,7 +217,7 @@ public class CreateTicket extends Fragment {
         }
 
         protected void onPostExecute(String result) {
-            Log.d("result  create ticket:",result+"");
+            Log.d("result  create ticket:", result + "");
             progressDialog.dismiss();
             if (result == null) {
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
