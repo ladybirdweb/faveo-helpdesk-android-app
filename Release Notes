@@ -8,6 +8,8 @@ Bugs Fixed
     Ticket detail page showing unknown while opening from client list tickets
     Trash page issue because of cache data
     Closed ticket api issue
+    Subject renaming issue
+    inbox page issue due to cache data 
     
 Enhancements
 
