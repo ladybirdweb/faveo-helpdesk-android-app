@@ -30,13 +30,14 @@ import co.helpdesk.faveo.Utils;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.activities.SplashActivity;
 import co.helpdesk.faveo.frontend.activities.TicketDetailActivity;
+import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
 
 public class Detail extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     TextView tv_helpTopic, tv_dept;
-    TextView textViewOpenedBy;
-
+    TextView textViewOpenedBy, textViewErrorSubject;
+    int paddingTop, paddingBottom;
     EditText editTextSubject, editTextFirstName, editTextLastName, editTextEmail,
             editTextLastMessage, editTextDueDate, editTextCreatedDate, editTextLastResponseDate;
 
@@ -88,25 +89,44 @@ public class Detail extends Fragment {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressDialog.setMessage("Updating ticket");
-                progressDialog.show();
-
-                try {
-                    new SaveTicket(getActivity(),
-                            Integer.parseInt(TicketDetailActivity.ticketID),
-                            URLEncoder.encode(editTextSubject.getText().toString(), "utf-8"),
-                            Integer.parseInt(Utils.removeDuplicates(SplashActivity.keySLA.split(","))[spinnerSLAPlans.getSelectedItemPosition()]),
-                            Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyTopic.split(","))[spinnerHelpTopics.getSelectedItemPosition()]),
-                            Integer.parseInt(Utils.removeDuplicates(SplashActivity.keySource.split(","))[spinnerSource.getSelectedItemPosition()]),
-                            Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyPriority.split(","))[spinnerPriority.getSelectedItemPosition()]),
-                            Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyStatus.split(","))[spinnerStatus.getSelectedItemPosition()]))
-                            .execute();
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
+                resetViews();
+                boolean allCorrect = true;
+                String subject = editTextSubject.getText().toString();
+                if (subject.trim().length() == 0) {
+                    setErrorState(editTextSubject, textViewErrorSubject, "Please fill the field");
+                    allCorrect = false;
+                } else if (subject.trim().length() < 5) {
+                    setErrorState(editTextSubject, textViewErrorSubject, "Subject should be minimum 5 characters");
+                    allCorrect = false;
+                }
+                if (allCorrect) {
+                    if (InternetReceiver.isConnected()) {
+                        progressDialog.setMessage("Updating ticket");
+                        progressDialog.show();
+                        try {
+                            new SaveTicket(getActivity(),
+                                    Integer.parseInt(TicketDetailActivity.ticketID),
+                                    URLEncoder.encode(subject, "utf-8"),
+                                    Integer.parseInt(Utils.removeDuplicates(SplashActivity.keySLA.split(","))[spinnerSLAPlans.getSelectedItemPosition()]),
+                                    Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyTopic.split(","))[spinnerHelpTopics.getSelectedItemPosition()]),
+                                    Integer.parseInt(Utils.removeDuplicates(SplashActivity.keySource.split(","))[spinnerSource.getSelectedItemPosition()]),
+                                    Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyPriority.split(","))[spinnerPriority.getSelectedItemPosition()]),
+                                    Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyStatus.split(","))[spinnerStatus.getSelectedItemPosition()]))
+                                    .execute();
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             }
         });
         return rootView;
+    }
+
+    private void setErrorState(EditText editText, TextView textViewError, String error) {
+        editText.setBackgroundResource(R.drawable.edittext_error_state);
+        editText.setPadding(0, paddingTop, 0, paddingBottom);
+        textViewError.setText(error);
     }
 
     public class FetchTicketDetail extends AsyncTask<String, Void, String> {
@@ -278,7 +298,7 @@ public class Detail extends Fragment {
 
         editTextSubject = (EditText) rootView.findViewById(R.id.editText_subject);
         editTextSubject.setText(TicketDetailActivity.ticketSubject);
-
+        textViewErrorSubject = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_subject);
         spinnerSLAPlans = (Spinner) rootView.findViewById(R.id.spinner_sla_plans);
         spinnerSlaArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, Utils.removeDuplicates(SplashActivity.valueSLA.split(","))); //selected item will look like a spinner set from XML
         spinnerSlaArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -321,6 +341,15 @@ public class Detail extends Fragment {
         buttonSave = (Button) rootView.findViewById(R.id.button_save);
         tv_dept = (TextView) rootView.findViewById(R.id.tv_dept);
         tv_helpTopic = (TextView) rootView.findViewById(R.id.tv_helpTopic);
+
+        paddingTop = editTextEmail.getPaddingTop();
+        paddingBottom = editTextEmail.getPaddingBottom();
+    }
+
+    private void resetViews() {
+        editTextSubject.setBackgroundResource(R.drawable.edittext_theme_states);
+        editTextSubject.setPadding(0, paddingTop, 0, paddingBottom);
+        textViewErrorSubject.setText("");
     }
 
     public void onButtonPressed(Uri uri) {

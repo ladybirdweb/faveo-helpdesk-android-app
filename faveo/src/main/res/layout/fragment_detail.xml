@@ -43,7 +43,6 @@
             android:id="@+id/editText_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:cursorVisible="true"
             android:imeOptions="actionNext"
@@ -54,6 +53,15 @@
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView_error_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/error_red"
+            android:textSize="12sp" />
 
         <TextView
             android:layout_width="wrap_content"
