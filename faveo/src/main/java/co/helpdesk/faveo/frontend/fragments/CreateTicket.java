@@ -128,6 +128,9 @@ public class CreateTicket extends Fragment {
                     if (fname.trim().length() == 0) {
                         setErrorState(editTextFirstName, textViewErrorFirstName, "Fill FirstName");
                         allCorrect = false;
+                    } else if (fname.trim().length() < 3) {
+                        setErrorState(editTextFirstName, textViewErrorFirstName, "FirstName should be minimum 3 characters");
+                        allCorrect = false;
                     }
                     if (lname.trim().length() == 0) {
                         setErrorState(editTextLastName, textViewErrorLastName, "Fill LastName");
