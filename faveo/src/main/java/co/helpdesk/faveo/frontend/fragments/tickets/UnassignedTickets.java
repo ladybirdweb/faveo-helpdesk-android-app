@@ -101,18 +101,19 @@ public class UnassignedTickets extends Fragment {
     public class FetchFirst extends AsyncTask<String, Void, String> {
         Context context;
 
-        public FetchFirst(Context context) {
+        FetchFirst(Context context) {
             this.context = context;
         }
 
         protected String doInBackground(String... urls) {
-            if (nextPageURL.equals("null")) {
-                return "all done";
-            }
+//            if (nextPageURL.equals("null")) {
+//                return "all done";
+//            }
             String result = new Helpdesk().getUnassignedTicket();
             if (result == null)
                 return null;
             String data;
+            ticketOverviewList.clear();
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 try {

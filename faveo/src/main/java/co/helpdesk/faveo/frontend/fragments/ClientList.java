@@ -116,18 +116,19 @@ public class ClientList extends Fragment implements View.OnClickListener {
     public class FetchClients extends AsyncTask<String, Void, String> {
         Context context;
 
-        public FetchClients(Context context) {
+       FetchClients(Context context) {
             this.context = context;
         }
 
         protected String doInBackground(String... urls) {
-            if (nextPageURL.equals("null")) {
-                return "all done";
-            }
+//            if (nextPageURL.equals("null")) {
+//                return "all done";
+//            }
             String result = new Helpdesk().getCustomersOverview();
             if (result == null)
                 return null;
             String data;
+            clientOverviewList.clear();
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 data = jsonObject.getString("data");
@@ -191,7 +192,7 @@ public class ClientList extends Fragment implements View.OnClickListener {
     public class FetchNextPage extends AsyncTask<String, Void, String> {
         Context context;
 
-        public FetchNextPage(Context context) {
+        FetchNextPage(Context context) {
             this.context = context;
         }
 

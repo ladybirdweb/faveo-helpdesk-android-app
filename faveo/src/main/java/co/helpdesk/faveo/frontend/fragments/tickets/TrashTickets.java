@@ -105,13 +105,14 @@ public class TrashTickets extends Fragment {
         }
 
         protected String doInBackground(String... urls) {
-            if (nextPageURL.equals("null")) {
-                return "all done";
-            }
+//            if (nextPageURL.equals("null")) {
+//                return "all done";
+//            }
             String result = new Helpdesk().getTrashTickets();
             if (result == null)
                 return null;
             String data;
+            ticketOverviewList.clear();
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 try {

@@ -209,14 +209,14 @@ public class InboxTickets extends Fragment {
         }
 
         protected String doInBackground(String... urls) {
-            if (nextPageURL.equals("null")) {
-                return "all done";
-            }
+//            if (nextPageURL.equals("null")) {
+//                return "all done";
+//            }
             String result = new Helpdesk().getInboxTicket();
             if (result == null)
                 return null;
             String data;
-           // ticketOverviewList.clear();
+            ticketOverviewList.clear();
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 try {

@@ -26,7 +26,6 @@ import java.util.List;
 import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
-import co.helpdesk.faveo.backend.database.DatabaseHandler;
 import co.helpdesk.faveo.frontend.adapters.TicketOverviewAdapter;
 import co.helpdesk.faveo.model.TicketOverview;
 
@@ -35,7 +34,7 @@ public class ClosedTickets extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     TextView tv;
     RecyclerView recyclerView;
-    int currentPage = 1;
+    //int currentPage = 1;
     static String nextPageURL = "";
     View rootView;
     ProgressDialog progressDialog;
@@ -47,8 +46,8 @@ public class ClosedTickets extends Fragment {
     private boolean loading = true;
     int pastVisibleItems, visibleItemCount, totalItemCount;
 
-    private String mParam1;
-    private String mParam2;
+   // private String mParam1;
+   // private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,14 +63,14 @@ public class ClosedTickets extends Fragment {
     public ClosedTickets() {
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        if (getArguments() != null) {
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
+//        }
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -104,13 +103,14 @@ public class ClosedTickets extends Fragment {
         }
 
         protected String doInBackground(String... urls) {
-            if (nextPageURL.equals("null")) {
-                return "all done";
-            }
+//            if (nextPageURL.equals("null")) {
+//                return "all done";
+//            }
             String result = new Helpdesk().getClosedTicket();
             if (result == null)
                 return null;
             String data;
+            ticketOverviewList.clear();
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 try {
@@ -190,7 +190,7 @@ public class ClosedTickets extends Fragment {
             if (result == null)
                 return null;
             //DatabaseHandler databaseHandler = new DatabaseHandler(context);
-           // databaseHandler.recreateTable();
+            // databaseHandler.recreateTable();
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 nextPageURL = jsonObject.getString("next_page_url");
@@ -200,7 +200,7 @@ public class ClosedTickets extends Fragment {
                     TicketOverview ticketOverview = Helper.parseTicketOverview(jsonArray, i);
                     if (ticketOverview != null) {
                         ticketOverviewList.add(ticketOverview);
-                       // databaseHandler.addTicketOverview(ticketOverview);
+                        // databaseHandler.addTicketOverview(ticketOverview);
                     }
                 }
             } catch (JSONException e) {

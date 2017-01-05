@@ -20,48 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a445abb4-8560-4cea-8c25-cd994a61fc5d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-hdpi/ic_add_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-hdpi/ic_note_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-hdpi/ic_reply_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-mdpi/ic_add_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-mdpi/ic_note_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-mdpi/ic_reply_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-xhdpi/ic_add_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-xhdpi/ic_note_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-xhdpi/ic_reply_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-xxhdpi/ic_add_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-xxhdpi/ic_note_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/res/drawable-xxhdpi/ic_reply_black_24dp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/Fab.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/faveo/src/main/res/drawable/add.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/build.gradle" afterPath="$PROJECT_DIR$/faveo/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/faveo.iml" afterPath="$PROJECT_DIR$/faveo/faveo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/faveo/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/FaveoApplication.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/FaveoApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/Helper.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/Helper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Helpdesk.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Helpdesk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/SplashActivity.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/SplashActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/TicketDetailActivity.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/TicketDetailActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketOverviewAdapter.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketOverviewAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketThreadAdapter.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketThreadAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/drawers/FragmentDrawer.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/drawers/FragmentDrawer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/CreateTicket.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/CreateTicket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Conversation.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Conversation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Detail.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Detail.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ClientList.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ClientList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/ClosedTickets.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/ClosedTickets.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/MyTickets.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/MyTickets.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/TrashTickets.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/TrashTickets.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/UnassignedTickets.java" afterPath="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/UnassignedTickets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/res/layout/activity_ticket_detail.xml" afterPath="$PROJECT_DIR$/faveo/src/main/res/layout/activity_ticket_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/res/layout/card_conversation.xml" afterPath="$PROJECT_DIR$/faveo/src/main/res/layout/card_conversation.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket.xml" afterPath="$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/faveo/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/faveo/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/faveo/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/faveo/src/main/res/values/styles.xml" />
     </list>
     <ignored path="faveo-helpdesk-android-community.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,35 +60,22 @@
     <favorites_list name="faveo-helpdesk-android-community" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CreateTicket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/CreateTicket.java">
+    <leaf>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
-              <folding>
-                <element signature="e#3674#8089#0" expanded="true" />
-                <element signature="e#8088#8089#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Detail.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Detail.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="105" column="17" selection-start-line="93" selection-start-column="15" selection-end-line="105" selection-end-column="17" />
+            <state relative-caret-position="240">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Helpdesk.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Helpdesk.java">
+      <file leaf-file-name="ClosedTickets.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/ClosedTickets.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,41 +83,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Conversation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Conversation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InboxTickets.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2097">
-              <caret line="268" column="6" selection-start-line="268" selection-start-column="6" selection-end-line="268" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MyTickets.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/MyTickets.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="175" selection-end-column="47" />
+            <state relative-caret-position="-810">
+              <caret line="101" column="8" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/faveo/build.gradle">
+      <file leaf-file-name="TrashTickets.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/TrashTickets.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+            <state relative-caret-position="345">
+              <caret line="114" column="39" selection-start-line="114" selection-start-column="39" selection-end-line="114" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnassignedTickets.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/UnassignedTickets.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1203">
+              <caret line="115" column="39" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
+              <folding>
+                <element signature="e#7220#7221#0" expanded="true" />
+                <element signature="e#7266#7267#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ClientList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2457">
+              <caret line="206" column="17" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InboxTickets.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1743,7 +1710,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4439165664000" />
+        <entry key="$PROJECT_DIR$" value="4439177531000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2022,7 +1989,6 @@
         <option value="$PROJECT_DIR$/faveo/src/main/res/layout/fragment_ticket_glimpse.xml" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/OpenTickets.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/client/ClosedTickets.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ClientList.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketGlimpseAdapter.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/res/layout/card_client.xml" />
         <option value="$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket_status.xml" />
@@ -2035,10 +2001,6 @@
         <option value="$PROJECT_DIR$/faveo/src/main/res/anim/fade_out.xml" />
         <option value="$PROJECT_DIR$/faveo/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/MyTickets.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/TrashTickets.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/UnassignedTickets.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/ClosedTickets.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/Helper.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/res/layout/card_conversation.xml" />
         <option value="$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket.xml" />
@@ -2057,10 +2019,15 @@
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/TicketDetailActivity.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Conversation.java" />
         <option value="$PROJECT_DIR$/faveo/build.gradle" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java" />
-        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Helpdesk.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ticketDetail/Detail.java" />
         <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/CreateTicket.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/backend/api/v1/Helpdesk.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/ClosedTickets.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/MyTickets.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/TrashTickets.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/UnassignedTickets.java" />
+        <option value="$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ClientList.java" />
       </list>
     </option>
   </component>
@@ -2094,272 +2061,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-community" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-community" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-community" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-community" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-community" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-community" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-community" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-community" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tickets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-community" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ticketDetail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-community" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo-helpdesk-android-community" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="faveo" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="v1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="faveo-helpdesk-android-community">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="faveo-helpdesk-android-community">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="faveo">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="faveo">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2490,13 +2191,123 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="faveo-helpdesk-android-community">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="faveo-helpdesk-android-community">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="faveo">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="faveo">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo-helpdesk-android-community" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo-helpdesk-android-community" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo-helpdesk-android-community" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo-helpdesk-android-community" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo-helpdesk-android-community" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faveo" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/material-sheet-fab-master 2/sample" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="device.picker.selection" value="G3AXB719W489PV7" />
+    <property name="device.picker.selection" value="Nexus_5_API_23" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/faveo/src/main/res/drawable-hdpi" />
     <property name="android.project.structure.last.selected" value="faveo" />
@@ -2906,7 +2717,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="741" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.4939577" order="7" side_tool="false" content_ui="tabs" />
@@ -2929,7 +2740,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5060423" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20996979" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23111783" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3006,36 +2817,6 @@
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/MainActivity.java</url>
-          <line>158</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/MainActivity.java</url>
-          <line>163</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/MainActivity.java</url>
-          <line>164</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/ClosedTickets.java</url>
-          <line>78</line>
-          <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java</url>
-          <line>281</line>
-          <properties />
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -3045,44 +2826,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/Preference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/anim/fade_in.xml" />
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/anim/fade_out.xml" />
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_login.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/UnassignedTickets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2190">
-          <caret line="183" column="6" selection-start-line="183" selection-start-column="6" selection-end-line="183" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/TrashTickets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="211" column="13" selection-start-line="211" selection-start-column="13" selection-end-line="211" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/ClosedTickets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="390">
+          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -3104,23 +2855,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/card_conversation.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/card_conversation.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/adapters/TicketThreadAdapter.java">
@@ -3138,17 +2889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1665">
           <caret line="136" column="80" selection-start-line="136" selection-start-column="80" selection-end-line="136" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2180#2181#0" expanded="false" />
-            <element signature="e#2226#2227#0" expanded="false" />
-            <element signature="e#6300#6301#0" expanded="false" />
-            <element signature="e#6346#6347#0" expanded="false" />
-            <element signature="e#8934#8935#0" expanded="false" />
-            <element signature="e#8992#8993#0" expanded="false" />
-            <element signature="e#9773#9774#0" expanded="false" />
-            <element signature="e#9811#9812#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3222,7 +2962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3301,10 +3040,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/drawable-hdpi/edittext_default.9.png">
-      <provider selected="true" editor-type-id="ninepatcheditor">
+      <provider editor-type-id="images">
         <state />
       </provider>
-      <provider editor-type-id="images">
+      <provider selected="true" editor-type-id="ninepatcheditor">
         <state />
       </provider>
     </entry>
@@ -3314,18 +3053,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/drawable-hdpi/edittext_focus.9.png">
-      <provider selected="true" editor-type-id="ninepatcheditor">
+      <provider editor-type-id="images">
         <state />
       </provider>
-      <provider editor-type-id="images">
+      <provider selected="true" editor-type-id="ninepatcheditor">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/drawable-hdpi/edittext_error.9.png">
-      <provider selected="true" editor-type-id="ninepatcheditor">
+      <provider editor-type-id="images">
         <state />
       </provider>
-      <provider editor-type-id="images">
+      <provider selected="true" editor-type-id="ninepatcheditor">
         <state />
       </provider>
     </entry>
@@ -3341,31 +3080,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/drawable/add.png" />
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/card_ticket_status.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_ticket_detail.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/res/layout/activity_ticket_detail.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4620">
           <caret line="308" column="50" selection-start-line="0" selection-start-column="0" selection-end-line="308" selection-end-column="50" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/faveo/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="37" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3373,7 +3110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="15" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3381,7 +3117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="41" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3389,7 +3124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="614">
           <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3397,9 +3131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="578" column="45" selection-start-line="53" selection-start-column="0" selection-end-line="616" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3407,23 +3138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/MyTickets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="175" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2097">
-          <caret line="268" column="6" selection-start-line="268" selection-start-column="6" selection-end-line="268" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3442,7 +3156,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="105" column="17" selection-start-line="93" selection-start-column="15" selection-end-line="105" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3451,8 +3164,69 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/ClosedTickets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/MyTickets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-810">
+          <caret line="101" column="8" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/TrashTickets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="114" column="39" selection-start-line="114" selection-start-column="39" selection-end-line="114" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/UnassignedTickets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1203">
+          <caret line="115" column="39" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
+          <folding>
+            <element signature="e#7220#7221#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/ClientList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2457">
+          <caret line="206" column="17" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faveo/src/main/java/co/helpdesk/faveo/frontend/fragments/tickets/InboxTickets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
