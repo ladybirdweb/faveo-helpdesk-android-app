@@ -20,6 +20,7 @@ android {
         targetSdkVersion 25
         versionCode 18
         versionName "1.8"
+        multiDexEnabled true
     }
     dexOptions {
         javaMaxHeapSize "4g"
