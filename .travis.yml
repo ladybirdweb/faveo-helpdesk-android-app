@@ -1,31 +1,36 @@
 language: android
-script: "./gradlew build"
+#script: "./gradlew build"
 android:
   components:
     - tools
     - build-tools-24.0.3
     - android-25
-    - extra-android-support # because I'm use support library
+#    - extra-android-support # because I'm use support library
     - extra-android-m2repository
-    - extra-google-google_play_services
-    - extra-google-m2repository
+#    - extra-google-google_play_services
+#    - extra-google-m2repository
 
-sudo: required
+#sudo: required
 
-jdk:
-  - oraclejdk8
+#jdk:
+ # - oraclejdk8
 
-install: true
+#install: true
 
-script:
-  - sudo apt-get update && sudo apt-get install oracle-java8-installer
-  - java -version
+#script:
+#  - sudo apt-get update && sudo apt-get install oracle-java8-installer
+ # - java -version
   
-before_script:
-  - chmod +x gradlew
-
+#before_script:
+ # - chmod +x gradlew
+before_install:
+        - chmod +x gradlew
+branches:
+        only:
+                - master
 script:
-  - ./gradlew assembleDebug --stacktrace
+ - ./gradlew build
+#  - ./gradlew assembleDebug --stacktrace
     
 
     # Specify at least one system image,
