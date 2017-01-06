@@ -1,5 +1,5 @@
 language: android
-script: "./gradlew build"
+#script: "./gradlew build"
 android:
   components:
     - tools
@@ -21,15 +21,15 @@ script:
   - sudo apt-get update && sudo apt-get install oracle-java8-installer
   - java -version
   
-before_script:
-  - chmod +x gradlew
+#before_script:
+  #- chmod +x gradlew
 #before_install:
         #- chmod +x gradlew
 branches:
         only:
                 - master
-script:
- - ./gradlew build
+#script:
+ #- ./gradlew build
 #  - ./gradlew assembleDebug --stacktrace
     
 
