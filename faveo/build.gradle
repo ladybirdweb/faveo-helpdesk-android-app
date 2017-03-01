@@ -18,8 +18,8 @@ android {
         applicationId "co.helpdesk.faveo"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 18
-        versionName "1.8"
+        versionCode 19
+        versionName "1.8.1"
         multiDexEnabled true
     }
     dexOptions {
@@ -55,9 +55,7 @@ dependencies {
     compile 'com.makeramen:roundedimageview:2.2.1'
     compile 'com.github.rahatarmanahmed:circularprogressview:2.4.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile('com.github.ozodrukh:CircularReveal:1.3.1@aar') {
-        transitive = true;
-    }
+
     compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
         transitive = true;
     }

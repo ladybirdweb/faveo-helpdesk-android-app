@@ -189,7 +189,7 @@ public class MyTickets extends Fragment {
             if (nextPageURL.equals("null")) {
                 return "all done";
             }
-            String result = new Helpdesk().nextPageURL(nextPageURL);
+            String result = new Helpdesk().nextPageURL(nextPageURL, Preference.getUserID());
             if (result == null)
                 return null;
             // DatabaseHandler databaseHandler = new DatabaseHandler(context);
