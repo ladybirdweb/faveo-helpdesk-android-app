@@ -111,7 +111,7 @@ public class LoginActivity extends AppCompatActivity implements InternetReceiver
         Context context;
         String companyURL;
 
-        public VerifyURL(Context context, String companyURL) {
+        VerifyURL(Context context, String companyURL) {
             this.context = context;
             this.companyURL = companyURL;
         }
@@ -146,7 +146,7 @@ public class LoginActivity extends AppCompatActivity implements InternetReceiver
         String username;
         String password;
 
-        public SignIn(Context context, String username, String password) {
+        SignIn(Context context, String username, String password) {
             this.context = context;
             this.username = username;
             this.password = password;
@@ -229,7 +229,8 @@ public class LoginActivity extends AppCompatActivity implements InternetReceiver
 
         editTextCompanyURL = (EditText) findViewById(R.id.editText_company_url);
         if (editTextCompanyURL != null) {
-            editTextCompanyURL.setText("http://");
+            editTextCompanyURL.setText("");
+            editTextCompanyURL.append("http://");
         }
         viewflipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         buttonVerifyURL = (ImageButton) findViewById(R.id.imageButton_verify_url);

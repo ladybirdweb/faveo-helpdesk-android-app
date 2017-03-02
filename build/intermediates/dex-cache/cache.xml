@@ -43,7 +43,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="e0a43b3c1db3c413739102f65b17dddb58f83ea1">
+        sha1="379b890112d09e7618c4e6550f6dc872ff4af9c3">
         <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_58a513c743e119e667b988ff33196ed725a6947b/classes.dex" />
     </item>
     <item
@@ -97,17 +97,8 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="88436904c815426176eb7239d7feede8acad6d80">
+        sha1="9ad4231f4b823ef1c49c291715cdcb34bfd8da73">
         <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ff61581380186a4d46563f2e872c569c91d4050c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.github.ozodrukh/CircularReveal/1.3.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="4e01297e21f918ce3de5f20f1b7ab5682f125ff4">
-        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.ozodrukh-CircularReveal-1.3.1_cdfc9476e9ca97c154b67965751deb0c31ca466b/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -126,15 +117,6 @@
         revision="24.0.1"
         sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
         <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_b0b69ac59eb78d4478380ccab48323ea529350ad/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/exploded-aar/com.github.ozodrukh/CircularReveal/1.3.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="4e01297e21f918ce3de5f20f1b7ab5682f125ff4">
-        <dex dex="/Users/narendra/Desktop/StudioProjects/faveo-helpdesk-community/faveo-helpdesk-android-community/faveo/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.ozodrukh-CircularReveal-1.3.1_cdfc9476e9ca97c154b67965751deb0c31ca466b/classes.dex" />
     </item>
     <item
         is-multidex="true"
