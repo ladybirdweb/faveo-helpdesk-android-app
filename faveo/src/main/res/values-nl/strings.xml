@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="crash_reports">CRASH REPORTS</string>
+    <string name="create_date">Datum aangemaakt</string>
+    <string name="department">Afdeling</string>
+    <string name="due_date">Verval datum</string>
+    <string name="email">E-Mail</string>
+    <string name="first_name">Voornaam</string>
+    <string name="forgot_pw">Wachtwoord vergeten</string>
+    <string name="help_topics">Help onderwerpen</string>
+    <string name="inbox">Postvak in</string>
+    <string name="internal_note">Interne notities</string>
+    <string name="last_name">AChternaam</string>
+    <string name="last_response_date">Laatste antwoord</string>
+    <string name="loading">Laden...</string>
+    <string name="logout">Uit loggen</string>
+    <string name="message">Bericht</string>
+    <string name="phone">Telefoonnnummer(optioneel)</string>
+    <string name="priority">Prioriteit</string>
+    <string name="reply">Antwoord</string>
+    <string name="save">Opslaan</string>
+    <string name="sla_plans">SLA</string>
+    <string name="source">Bron</string>
+    <string name="status">Status</string>
+    <string name="subject">Onderwerp</string>
+    <string name="submit">Versturen</string>
+    <string name="ticket_list">Ticket lijst</string>
+    <string name="to">Naar</string>
+    <string name="url">Bedrijfs URL</string>
+    <string name="welcome">Welkom</string>
+</resources>

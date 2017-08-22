@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/textView_ticket_time"
-                    android:text="INTERNAL NOTE"
+                    android:text="@string/internal_note"
                     android:textColor="@color/error_red"
                     android:textSize="12sp" />
 

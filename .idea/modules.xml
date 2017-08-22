@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/faveo/faveo.iml" filepath="$PROJECT_DIR$/faveo/faveo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/faveo-helpdesk-android-community.iml" filepath="$PROJECT_DIR$/faveo-helpdesk-android-community.iml" />
-    </modules>
-  </component>
-</project>

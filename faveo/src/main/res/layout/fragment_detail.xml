@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="SUBJECT"
+            android:text="@string/subject"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="SLA PLANS"
+            android:text="@string/sla_plans"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="STATUS"
+            android:text="@string/status"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -111,7 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="PRIORITY"
+            android:text="@string/priority"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -134,7 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="DEPARTMENT"
+            android:text="@string/department"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -156,7 +156,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="HELP TOPIC"
+            android:text="@string/help_topics"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -175,10 +175,11 @@
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="FIRST NAME"
+            android:text="@string/first_name"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -203,10 +204,11 @@
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="LAST NAME"
+            android:text="@string/last_name"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -234,7 +236,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="EMAIL"
+            android:text="@string/email"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -262,7 +264,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="SOURCE"
+            android:text="@string/source"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -313,7 +315,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="DUE DATE"
+            android:text="@string/due_date"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -342,7 +344,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="CREATED DATE"
+            android:text="@string/create_date"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -368,11 +370,12 @@
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.3"
-            android:text="LAST RESPONSE DATE"
 
+            android:text="@string/last_response_date"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -430,7 +433,7 @@
             android:layout_gravity="center"
             android:layout_margin="32dp"
             android:background="@color/blue_300"
-            android:text="Save"
+            android:text="@string/save"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp"

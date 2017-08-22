@@ -157,9 +157,9 @@ public class LoginActivity extends AppCompatActivity implements InternetReceiver
         }
 
         protected void onPostExecute(String result) {
-            Log.d("Response login", result);
             progressDialogSignIn.dismiss();
-            if (result == null) {
+            if(result == null){
+                Log.d("Response login", "Error connecting to sever");
                 Toast.makeText(LoginActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                 return;
             } else {
