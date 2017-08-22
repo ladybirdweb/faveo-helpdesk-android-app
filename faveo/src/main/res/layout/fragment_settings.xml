@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="CRASH REPORTS"
+            android:text="@string/crash_reports"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:alpha="0.6"
-                android:text="Send crash reports "
+                android:text="@string/com.crashlytics.CrashSubmissionPromptTitle"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />

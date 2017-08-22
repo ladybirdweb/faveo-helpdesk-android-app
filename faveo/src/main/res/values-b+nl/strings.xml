@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Faveo Helpdesk Community</string>
+
+    <string name="hello_world">Hallo wereld!</string>
+    <string name="action_settings">Instellingen</string>
+    <string name="title_activity_about">OveronsActiviteid</string>
+    <string name="title_activity_client_list">ClientListActivity</string>
+    <string name="title_activity_client_profile">ClientProfileActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_forgot_password">ForgotPassword</string>
+    <string name="title_activity_splash">Faveo</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_ticket_detail">TicketDetailActivity</string>
+
+    <string name="title_activity_main">Faveo</string>
+    <string name="create_ticket">Ticket aanmaken</string>
+    <string name="inbox_tickets">Inbox</string>
+    <string name="my_tickets">Mijn tickets</string>
+    <string name="unassigned_tickets">Niet toegekende tickets</string>
+    <string name="closed_tickets">Afgeronde tickets</string>
+    <string name="trash_tickets">Prullenbak</string>
+    <string name="client_list">Klanten lijst</string>
+    <string name="settings">Instellingen</string>
+    <string name="about">Over ons</string>
+
+    <string name="com.crashlytics.CrashSubmissionPromptTitle">
+          Zenden van Crash Report?</string>
+    <string name="com.crashlytics.CrashSubmissionPromptMessage">
+          De app is gecrashed! Help ons met het oplossen van dit probleem
+          door een crash report optesturen naar ons.</string>
+    <string name="com.crashlytics.CrashSubmissionSendTitle">Zenden</string>
+    <string name="com.crashlytics.CrashSubmissionAlwaysSendTitle">Altijd verzenden</string>
+    <string name="com.crashlytics.CrashSubmissionCancelTitle">Niet verzenden</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Profiel</string>
+
+</resources>

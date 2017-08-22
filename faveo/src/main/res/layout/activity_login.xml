@@ -40,7 +40,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:alpha="0.3"
-                    android:text="COMPANY'S URL"
+                    android:text="@string/url"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />

@@ -40,5 +40,34 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Profile</string>
+    <string name="status">Status</string>
+    <string name="email">Email</string>
+    <string name="forgot_pw">Forgot Password?</string>
+    <string name="url">Company URL</string>
+    <string name="welcome">Welcome !</string>
+    <string name="loading">LOADING...</string>
+    <string name="inbox">INBOX</string>
+    <string name="reply">Reply</string>
+    <string name="internal_note">Internal Note</string>
+    <string name="to">To</string>
+    <string name="message">MESSAGE</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone">Phone (Optional)</string>
+    <string name="help_topics">HELP TOPICS</string>
+    <string name="sla_plans">SLA PLANS</string>
+    <string name="department">DEPARTMENT</string>
+    <string name="subject">SUBJECT</string>
+    <string name="priority">PRIORITY</string>
+    <string name="submit">Submit</string>
+    <string name="crash_reports">CRASH REPORTS</string>
+    <string name="save">Save</string>
+    <string name="last_response_date">LAST RESPONSE DATE</string>
+    <string name="create_date">CREATED DATE</string>
+    <string name="due_date">DUE DATE</string>
+    <string name="source">SOURCE</string>
+    <string name="ticket_list">Ticket list</string>
+    <string name="logout">Log out</string>
 
 </resources>

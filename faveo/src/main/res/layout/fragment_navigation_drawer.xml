@@ -48,7 +48,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-bold"
                     android:gravity="center"
-                    android:text="Create ticket"
+                    android:text="@string/create_ticket"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -76,7 +76,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-bold"
                     android:gravity="center"
-                    android:text="Ticket list"
+                    android:text="@string/ticket_list"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -102,7 +102,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-bold"
                     android:gravity="center"
-                    android:text="Inbox tickets"
+                    android:text="@string/inbox_tickets"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -128,7 +128,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-bold"
                     android:gravity="center"
-                    android:text="My tickets"
+                    android:text="@string/my_tickets"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -150,11 +150,12 @@
                     android:src="@drawable/unassigned_ticket" />
 
                 <TextView
+                    android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-bold"
                     android:gravity="center"
-                    android:text="Unassigned tickets"
+                    android:text="@string/unassigned_tickets"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -180,7 +181,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-bold"
                     android:gravity="center"
-                    android:text="Closed tickets"
+                    android:text="@string/closed_tickets"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -206,7 +207,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-bold"
                     android:gravity="center"
-                    android:text="Trash"
+                    android:text="@string/trash_tickets"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -234,7 +235,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-bold"
                     android:gravity="center"
-                    android:text="Client list"
+                    android:text="@string/client_list"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -262,7 +263,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-bold"
                     android:gravity="center"
-                    android:text="Settings"
+                    android:text="@string/settings"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -290,7 +291,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-bold"
                     android:gravity="center"
-                    android:text="About"
+                    android:text="@string/about"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -318,7 +319,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-bold"
                     android:gravity="center"
-                    android:text="Logout"
+                    android:text="@string/logout"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 

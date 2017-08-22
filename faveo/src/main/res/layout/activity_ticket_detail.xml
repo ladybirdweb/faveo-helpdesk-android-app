@@ -265,7 +265,7 @@
                             android:drawableLeft="@drawable/ic_reply_black_24dp"
                             android:drawableStart="@drawable/ic_reply_black_24dp"
                             android:drawableTint="@color/faveo_blu"
-                            android:text="Reply" />
+                            android:text="@string/reply" />
                     </LinearLayout>
 
                     <!-- Note -->
@@ -280,7 +280,7 @@
                             android:drawableLeft="@drawable/ic_note_black_24dp"
                             android:drawableStart="@drawable/ic_note_black_24dp"
                             android:drawableTint="@color/faveo_blu"
-                            android:text="Internal Note" />
+                            android:text="@string/internal_note" />
                     </LinearLayout>
                     <!-- Note -->
                     <LinearLayout
