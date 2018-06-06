@@ -17,6 +17,11 @@
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@color/theme</item>
     </style>
+    <style name="AppThemeOverlay.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@color/actionbar</item>
+        <item name="android:textColorPrimary">@color/actionbar</item>
+        <item name="android:textColorSecondary">@color/actionbar</item>
+    </style>
 
     <style name="SwitchStyle">
         <item name="colorControlNormal">@color/blue</item>
@@ -25,7 +30,8 @@
         <item name="colorButtonNormal">@color/blue</item>
         <item name="colorSwitchThumbNormal">@color/blue</item>
     </style>
-
+    <style name="MyMaterialTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="MyMaterialTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="TextAppearance.MaterialSheetFab.Sheet.Item" parent="">
         <item name="android:layout_width">@dimen/sheet_width</item>
         <item name="android:layout_height">wrap_content</item>

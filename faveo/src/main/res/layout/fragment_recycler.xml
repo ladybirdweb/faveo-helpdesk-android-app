@@ -1,29 +1,130 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    android:background="@color/colorAccent"
+    android:orientation="vertical">
 
-    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/swipeRefresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/cardList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </android.support.v4.widget.SwipeRefreshLayout>
+    <!--<ProgressBar-->
+    <!--android:id="@+id/progress_bar"-->
+    <!--style="@style/Widget.AppCompat.ProgressBar"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginTop="54dp"-->
+    <!--android:visibility="gone" />-->
+    <TextView
+        android:id="@+id/noiternet_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:drawableTint="@color/dark_translucent"
+        android:drawableTop="@drawable/ic_signal_wifi_off_black_48dp"
+        android:text="@string/no_internet_connection"
+        android:textColor="@color/dark_translucent"
+        android:textSize="28sp"
+        android:visibility="gone"
+        android:layout_marginTop="30dp"/>
 
     <TextView
         android:id="@+id/empty_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_gravity="center"
-        android:text="No Records!"
+        android:drawableTint="@color/dark_translucent"
+        android:drawableTop="@drawable/ic_inbox_black_24dp"
+        android:text="@string/no_records"
+        android:textColor="@color/dark_translucent"
         android:textSize="28sp"
-        android:textStyle="bold"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:layout_marginTop="30dp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:clickable="true">
 
-</FrameLayout>
+        <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+            android:id="@+id/cardList"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:demo_child_count="10"
+            app:demo_layout="@layout/card_ticket_shimmer" />
+
+
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:text="Total Count"
+        android:id="@+id/totalcount"
+        android:textColor="@color/faveo"
+        android:gravity="center"
+        android:visibility="visible"/>
+    <!--<TextView-->
+        <!--android:layout_width="380dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:text="Total Count"-->
+        <!--android:id="@+id/totalcount"-->
+        <!--android:textColor="@color/faveo"-->
+        <!--android:gravity="center"-->
+        <!--android:visibility="visible"/>-->
+    <!--<TextView-->
+        <!--android:layout_width="380dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight=".7"-->
+        <!--android:text="Total Count"-->
+        <!--android:id="@+id/totalcount"-->
+        <!--android:textColor="@color/faveo"-->
+        <!--android:gravity="center"-->
+        <!--android:visibility="visible"/>-->
+</LinearLayout>
+
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/sort_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="36dp"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:alpha=".6"-->
+    <!--android:background="@color/faveo"-->
+    <!--android:clickable="true"-->
+    <!--android:elevation="4dp"-->
+    <!--android:visibility="visible">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/sorting_type_textview"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_marginRight="18dp"-->
+    <!--android:text="Sorting type"-->
+    <!--android:textColor="@color/shade_white"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_marginLeft="18dp"-->
+    <!--android:text="Sort"-->
+    <!--android:textColor="@color/shade_white"-->
+    <!--android:textStyle="bold" />-->
+    <!--</RelativeLayout>-->
+
+</LinearLayout>

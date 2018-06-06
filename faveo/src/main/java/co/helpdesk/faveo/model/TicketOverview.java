@@ -2,6 +2,7 @@ package co.helpdesk.faveo.model;
 
 /**
  * Created by Sumit
+ * Model class for ticket overview.
  */
 public class TicketOverview {
 
@@ -12,8 +13,13 @@ public class TicketOverview {
     public String ticketSubject;
     public String ticketTime;
     public String ticketBubble;
+    public String ticketStatus;
+    public String ticketPriorityColor;
+    public String ticketAttachments;
+    public String dueDate;
+    public String placeholder;
 
-    public TicketOverview(int ticketID, String clientPicture, String ticketNumber, String clientName, String ticketSubject, String ticketTime, String ticketBubble) {
+    public TicketOverview(int ticketID, String clientPicture, String ticketNumber, String clientName, String ticketSubject, String ticketTime, String ticketPriorityColor, String ticketStatus, String ticketBubble, String ticketAttachments, String dueDate, String placeholder) {
         this.ticketID = ticketID;
         this.clientPicture = clientPicture;
         this.ticketNumber = ticketNumber;
@@ -21,6 +27,53 @@ public class TicketOverview {
         this.ticketSubject = ticketSubject;
         this.ticketTime = ticketTime;
         this.ticketBubble = ticketBubble;
+        this.ticketPriorityColor = ticketPriorityColor;
+        this.ticketStatus = ticketStatus;
+        this.ticketAttachments = ticketAttachments;
+        this.dueDate = dueDate;
+        this.placeholder = placeholder;
+
+    }
+
+
+    public String getPlaceholder() {
+        return placeholder;
+    }
+
+    public void setPlaceholder(String placeholder) {
+        this.placeholder = placeholder;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public String getTicketAttachments() {
+        return ticketAttachments;
+    }
+
+    public void setTicketAttachments(String ticketAttachments) {
+        this.ticketAttachments = ticketAttachments;
+    }
+
+    public String getTicketStatus() {
+        return ticketStatus;
+    }
+
+    public void setTicketStatus(String ticketStatus) {
+        this.ticketStatus = ticketStatus;
+    }
+
+    public String getTicketPriority() {
+        return ticketPriorityColor;
+    }
+
+    public void setTicketPriority(String ticketPriority) {
+        this.ticketPriorityColor = ticketPriority;
     }
 
     public int getTicketID() {

@@ -2,6 +2,7 @@ package co.helpdesk.faveo.model;
 
 /**
  * Created by Sumit
+ * Model class for ticket glimpse.
  */
 public class TicketGlimpse {
 

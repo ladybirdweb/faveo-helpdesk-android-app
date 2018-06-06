@@ -1,38 +1,30 @@
 package co.helpdesk.faveo.frontend.fragments;
 
-import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.CompoundButtonCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.SwitchCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
-import co.helpdesk.faveo.Constants;
-import co.helpdesk.faveo.Preference;
+import com.pixplicity.easyprefs.library.Prefs;
+
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.frontend.activities.MainActivity;
-import co.helpdesk.faveo.frontend.activities.SplashActivity;
+import es.dmoral.toasty.Toasty;
 
-public class Settings extends Fragment implements CompoundButton.OnCheckedChangeListener, CompoundButton.OnClickListener {
-    SwitchCompat switchCompatStatus, switchCompatResponse, switchCompatCreated,
-            switchCompatAssignedGroup, switchCompatAssignedMe, switchCompatCrashReports;
-    public static boolean isCheckedStatus = false, isCheckedResponse = false, isCheckedCreated = false,
-            isCheckedAssignedGroup = false, isCheckedAssignedMe = false, isCheckedCrashReports = true;
+public class Settings extends Fragment implements CompoundButton.OnClickListener {
+    SwitchCompat switchCompatCrashReports;
+    public static boolean isCheckedCrashReports = true;
 
     View rootView;
 
@@ -55,7 +47,11 @@ public class Settings extends Fragment implements CompoundButton.OnCheckedChange
 
     public Settings() {
     }
-
+    /**
+     *
+     * @param savedInstanceState under special circumstances, to restore themselves to a previous
+     * state using the data stored in this bundle.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,24 +60,27 @@ public class Settings extends Fragment implements CompoundButton.OnCheckedChange
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    /**
+     *
+     * @param inflater for loading the fragment.
+     * @param container where the fragment is going to be load.
+     * @param savedInstanceState
+     * @return after initializing returning the rootview
+     * which is having the fragment.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.fragment_settings, container, false);
-            //switchCompatStatus = (SwitchCompat) rootView.findViewById(R.id.switch_status);
-            // switchCompatResponse = (SwitchCompat) rootView.findViewById(R.id.switch_response);
-            // switchCompatCreated = (SwitchCompat) rootView.findViewById(R.id.switch_created);
-            // switchCompatAssignedGroup = (SwitchCompat) rootView.findViewById(R.id.switch_assigned_group);
-            // switchCompatAssignedMe = (SwitchCompat) rootView.findViewById(R.id.switch_assigned_me);
+
             switchCompatCrashReports = (SwitchCompat) rootView.findViewById(R.id.switch_crash_reports);
-            switchCompatCrashReports.setChecked(Preference.isCrashReport());
+            switchCompatCrashReports.setChecked(Prefs.getBoolean("CRASH_REPORT", false));
             // switchCompatCrashReports.setOnCheckedChangeListener(this);
             switchCompatCrashReports.setOnClickListener(this);
 
         }
-        ((MainActivity) getActivity()).setActionBarTitle("Settings");
+        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.settings));
         return rootView;
     }
 
@@ -96,60 +95,29 @@ public class Settings extends Fragment implements CompoundButton.OnCheckedChange
             mListener.onFragmentInteraction(uri);
         }
     }
-
+    /**
+     * When the fragment is going to be attached
+     * this life cycle method is going to be called.
+     * @param context refers to the current fragment.
+     */
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
     }
-
+    /**
+     * Once the fragment is going to be detached then
+     * this method is going to be called.
+     */
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
-
-    @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        switch (buttonView.getId()) {
-//            case R.id.switch_status:
-//                isCheckedStatus = switchCompatStatus.isChecked();
-//                break;
-//            case R.id.switch_response:
-//                isCheckedResponse = switchCompatResponse.isChecked();
-//                break;
-//            case R.id.switch_created:
-//                isCheckedCreated = switchCompatCreated.isChecked();
-//                break;
-//            case R.id.switch_assigned_group:
-//                isCheckedAssignedGroup = switchCompatAssignedGroup.isChecked();
-//                break;
-//            case R.id.switch_assigned_me:
-//                isCheckedAssignedMe = switchCompatAssignedMe.isChecked();
-//                break;
-            case R.id.switch_crash_reports: {
-
-//                if (!switchCompatCrashReports.isChecked()) {
-//                    isCheckedCrashReports = false;
-//                    SharedPreferences.Editor authenticationEditor = getActivity().getApplicationContext().getSharedPreferences(Constants.PREFERENCE, 0).edit();
-//                    authenticationEditor.putBoolean("CRASH_REPORT", isCheckedCrashReports);
-//                    authenticationEditor.apply();
-//
-//                } else {
-//                    isCheckedCrashReports = true;
-//                    SharedPreferences.Editor authenticationEditor = getActivity().getApplicationContext().getSharedPreferences(Constants.PREFERENCE, 0).edit();
-//                    authenticationEditor.putBoolean("CRASH_REPORT", isCheckedCrashReports);
-//                    authenticationEditor.apply();
-//                }
-
-                break;
-            }
-        }
     }
 
     @Override
@@ -159,15 +127,15 @@ public class Settings extends Fragment implements CompoundButton.OnCheckedChange
             case R.id.switch_crash_reports: {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
-                        .setTitle("Restart App ?")
-                        .setMessage("To apply the changes in settings, you must restart the app!")
+                        .setTitle(R.string.restart_app_tittle)
+                        .setMessage(R.string.restart_app)
                         .setCancelable(false)
                         .setIcon(R.drawable.ic_warning_black_36dp)
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
-                                switchCompatCrashReports.setChecked(Preference.isCrashReport());
+                                switchCompatCrashReports.setChecked(Prefs.getBoolean("CRASH_REPORT", false));
                             }
                         })
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -175,13 +143,13 @@ public class Settings extends Fragment implements CompoundButton.OnCheckedChange
                             public void onClick(DialogInterface dialog, int which) {
                                 if (!switchCompatCrashReports.isChecked()) {
                                     isCheckedCrashReports = false;
-                                    SharedPreferences.Editor authenticationEditor = getActivity().getApplicationContext().getSharedPreferences(Constants.PREFERENCE, 0).edit();
+                                    SharedPreferences.Editor authenticationEditor = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).edit();
                                     authenticationEditor.putBoolean("CRASH_REPORT", isCheckedCrashReports);
                                     authenticationEditor.apply();
 
                                 } else {
                                     isCheckedCrashReports = true;
-                                    SharedPreferences.Editor authenticationEditor = getActivity().getApplicationContext().getSharedPreferences(Constants.PREFERENCE, 0).edit();
+                                    SharedPreferences.Editor authenticationEditor = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).edit();
                                     authenticationEditor.putBoolean("CRASH_REPORT", isCheckedCrashReports);
                                     authenticationEditor.apply();
                                 }
@@ -189,7 +157,7 @@ public class Settings extends Fragment implements CompoundButton.OnCheckedChange
                                         .getLaunchIntentForPackage(getContext().getPackageName());
                                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(i);
-                                Toast.makeText(getContext(), "Restarting...", Toast.LENGTH_LONG).show();
+                                Toasty.info(getContext(), getString(R.string.restarting), Toast.LENGTH_LONG).show();
                             }
                         });
 
@@ -203,7 +171,7 @@ public class Settings extends Fragment implements CompoundButton.OnCheckedChange
     }
 
     public interface OnFragmentInteractionListener {
-        public void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(Uri uri);
     }
 
 }

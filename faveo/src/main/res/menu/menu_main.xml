@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.narendra.myapplication12.MainActivity">
+
+    <!--<item-->
+        <!--android:id="@+id/action_search"-->
+        <!--android:icon="@drawable/ic_action_search"-->
+        <!--android:orderInCategory="99"-->
+        <!--android:title="Search"-->
+        <!--app:showAsAction="ifRoom" />-->
+    <!--<item-->
+        <!--android:id="@+id/action_noti"-->
+        <!--android:icon="@drawable/ic_notifications_black_24dp_colored"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="Notifications"-->
+        <!--app:showAsAction="ifRoom" />-->
+
+</menu>

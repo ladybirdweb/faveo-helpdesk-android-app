@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="64dp"
-    android:background="@color/colorAccent">
+    android:background="?attr/selectableItemBackground">
 
     <TextView
         android:id="@+id/textView_ticket_id"
@@ -14,33 +14,37 @@
     <TextView
         android:id="@+id/textView_ticket_number"
         android:layout_width="wrap_content"
+        android:layout_marginTop="4dp"
         android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:layout_alignLeft="@+id/textView_ticket_subject"
+        android:layout_alignStart="@+id/textView_ticket_subject"
+        android:text="sdgjhvhsdv" />
 
     <View
+        android:id="@+id/color"
         android:layout_width="6dp"
         android:layout_height="match_parent"
-        android:background="@color/blue"
-        android:visibility="invisible" />
+        android:background="@color/faveo" />
 
-    <ImageView
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_margin="16dp"
-        android:alpha="0.27"
-        android:src="@drawable/done_black"
-        tools:ignore="ContentDescription" />
+    <!--<ImageView-->
+    <!--android:id="@+id/imageView7"-->
+    <!--android:layout_width="32dp"-->
+    <!--android:layout_height="32dp"-->
+    <!--android:layout_margin="16dp"-->
+    <!--android:alpha="0.27"-->
+    <!--android:src="@drawable/done_black"-->
+    <!--tools:ignore="ContentDescription" />-->
 
     <TextView
         android:id="@+id/textView_ticket_subject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView_ticket_id"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="75dp"
-        android:layout_marginStart="75dp"
-        android:layout_toEndOf="@+id/imageView"
-        android:layout_toRightOf="@+id/imageView"
+        android:layout_above="@+id/view2"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_toEndOf="@+id/color"
+        android:layout_toRightOf="@+id/color"
         android:ellipsize="end"
         android:gravity="center"
         android:maxLines="1"
@@ -49,6 +53,7 @@
         tools:ignore="HardcodedText,UnknownId" />
 
     <View
+        android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"

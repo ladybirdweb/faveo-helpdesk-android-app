@@ -1,6 +1,5 @@
 package co.helpdesk.faveo.frontend.fragments;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
@@ -8,7 +7,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +17,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pixplicity.easyprefs.library.Prefs;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 import co.helpdesk.faveo.Helper;
-import co.helpdesk.faveo.Preference;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.Utils;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
@@ -35,16 +34,14 @@ public class CreateTicket extends Fragment {
 
     EditText editTextEmail, editTextLastName, editTextFirstName, editTextPhone, editTextSubject, editTextMessage;
     TextView textViewErrorEmail, textViewErrorLastName, textViewErrorFirstName, textViewErrorPhone, textViewErrorSubject, textViewErrorMessage;
-
     Spinner spinnerHelpTopic, spinnerSLAPlans, spinnerAssignTo, spinnerPriority, spinnerCountryCode;
     Button buttonSubmit;
-
-    ArrayAdapter<String> spinnerSlaArrayAdapter, spinnerAssignToArrayAdapter,
-            spinnerHelpArrayAdapter, spinnerDeptArrayAdapter, spinnerPriArrayAdapter;
-
     ProgressDialog progressDialog;
     int paddingTop, paddingBottom;
     View rootView;
+
+    ArrayAdapter<String> spinnerSlaArrayAdapter, spinnerAssignToArrayAdapter,
+            spinnerHelpArrayAdapter, spinnerDeptArrayAdapter, spinnerPriArrayAdapter;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -65,7 +62,11 @@ public class CreateTicket extends Fragment {
 
     public CreateTicket() {
     }
-
+    /**
+     *
+     * @param savedInstanceState under special circumstances, to restore themselves to a previous
+     * state using the data stored in this bundle.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +76,7 @@ public class CreateTicket extends Fragment {
         }
     }
 
-    public int GetCountryZipCode() {
+    public int getCountryZipCode() {
         String CountryID = "";
         String CountryZipCode = "";
         int code = 0;
@@ -94,12 +95,19 @@ public class CreateTicket extends Fragment {
         }
         return code;
     }
-
+    /**
+     *
+     * @param inflater for loading the fragment.
+     * @param container where the fragment is going to be load.
+     * @param savedInstanceState
+     * @return after initializing returning the rootview
+     * which is having the fragment.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (rootView == null) {
-            rootView = inflater.inflate(co.helpdesk.faveo.R.layout.fragment_create_ticket, container, false);
+            rootView = inflater.inflate(R.layout.fragment_create_ticket, container, false);
             setUpViews(rootView);
             buttonSubmit.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -121,48 +129,48 @@ public class CreateTicket extends Fragment {
                     boolean allCorrect = true;
 
                     if (email.trim().length() == 0 || !Helper.isValidEmail(email)) {
-                        setErrorState(editTextEmail, textViewErrorEmail, "Invalid email");
+                        setErrorState(editTextEmail, textViewErrorEmail, getString(R.string.invalid_email));
                         allCorrect = false;
                     }
 
                     if (fname.trim().length() == 0) {
-                        setErrorState(editTextFirstName, textViewErrorFirstName, "Fill FirstName");
+                        setErrorState(editTextFirstName, textViewErrorFirstName, getString(R.string.fill_firstname));
                         allCorrect = false;
                     } else if (fname.trim().length() < 3) {
-                        setErrorState(editTextFirstName, textViewErrorFirstName, "FirstName should be minimum 3 characters");
+                        setErrorState(editTextFirstName, textViewErrorFirstName, getString(R.string.firstname_minimum_char));
                         allCorrect = false;
                     }
                     if (lname.trim().length() == 0) {
-                        setErrorState(editTextLastName, textViewErrorLastName, "Fill LastName");
+                        setErrorState(editTextLastName, textViewErrorLastName, getString(R.string.fill_lastname));
                         allCorrect = false;
                     }
 
                     if (subject.trim().length() == 0) {
-                        setErrorState(editTextSubject, textViewErrorSubject, "Please fill the field");
+                        setErrorState(editTextSubject, textViewErrorSubject, getString(R.string.please_fill_field));
                         allCorrect = false;
                     } else if (subject.trim().length() < 5) {
-                        setErrorState(editTextSubject, textViewErrorSubject, "Subject should be minimum 5 characters");
+                        setErrorState(editTextSubject, textViewErrorSubject, getString(R.string.sub_minimum_char));
                         allCorrect = false;
                     }
 
                     if (message.trim().length() == 0) {
-                        setErrorState(editTextMessage, textViewErrorMessage, "Please fill the field");
+                        setErrorState(editTextMessage, textViewErrorMessage, getString(R.string.please_fill_field));
                         allCorrect = false;
                     } else if (message.trim().length() < 10) {
-                        setErrorState(editTextMessage, textViewErrorMessage, "Message should be minimum 10 characters");
+                        setErrorState(editTextMessage, textViewErrorMessage, getString(R.string.msg_minimum_char));
                         allCorrect = false;
                     }
 
-                    if (spinnerAssignTo.getSelectedItemPosition() == 1) {
-                        Toast.makeText(getActivity(), "Invalid assignment", Toast.LENGTH_LONG).show();
-                        setErrorState(editTextMessage, textViewErrorMessage, "Invalid assign");
-                        allCorrect = false;
-                    }
+//                    if (spinnerAssignTo.getSelectedItemPosition() == 1) {
+//                        Toast.makeText(getActivity(), "Invalid assignment", Toast.LENGTH_LONG).show();
+//                        setErrorState(editTextMessage, textViewErrorMessage, "Invalid assign");
+//                        allCorrect = false;
+//                    }
 
                     if (allCorrect) {
                         if (InternetReceiver.isConnected()) {
                             progressDialog = new ProgressDialog(getActivity());
-                            progressDialog.setMessage("Creating ticket");
+                            progressDialog.setMessage(getString(R.string.creating_ticket));
                             progressDialog.show();
                             try {
                                 fname = URLEncoder.encode(fname, "utf-8");
@@ -175,19 +183,19 @@ public class CreateTicket extends Fragment {
                                 e.printStackTrace();
                             }
 
-                            new CreateNewTicket(Integer.parseInt(Preference.getUserID()), subject, message, helpTopic, SLAPlans, priority, assignTo, phone, fname, lname, email, countrycode).execute();
-
+                            new CreateNewTicket(Integer.parseInt(Prefs.getString("ID", null)), subject, message, helpTopic, SLAPlans, priority, assignTo, phone, fname, lname, email, countrycode).execute();
                         } else
-                            Toast.makeText(v.getContext(), "Oops! No internet", Toast.LENGTH_LONG).show();
+                            Toast.makeText(v.getContext(), R.string.oops_no_internet, Toast.LENGTH_LONG).show();
                     }
+
                 }
             });
         }
-        ((MainActivity) getActivity()).setActionBarTitle("Create ticket");
+        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.create_ticket));
         return rootView;
     }
 
-    public class CreateNewTicket extends AsyncTask<String, Void, String> {
+    private class CreateNewTicket extends AsyncTask<String, Void, String> {
         int userID;
         String phone;
         String subject;
@@ -216,56 +224,60 @@ public class CreateTicket extends Fragment {
         }
 
         protected String doInBackground(String... urls) {
-            return new Helpdesk().postCreateTicket(userID, subject, body, helpTopic, SLA, priority, dept, fname, lname, phone, email, code);
+            return new Helpdesk().postCreateTicket(userID, subject, body, helpTopic,SLA, priority, fname, lname, phone, email, code,"");
         }
 
         protected void onPostExecute(String result) {
-            Log.d("result  create ticket:", result + "");
             progressDialog.dismiss();
             if (result == null) {
-                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), getString(R.string.something_went_wrong), Toast.LENGTH_LONG).show();
                 return;
             }
-            if (result.contains("Ticket created successfully!")) {
-                Toast.makeText(getActivity(), "Ticket created", Toast.LENGTH_LONG).show();
+            if (result.contains("NotificationThread created successfully!")) {
+                Toast.makeText(getActivity(), getString(R.string.ticket_created_success), Toast.LENGTH_LONG).show();
             }
         }
     }
 
     private void resetViews() {
-        editTextEmail.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
+
+        editTextEmail.setBackgroundResource(R.drawable.edittext_theme_states);
         editTextEmail.setPadding(0, paddingTop, 0, paddingBottom);
         editTextFirstName.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
         editTextFirstName.setPadding(0, paddingTop, 0, paddingBottom);
         editTextLastName.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
         editTextLastName.setPadding(0, paddingTop, 0, paddingBottom);
-        editTextPhone.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
+        editTextPhone.setBackgroundResource(R.drawable.edittext_theme_states);
         editTextPhone.setPadding(0, paddingTop, 0, paddingBottom);
-        editTextSubject.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
+        editTextSubject.setBackgroundResource(R.drawable.edittext_theme_states);
         editTextSubject.setPadding(0, paddingTop, 0, paddingBottom);
-        editTextMessage.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_theme_states);
+        editTextMessage.setBackgroundResource(R.drawable.edittext_theme_states);
         editTextMessage.setPadding(0, paddingTop, 0, paddingBottom);
         textViewErrorEmail.setText("");
         textViewErrorFirstName.setText("");
         textViewErrorLastName.setText("");
-        // textViewErrorPhone.setText("");
+        textViewErrorPhone.setText("");
         textViewErrorSubject.setText("");
         textViewErrorMessage.setText("");
-
     }
 
     private void setErrorState(EditText editText, TextView textViewError, String error) {
-        editText.setBackgroundResource(co.helpdesk.faveo.R.drawable.edittext_error_state);
+        editText.setBackgroundResource(R.drawable.edittext_error_state);
         editText.setPadding(0, paddingTop, 0, paddingBottom);
         textViewError.setText(error);
     }
 
+    /**
+     * For initializing all the views used
+     * in create ticket fragment.
+     * @param rootView
+     */
     private void setUpViews(View rootView) {
         editTextEmail = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_email);
         editTextFirstName = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_firstname);
         editTextLastName = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_lastname);
         editTextPhone = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_phone);
-        // editTextPhone.setText("91");
+
         editTextSubject = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_subject);
         editTextMessage = (EditText) rootView.findViewById(co.helpdesk.faveo.R.id.editText_message);
         textViewErrorEmail = (TextView) rootView.findViewById(co.helpdesk.faveo.R.id.textView_error_email);
@@ -296,7 +308,7 @@ public class CreateTicket extends Fragment {
         spinnerPriority.setAdapter(spinnerPriArrayAdapter);
 
         spinnerCountryCode = (Spinner) rootView.findViewById(R.id.spinner_code);
-        spinnerCountryCode.setSelection(GetCountryZipCode());
+        spinnerCountryCode.setSelection(getCountryZipCode());
         buttonSubmit = (Button) rootView.findViewById(co.helpdesk.faveo.R.id.button_submit);
         paddingTop = editTextEmail.getPaddingTop();
         paddingBottom = editTextEmail.getPaddingBottom();
@@ -307,18 +319,25 @@ public class CreateTicket extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
-
+    /**
+     * When the fragment is going to be attached
+     * this life cycle method is going to be called.
+     * @param context refers to the current fragment.
+     */
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof Settings.OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
     }
-
+    /**
+     * Once the fragment is going to be detached then
+     * this method is going to be called.
+     */
     @Override
     public void onDetach() {
         super.onDetach();
@@ -328,5 +347,6 @@ public class CreateTicket extends Fragment {
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
     }
+
 
 }

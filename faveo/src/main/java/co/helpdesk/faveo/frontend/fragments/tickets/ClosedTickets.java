@@ -3,6 +3,7 @@ package co.helpdesk.faveo.frontend.fragments.tickets;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.muddzdev.styleabletoastlibrary.StyleableToast;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,11 +26,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.adapters.TicketOverviewAdapter;
 import co.helpdesk.faveo.model.TicketOverview;
+import es.dmoral.toasty.Toasty;
 
 public class ClosedTickets extends Fragment {
     private static final String ARG_PARAM1 = "param1";
@@ -39,7 +44,8 @@ public class ClosedTickets extends Fragment {
     View rootView;
     ProgressDialog progressDialog;
     SwipeRefreshLayout swipeRefresh;
-
+    int count;
+    TextView textViewTotalCount;
     TicketOverviewAdapter ticketOverviewAdapter;
     List<TicketOverview> ticketOverviewList = new ArrayList<>();
 
@@ -78,6 +84,7 @@ public class ClosedTickets extends Fragment {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
             progressDialog = new ProgressDialog(getActivity());
+            textViewTotalCount= (TextView) rootView.findViewById(R.id.totalcount);
             progressDialog.setMessage("Fetching tickets");
             progressDialog.show();
             new FetchFirst(getActivity()).execute();
@@ -115,6 +122,7 @@ public class ClosedTickets extends Fragment {
                 JSONObject jsonObject = new JSONObject(result);
                 try {
                     data = jsonObject.getString("data");
+                    count=jsonObject.getInt("total");
                     nextPageURL = jsonObject.getString("next_page_url");
                 } catch (JSONException e) {
                     data = jsonObject.getString("result");
@@ -132,6 +140,7 @@ public class ClosedTickets extends Fragment {
         }
 
         protected void onPostExecute(String result) {
+            textViewTotalCount.setText("" + count + " tickets");
             if (swipeRefresh.isRefreshing())
                 swipeRefresh.setRefreshing(false);
             if (progressDialog.isShowing())
@@ -142,7 +151,7 @@ public class ClosedTickets extends Fragment {
             }
             if (result.equals("all done")) {
 
-                Toast.makeText(context, "All Done!", Toast.LENGTH_SHORT).show();
+                Toasty.info(context, getString(R.string.all_caught_up), Toast.LENGTH_SHORT).show();
                 //return;
             }
             recyclerView = (RecyclerView) rootView.findViewById(R.id.cardList);
@@ -161,13 +170,19 @@ public class ClosedTickets extends Fragment {
                             if ((visibleItemCount + pastVisibleItems) >= totalItemCount) {
                                 loading = false;
                                 new FetchNextPage(getActivity()).execute();
-                                Toast.makeText(getActivity(), "Loading!", Toast.LENGTH_SHORT).show();
+                                StyleableToast st = new StyleableToast(getContext(), getString(R.string.loading), Toast.LENGTH_SHORT);
+                                st.setBackgroundColor(Color.parseColor("#3da6d7"));
+                                st.setTextColor(Color.WHITE);
+                                st.setIcon(R.drawable.ic_autorenew_black_24dp);
+                                st.spinIcon();
+                                st.setMaxAlpha();
+                                st.show();
                             }
                         }
                     }
                 }
             });
-            ticketOverviewAdapter = new TicketOverviewAdapter(ticketOverviewList);
+            ticketOverviewAdapter = new TicketOverviewAdapter(getContext(),ticketOverviewList);
             recyclerView.setAdapter(ticketOverviewAdapter);
             if (ticketOverviewAdapter.getItemCount() == 0) {
                 tv.setVisibility(View.VISIBLE);
@@ -214,7 +229,7 @@ public class ClosedTickets extends Fragment {
             if (result == null)
                 return;
             if (result.equals("all done")) {
-                Toast.makeText(context, "All tickets loaded", Toast.LENGTH_SHORT).show();
+                Toasty.info(context, getString(R.string.all_caught_up), Toast.LENGTH_SHORT).show();
                 return;
             }
             ticketOverviewAdapter.notifyDataSetChanged();

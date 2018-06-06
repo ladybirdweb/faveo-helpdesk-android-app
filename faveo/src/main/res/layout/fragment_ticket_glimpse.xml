@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="No Records!"
+        android:text="@string/no_records"
         android:textSize="28sp"
         android:textStyle="bold"
         android:visibility="gone" />
