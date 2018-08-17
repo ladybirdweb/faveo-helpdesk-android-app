@@ -17,6 +17,8 @@ import com.amulyakhare.textdrawable.util.ColorGenerator;
 import com.github.curioustechizen.ago.RelativeTimeTextView;
 import com.squareup.picasso.Picasso;
 
+import org.jsoup.Jsoup;
+
 import java.util.List;
 
 import agency.tango.android.avatarview.IImageLoader;
@@ -48,6 +50,7 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         TicketThread ticketThread = ticketThreadList.get(i);
         String letter = String.valueOf(ticketThread.clientName.charAt(0)).toUpperCase();
         ticketViewHolder.textViewClientName.setText(ticketThread.clientName);
+        ticketViewHolder.textViewTicketCreatedTime.setReferenceTime(Helper.relativeTime(ticketThread.messageTime));
         ticketViewHolder.textViewMessageTime.setReferenceTime(Helper.relativeTime(ticketThread.messageTime));
         ticketViewHolder.linearLayout.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -57,6 +60,12 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
                 return true;
             }
         });
+
+        String message=ticketThread.message.replaceAll("\n","");
+        String message1=message.replaceAll("\t","");
+        String message2=message1.replaceAll("&nbsp;"," ");
+
+        ticketViewHolder.textViewShowingSome.setText(Jsoup.parse(message2).text());
         //ticketViewHolder.textViewMessageTitle.setText(ticketThread.messageTitle);
         //ticketViewHolder.textViewMessage.setText(Html.fromHtml(ticketThread.message));
         ticketViewHolder.webView.loadDataWithBaseURL(null, ticketThread.message.replaceAll("\\n", "<br/>"), "text/html", "UTF-8", null);
@@ -99,25 +108,65 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
 //            ticketViewHolder.webView.setVisibility(View.VISIBLE);
 //        }
 
+//        if (i==0){
+//            ticketViewHolder.webView.setVisibility(View.VISIBLE);
+//        }
+//        if (i==1){
+//            ticketViewHolder.webView.setVisibility(View.VISIBLE);
+//        }
+//        if (i==ticketThreadList.size()-1){
+//            ticketViewHolder.textViewShowingSome.setVisibility(View.GONE);
+//            ticketViewHolder.webView.setVisibility(View.VISIBLE);
+//            ticketViewHolder.reportAndReply.setVisibility(View.GONE);
+//            ticketViewHolder.textViewTicketCreatedTime.setVisibility(View.VISIBLE);
+//
+//        }
         if (i==0){
-            ticketViewHolder.webView.setVisibility(View.VISIBLE);
+            ticketViewHolder.linearLayoutWeb.setVisibility(View.GONE);
+            ticketViewHolder.reportAndReply.setVisibility(View.GONE);
+            ticketViewHolder.textViewMessageTime.setVisibility(View.VISIBLE);
+            ticketViewHolder.textViewTicketCreatedTime.setVisibility(View.GONE);
+            ticketViewHolder.textViewShowingSome.setVisibility(View.VISIBLE);
         }
-        if (i==1){
-            ticketViewHolder.webView.setVisibility(View.VISIBLE);
+        else if (i==ticketThreadList.size()-1){
+            ticketViewHolder.textViewShowingSome.setVisibility(View.GONE);
+            ticketViewHolder.reportAndReply.setVisibility(View.VISIBLE);
+            ticketViewHolder.textViewTicketCreatedTime.setVisibility(View.VISIBLE);
+            ticketViewHolder.textViewMessageTime.setVisibility(View.GONE);
+            ticketViewHolder.linearLayoutWeb.setVisibility(View.VISIBLE);
         }
+        else {
+            ticketViewHolder.linearLayoutWeb.setVisibility(View.GONE);
+            ticketViewHolder.reportAndReply.setVisibility(View.GONE);
+            ticketViewHolder.textViewMessageTime.setVisibility(View.VISIBLE);
+            ticketViewHolder.textViewTicketCreatedTime.setVisibility(View.GONE);
+            ticketViewHolder.textViewShowingSome.setVisibility(View.VISIBLE);
+        }
+
         if (i==ticketThreadList.size()-1){
-            ticketViewHolder.webView.setVisibility(View.VISIBLE);
+            ticketViewHolder.reportAndReply.setText("reported ");
+        }
+        else{
+            ticketViewHolder.reportAndReply.setText("updated ");
         }
 
         ticketViewHolder.thread.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ticketViewHolder.webView.getVisibility() == View.GONE) {
+                if (ticketViewHolder.linearLayoutWeb.getVisibility() == View.VISIBLE) {
                     //ticketViewHolder.textViewMessageTitle.setVisibility(View.VISIBLE);
-                    ticketViewHolder.webView.setVisibility(View.VISIBLE);
+                    ticketViewHolder.linearLayoutWeb.setVisibility(View.GONE);
+                    ticketViewHolder.reportAndReply.setVisibility(View.GONE);
+                    ticketViewHolder.textViewMessageTime.setVisibility(View.VISIBLE);
+                    ticketViewHolder.textViewTicketCreatedTime.setVisibility(View.GONE);
+                    ticketViewHolder.textViewShowingSome.setVisibility(View.VISIBLE);
                 } else {
                     //ticketViewHolder.textViewMessageTitle.setVisibility(View.GONE);
-                    ticketViewHolder.webView.setVisibility(View.GONE);
+                    ticketViewHolder.textViewShowingSome.setVisibility(View.GONE);
+                    ticketViewHolder.reportAndReply.setVisibility(View.VISIBLE);
+                    ticketViewHolder.textViewTicketCreatedTime.setVisibility(View.VISIBLE);
+                    ticketViewHolder.textViewMessageTime.setVisibility(View.GONE);
+                    ticketViewHolder.linearLayoutWeb.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -146,7 +195,10 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         TextView textViewType;
         WebView webView;
         LinearLayout linearLayout;
-
+        TextView textViewShowingSome;
+        TextView reportAndReply;
+        LinearLayout linearLayoutWeb;
+        RelativeTimeTextView textViewTicketCreatedTime;
         TicketViewHolder(View v) {
 
             super(v);
@@ -154,11 +206,15 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
             roundedImageViewProfilePic = (ImageView) v.findViewById(R.id.imageView_default_profile);
             textViewClientName = (TextView) v.findViewById(R.id.textView_client_name);
             textViewMessageTime = (RelativeTimeTextView) v.findViewById(R.id.textView_ticket_time);
-            textViewMessageTitle = (TextView) v.findViewById(R.id.textView_client_message_title);
+            //textViewMessageTitle = (TextView) v.findViewById(R.id.textView_client_message_title);
             linearLayout= (LinearLayout) v.findViewById(R.id.linearLayout);
+            textViewShowingSome= (TextView) v.findViewById(R.id.showingSome);
+            textViewTicketCreatedTime= (RelativeTimeTextView) v.findViewById(R.id.textView_ticket_related);
             //  textViewMessage = (TextView) v.findViewById(R.id.textView_client_message_body);
             textViewType = (TextView) v.findViewById(R.id.textView_type);
             webView = (WebView) v.findViewById(R.id.webView);
+            reportAndReply= (TextView) v.findViewById(R.id.reported);
+            linearLayoutWeb= (LinearLayout) v.findViewById(R.id.linearWebView);
         }
 
     }

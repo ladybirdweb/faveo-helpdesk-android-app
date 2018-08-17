@@ -31,6 +31,7 @@ import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.adapters.TicketOverviewAdapter;
+import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
 import co.helpdesk.faveo.model.TicketOverview;
 import es.dmoral.toasty.Toasty;
 
@@ -42,7 +43,7 @@ public class ClosedTickets extends Fragment {
     //int currentPage = 1;
     static String nextPageURL = "";
     View rootView;
-    ProgressDialog progressDialog;
+    //ProgressDialog progressDialog;
     SwipeRefreshLayout swipeRefresh;
     int count;
     TextView textViewTotalCount;
@@ -83,12 +84,14 @@ public class ClosedTickets extends Fragment {
                              Bundle savedInstanceState) {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
-            progressDialog = new ProgressDialog(getActivity());
             textViewTotalCount= (TextView) rootView.findViewById(R.id.totalcount);
-            progressDialog.setMessage("Fetching tickets");
-            progressDialog.show();
-            new FetchFirst(getActivity()).execute();
             swipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefresh);
+            if (InternetReceiver.isConnected()){
+                swipeRefresh.setRefreshing(true);
+                new FetchFirst(getActivity()).execute();
+            }
+
+
             swipeRefresh.setColorSchemeResources(R.color.faveo_blue);
             swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
@@ -141,10 +144,9 @@ public class ClosedTickets extends Fragment {
 
         protected void onPostExecute(String result) {
             textViewTotalCount.setText("" + count + " tickets");
+            swipeRefresh.setRefreshing(false);
             if (swipeRefresh.isRefreshing())
                 swipeRefresh.setRefreshing(false);
-            if (progressDialog.isShowing())
-                progressDialog.dismiss();
             if (result == null) {
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
                 return;

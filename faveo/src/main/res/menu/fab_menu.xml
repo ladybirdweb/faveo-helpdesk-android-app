@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fab_internalnote"
+        android:icon="@drawable/ic_note_black_24dp"
+        android:title="Internal Note"
+        />
+    <item
+        android:id="@+id/fab_reply"
+        android:icon="@drawable/ic_reply_black_24dp"
+        android:title="Reply"
+        />
+</menu>

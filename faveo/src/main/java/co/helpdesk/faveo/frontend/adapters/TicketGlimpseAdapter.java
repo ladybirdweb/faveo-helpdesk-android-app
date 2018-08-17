@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.pixplicity.easyprefs.library.Prefs;
+
 import java.util.List;
 
 import co.helpdesk.faveo.R;
@@ -69,6 +71,7 @@ public class TicketGlimpseAdapter extends RecyclerView.Adapter<TicketGlimpseAdap
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), TicketDetailActivity.class);
                     intent.putExtra("ticket_id", textViewTicketID.getText().toString());
+                    Prefs.putString("TICKETid",textViewTicketID.getText().toString());
                     intent.putExtra("ticket_number", textViewTicketNumber.getText().toString());
                     intent.putExtra("ticket_opened_by", clientName);
                     intent.putExtra("ticket_subject", textViewSubject.getText().toString());

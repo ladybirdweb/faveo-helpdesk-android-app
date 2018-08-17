@@ -1,17 +1,21 @@
 package co.helpdesk.faveo.frontend.activities;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -53,32 +57,25 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     protected boolean doubleBackToExitPressedOnce = false;
     public static boolean isShowing = false;
     private ArrayList<String> mList = new ArrayList<>();
-//    @BindView(R.id.sort_view)
-//    RelativeLayout sortView;
-//    @BindView(R.id.sorting_type_textview)
-//    TextView sortTextview;
-//    @BindView(R.id.arrow_imgView)
-//    ImageView arrowDown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         isShowing = true;
         setContentView(R.layout.activity_main);
+        overridePendingTransition(R.anim.slide_in_from_right,R.anim.slide_in_from_right);
+        Window window = MainActivity.this.getWindow();
+
+        // clear FLAG_TRANSLUCENT_STATUS flag:
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+// finally change the color
+        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.faveo));
         ButterKnife.bind(this);
-
-
-
-        // TODO: Move this to where you establish a user session
-        //logUser();
-//        if (BuildConfig.DEBUG) {
-//            DebugDB.getAddressLog();
-//            Log.d("Refreshed token: ", "" + FirebaseInstanceId.getInstance().getToken());
-//        }
-
-//        String nextPageURL = getIntent().getStringExtra("nextPageURL");
-//        Bundle bundle = new Bundle();
-//        bundle.putString("nextPageURL", nextPageURL);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -87,57 +84,19 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 
-
-//        getSupportActionBar().setTitle("Inbox");
-
         FragmentDrawer drawerFragment = (FragmentDrawer)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
 
-
-        /*
-          Loading the inbox fragment here.
-         */
         InboxTickets inboxTickets = new InboxTickets();
-        //inboxTickets.setArguments(bundle);
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container_body, inboxTickets);
         fragmentTransaction.commit();
         setActionBarTitle(getResources().getString(R.string.inbox));
 
-
-
-//        AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
-//        builder1.setTitle("Faveo Pro");
-//        builder1.setMessage("Welcome to FAVEO!");
-//        builder1.setIcon(R.mipmap.ic_launcher);
-//        builder1.setCancelable(true);
-//
-//        final AlertDialog dlg = builder1.create();
-//
-//        dlg.show();
-//
-//        final Timer t = new Timer();
-//        t.schedule(new TimerTask() {
-//            public void run() {
-//                dlg.dismiss(); // when the task active then close the dialog
-//                t.cancel(); // also just top the timer thread, otherwise, you may receive a crash report
-//            }
-//        }, 2000);
-
     }
-
-
-
-//    private void logUser() {
-//        // TODO: Use the current user's information
-//        // You can call any combination of these three methods
-//        Crashlytics.setUserIdentifier(Preference.getUserID());
-//        Crashlytics.setUserEmail(Constants.URL);
-//        Crashlytics.setUserName(Preference.getUsername());
-//    }
 
     @Override
     protected void onDestroy() {
@@ -145,37 +104,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         super.onDestroy();
 
     }
-
-//    @OnClick(R.id.sort_view)
-//    public void onClickSort() {
-//        arrowDown.animate().rotation(180).start();
-//
-//        new BottomSheet.Builder(this).title("Sort by").sheet(R.menu.sort_menu).listener(new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                switch (which) {
-//                    case R.id.action_date:
-//                        sortTextview.setText("Due by date");
-//                        break;
-//                    case R.id.action_time:
-//                        sortTextview.setText("Due by time");
-//                        break;
-//                    case R.id.action_status:
-//                        sortTextview.setText("Status");
-//                        break;
-//                    case R.id.action_priority:
-//                        sortTextview.setText("Priority");
-//                        break;
-//                }
-//            }
-//        }).setOnDismissListener(new DialogInterface.OnDismissListener() {
-//            @Override
-//            public void onDismiss(DialogInterface dialog) {
-//                arrowDown.animate().rotation(0).start();
-//            }
-//        }).show();
-//
-//    }
 
     /**
      * This will handle the drawer item.
@@ -220,18 +148,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-//        if (id == R.id.action_search) {
-//            startActivity(new Intent(MainActivity.this, SearchActivity.class));
-//            return true;
-//        }
-
-//        if (id == R.id.action_noti) {
-//
-//            Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
-//            startActivity(intent);
-//            return true;
-//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -298,15 +214,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     }
 
-//    /**
-//     * Callback will be triggered when there is change in
-//     * network connection
-//     */
-//    @Override
-//    public void onNetworkConnectionChanged(boolean isConnected) {
-//        showSnack(isConnected);
-//    }
-
     /**
      * Handling the back button here.
      * As if we clicking twice then it will
@@ -315,21 +222,40 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
      */
     @Override
     public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
-        }
+        android.support.v7.app.AlertDialog.Builder alertDialog = new android.support.v7.app.AlertDialog.Builder(MainActivity.this);
 
-        this.doubleBackToExitPressedOnce = true;
-        Snackbar.make(findViewById(android.R.id.content), R.string.press_again_exit, Snackbar.LENGTH_SHORT).show();
+        // Setting Dialog Title
+        alertDialog.setTitle(R.string.logOut);
 
-        new Handler().postDelayed(new Runnable() {
+        // Setting Dialog Message
+        alertDialog.setMessage(R.string.logoutConfirm);
 
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
+        // Setting Icon to Dialog
+        alertDialog.setIcon(R.mipmap.ic_launcher);
+
+        // Setting Positive "Yes" Button
+        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // Write your code here to invoke YES event
+                //Toast.makeText(getApplicationContext(), "You clicked on YES", Toast.LENGTH_SHORT).show();
+                finishAffinity();
+                System.exit(0);
+
             }
-        }, 2500);
+        });
+
+        // Setting Negative "NO" Button
+        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // Write your code here to invoke NO event
+                //Toast.makeText(getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
+                dialog.cancel();
+            }
+        });
+
+        // Showing Alert Message
+        alertDialog.show();
+
     }
 
     // This method will be called when a MessageEvent is posted (in the UI thread for Toast)

@@ -10,11 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="4dp"
-        android:paddingTop="@dimen/appbar_padding_top"
+        android:background="@color/faveo"
         android:theme="@style/AppThemeOverlay.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:contentScrim="?attr/colorPrimary"
@@ -25,47 +24,66 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorAccent"
+                android:background="@color/faveo"
                 android:orientation="vertical">
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="?attr/colorPrimary"
+                    android:background="@color/faveo"
                     app:layout_collapseMode="pin"
                     app:layout_scrollFlags="scroll|enterAlways"
-                    app:popupTheme="@style/AppThemeOverlay.ActionBar">
+                    >
 
-                    <TextView
-                        android:id="@+id/title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="left"
-                        android:gravity="center"
-                        android:text="@string/profile"
-                        android:textColor="@color/faveo"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize">
 
+                        <ImageView
+                            android:id="@+id/imageViewBackClient"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="11dp"
+                            android:src="@drawable/ic_arrow_back_black_24dp"
+                            android:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_gravity="left"
+                            android:layout_marginStart="65dp"
+                            android:gravity="center"
+                            android:text="@string/profile"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
                 </android.support.v7.widget.Toolbar>
 
                 <RelativeLayout
                     android:id="@+id/client4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="8dp">
+                    >
 
                     <ImageView
                         android:id="@+id/imageView_default_profile"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:layout_centerHorizontal="true"
-                        android:src="@drawable/default_pic"
                         android:transitionName="@string/blue_name"
+                        android:backgroundTint="@color/white"
                         android:background="@drawable/rounded_textview"/>
 
-                    <TextView
+
+
+                    <com.elyeproj.loaderviewlibrary.LoaderTextView
                         android:id="@+id/textView_client_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -74,78 +92,88 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="sans-serif-bold"
                         android:maxLines="1"
-                        android:text="@string/dummy_name"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:use_gradient="true"/>
 
-                    <TextView
+                    <com.elyeproj.loaderviewlibrary.LoaderTextView
                         android:id="@+id/textView_client_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/textView_client_name"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="6dp"
-                        android:alpha=".54"
                         android:drawableLeft="@drawable/email"
+                        android:drawableTint="@color/white"
                         android:drawablePadding="8dp"
                         android:fontFamily="sans-serif-medium"
                         android:maxLines="1"
-                        android:text="@string/dummy_mail_id"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
-
-                    <TextView
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:use_gradient="true"/>
+                    <com.elyeproj.loaderviewlibrary.LoaderTextView
                         android:id="@+id/textView_client_phone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/textView_client_email"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="6dp"
-                        android:alpha=".54"
-                        android:drawableLeft="@drawable/phone"
+                        android:drawableLeft="@drawable/landphone"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:drawableTint="@color/white"
+                        android:text="@string/dummy_num"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:use_gradient="true"
+                        />
+                    <com.elyeproj.loaderviewlibrary.LoaderTextView
+                        android:id="@+id/textView_client_mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_client_phone"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="6dp"
+                        android:drawableLeft="@drawable/mobile"
+                        android:drawableTint="@color/white"
                         android:drawablePadding="8dp"
                         android:fontFamily="sans-serif-medium"
                         android:maxLines="1"
                         android:text="@string/dummy_num"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="16sp"
-
-                       />
-
-
-
+                        app:use_gradient="true"
+                        />
                 </RelativeLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
-                    android:paddingTop="4dp">
+                    android:paddingTop="4dp"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textView_client_company"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:alpha="0.3"
-                        android:text="@string/company"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/textView_client_status"
-                        android:layout_width="match_parent"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:alpha="0.3"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
                         android:gravity="end"
                         android:text="@string/status"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
+                        android:layout_marginBottom="3dp"
                         android:textStyle="bold" />
 
-                </LinearLayout>
+
+
+                </RelativeLayout>
 
             </LinearLayout>
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -155,8 +183,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabGravity="fill"
-            app:tabIndicatorColor="@color/faveo"
-            app:tabMode="fixed" />
+            app:tabTextColor="#808080"
+            app:tabMode=    "fixed"
+            android:background="@color/faveo"
+            app:tabIndicatorColor="@color/grey_500"
+            app:tabIndicatorHeight="4dp"
+            app:tabSelectedTextColor="@color/white"/>
+        <!--app:tabIndicatorColor="@color/faveo"-->
+
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager

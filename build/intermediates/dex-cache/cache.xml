@@ -3,1281 +3,673 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\44698dadf5e36e20ae4f4d742dc6704f1cfa4daa\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\searchablespinnerlibrary-1.3.1.aar\8031b1cd1f83c358650852ec20f5a64f\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_384c8ff6cb4220a427e4f577a703eb8c4ae66550\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\545feb5771157e9d624d2feead53dda06cf92cce\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6a11388058c8c82cbdb5e8646f1c37adfc7755d6">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_09a652be619d2c8a1b7bfdf1e6be6925d64f9e06\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\917811cdadbc7049c1612bd926bde6049f28a445\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e1183124ffc0e91f97660eaa6dc895b296d96297\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\36fe19b43e64f77267fa6a7929928fd08c549866\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="f5237d698ea644e4fe433f30425c92969569dc62">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9d054b5640bcad322da2f061ac3c92fb679b8bfe\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\af533356ae4c242b8b80407d1fac2def3eed5aca\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="420fb486e1b1c20664815985f69923dfe67abe2f">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b5cca6958c0cf89f459a64aa98adb20ec95ac6f7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\a9c8207b3cf0b774603a07c9b92b848ae66d7365\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_688a965e8d2ae4e2874c5c015dc1fd50486ed051\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f0987b1dd5b2d6484a6be2a3e11a5bc2b5c5fbce\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d237556caead5b93d97e18a071059a2c0045978e">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2aaa66ef3a4121b1fcdb03f26bd173cdf931b953\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.0.0\ddd99896e9569eaababbe81b35d80e1b91c4ad85\eventbus-3.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\eventbus-3.0.0_fc00b8789fc37752f91a9ba8ec2f407c6e9f0c7e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_258f1b7910e7a2a83f1679f288f4d148576c36b7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.googlecode.libphonenumber\libphonenumber\8.5.2\4a5b5caed312654f6aa2171d2f24e44785621d3d\libphonenumber-8.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="4a5b5caed312654f6aa2171d2f24e44785621d3d">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\libphonenumber-8.5.2_2bbd13662060ba8d7495990f5865e5e000ddc3a4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations-java5\15.0\7011b4551a8451906759b05814c58b9eb829ea9b\annotations-java5-15.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="7011b4551a8451906759b05814c58b9eb829ea9b">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\annotations-java5-15.0_4856775e2d91d416926d6ec2d46cea33544c0333\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\e41a55a480f04727bd12cbdcbe79f94941d54300\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="b881010e06dc39be15b7465cd16492eedbab246f">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2e9f27cde68a7ae133feb8eb166178b5f8038d7e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\dcfa02333e374611a7f515277cc22356b3200e3e\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_aa640ec145b7b4c07b70a77d828083e24c8720bd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\4af7bb64ac947447f9cb89b625d3f6dfeca091a5\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d85bcb4cdab113656aa17b13f36a852133a4fa7e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_580168de89511be5d214631e89f433e2c0d22b72\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\c55d0304ed0c19a084b3a6159bc25a0a6454a9d9\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_76046127db0e2eb8b6a28248ba562fb6e2b6594d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f569ccd2590b1675be80443e46068ef519175341\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b6b03058c8d14e179db8537f247cc3b9e83635b6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\774625fc5fc215992cf106966014fc3db52ab978\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="8c8243677105d9c78cfbf553b55e256b3d4bea39">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7009f7cf83642da733e3ae550f24e2452b05ad0f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\45432f9386cc992610683d3454fbf5f97337d9b0\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7e57606800ac4df93b7783af4b6d1a79a2da5058\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f569ccd2590b1675be80443e46068ef519175341\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b6b03058c8d14e179db8537f247cc3b9e83635b6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_fae12434ff88b719a0aa0de7821d6ddfa30a39a1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.0.0\ddd99896e9569eaababbe81b35d80e1b91c4ad85\eventbus-3.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\eventbus-3.0.0_fc00b8789fc37752f91a9ba8ec2f407c6e9f0c7e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\541c3b67a3c39537f4afb29141c6709e2e91f969\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="1ee075177bd403c333d4843b92c4b6c55db929ed">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_76497eb2dcf25ef8b94bf066f8c8843497b2b9d1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f0987b1dd5b2d6484a6be2a3e11a5bc2b5c5fbce\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d237556caead5b93d97e18a071059a2c0045978e">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2aaa66ef3a4121b1fcdb03f26bd173cdf931b953\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f3028d4743bc347fb51825f0d46cc6c03904747e\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="e699699fae0092703de1d02b217f43803d0f7e0a">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1d926f432fb8baf24192307d0876cbf1ec80d907\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.haha\haha\2.0.3\640a438d2d415c056ca6a673ac26b183b044e160\haha-2.0.3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="640a438d2d415c056ca6a673ac26b183b044e160">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\haha-2.0.3_8bd9d1fd751d1487a77def04afcb5968277c7ebb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\c4db4dee54c41cd2f7ed86890cceb47f1f378a32\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="823bcb877cb90eb4ecbbc050d822ff5d84bb2db2">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_265317f29e575547034ab40d5f74a458bfffec2e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\29123aec0a91b0602a367f53732a73a7fa672728\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_edce47097a8da71b0179cb8bcab483ea779bb6e1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\4e491087e97441612373f73589cf618b4d810460\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="1d1db9e71e9288da45518fef3c20266d4691929e">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_50f83770df3868c55cb0bb92e677d941da0b9e2b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\256ab1893b96e08e4d965eeaa12a11408f1be97d\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_32764df0c95925baa7afaabc3a15e3465b2cb0f3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.4.1_26f8e0df8cafcf29bb310d7d5cc71ce5e5168a8c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\44698dadf5e36e20ae4f4d742dc6704f1cfa4daa\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_384c8ff6cb4220a427e4f577a703eb8c4ae66550\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\cfd2a1d37a91a3bf9d01a86c8572902935e239a4\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="9744383e864cd272d30b54848a1c1b5f840d23f2">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a4d1430e81e0f113435b5d6f12d14f5f4338a779\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\6becc67b97e1fb27f6853026b766424cca5e56e6\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f4ad8edeae561a8bcd5b6b2df3814008c5c55177\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\5a19e92c4f62ffd8995babc610776e492af11aa3\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="e5bf70f3683146e4875c006624543cb0a13eac91">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a3252a98439417ddb3381519f83b332edba1ea94\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.leakcanary\leakcanary-watcher\1.5\288101b16513158c2923ad3fb6161d1452b65e73\leakcanary-watcher-1.5.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="288101b16513158c2923ad3fb6161d1452b65e73">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\leakcanary-watcher-1.5_941f3fedc9ac343a54bb77ff9d1bce3c4636e59b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f11e91d18979e2e4a1b426ec9fed59a87e71a392\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6f0df6ac1d95fb4f9e11331a346910e0350e228c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_6fd3d2789986991fb39e191b4f8df68d1abea73e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\917811cdadbc7049c1612bd926bde6049f28a445\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e1183124ffc0e91f97660eaa6dc895b296d96297\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\36fe19b43e64f77267fa6a7929928fd08c549866\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="f5237d698ea644e4fe433f30425c92969569dc62">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9d054b5640bcad322da2f061ac3c92fb679b8bfe\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations-java5\15.0\7011b4551a8451906759b05814c58b9eb829ea9b\annotations-java5-15.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="7011b4551a8451906759b05814c58b9eb829ea9b">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\annotations-java5-15.0_4856775e2d91d416926d6ec2d46cea33544c0333\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\29123aec0a91b0602a367f53732a73a7fa672728\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_edce47097a8da71b0179cb8bcab483ea779bb6e1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\3ad0f24dd1b00e3e485af7924efe2ad83dfdc5a4\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="e847f635d8fd7e1fdad69fb0ae2b6122883654de">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0787846f986f2074065ca7e43348bcd99182b069\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_9eced6a1b316a8f7b7ad532dcb754fa2051e98b2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\c6af347862cdfc3f9a4316d7bd3dc4e7660e5035\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b5b2ac114dc09659d9f7e1c016d477ab46517f26\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\545feb5771157e9d624d2feead53dda06cf92cce\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6a11388058c8c82cbdb5e8646f1c37adfc7755d6">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_09a652be619d2c8a1b7bfdf1e6be6925d64f9e06\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\a9c8207b3cf0b774603a07c9b92b848ae66d7365\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_688a965e8d2ae4e2874c5c015dc1fd50486ed051\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\7e6b0269d4dfa4923f4bd82f81222fb37b1bcce4\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="c77602d43223db798b1ca56cf307ab0ee3c0e63f">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_95ed07be169b17155d3289f6523e3d46816edfd8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\dc699916fb4a70d760e30c0b98fdbde49b1f9cb1\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="40b4c3967e7cd13f24a07426a201bf832bbc1c16">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6e7cf55b9a8eb01af15dfd9112fed25f8f9acf7c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.5.1\bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc\butterknife-annotations-8.5.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-annotations-8.5.1_8a73c007706da97f71e94d6a29a78eae9d86184f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\fe5a80e6e0c577e3e1da979f8ceb8c9778f05262\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0c1111022d5058b10b1d872ccdf7edba1ce2ef87\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\b7bc64ee23563f582a11cc8889f8025a7a71366e\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d3b394848f31ac12c50e0227af889247943b11b2">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6e09d079b5041e2b5f7dc81225c41d1ca9650982\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\768b75e884f714a5bea9c0fd628af7d28f9ec9ae\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bb3ad606cb306455ce5eebc6f62cc909214ba849\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\8d89bec5467e71f87ed739e990fc128f7fa51b7f\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="263c1c941f603469ecbaf8745f7b2d18ae85c5c0">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5928f404a472513463129e4f1cdc3c67300096c2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.leakcanary\leakcanary-analyzer\1.5\3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f\leakcanary-analyzer-1.5.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\leakcanary-analyzer-1.5_186611727f2d27f82404528f5b84fa2b413ba955\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\dc3fec55d82c74a6108737597343d283736802ab\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="3d7ba2eb647e082275b2a65ddcf2233d4c1e3c1a">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d59d20c6933ef503f92dc3bfaee58a1ddf3f60e2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\6becc67b97e1fb27f6853026b766424cca5e56e6\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f4ad8edeae561a8bcd5b6b2df3814008c5c55177\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\a40f7e8a48a0767aaf67cdaf22114fddf92e6420\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b88d04ac3e13ebba280c676e44375bc3ea73ad6f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\bd1acfcc6379e4464b2a6e82ac2cbd82328177c8\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_50a26520d5327e815950b02b43ec5ffeb08db197\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\dc699916fb4a70d760e30c0b98fdbde49b1f9cb1\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="40b4c3967e7cd13f24a07426a201bf832bbc1c16">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6e7cf55b9a8eb01af15dfd9112fed25f8f9acf7c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-tasks-1.4.0_d44cab6d73331262e2a0954c39fb0bf1cc7c0468\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="74e2a4d1f11d12666b04dc8fe6dc3dbcedf101d9">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_68df03a676399b70f21392ce3a852939e1f2eacd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.4.1_26f8e0df8cafcf29bb310d7d5cc71ce5e5168a8c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_9eced6a1b316a8f7b7ad532dcb754fa2051e98b2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\7e6b0269d4dfa4923f4bd82f81222fb37b1bcce4\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="c77602d43223db798b1ca56cf307ab0ee3c0e63f">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_95ed07be169b17155d3289f6523e3d46816edfd8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\78b51f4843d7ba95bf4fdeac64094c94f3e7fa32\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="a62dd320116a3b33f66cf17396147c1fbc2e194e">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_aad5145b00dd0390953505305096fdf1a8a2771e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\1d9e31f8dabaafc0211e111d4d4e10221e2e9f2e\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="34fc70f7f1d882154d876ea763f05977d9945699">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e894f9ce1c46c863ea91dbaf3d3f61355453f9a8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f235c3ebb11368a35940e089c65377fb458d3fd1\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="31dbe885ef6a9d6a88412750e85784f60b95cb90">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_537af3b56d2646acadb9d5ea52c1e0b85dac4481\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\c4db4dee54c41cd2f7ed86890cceb47f1f378a32\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="823bcb877cb90eb4ecbbc050d822ff5d84bb2db2">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_265317f29e575547034ab40d5f74a458bfffec2e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\c6af347862cdfc3f9a4316d7bd3dc4e7660e5035\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b5b2ac114dc09659d9f7e1c016d477ab46517f26\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f6de08cdee7623234daeb4c4b310ac0af5335033\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_35ed9eedf6158fcd267c558868a061d6c7481d1f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\58fd1f9a91bfff5878ee4abbaf75753bf563d430\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0b6d73cb7ed82b9014aad065171ab0b7940cc17e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_6fd3d2789986991fb39e191b4f8df68d1abea73e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\45432f9386cc992610683d3454fbf5f97337d9b0\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7e57606800ac4df93b7783af4b6d1a79a2da5058\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\library-2.4.0_239de39b44db1dd45ed6dabb2d300e3030678f65\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.0.2\b9cd8fc6bd15cb915735d34535db30ece0c44603\constraint-layout-solver-1.0.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_4c28b86037e94973322fdec0b8a7ae6581585ea7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\64cbb4f75e18d49cba00f1ba53fc490caacdf664\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="844efef744581e604ea77683555271ebbd61d871">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c5b7514efed685674c6c4666f79f04c4b4597234\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\8d89bec5467e71f87ed739e990fc128f7fa51b7f\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="263c1c941f603469ecbaf8745f7b2d18ae85c5c0">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5928f404a472513463129e4f1cdc3c67300096c2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\37edea852f60c966559de6f5a090ac703644dafb\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="cf5e2940501f8f7b9175df6491cebb84f5690f14">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6661639261a1c285d87bc5afcc882928931cd5f3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\fe5a80e6e0c577e3e1da979f8ceb8c9778f05262\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0c1111022d5058b10b1d872ccdf7edba1ce2ef87\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\387c339a701941e986c9d6dd9bedb4e313436205\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="2cfb5a2b52bb09fa94a7a0c4c2f2319703cb1f03">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fdd83f8d02cb5a5c2bbcfb862565cc53366f41d5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\768b75e884f714a5bea9c0fd628af7d28f9ec9ae\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bb3ad606cb306455ce5eebc6f62cc909214ba849\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\dd6fd19fbc316a0e37dd018764c0eebcaa77cfb7\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c694dcd43d8cfbd8dd7e7500b65eb8a8c782697e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.9.0_f23265b7b8b87f2f35adb1a1a0348dbc195b3e54\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\ccc7688a37777cdbba27253737f097af83d733e9\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="aa13c67643afa4a5f7353095eb7fb985d55a18e1">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2f9fd081f59151939aa169a8fde69fb6222f79e7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\9da75fbf0b39d3d936bebde67b3f2924effa8e09\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3112de2bfa3272637ca63c49804dba89b2c724c9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.leakcanary\leakcanary-analyzer\1.5\3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f\leakcanary-analyzer-1.5.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\leakcanary-analyzer-1.5_186611727f2d27f82404528f5b84fa2b413ba955\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\67ac495af08bea25eb9acde55b31e04e43d80877\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="5c812ad0773ab307151802099a33575fa7bb270b">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e571467996fb1e91fb9908c1a80c406e943981c6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\b319ebf83e98c398ba97e8ab9c5b0d5dfbdab63d\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="9a883402815cf6ab7b526e84bbd1d8752f075cd3">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_087309fc0ab6c49cfea6804dabf8f9f76f153ab6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\b7bc64ee23563f582a11cc8889f8025a7a71366e\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d3b394848f31ac12c50e0227af889247943b11b2">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6e09d079b5041e2b5f7dc81225c41d1ca9650982\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\3ad0f24dd1b00e3e485af7924efe2ad83dfdc5a4\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="e847f635d8fd7e1fdad69fb0ae2b6122883654de">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0787846f986f2074065ca7e43348bcd99182b069\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\6d55f54d4def6421b4fab74c07d4abebad23a4e2\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4c795626cb9506c5dbb7db2addff08acce5a19a6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\dc3fec55d82c74a6108737597343d283736802ab\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="3d7ba2eb647e082275b2a65ddcf2233d4c1e3c1a">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d59d20c6933ef503f92dc3bfaee58a1ddf3f60e2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\676d7cc9e3a4102a51485c31c3f705106e482c6a\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6fb836004987be7241d0a50b2530d119612d6a2a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\fd319141fb3d8f8300258981c6f873c0b89d4731\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
+        revision="27.0.3"
         sha1="dbfaa66636f1fadb6cff4080a3a271e97f288340">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bce04417d52ede4156d8fe13c8e69fe996a8ec15\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\31\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\64cbb4f75e18d49cba00f1ba53fc490caacdf664\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\styleabletoast-1.0.6.aar\4eee517e3dc5558828cbee1e80df177f\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="844efef744581e604ea77683555271ebbd61d871">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c5b7514efed685674c6c4666f79f04c4b4597234\classes.dex" />
+        revision="27.0.3"
+        sha1="40b4c3967e7cd13f24a07426a201bf832bbc1c16">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\9\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-tasks-1.4.0_d44cab6d73331262e2a0954c39fb0bf1cc7c0468\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\b319ebf83e98c398ba97e8ab9c5b0d5dfbdab63d\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\transition-25.4.0.aar\18daf00ed48fe429b03ab67916197848\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="9a883402815cf6ab7b526e84bbd1d8752f075cd3">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_087309fc0ab6c49cfea6804dabf8f9f76f153ab6\classes.dex" />
+        revision="27.0.3"
+        sha1="40a6b8f05124eb9e6012e18b80a6dbd13440e283">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\32\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\eca37817e9efc3c9987d0a8eb48123cc55c58128\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="c7a2672b3122b897a0751f327929ae405ea02bf7">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_eb259a9c21e29179dc96352a1b3dec0b15c11027\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\1d9e31f8dabaafc0211e111d4d4e10221e2e9f2e\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="34fc70f7f1d882154d876ea763f05977d9945699">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e894f9ce1c46c863ea91dbaf3d3f61355453f9a8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\32d2a4332f02d00d20e3748fcfc19426ff688041\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\crashlytics-2.6.7.aar\87e3a016b05ee9acde585942bc6d1b98\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="8795af3e130206443f2d5ed45f1b26067aff70dc">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e0c7a22fa2d1bc2dc6d628bbdc0014315a0cd123\classes.dex" />
+        revision="27.0.3"
+        sha1="823bcb877cb90eb4ecbbc050d822ff5d84bb2db2">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\1\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\78b51f4843d7ba95bf4fdeac64094c94f3e7fa32\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="a62dd320116a3b33f66cf17396147c1fbc2e194e">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_aad5145b00dd0390953505305096fdf1a8a2771e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f235c3ebb11368a35940e089c65377fb458d3fd1\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fresco-0.14.1.aar\27abef231553caed2e5cc40eb5b56e4f\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="31dbe885ef6a9d6a88412750e85784f60b95cb90">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_537af3b56d2646acadb9d5ea52c1e0b85dac4481\classes.dex" />
+        revision="27.0.3"
+        sha1="c77602d43223db798b1ca56cf307ab0ee3c0e63f">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\52\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\a40f7e8a48a0767aaf67cdaf22114fddf92e6420\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\library-1.4.0.aar\c410649a4e9a2b1753449b7735f48ff9\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b88d04ac3e13ebba280c676e44375bc3ea73ad6f\classes.dex" />
+        revision="27.0.3"
+        sha1="f5237d698ea644e4fe433f30425c92969569dc62">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\23\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\library-2.4.0_239de39b44db1dd45ed6dabb2d300e3030678f65\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f6de08cdee7623234daeb4c4b310ac0af5335033\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-messaging-10.0.1.aar\587a7f142b7ceec071a2828391ef3d91\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_35ed9eedf6158fcd267c558868a061d6c7481d1f\classes.dex" />
+        revision="27.0.3"
+        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\17\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.0.2\b9cd8fc6bd15cb915735d34535db30ece0c44603\constraint-layout-solver-1.0.2.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\ShimmerRecyclerView-v1.0.aar\21d624f82fc9b7f26efcf579c5330f2b\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_4c28b86037e94973322fdec0b8a7ae6581585ea7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\58fd1f9a91bfff5878ee4abbaf75753bf563d430\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0b6d73cb7ed82b9014aad065171ab0b7940cc17e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\67ac495af08bea25eb9acde55b31e04e43d80877\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="5c812ad0773ab307151802099a33575fa7bb270b">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e571467996fb1e91fb9908c1a80c406e943981c6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\256ab1893b96e08e4d965eeaa12a11408f1be97d\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_32764df0c95925baa7afaabc3a15e3465b2cb0f3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\387c339a701941e986c9d6dd9bedb4e313436205\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="2cfb5a2b52bb09fa94a7a0c4c2f2319703cb1f03">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fdd83f8d02cb5a5c2bbcfb862565cc53366f41d5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\af533356ae4c242b8b80407d1fac2def3eed5aca\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
+        revision="27.0.3"
         sha1="420fb486e1b1c20664815985f69923dfe67abe2f">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b5cca6958c0cf89f459a64aa98adb20ec95ac6f7\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\8\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.0.1.aar\d149fae94b3b11d7f0b72545e580e177\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.9.0_f23265b7b8b87f2f35adb1a1a0348dbc195b3e54\classes.dex" />
+        revision="27.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\39\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\6d55f54d4def6421b4fab74c07d4abebad23a4e2\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.4.0.aar\b6d9941b762d56cc126d00196b72cd07\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4c795626cb9506c5dbb7db2addff08acce5a19a6\classes.dex" />
+        revision="27.0.3"
+        sha1="b1e0cd070d7cf659ece90e919bff76e7ddc32532">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\14\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\fd319141fb3d8f8300258981c6f873c0b89d4731\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-crash-10.0.1.aar\a9722dd6f14aab638129bcb56651003d\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="dbfaa66636f1fadb6cff4080a3a271e97f288340">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bce04417d52ede4156d8fe13c8e69fe996a8ec15\classes.dex" />
+        revision="27.0.3"
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\33\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\dcfa02333e374611a7f515277cc22356b3200e3e\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\loaderviewlibrary-1.4.1.aar\139da20c675fe1ca9de3a7266d098252\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_aa640ec145b7b4c07b70a77d828083e24c8720bd\classes.dex" />
+        revision="27.0.3"
+        sha1="cd062c34fb1be62cc5db7e3409a7bbe3c9ae58a3">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\5\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\bd1acfcc6379e4464b2a6e82ac2cbd82328177c8\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_50a26520d5327e815950b02b43ec5ffeb08db197\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.googlecode.libphonenumber\libphonenumber\8.5.2\4a5b5caed312654f6aa2171d2f24e44785621d3d\libphonenumber-8.5.2.jar"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations-java5\15.0\7011b4551a8451906759b05814c58b9eb829ea9b\annotations-java5-15.0.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="4a5b5caed312654f6aa2171d2f24e44785621d3d">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\libphonenumber-8.5.2_2bbd13662060ba8d7495990f5865e5e000ddc3a4\classes.dex" />
+        revision="27.0.3"
+        sha1="7011b4551a8451906759b05814c58b9eb829ea9b">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\29\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\9da75fbf0b39d3d936bebde67b3f2924effa8e09\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3112de2bfa3272637ca63c49804dba89b2c724c9\classes.dex" />
+        revision="27.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\68\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.4.0.aar\43359df33fdabea29ae3b301f3207eaa\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.8.0_b664261ea3f82feaa7e0005f732389bc7da7ae23\classes.dex" />
+        revision="27.0.3"
+        sha1="b77e50b3c31d0fc64148530f7077f79ec114b5b9">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\48\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\ccc7688a37777cdbba27253737f097af83d733e9\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="aa13c67643afa4a5f7353095eb7fb985d55a18e1">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2f9fd081f59151939aa169a8fde69fb6222f79e7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_fae12434ff88b719a0aa0de7821d6ddfa30a39a1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\c55d0304ed0c19a084b3a6159bc25a0a6454a9d9\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-0.14.1.aar\1606b6ab18a6b8b5dfdb0415be1d3d73\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_76046127db0e2eb8b6a28248ba562fb6e2b6594d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\e41a55a480f04727bd12cbdcbe79f94941d54300\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
+        revision="27.0.3"
         sha1="b881010e06dc39be15b7465cd16492eedbab246f">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2e9f27cde68a7ae133feb8eb166178b5f8038d7e\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\54\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\4af7bb64ac947447f9cb89b625d3f6dfeca091a5\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d85bcb4cdab113656aa17b13f36a852133a4fa7e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\5fe64b95d337736957091554622955d8\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_258f1b7910e7a2a83f1679f288f4d148576c36b7\classes.dex" />
+        revision="27.0.3"
+        sha1="a64026daf4819a589aea776f5deb19b257a104d1">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\56\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\676d7cc9e3a4102a51485c31c3f705106e482c6a\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6fb836004987be7241d0a50b2530d119612d6a2a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.8.0_b664261ea3f82feaa7e0005f732389bc7da7ae23\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\eca37817e9efc3c9987d0a8eb48123cc55c58128\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\61011e00049aa2fa0f104beb37f59644\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="c7a2672b3122b897a0751f327929ae405ea02bf7">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_eb259a9c21e29179dc96352a1b3dec0b15c11027\classes.dex" />
+        revision="27.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\40\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f11e91d18979e2e4a1b426ec9fed59a87e71a392\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6f0df6ac1d95fb4f9e11331a346910e0350e228c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.haha\haha\2.0.3\640a438d2d415c056ca6a673ac26b183b044e160\haha-2.0.3.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\arcanimator-1.0.0.aar\1e719c81253294277d4c59917f6a94a2\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="640a438d2d415c056ca6a673ac26b183b044e160">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\haha-2.0.3_8bd9d1fd751d1487a77def04afcb5968277c7ebb\classes.dex" />
+        revision="27.0.3"
+        sha1="31dbe885ef6a9d6a88412750e85784f60b95cb90">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\61\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.5.1\bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc\butterknife-annotations-8.5.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-annotations-8.5.1_8a73c007706da97f71e94d6a29a78eae9d86184f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\774625fc5fc215992cf106966014fc3db52ab978\output\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fbcore-0.14.1.aar\5ba4578c7b8f25c9ace4d4f70b4b0906\jars\classes.jar"
         jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
-        sha1="8c8243677105d9c78cfbf553b55e256b3d4bea39">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7009f7cf83642da733e3ae550f24e2452b05ad0f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\f3028d4743bc347fb51825f0d46cc6c03904747e\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="e699699fae0092703de1d02b217f43803d0f7e0a">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1d926f432fb8baf24192307d0876cbf1ec80d907\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\dd6fd19fbc316a0e37dd018764c0eebcaa77cfb7\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c694dcd43d8cfbd8dd7e7500b65eb8a8c782697e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\cfd2a1d37a91a3bf9d01a86c8572902935e239a4\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="9744383e864cd272d30b54848a1c1b5f840d23f2">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a4d1430e81e0f113435b5d6f12d14f5f4338a779\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\541c3b67a3c39537f4afb29141c6709e2e91f969\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="1ee075177bd403c333d4843b92c4b6c55db929ed">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_76497eb2dcf25ef8b94bf066f8c8843497b2b9d1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.gradle\caches\modules-2\files-2.1\com.squareup.leakcanary\leakcanary-watcher\1.5\288101b16513158c2923ad3fb6161d1452b65e73\leakcanary-watcher-1.5.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="288101b16513158c2923ad3fb6161d1452b65e73">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\leakcanary-watcher-1.5_941f3fedc9ac343a54bb77ff9d1bce3c4636e59b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\4e491087e97441612373f73589cf618b4d810460\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="1d1db9e71e9288da45518fef3c20266d4691929e">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_50f83770df3868c55cb0bb92e677d941da0b9e2b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\37edea852f60c966559de6f5a090ac703644dafb\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="cf5e2940501f8f7b9175df6491cebb84f5690f14">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6661639261a1c285d87bc5afcc882928931cd5f3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\5a19e92c4f62ffd8995babc610776e492af11aa3\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
+        revision="27.0.3"
         sha1="e5bf70f3683146e4875c006624543cb0a13eac91">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a3252a98439417ddb3381519f83b332edba1ea94\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\66\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar&apos;s pc\.android\build-cache\32d2a4332f02d00d20e3748fcfc19426ff688041\output\jars\classes.jar"
-        jumboMode="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\filepicker-1.0.8.aar\ec67bc1c6c6ce3977aceb5676a2b51cd\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.2"
+        revision="27.0.3"
+        sha1="1d1db9e71e9288da45518fef3c20266d4691929e">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fab-speed-dial-1.0.6.aar\3492b3b55b91ee7bcb391ef24717a086\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="02d0d40b4c5b6b4093af99d696cea903aad9e529">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\626f7d34dce53088ab9c35c8340ed32a\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="05e3d15c623cd98f0eb43c8249fb6151fae0786c">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\51\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\com.amulyakhare.textdrawable-1.0.1.aar\71b6620e266e8659f467fdd5ea192d05\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d237556caead5b93d97e18a071059a2c0045978e">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\9ed0edf935c2f04f851845c88c625723\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\36\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.3.16.aar\0af148993d2beda6c226c47267291d30\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="844efef744581e604ea77683555271ebbd61d871">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\43\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\20\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\ccp-2.0.2.aar\7572ebed6e3dc7ebdbccd48731a8eee6\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2cfb5a2b52bb09fa94a7a0c4c2f2319703cb1f03">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\19\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\25.4.0\f6a2fc748ae3769633dea050563e1613e93c135e\support-annotations-25.4.0.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f6a2fc748ae3769633dea050563e1613e93c135e">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\59\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.0.1.aar\85b75a1aac2211da28a749b3d9c8f245\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\38\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\1ef9f6e155724eec049788fae914baf9\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e04f28ac2dd9bbe48ced6fc87fedf46c2586f5d6">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\55\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.0.2\b9cd8fc6bd15cb915735d34535db30ece0c44603\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\63\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\multidex-1.0.1.aar\a1879a0d307173a19bc8599166fb7593\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\21\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.0.0\ddd99896e9569eaababbe81b35d80e1b91c4ad85\eventbus-3.0.0.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\28\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\Toasty-1.1.3.aar\4a2bf8f88df432f6c87db882a77ce026\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="aa13c67643afa4a5f7353095eb7fb985d55a18e1">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\10\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.4.0.aar\2024c1cbb05ee1d8b00b76f5f08c2ffd\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="4961be1437163ab598620a3c907c0f3432936f51">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\47\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\beta-1.2.4.aar\646caa84782b79f578633eb1a4371c65\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8c8243677105d9c78cfbf553b55e256b3d4bea39">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\42\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\ced312e441d06aa238f88a6dde20770b\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a7a0aa678c3bbadb67fb41df9e107f7ee9087902">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\12\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\avatar-view-0.0.2.aar\7d313ed784de74a6a400c90c8b3addf7\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9744383e864cd272d30b54848a1c1b5f840d23f2">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\57\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\avatar-view-picasso-0.0.2.aar\fda6e1ca7293d3b16cfbaf499a640715\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a62dd320116a3b33f66cf17396147c1fbc2e194e">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\26\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\60\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\aa096c957ad6a7fa229d21fdd6d7483b\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c2deeac83ffa1304264bc755c2ddb84e7a7fa239">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\50\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\butterknife-8.5.1.aar\f1db9199bf1dfb8099b9133867da0959\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\27\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\answers-1.3.12.aar\18431d53d490b2283448cd22918abd23\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="5c812ad0773ab307151802099a33575fa7bb270b">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\44\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.4.0.aar\3cd67ea6934914fa2008111d6e231698\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c879101226d1b2aaf6edae3d7491de6fd56d2659">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\15\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.googlecode.libphonenumber\libphonenumber\8.5.2\4a5b5caed312654f6aa2171d2f24e44785621d3d\libphonenumber-8.5.2.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="4a5b5caed312654f6aa2171d2f24e44785621d3d">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\46\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\13\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\5cd0acba759a807013e16b5418e03b40\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d29e451fd5bcc265989bf80afd4f149d95d72e7d">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\49\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\timber-4.3.0.aar\5730b43088b65d8a9a1a2236c8fd5a40\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6a11388058c8c82cbdb5e8646f1c37adfc7755d6">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\67\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\design-25.4.0.aar\39dd249acfcf8ea41349b917eac80b63\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="cad1364721fc716a39bdc351d3637edb634c9aa5">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fabric-1.3.16.aar\94861d9ad109480ee88be4c74d9a8cda\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="263c1c941f603469ecbaf8745f7b2d18ae85c5c0">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\45\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.5.1\bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc\butterknife-annotations-8.5.1.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\58\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\bottomsheet-0.9.aar\45149f30a4f6dd2a1cd0bc74779ef857\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e847f635d8fd7e1fdad69fb0ae2b6122883654de">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\24\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fastscroll-0.2.5.aar\f69867a84df0f364035124ba29763e60\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="1ee075177bd403c333d4843b92c4b6c55db929ed">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\11\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\circularprogressview-2.4.0.aar\681c842b5c7ef01796ee88fc8744545e\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9a883402815cf6ab7b526e84bbd1d8752f075cd3">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\16\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\library-1.8.1.aar\b88587fd5a3e4816fc41b690f4b20ec8\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d3b394848f31ac12c50e0227af889247943b11b2">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\30\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8a84f3cfc8da3f967dc4639bd057a15f\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\41\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\64\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\drawee-0.14.1.aar\ec6c9255d3b31c019084670812ea41ba\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="cf5e2940501f8f7b9175df6491cebb84f5690f14">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\65\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\62\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\material-sheet-fab-1.2.1.aar\52d2f9d9968d494d271e683056173e29\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="34fc70f7f1d882154d876ea763f05977d9945699">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\22\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\faba727dc7e8392b57928109d139c99a\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\35\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-common-10.0.1.aar\e432ce0896908aad037ce5fe825e45bf\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\37\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\library-2.1.3.aar\ad9890badfcbd9e04e3b72f684ed1a5e\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e699699fae0092703de1d02b217f43803d0f7e0a">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\25\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\imagepipeline-0.14.1.aar\24079577b4c2aa8073e559d7fdefbfd1\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
         sha1="8795af3e130206443f2d5ed45f1b26067aff70dc">
-        <dex dex="D:\Current work\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e0c7a22fa2d1bc2dc6d628bbdc0014315a0cd123\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\53\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4e7583a6b1ec7486fb5c31345fafd004\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\34\classes.dex" />
     </item>
 
 </items>

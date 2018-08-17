@@ -6,6 +6,8 @@ package co.helpdesk.faveo.frontend.drawers;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -242,12 +244,18 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
             String letter = Prefs.getString("profilePicture", null);
             Log.d("profilePicture", letter);
             if (letter.contains("jpg") || letter.contains("png") || letter.contains("jpeg")) {
+                //profilePic.setColorFilter(getContext().getResources().getColor(R.color.white));
+                //profilePic.setColorFilter(context.getResources().getColor(R.color.faveo), PorterDuff.Mode.SRC_IN);
                 Picasso.with(context).load(letter).transform(new CircleTransform()).into(profilePic);
-            } else {
+            }
+            else {
+                int color= Color.parseColor("#ffffff");
                 String letter1 = String.valueOf(Prefs.getString("PROFILE_NAME", "").charAt(0));
                 ColorGenerator generator = ColorGenerator.MATERIAL;
                 TextDrawable drawable = TextDrawable.builder()
-                        .buildRound(letter1, generator.getRandomColor());
+                        .buildRound(letter1,color);
+                //profilePic.setAlpha(0.2f);
+                profilePic.setColorFilter(context.getResources().getColor(R.color.faveo), PorterDuff.Mode.SRC_IN);
                 profilePic.setImageDrawable(drawable);
             }
         }catch (NullPointerException e){

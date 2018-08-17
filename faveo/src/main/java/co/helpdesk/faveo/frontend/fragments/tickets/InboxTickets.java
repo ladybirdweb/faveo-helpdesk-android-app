@@ -32,6 +32,7 @@ import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.adapters.TicketOverviewAdapter;
+import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
 import co.helpdesk.faveo.model.TicketOverview;
 import es.dmoral.toasty.Toasty;
 
@@ -46,7 +47,6 @@ public class InboxTickets extends Fragment {
     static String nextPageURL = "";
     static String firstPageURl = "";
     View rootView;
-    ProgressDialog progressDialog;
     SwipeRefreshLayout swipeRefresh;
     TextView textViewTotalCount;
     TicketOverviewAdapter ticketOverviewAdapter;
@@ -88,19 +88,24 @@ public class InboxTickets extends Fragment {
             rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
 //            if (getArguments() != null)
 //                nextPageURL = getArguments().getString("nextPageURL");
-
+            swipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefresh);
             recyclerView = (RecyclerView) rootView.findViewById(R.id.cardList);
             recyclerView.setHasFixedSize(false);
             textViewTotalCount= (TextView) rootView.findViewById(R.id.totalcount);
             final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
             linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
             recyclerView.setLayoutManager(linearLayoutManager);
-            progressDialog = new ProgressDialog(getActivity());
-            progressDialog.setMessage("Fetching tickets");
-            progressDialog.show();
+
+            if (InternetReceiver.isConnected()){
+                swipeRefresh.setRefreshing(true);
+                new FetchFirst(getActivity()).execute();
+            }
+//            progressDialog = new ProgressDialog(getActivity());
+//            progressDialog.setMessage("Fetching tickets");
+//            progressDialog.show();
            // new ReadFromDatabase(getActivity()).execute();
-            new FetchFirst(getActivity()).execute();
-            swipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefresh);
+            //new FetchFirst(getActivity()).execute();
+
             swipeRefresh.setColorSchemeResources(R.color.faveo_blue);
             swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
@@ -251,10 +256,9 @@ public class InboxTickets extends Fragment {
         protected void onPostExecute(String result) {
            // ticketOverviewAdapter.notifyDataSetChanged();
             textViewTotalCount.setText("" + count + " tickets");
+            swipeRefresh.setRefreshing(false);
             if (swipeRefresh.isRefreshing())
                 swipeRefresh.setRefreshing(false);
-            if (progressDialog.isShowing())
-                progressDialog.dismiss();
             if (result == null) {
                 Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_LONG).show();
                 return;

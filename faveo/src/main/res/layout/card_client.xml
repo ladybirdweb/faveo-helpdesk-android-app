@@ -34,6 +34,7 @@
         android:layout_toRightOf="@+id/imageView_default_profile"
         android:fontFamily="sans-serif-bold"
         android:maxLines="1"
+        android:alpha=".54"
         android:ellipsize="end"
         android:text="@string/dummy_name"
         android:textColor="@color/black"

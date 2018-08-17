@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,18 +13,22 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
+import com.elyeproj.loaderviewlibrary.LoaderTextView;
 import com.pixplicity.easyprefs.library.Prefs;
 import com.squareup.picasso.Picasso;
 
@@ -64,23 +69,25 @@ public class ClientDetailActivity extends AppCompatActivity implements
     ImageView imageViewClientPicture;
 
     @BindView(R.id.textView_client_name)
-    TextView textViewClientName;
+    LoaderTextView textViewClientName;
 
     @BindView(R.id.textView_client_email)
-    TextView textViewClientEmail;
+    LoaderTextView textViewClientEmail;
 
     @BindView(R.id.textView_client_phone)
-    TextView textViewClientPhone;
+    LoaderTextView textViewClientPhone;
 
     @BindView(R.id.textView_client_status)
     TextView textViewClientStatus;
 
-    @BindView(R.id.textView_client_company)
-    TextView textViewClientCompany;
+//    @BindView(R.id.textView_client_company)
+//    TextView textViewClientCompany;
 
     @BindView(R.id.viewpager)
     ViewPager viewPager;
 
+    @BindView(R.id.imageViewBackClient)
+            ImageView imageViewBack;
 
     ViewPagerAdapter adapter;
     OpenTickets fragmentOpenTickets;
@@ -102,37 +109,36 @@ public class ClientDetailActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_profile);
+        Window window = ClientDetailActivity.this.getWindow();
+
+        // clear FLAG_TRANSLUCENT_STATUS flag:
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+// finally change the color
+        window.setStatusBarColor(ContextCompat.getColor(ClientDetailActivity.this,R.color.faveo));
         ButterKnife.bind(this);
         Constants.URL = Prefs.getString("COMPANY_URL", "");
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-        }
+//        if (getSupportActionBar() != null) {
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//            getSupportActionBar().setDisplayShowHomeEnabled(true);
+//            getSupportActionBar().setDisplayShowTitleEnabled(false);
+//        }
         TextView mTitle = (TextView) mToolbar.findViewById(R.id.title);
         mTitle.setText(R.string.profile);
-
+        imageViewBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         setUpViews();
         Intent intent = getIntent();
         clientID = intent.getStringExtra("CLIENT_ID");
-        // clientName = intent.getStringExtra("CLIENT_NAME");
-//        textViewClientName.setText(clientName);
-//        textViewClientEmail.setText(intent.getStringExtra("CLIENT_EMAIL"));
-//        if (intent.getStringExtra("CLIENT_PHONE") == null || intent.getStringExtra("CLIENT_PHONE").equals(""))
-//            textViewClientPhone.setVisibility(View.INVISIBLE);
-//        else
-//            textViewClientPhone.setText(intent.getStringExtra("CLIENT_PHONE"));
-//        String clientPictureUrl = intent.getStringExtra("CLIENT_PICTURE");
-//        if (intent.getStringExtra("CLIENT_COMPANY").equals("null") || intent.getStringExtra("CLIENT_COMPANY").equals(""))
-//            textViewClientCompany.setText("");
-//        else
-//            textViewClientCompany.setText(intent.getStringExtra("CLIENT_COMPANY"));
-//        textViewClientStatus.setText(intent.getStringExtra("CLIENT_ACTIVE").equals("1") ? getString(R.string.active) : getString(R.string.inactive));
-
-        //IImageLoader imageLoader = new PicassoLoader();
-        //imageLoader.loadImage(imageViewClientPicture, clientPictureUrl, clientName);
 
         if (InternetReceiver.isConnected()) {
             progressDialog.show();
@@ -154,12 +160,7 @@ public class ClientDetailActivity extends AppCompatActivity implements
      */
     @Override
     public void onBackPressed() {
-        if (!MainActivity.isShowing) {
-            Log.d("isShowing", "false");
-            Intent intent = new Intent(ClientDetailActivity.this, SplashActivity.class);
-            startActivity(intent);
-        } else Log.d("isShowing", "true");
-        super.onBackPressed();
+        finish();
     }
 
     /**
@@ -192,35 +193,6 @@ public class ClientDetailActivity extends AppCompatActivity implements
         }
 
         protected String doInBackground(String... urls) {
-//            listTicketGlimpse = new ArrayList<>();
-//            String result = new Helpdesk().getTicketsByUser(clientID);
-//            if (result == null)
-//                return null;
-//            try {
-//                JSONObject jsonObject = new JSONObject(result);
-//
-//                JSONArray jsonArray = jsonObject.getJSONArray("tickets");
-//                for (int i = 0; i < jsonArray.length(); i++) {
-//                    int ticketID = Integer.parseInt(jsonArray.getJSONObject(i).getString("id"));
-//                    boolean isOpen = true;
-//                    String ticketNumber = jsonArray.getJSONObject(i).getString("ticket_number");
-//                    String ticketSubject = jsonArray.getJSONObject(i).getString("title");
-//                    try {
-//                        isOpen = jsonArray.getJSONObject(i).getString("ticket_status_name").equals("Open");
-//                        if (isOpen)
-//                            listOpenTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, true));
-//                        else
-//                            listClosedTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, false));
-//                    } catch (Exception e) {
-//                        listOpenTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, true));
-//                    }
-//                    listTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, isOpen));
-//                }
-//            } catch (JSONException e) {
-//                Toast.makeText(ClientDetailActivity.this, R.string.unexpected_error, Toast.LENGTH_LONG).show();
-//                e.printStackTrace();
-//            }
-            // return "success";
             return new Helpdesk().getTicketsByUser(clientID);
         }
 
@@ -260,30 +232,16 @@ public class ClientDetailActivity extends AppCompatActivity implements
                     imageViewClientPicture.setVisibility(View.GONE);
 
                 }
-//                else if (clientOverview.clientPicture.contains(".jpg")){
-//                    //mDrawableBuilder = TextDrawable.builder()
-//                    //.round();
-////    TextDrawable drawable1 = mDrawableBuilder.build(generator.getRandomColor());
-//                    Picasso.with(context).load(clientOverview.getClientPicture()).transform(new CircleTransform()).into(clientViewHolder.roundedImageViewProfilePic);
-////        Glide.with(context)
-////            .load(ticketOverview.getClientPicture())
-////            .into(ticketViewHolder.roundedImageViewProfilePic);
-//
-//                    //ticketViewHolder.roundedImageViewProfilePic.setImageDrawable(drawable);
-//
-//                }
                 else{
+                    int color=Color.parseColor("#ffffff");
                     ColorGenerator generator = ColorGenerator.MATERIAL;
                     TextDrawable drawable = TextDrawable.builder()
-                            .buildRound(letter, generator.getRandomColor());
+                            .buildRound(letter,color);
+                    imageViewClientPicture.setColorFilter(context.getResources().getColor(R.color.faveo), PorterDuff.Mode.SRC_IN);
                     imageViewClientPicture.setImageDrawable(drawable);
                 }
                 String phone = "";
                 String mobile;
-//                if (requester.getString("mobile") == null || requester.getString("mobile").equals(""))
-//                    textViewClientPhone.setVisibility(View.INVISIBLE);
-//
-//                else
                 phone = requester.getString("phone_number");
                 mobile=requester.getString("mobile");
 
@@ -299,10 +257,10 @@ public class ClientDetailActivity extends AppCompatActivity implements
                     textViewClientPhone.setText(mobile);
                 }
 
-                if (requester.getString("company").equals("null") || requester.getString("company").equals(""))
-                    textViewClientCompany.setText("");
-                else
-                    textViewClientCompany.setText(requester.getString("company"));
+//                if (requester.getString("company").equals("null") || requester.getString("company").equals(""))
+//                    textViewClientCompany.setText("");
+//                else
+//                    textViewClientCompany.setText(requester.getString("company"));
                 textViewClientStatus.setText(requester.getString("active" +
                         "").equals("1") ? getString(R.string.active) : getString(R.string.inactive));
 
@@ -421,13 +379,6 @@ public class ClientDetailActivity extends AppCompatActivity implements
     private void setUpViews() {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage(getString(R.string.fetching_tickets));
-        //imageViewClientPicture = (ImageView) findViewById(R.id.imageView_default_profile);
-        //textViewClientName = (TextView) findViewById(R.id.textView_client_name);
-        // textViewClientEmail = (TextView) findViewById(R.id.textView_client_email);
-        // textViewClientPhone = (TextView) findViewById(R.id.textView_client_phone);
-        //textViewClientCompany = (TextView) findViewById(R.id.textView_client_company);
-        //textViewClientStatus = (TextView) findViewById(R.id.textView_client_status);
-        // viewPager = (ViewPager) findViewById(R.id.viewpager);
 
     }
 

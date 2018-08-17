@@ -1,13 +1,17 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     android:fillViewport="true"
     android:overScrollMode="never"
-    android:padding="16dp"
-    android:scrollbars="none">
-
+    android:padding="7dp"
+    >
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:overScrollMode="never">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -29,14 +33,24 @@
         <!--android:textSize="14sp"-->
         <!--android:textStyle="bold" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="@string/subject"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:background="#f2f2f2"
+            android:layout_marginTop="-1dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/Subject"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/editText_subject"
@@ -48,19 +62,11 @@
             android:inputType="textEmailAddress"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
+            android:layout_marginLeft="7dp"
             android:text="@string/not_available"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView_error_subject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginBottom="12dp"
-            android:textColor="@color/error_red"
-            android:textSize="12sp" />
+            />
 
         <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
@@ -106,27 +112,36 @@
         <!--android:paddingTop="24dp"-->
         <!--android:textSize="14sp" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="@string/priority"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:background="#f2f2f2">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/priority"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
         <Spinner
             android:id="@+id/spinner_priority"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:entries="@array/spinnerPriority"
             android:imeOptions="actionNext"
             android:maxLines="1"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:clickable="false" />
 
         <!--<TextView-->
         <!--android:id="@+id/tv_type"-->
@@ -150,21 +165,28 @@
         <!--android:paddingTop="24dp"-->
         <!--android:textSize="14sp" />-->
 
-        <TextView
-            android:id="@+id/tv_helpTopic"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="@string/helptopic"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:background="#f2f2f2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/helptopic"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <Spinner
             android:id="@+id/spinner_help_topics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:entries="@array/spinnerHelpTopics"
             android:imeOptions="actionNext"
@@ -172,20 +194,28 @@
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
             android:textSize="14sp" />
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="@string/sla_plans"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:background="#f2f2f2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/sla_plans"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <Spinner
             android:id="@+id/spinner_sla_plans"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:imeOptions="actionNext"
             android:maxLines="1"
@@ -224,20 +254,30 @@
         <!--android:textSize="14sp" />-->
 
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="@string/source"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:background="#f2f2f2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/source"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
 
         <Spinner
             android:id="@+id/spinner_source"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:entries="@array/spinnerHelpTopics"
             android:imeOptions="actionNext"
@@ -275,22 +315,6 @@
         <!--android:focusableInTouchMode="false"-->
         <!--android:imeOptions="actionNext" />-->
 
-
-
-        <Button
-            android:id="@+id/button_save"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="56dp"
-            android:background="@drawable/button_background"
-            android:text="@string/save"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:visibility="gone"/>
-
     </LinearLayout>
-
-</ScrollView>
+    </android.support.v4.widget.NestedScrollView>
+</FrameLayout>

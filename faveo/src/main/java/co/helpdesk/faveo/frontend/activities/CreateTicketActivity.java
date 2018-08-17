@@ -1,8 +1,10 @@
 package co.helpdesk.faveo.frontend.activities;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -16,6 +18,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.CursorAdapter;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
@@ -26,6 +29,11 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,8 +45,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.hbb20.CountryCodePicker;
 import com.pixplicity.easyprefs.library.Prefs;
-import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
-import com.wang.avi.AVLoadingIndicatorView;
+//import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
+//import com.wang.avi.AVLoadingIndicatorView;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -56,9 +64,12 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import co.helpdesk.faveo.Constants;
+import co.helpdesk.faveo.FaveoApplication;
 import co.helpdesk.faveo.Helper;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
+import co.helpdesk.faveo.frontend.fragments.CreateTicket;
 import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
 import co.helpdesk.faveo.model.Data;
 import co.helpdesk.faveo.model.MessageEvent;
@@ -79,7 +90,6 @@ public class CreateTicketActivity extends AppCompatActivity {
     ArrayAdapter<Data> spinnerPriArrayAdapter, spinnerHelpArrayAdapter,spinnerSLAAdapter;
     ArrayAdapter<String> spinnerSlaArrayAdapter, spinnerAssignToArrayAdapter,
             spinnerDeptArrayAdapter;
-    AVLoadingIndicatorView avLoadingIndicatorView;
     @BindView(R.id.fname_edittext)
     EditText editTextFirstName;
     @BindView(R.id.email_edittext)
@@ -132,17 +142,8 @@ public class CreateTicketActivity extends AppCompatActivity {
     NestedScrollView nestedScrollView;
     @BindView(R.id.spinner_sla_plans)
             Spinner spinnerSLA;
-
-
-
-    //    @BindView(R.id.spinner_assign_to)
-//    Spinner spinnerSLA;
-    //    @BindView(R.id.spinner_dept)
-//    Spinner spinnerDept;
-//    @BindView(R.id.cc_searchview)
-//    SearchView ccSearchview;
-//    @BindView(R.id.requester_searchview)
-//    SearchView requesterSearchview;
+    @BindView(R.id.refresh)
+            Button button ;
     ProgressDialog progressDialog;
     CountryCodePicker countryCodePicker;
     ArrayList<Data> helptopicItems, priorityItems,slaItems;
@@ -150,8 +151,19 @@ public class CreateTicketActivity extends AppCompatActivity {
     String splChrs = "-/@#$%^&_+=()" ;
     String countrycode = "";
     ImageView imageViewBack;
+    Animation rotation;
+    public static String
+            keyDepartment = "", valueDepartment = "",
+            keySLA = "", valueSLA = "",
+            keyStatus = "", valueStatus = "",
+            keyStaff = "", valueStaff = "",
+            keyTeam = "", valueTeam = "",
+            keyName="",
+            keyPriority = "", valuePriority = "",
+            keyTopic = "", valueTopic = "",
+            keySource = "", valueSource = "",
+            keyType = "", valueType = "";
     private InputFilter filter = new InputFilter() {
-
         @Override
         public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
 
@@ -168,20 +180,19 @@ public class CreateTicketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_ticket);
+        Window window = CreateTicketActivity.this.getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(ContextCompat.getColor(CreateTicketActivity.this,R.color.faveo));
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-
+        rotation = AnimationUtils.loadAnimation(this, R.anim.rotate);
         imageViewBack= (ImageView) findViewById(R.id.imageViewBack);
-//        getSupportActionBar().setHomeButtonEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setTitle(R.string.create_ticket);
         countryCodePicker= (CountryCodePicker) findViewById(R.id.countrycoode);
         countryCodePicker.setOnCountryChangeListener(new CountryCodePicker.OnCountryChangeListener() {
             @Override
             public void onCountrySelected() {
-                //Toast.makeText(MainActivity.this, "code :"+countryCodePicker.getSelectedCountryCode(), Toast.LENGTH_SHORT).show();
-
                 countrycode=countryCodePicker.getSelectedCountryCode();
             }
         });
@@ -189,8 +200,7 @@ public class CreateTicketActivity extends AppCompatActivity {
         imageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(CreateTicketActivity.this,MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
         editTextFirstName.requestFocus();
@@ -223,7 +233,7 @@ public class CreateTicketActivity extends AppCompatActivity {
             slaItems=new ArrayList<>();
             slaItems.add(new Data(0,"Please select SLA"));
             for (int i = 0; i < jsonArraySLA.length(); i++) {
-                Data data = new Data(Integer.parseInt(jsonArraySLA.getJSONObject(i).getString("id")), jsonArraySLA.getJSONObject(i).getString("name"));
+                Data data = new Data(Integer.parseInt(jsonArraySLA.getJSONObject(i).getString("id")), jsonArraySLA.getJSONObject(i).getString("sla_duration"));
                 slaItems.add(data);
             }
 
@@ -231,11 +241,54 @@ public class CreateTicketActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        avLoadingIndicatorView=new AVLoadingIndicatorView(this);
         setUpViews();
-        //getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
-        // AndroidNetworking.enableLogging();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                hideKeyboard(CreateTicketActivity.this);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(CreateTicketActivity.this);
+
+                // Setting Dialog Title
+                alertDialog.setTitle(getString(R.string.refreshingPage));
+
+                // Setting Dialog Message
+                alertDialog.setMessage(getString(R.string.refreshPage));
+
+                // Setting Icon to Dialog
+                alertDialog.setIcon(R.mipmap.ic_launcher);
+
+                // Setting Positive "Yes" Button
+                alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Write your code here to invoke YES event
+                        //Toast.makeText(getApplicationContext(), "You clicked on YES", Toast.LENGTH_SHORT).show();
+                        if (InternetReceiver.isConnected()){
+                            button.startAnimation(rotation);
+//                            progressDialog=new ProgressDialog(CreateTicketActivity.this);
+//                            progressDialog.setMessage(getString(R.string.refreshing));
+//                            progressDialog.show();
+
+                            new FetchDependency().execute();
+                            setUpViews();
+                        }
+                    }
+                });
+
+                // Setting Negative "NO" Button
+                alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Write your code here to invoke NO event
+                        //Toast.makeText(getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
+                        dialog.cancel();
+                    }
+                });
+
+                // Showing Alert Message
+                alertDialog.show();
+            }
+        });
+
     }
 
     @Override
@@ -254,48 +307,12 @@ public class CreateTicketActivity extends AppCompatActivity {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
-
-//            case R.id.action_create:
-//                createButtonClick();
-//                return true;
 
             case android.R.id.home:
                 //Write your logic here
                 this.finish();
                 return true;
-
-//            case R.id.action_attach: {
-//                new BottomSheet.Builder(this).title("Attach files from").sheet(R.menu.bottom_menu).listener(new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        switch (which) {
-//                            case R.id.action_gallery:
-//
-//                                Intent galleryIntent = new Intent(Intent.ACTION_PICK,
-//                                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//
-//                                startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
-//                                break;
-////                            case R.id.action_docx:
-////
-//////                                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-//////                                //intent.setType("text/*");
-//////                                intent.setType("*/*");
-//////                                intent.addCategory(Intent.CATEGORY_OPENABLE);
-//////                                startActivityForResult(Intent.createChooser(intent, "Select a doc"), RESULT_LOAD_FILE);
-////
-////                                break;
-//                            default:
-//                                break;
-//                        }
-//                    }
-//                }).show();
-//                return true;
-//            }
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -314,16 +331,7 @@ public class CreateTicketActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
-        if (!MainActivity.isShowing) {
-            Log.d("isShowing", "false");
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        } else Log.d("isShowing", "true");
-
-//        if (fabExpanded)
-//            exitReveal();
-//        else super.onBackPressed();
+            finish();
     }
 
     /**
@@ -355,22 +363,9 @@ public class CreateTicketActivity extends AppCompatActivity {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImage);
                 String uriString = getPath(selectedImage);
                 File myFile = new File(uriString);
-//                String[] filePathColumn = {MediaStore.Images.Media.DATA};
-//
-//                // Get the cursor
-//                Cursor cursor = getContentResolver().query(selectedImage,
-//                        filePathColumn, null, null, null);
-//                // Move to first row
-//                cursor.moveToFirst();
-//
-//                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-//                imgDecodableString = cursor.getString(columnIndex);
-//                cursor.close();
                 attachment_layout.setVisibility(View.VISIBLE);
-                // Set the Image in ImageView after decoding the String
                 imageView.setImageBitmap(bitmap);
                 Log.d("size", myFile.length() + "");
-                //attachmentFileSize.setText("(" + myFile.length() / 1024 + "kb)");
                 attachmentFileSize.setText(getFileSize(myFile.length()));
                 attachmentFileName.setText(myFile.getName());
 
@@ -393,45 +388,10 @@ public class CreateTicketActivity extends AppCompatActivity {
         return new DecimalFormat("#,##0.#").format(size / Math.pow(1024, digitGroups)) + " " + units[digitGroups];
     }
 
-    public int getCountryZipCode() {
-        String CountryID = "";
-        String CountryZipCode = "";
-        int code = 0;
-
-        TelephonyManager manager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
-        //getNetworkCountryIso
-        CountryID = manager.getSimCountryIso().toUpperCase();
-        String[] rl = this.getResources().getStringArray(R.array.spinnerCountryCodes);
-        for (String aRl : rl) {
-            String[] g = aRl.split(",");
-            if (g[1].trim().equals(CountryID.trim())) {
-                CountryZipCode = g[0];
-                //code = i;
-                break;
-            }
-        }
-        return Integer.parseInt(CountryZipCode);
-    }
-
-    private void selectValue(Spinner spinner, Object value) {
-        for (int i = 0; i < spinner.getCount(); i++) {
-            spinner.getItemAtPosition(i);
-            String[] split = spinner.getItemAtPosition(i).toString().split(",");
-            String s = split[1];
-            if (s.equals(value)) {
-                Log.d("dsegffg", i + "");
-                spinner.setSelection(i);
-                break;
-            }
-        }
-    }
-
     /**
      * Setting up the views here.
      */
     public void setUpViews() {
-        // selectValue(phCode, getCountryZipCode());
-        // phCode.setSelection(getCountryZipCode());
         final CursorAdapter suggestionAdapter = new SimpleCursorAdapter(this,
                 android.R.layout.simple_list_item_1,
                 null,
@@ -440,104 +400,6 @@ public class CreateTicketActivity extends AppCompatActivity {
                 0);
         final List<String> suggestions = new ArrayList<>();
 
-//        requesterSearchview.setSuggestionsAdapter(suggestionAdapter);
-//        requesterSearchview.setOnSuggestionListener(new SearchView.OnSuggestionListener() {
-//            @Override
-//            public boolean onSuggestionSelect(int position) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onSuggestionClick(int position) {
-//                requesterSearchview.setQuery(suggestions.get(position), false);
-//                requesterSearchview.clearFocus();
-//                //doSearch(suggestions.get(position));
-//                return true;
-//            }
-//        });
-//
-//        requesterSearchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                if (newText.length() > 2) {
-//                    //loadData(s);
-//                    Toast.makeText(getBaseContext(), newText, Toast.LENGTH_SHORT).show();
-//                }
-//
-//                //                MyApp.autocompleteService.search(newText, new Callback<Autocomplete>() {
-////                    @Override
-////                    public void success(Autocomplete autocomplete, Response response) {
-////                        suggestions.clear();
-////                        suggestions.addAll(autocomplete.suggestions);
-////
-////                        String[] columns = {
-////                                BaseColumns._ID,
-////                                SearchManager.SUGGEST_COLUMN_TEXT_1,
-////                                SearchManager.SUGGEST_COLUMN_INTENT_DATA
-////                        };
-////
-////                        MatrixCursor cursor = new MatrixCursor(columns);
-////
-////                        for (int i = 0; i < autocomplete.suggestions.size(); i++) {
-////                            String[] tmp = {Integer.toString(i), autocomplete.suggestions.get(i), autocomplete.suggestions.get(i)};
-////                            cursor.addRow(tmp);
-////                        }
-////                        suggestionAdapter.swapCursor(cursor);
-////                    }
-////
-////                    @Override
-////                    public void failure(RetrofitError error) {
-////                        Toast.makeText(SearchFoodActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-////                        Log.w("autocompleteService", error.getMessage());
-////                    }
-////                });
-//                return true;
-//            }
-//        });
-//        ccSearchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                //Toast.makeText(getBaseContext(), query, Toast.LENGTH_LONG).show();
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//
-//                return true;
-//            }
-//        });
-
-//        ImageButton attchmentClose = (ImageButton) findViewById(R.id.attachment_close);
-//        ImageButton addButton = (ImageButton) findViewById(R.id.addrequester_button);
-//        addButton.setOnClickListener(new View.OnClickListener()
-//                                     {
-//                                         @Override
-//                                         public void onClick(View v) {
-//
-//                                             CustomBottomSheetDialog bottomSheetDialog = new CustomBottomSheetDialog();
-//                                             bottomSheetDialog.show(getSupportFragmentManager(), "Custom Bottom Sheet");
-//
-//                                         }
-//                                     }
-//
-//        );
-//        attchmentClose.setOnClickListener(new View.OnClickListener()
-//
-//                                          {
-//                                              @Override
-//                                              public void onClick(View v) {
-//                                                  attachment_layout.setVisibility(View.GONE);
-//                                              }
-//                                          }
-//
-//        );
-
         spinnerHelpArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, helptopicItems); //selected item will look like a spinner set from XML
         spinnerHelpArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerHelpTopic.setAdapter(spinnerHelpArrayAdapter);
@@ -545,42 +407,21 @@ public class CreateTicketActivity extends AppCompatActivity {
         spinnerSLAAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,slaItems); //selected item will look like a spinner set from XML
         spinnerSLAAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSLA.setAdapter(spinnerSLAAdapter);
-//
-//        spinnerAssignToArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Utils.removeDuplicates(SplashActivity.valueDepartment.split(","))); //selected item will look like a spinner set from XML
-//        spinnerAssignToArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnerDept.setAdapter(spinnerAssignToArrayAdapter);
+
 
         spinnerPriArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, priorityItems); //selected item will look like a spinner set from XML
         spinnerPriArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPriority.setAdapter(spinnerPriArrayAdapter);
 
-//
-        // editTextFirstName.addTextChangedListener(mTextWatcher);
         editTextLastName.setFilters(new InputFilter[]{filter});
         editTextFirstName.setFilters(new InputFilter[]{filter});
         subEdittext.setFilters(new InputFilter[]{filter});
 
 
-//        subEdittext.setFilters(new InputFilter[]{
-//                new InputFilter() {
-//                    public CharSequence filter(CharSequence src, int start,
-//                                               int end, Spanned dst, int dstart, int dend) {
-//                        if (src.equals("")) { // for backspace
-//                            return src;
-//                        }
-//                        if (src.toString().matches("[\\x00-\\x7F]+")) {
-//                            return src;
-//                        }
-//                        return "";
-//                    }
-//                }
-//        });
-
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //replaces the default 'Back' button action
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             finish();
         }
@@ -599,26 +440,16 @@ public class CreateTicketActivity extends AppCompatActivity {
         String phone = editTextPhone.getText().toString();
         mobile = editTextMobile.getText().toString();
 
-//        if (!phCode.getSelectedItem().toString().equals("Code")) {
-//            countrycode = phCode.getSelectedItem().toString();
-//            String[] cc = countrycode.split(",");
-//            countrycode = cc[1];
-//        }
         countrycode=countryCodePicker.getSelectedCountryCode();
 
         allCorrect = true;
 
 
-        Data helpTopic = (Data) spinnerHelpTopic.getSelectedItem();
+        final Data helpTopic = (Data) spinnerHelpTopic.getSelectedItem();
         Log.d("ID of objt", "" + helpTopic.ID);
-        //  int SLAPlans = spinnerSLA.getSelectedItemPosition();
-        //int dept = spinnerDept.getSelectedItemPosition();
-        Data priority = (Data) spinnerPriority.getSelectedItem();
-        Data sla= (Data) spinnerSLA.getSelectedItem();
+        final Data priority = (Data) spinnerPriority.getSelectedItem();
+        final Data sla= (Data) spinnerSLA.getSelectedItem();
 
-//    if (phCode.equals("")){
-//        Toast.makeText(this, "Select the code", Toast.LENGTH_SHORT).show();
-//    }
         if (fname.length()==0&&email.length()==0&&subject.length()==0&&message.length()==0&&helpTopic.ID == 0&&priority.ID == 0){
             Toasty.warning(this,getString(R.string.fill_all_the_details),Toast.LENGTH_SHORT).show();
             allCorrect=false;
@@ -644,17 +475,6 @@ public class CreateTicketActivity extends AppCompatActivity {
             Toasty.warning(this, getString(R.string.invalid_email), Toast.LENGTH_SHORT).show();
             allCorrect = false;
         }
-
-//        else if (phCode.getSelectedItemPosition()==0){
-//            if (mobile!=null){
-//
-//            }
-//        }
-//        else if (phCode.getSelectedItemPosition()==0&&mobile!=null){
-//
-//                allCorrect=false;
-
-//            }
 
 
 
@@ -712,17 +532,6 @@ public class CreateTicketActivity extends AppCompatActivity {
             Toasty.warning(this, getString(R.string.msg_minimum_char), Toast.LENGTH_SHORT).show();
             allCorrect = false;
         }
-//        if (lname.trim().length() == 0) {
-//            Toasty.warning(this, getString(R.string.fill_lastname), Toast.LENGTH_SHORT).show();
-//            allCorrect = false;
-//        } else
-//        if (dept == 0) {
-//            allCorrect = false;
-//            Toasty.warning(CreateTicketActivity.this, "Please select some Department", Toast.LENGTH_SHORT).show();
-//        } else if (SLAPlans == 0) {
-//            allCorrect = false;
-//            Toasty.warning(CreateTicketActivity.this, "Please select some SLA plan", Toast.LENGTH_SHORT).show();
-//        } else
 
         if (allCorrect) {
 
@@ -742,80 +551,69 @@ public class CreateTicketActivity extends AppCompatActivity {
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
-                progressDialog.show();
-                new CreateNewTicket(Integer.parseInt(Prefs.getString("ID", null)), subject, message, helpTopic.ID,sla.ID, priority.ID, phone, fname, lname, email, countrycode, mobile).execute();
-//                JSONObject jsonObject = new JSONObject();
-//                try {
-//                    //jsonObject.put("api_key", Constants.API_KEY);
-//                    jsonObject.put("ip", null);
-//                    jsonObject.put("token", Preference.getToken());
-//                    // jsonObject.put("user_id", Integer.parseInt(Preference.getUserID()));
-//                    jsonObject.put("subject", subject);
-//                    jsonObject.put("body", message);
-//                    jsonObject.put("helptopic", helpTopic);
-//                    jsonObject.put("sla", SLAPlans);
-//                    jsonObject.put("priority", priority);
-//                    jsonObject.put("dept", dept);
-//                    // jsonObject.put("first_name", fname);
-//                    //jsonObject.put("last_name", lname);
-//                    // jsonObject.put("code", countrycode);
-//                    // jsonObject.put("phone", phone);
-//                    // jsonObject.put("email", email);
-//
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-                // Log.d(TAG, jsonObject + "");
+                hideKeyboard(this);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(CreateTicketActivity.this);
 
-//                ANRequest anRequest = AndroidNetworking.post(Constants.URL + "helpdesk/create?")
-//                        .addJSONObjectBody(jsonObject) // posting json
-//                        .setTag("create_ticket")
-//                        .setPriority(Priority.HIGH)
-//                        .build();
-//                Log.d("ANRequested URL", anRequest.getUrl() + "");
-//                anRequest.getAsJSONObject(new JSONObjectRequestListener() {
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                        Log.d("FAN", response + "");
-//                        progressDialog.dismiss();
-//                        if (response.has("token_expired")) {
-//                            new Helpdesk();
-//                            new Authenticate();
-//                            createButtonClick();
-//                        } else if (response.has("NotificationThread created successfully!")) {
-//                            Toasty.success(CreateTicketActivity.this, getString(R.string.ticket_created_success), Toast.LENGTH_LONG).show();
-//                        }
-//                        // do anything with response
-//                    }
-//
-//                    @Override
-//                    public void onError(ANError error) {
-//                        progressDialog.dismiss();
-//                        if (error.getErrorCode() != 0) {
-//                            // received error from server
-//                            // error.getErrorCode() - the error code from server
-//                            // error.getErrorBody() - the error body from server
-//                            // error.getErrorDetail() - just an error detail
-//                            Log.d(TAG, "onError errorCode : " + error.getErrorCode());
-//                            Log.d(TAG, "onError errorBody : " + error.getErrorBody());
-//                            Log.d(TAG, "onError errorDetail : " + error.getErrorDetail());
-//                            // get parsed error object (If ApiError is your class)
-//                            //ApiError apiError = error.getErrorAsObject(ApiError.class);
-//                        } else {
-//                            // error.getErrorDetail() : connectionError, parseError, requestCancelledError
-//                            Log.d(TAG, "onError errorDetail : " + error.getErrorDetail());
-//                        }
-//                        // handle error
-//                        Toasty.error(CreateTicketActivity.this, getString(R.string.error_creating_ticket), Toast.LENGTH_SHORT, true).show();
-//                    }
-//                });
+                // Setting Dialog Title
+                alertDialog.setTitle(R.string.creating);
 
-                // new CreateNewTicket(Integer.parseInt(Preference.getUserID()), subject, message, helpTopic, SLAPlans, priority, dept, phone, fname, lname, email, countrycode).execute();
+                // Setting Dialog Message
+                alertDialog.setMessage(R.string.sure);
+
+                // Setting Icon to Dialog
+                alertDialog.setIcon(R.mipmap.ic_launcher);
+
+                // Setting Positive "Yes" Button
+                final String finalSubject = subject;
+                final String finalMessage = message;
+                final String finalPhone = phone;
+                final String finalFname = fname;
+                final String finalLname = lname;
+                final String finalEmail = email;
+                alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Write your code here to invoke YES event
+                        //Toast.makeText(getApplicationContext(), "You clicked on YES", Toast.LENGTH_SHORT).show();
+                        if (InternetReceiver.isConnected()){
+
+                            progressDialog.show();
+                            new CreateNewTicket(Integer.parseInt(Prefs.getString("ID", null)), finalSubject, finalMessage, helpTopic.ID,sla.ID, priority.ID, finalPhone, finalFname, finalLname, finalEmail, countrycode, mobile).execute();
+//                            progressDialog=new ProgressDialog(CreateTicketActivity.this);
+//                            progressDialog.setMessage(getString(R.string.refreshing));
+//                            progressDialog.show();
+
+
+                        }
+                    }
+                });
+
+                // Setting Negative "NO" Button
+                alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Write your code here to invoke NO event
+                        //Toast.makeText(getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
+                        dialog.cancel();
+                    }
+                });
+
+                // Showing Alert Message
+                alertDialog.show();
+
+
             } else
                 Toasty.info(this, getString(R.string.oops_no_internet), Toast.LENGTH_SHORT, true).show();
         }
     }
-
+    public static void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
     /**
      * Async task for creating the ticket.
      */
@@ -963,24 +761,149 @@ public class CreateTicketActivity extends AppCompatActivity {
 
     }
 
-//    private TextWatcher mTextWatcher = new TextWatcher() {
-//        @Override
-//        public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-//        }
-//
-//        @Override
-//        public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-//
-//            if ((subEdittext.getText().toString()).matches("\\[a-zA-Z]+")) {
-//
-//
-//            }
-//        }
-//
-//        @Override
-//        public void afterTextChanged(Editable editable) {
-//            // check Fields For Empty Values
-//            //checkFieldsForEmptyValues();
-//        }
-//    };
+    private class FetchDependency extends AsyncTask<String, Void, String> {
+
+        protected String doInBackground(String... urls) {
+
+            return new Helpdesk().getDependency();
+
+        }
+
+        protected void onPostExecute(String result) {
+            Log.d("Depen Response : ", result + "");
+            button.clearAnimation();
+            if (result == null) {
+                return;
+            }
+
+            try {
+
+                JSONObject jsonObject = new JSONObject(result);
+                JSONObject jsonObject1 = jsonObject.getJSONObject("result");
+                Prefs.putString("DEPENDENCY", jsonObject1.toString());
+                // Preference.setDependencyObject(jsonObject1, "dependency");
+                JSONArray jsonArrayDepartments = jsonObject1.getJSONArray("departments");
+                for (int i = 0; i < jsonArrayDepartments.length(); i++) {
+                    keyDepartment += jsonArrayDepartments.getJSONObject(i).getString("id") + ",";
+                    valueDepartment += jsonArrayDepartments.getJSONObject(i).getString("name") + ",";
+                }
+                Prefs.putString("keyDept", keyDepartment);
+                Prefs.putString("valueDept", valueDepartment);
+
+
+                JSONArray jsonArraySla = jsonObject1.getJSONArray("sla");
+                for (int i = 0; i < jsonArraySla.length(); i++) {
+                    keySLA += jsonArraySla.getJSONObject(i).getString("id") + ",";
+                    valueSLA += jsonArraySla.getJSONObject(i).getString("name") + ",";
+                }
+                Prefs.putString("keySLA", keySLA);
+                Prefs.putString("valueSLA", valueSLA);
+
+                JSONArray jsonArrayPriorities = jsonObject1.getJSONArray("priorities");
+                for (int i = 0; i < jsonArrayPriorities.length(); i++) {
+                    // keyPri.add(jsonArrayPriorities.getJSONObject(i).getString("priority_id"));
+                    //valuePri.add(jsonArrayPriorities.getJSONObject(i).getString("priority"));
+                    keyPriority += jsonArrayPriorities.getJSONObject(i).getString("priority_id") + ",";
+                    valuePriority += jsonArrayPriorities.getJSONObject(i).getString("priority") + ",";
+                }
+                Prefs.putString("keyPri", keyPriority);
+                Prefs.putString("valuePri", valuePriority);
+                //Prefs.putOrderedStringSet("keyPri", keyPri);
+                // Prefs.putOrderedStringSet("valuePri", valuePri);
+                //Log.d("Testtttttt", Prefs.getOrderedStringSet("keyPri", keyPri) + "   " + Prefs.getOrderedStringSet("valuePri", valuePri));
+
+
+                JSONArray jsonArrayHelpTopics = jsonObject1.getJSONArray("helptopics");
+                for (int i = 0; i < jsonArrayHelpTopics.length(); i++) {
+
+                    keyTopic += jsonArrayHelpTopics.getJSONObject(i).getString("id") + ",";
+                    valueTopic += jsonArrayHelpTopics.getJSONObject(i).getString("topic") + ",";
+                }
+
+                Prefs.putString("keyHelpTopic", keyTopic);
+                Prefs.putString("valueHelptopic", valueTopic);
+
+                JSONArray jsonArrayStatus = jsonObject1.getJSONArray("status");
+                for (int i = 0; i < jsonArrayStatus.length(); i++) {
+                    keyStatus += jsonArrayStatus.getJSONObject(i).getString("id") + ",";
+                    valueStatus += jsonArrayStatus.getJSONObject(i).getString("name") + ",";
+                }
+                Prefs.putString("keyStatus", keyStatus);
+                Prefs.putString("valueStatus", valueStatus);
+
+                JSONArray jsonArraySources = jsonObject1.getJSONArray("sources");
+                for (int i = 0; i < jsonArraySources.length(); i++) {
+                    keySource += jsonArraySources.getJSONObject(i).getString("id") + ",";
+                    valueSource += jsonArraySources.getJSONObject(i).getString("name") + ",";
+                }
+
+                Prefs.putString("keySource", keySource);
+                Prefs.putString("valueSource", valueSource);
+
+                int open = 0, closed = 0, trash = 0, unasigned = 0, my_tickets = 0;
+                JSONArray jsonArrayTicketsCount = jsonObject1.getJSONArray("tickets_count");
+                for (int i = 0; i < jsonArrayTicketsCount.length(); i++) {
+                    String name = jsonArrayTicketsCount.getJSONObject(i).getString("name");
+                    String count = jsonArrayTicketsCount.getJSONObject(i).getString("count");
+
+                    switch (name) {
+                        case "Open":
+                            open = Integer.parseInt(count);
+                            break;
+                        case "Closed":
+                            closed = Integer.parseInt(count);
+                            break;
+                        case "Deleted":
+                            trash = Integer.parseInt(count);
+                            break;
+                        case "unassigned":
+                            unasigned = Integer.parseInt(count);
+                            break;
+                        case "mytickets":
+                            my_tickets = Integer.parseInt(count);
+                            break;
+                        default:
+                            break;
+
+                    }
+                }
+
+
+                if (open > 999)
+                    Prefs.putString("inboxTickets", "999+");
+                else
+                    Prefs.putString("inboxTickets", open + "");
+
+                if (closed > 999)
+                    Prefs.putString("closedTickets", "999+");
+                else
+                    Prefs.putString("closedTickets", closed + "");
+
+                if (my_tickets > 999)
+                    Prefs.putString("myTickets", "999+");
+                else
+                    Prefs.putString("myTickets", my_tickets + "");
+
+                if (trash > 999)
+                    Prefs.putString("trashTickets", "999+");
+                else
+                    Prefs.putString("trashTickets", trash + "");
+
+                if (unasigned > 999)
+                    Prefs.putString("unassignedTickets", "999+");
+                else
+                    Prefs.putString("unassignedTickets", unasigned + "");
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } finally {
+
+
+            }
+            finish();
+            Intent intent=new Intent(CreateTicketActivity.this, CreateTicketActivity.class);
+            startActivity(intent);
+
+        }
+    }
 }

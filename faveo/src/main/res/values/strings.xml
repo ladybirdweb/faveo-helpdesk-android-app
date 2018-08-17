@@ -197,6 +197,17 @@
     <string name="leaveYourMessage">Leave your message</string>
     <string name="ticketReply">Ticket Reply</string>
     <string name="pleaseWait">Please wait</string>
+    <string name="interNalNote">Internal note</string>
+    <string name="retry">try again</string>
+    <string name="refreshingPage">Refreshing page</string>
+    <string name="refreshPage">Are you sure you want to refresh this page?</string>
+    <string name="Subject">Subject</string>
+    <string name="creating">Creating ticket</string>
+    <string name="sure">Are you sure you want to to create the ticket?</string>
+    <string name="editing">Editing ticket</string>
+    <string name="sureUpdatre">are you sure you want to make the changes?</string>
+    <string name="logoutConfirm">are you sure you want to log out from the app?</string>
+    <string name="logOut">logging out</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

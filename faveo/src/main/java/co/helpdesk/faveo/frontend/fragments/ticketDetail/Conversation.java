@@ -103,8 +103,7 @@ public class Conversation extends Fragment {
             textViewTotalCount.setVisibility(View.GONE);
             if (InternetReceiver.isConnected()) {
                 noInternet_view.setVisibility(View.GONE);
-                // swipeRefresh.setRefreshing(true);
-                progressDialog.show();
+                swipeRefresh.setRefreshing(true);
                 task = new FetchTicketThreads(getActivity());
                 task.execute();
             } else {
@@ -152,7 +151,7 @@ public class Conversation extends Fragment {
         }
 
         protected void onPostExecute(String result) {
-            progressDialog.dismiss();
+            swipeRefresh.setRefreshing(false);
             if (swipeRefresh.isRefreshing())
                 swipeRefresh.setRefreshing(false);
             if (result == null) {
@@ -287,10 +286,10 @@ public class Conversation extends Fragment {
 
     @Override
     public void onResume() {
-        progressDialog.show();
-        if (InternetReceiver.isConnected()){
-            new FetchTicketThreads(getActivity()).execute();
-        }
+//        progressDialog.show();
+//        if (InternetReceiver.isConnected()){
+//            new FetchTicketThreads(getActivity()).execute();
+//        }
         super.onResume();
 
     }

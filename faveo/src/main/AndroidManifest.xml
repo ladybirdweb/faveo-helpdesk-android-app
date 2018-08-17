@@ -56,10 +56,6 @@
             android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait" />
-        <!-- <activity -->
-        <!-- android:name=".frontend.activities.NotificationActivity" -->
-        <!-- android:label="@string/title_activity_notification" -->
-        <!-- android:launchMode="singleTask" /> -->
 
         <receiver
             android:name=".frontend.receivers.InternetReceiver"
@@ -73,7 +69,10 @@
             android:name="io.fabric.ApiKey"
             android:value="3d31c3fca25cb228d17bfa05856d933d97e90db1" />
 
-        <activity android:name=".frontend.activities.TicketSaveActivity" />
+        <activity android:name=".frontend.activities.TicketSaveActivity"
+            android:label="@string/title_activity_save"
+            android:theme="@style/MyMaterialTheme"
+            ></activity>
         <activity android:name=".frontend.activities.TicketReplyActivity" />
         <activity android:name=".frontend.activities.InternalNoteActivity"></activity>
     </application>

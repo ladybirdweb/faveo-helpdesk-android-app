@@ -4,375 +4,469 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:id="@+id/ticketDetailCo"
+    android:background="@color/colorAccent"
     tools:context=".frontend.activities.TicketDetailActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:paddingTop="@dimen/appbar_padding_top"
+        android:layout_height="130dp"
         android:theme="@style/AppThemeOverlay.ActionBar">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbarTicketDetail"
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
             android:background="#F5F5F5"
-            android:minHeight="?attr/actionBarSize"
-            app:contentInsetStart="0dp"
-            app:contentInsetLeft="0dp"
-            >
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7"
                 >
+
                 <View
-                    android:id="@+id/viewPriority"
-                    android:layout_width="7dp"
-                    android:layout_height="150dp"
-                    android:visibility="gone"
+                    android:id="@+id/viewPriority1"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:background="@color/faveo">
                 </View>
 
-
-                <ImageView
-                    android:id="@+id/imageViewBackTicketDetail"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_above="@+id/textViewagentName"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_toEndOf="@+id/viewPriority"
-                    android:src="@drawable/ic_arrow_back_black_24dp" />
-
-                <TextView
-                    android:id="@+id/status"
-                    android:layout_width="wrap_content"
+                <com.elyeproj.loaderviewlibrary.LoaderTextView
+                    android:id="@+id/textViewagentName"
+                    android:layout_width="76dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="12dp"
-                    android:layout_toEndOf="@+id/textViewagentName"
-                    android:background="@drawable/rectangle1"
-                    android:text="Status"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:layout_toStartOf="@+id/department"
+                    android:background="@drawable/rectangle3"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:use_gradient="true"
+                    android:fontFamily="sans-serif-medium"
+                    />
 
-
-                <TextView
-                    android:id="@+id/textViewagentName"
-                    android:layout_width="wrap_content"
+                <com.elyeproj.loaderviewlibrary.LoaderTextView
+                    android:id="@+id/status"
+                    android:layout_width="76dp"
                     android:layout_height="wrap_content"
-                    android:layout_above="@+id/title"
-                    android:layout_alignStart="@+id/imageViewBackTicketDetail"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="110dp"
                     android:background="@drawable/rectangle1"
-                    android:text="Agent Name"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:gravity="center"
+                    android:text=""
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:use_gradient="true"
+                    android:fontFamily="sans-serif-medium"/>
 
-                <TextView
+                <com.elyeproj.loaderviewlibrary.LoaderTextView
+                    android:id="@+id/department"
+                    android:layout_width="76dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/status"
+                    android:background="@drawable/rectangle1"
+                    android:gravity="center"
+                    android:text=""
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    tools:ignore="RelativeOverlap"
+                    app:use_gradient="true"
+                    android:fontFamily="sans-serif-medium"/>
+
+                <com.elyeproj.loaderviewlibrary.LoaderTextView
                     android:id="@+id/title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="25dp"
+                    android:layout_alignParentBottom="true"
                     android:layout_alignStart="@+id/textViewagentName"
-                    android:layout_below="@+id/status"
                     android:layout_gravity="start"
-                    android:layout_marginTop="13dp"
-                    android:text="@string/aaaa_0001_0000001"
+                    android:layout_marginBottom="21dp"
+                    android:text=""
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/subject"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_alignTop="@+id/imageViewBackTicketDetail"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="22dp"
-                    android:layout_toEndOf="@+id/imageViewBackTicketDetail"
-                    android:text="Test Ticket For Faveo"
-                    android:textColor="@color/dark_grey"
                     android:textSize="15sp"
-                    android:maxLines="1"/>
+                    app:use_gradient="true" />
 
+                <!--<ImageView-->
+                    <!--android:id="@+id/collaboratorview"-->
+                    <!--android:layout_width="25dp"-->
+                    <!--android:layout_height="25dp"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:layout_alignTop="@+id/title"-->
+                    <!--android:layout_gravity="start"-->
+                    <!--android:layout_marginEnd="17dp"-->
+                    <!--android:background="@drawable/ic_group_black_24dp"-->
+                    <!--android:backgroundTint="@color/faveo"-->
+                    <!--android:visibility="gone"-->
+                    <!--/>-->
+
+
+                <!--<ProgressBar-->
+                <!--android:id="@+id/TicketDetailProgressbar"-->
+                <!--android:layout_width="20dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_toEndOf="@+id/title"-->
+                <!--android:layout_alignTop="@+id/title"-->
+                <!--android:layout_marginEnd="162dp"-->
+                <!--android:visibility="gone" />-->
 
             </RelativeLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbarTicketDetail"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#F5F5F5"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:contentInsetLeft="0dp"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize">
+                    <View
+                        android:id="@+id/viewPriority"
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/faveo">
+                    </View>
+                    <ImageView
+                        android:id="@+id/imageViewBackTicketDetail"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="21dp"
+                        android:src="@drawable/ic_arrow_back_black_24dp" />
+                    <com.elyeproj.loaderviewlibrary.LoaderTextView
+                        android:id="@+id/subject"
+                        android:layout_width="200dp"
+                        android:layout_height="30dp"
+                        android:layout_alignTop="@+id/imageViewBackTicketDetail"
+                        android:layout_marginStart="22dp"
+                        android:layout_toEndOf="@+id/imageViewBackTicketDetail"
+                        android:text=""
+                        android:textColor="@color/dark_grey"
+                        android:textSize="18sp"
+                        android:maxLines="1"
+                        tools:ignore="RelativeOverlap"
+                        app:use_gradient="true"/>
+                </RelativeLayout>
 
-
-        </android.support.v7.widget.Toolbar>
-
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
+            android:background="#F5F5F5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="5dp"
             app:tabGravity="fill"
             app:tabIndicatorColor="@color/faveo"
-            app:tabMode="fixed" />
+            app:tabMode="fixed"
+            android:visibility="visible">
+        </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
-
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <View
         android:id="@+id/overlay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/transparent"
+        android:layout_height="600dp"
+        android:background="@color/grey_200"
         android:clickable="true"
-        android:visibility="invisible" />
+        android:visibility="gone" />
 
-    <io.codetail.widget.RevealLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+
+    <!--<io.codetail.widget.RevealLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--&gt;-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/reveal"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@color/grey_200"-->
+    <!--android:clickable="true"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingLeft="24dp"-->
+    <!--android:paddingRight="24dp"-->
+    <!--android:paddingTop="24dp"-->
+    <!--android:visibility="gone">-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/section_internal_note"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="12dp"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:text="@string/internal_note"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="14sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:alpha="0.3"-->
+    <!--android:text="@string/message"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="14sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/editText_internal_note"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/edittext_modified_states"-->
+    <!--android:imeOptions="actionDone"-->
+    <!--android:inputType="textMultiLine"-->
+    <!--android:isScrollContainer="true"-->
+    <!--android:maxLength="2000"-->
+    <!--android:maxLines="10"-->
+    <!--android:paddingBottom="16dp"-->
+    <!--android:paddingTop="16dp"-->
+    <!--android:textCursorDrawable="@drawable/color_cursor"-->
+    <!--android:textSize="14sp" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/button_create"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="end"-->
+    <!--android:layout_margin="12dp"-->
+    <!--android:background="@color/faveo"-->
+    <!--android:text="@string/create"-->
+    <!--android:textAllCaps="false"-->
+    <!--android:textColor="@color/white" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/section_reply"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical">-->
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:text="@string/reply"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="14sp"-->
+    <!--android:textStyle="bold" />-->
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:alpha="0.3"-->
+    <!--android:text="@string/message"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="14sp"-->
+    <!--android:textStyle="bold" />-->
+    <!--<EditText-->
+    <!--android:id="@+id/editText_reply_message"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/edittext_modified_states"-->
+    <!--android:imeOptions="actionDone"-->
+    <!--android:inputType="textMultiLine"-->
+    <!--android:isScrollContainer="true"-->
+    <!--android:maxLength="2000"-->
+    <!--android:maxLines="10"-->
+    <!--android:paddingBottom="16dp"-->
+    <!--android:paddingTop="16dp"-->
+    <!--android:textCursorDrawable="@drawable/color_cursor"-->
+    <!--android:textSize="14sp" />-->
+    <!--<TextView-->
+    <!--android:id="@+id/addcc"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Add CC"-->
+    <!--android:textColor="@color/faveo"-->
+    <!--android:textSize="18sp"-->
+    <!--android:textStyle="bold"-->
+    <!--android:visibility="visible"-->
+    <!--android:layout_marginRight="50dp"/>-->
+
+    <!--<Button-->
+    <!--android:id="@+id/button_send"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="end"-->
+    <!--android:layout_margin="12dp"-->
+    <!--android:background="@color/faveo"-->
+    <!--android:text="@string/send"-->
+    <!--android:textAllCaps="false"-->
+    <!--android:textColor="@color/white" />-->
+
+
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+    <!--</io.codetail.widget.RevealLinearLayout>-->
+
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--&lt;!&ndash; Your FAB implementation &ndash;&gt;-->
+    <!--<co.helpdesk.faveo.pro.frontend.views.Fab-->
+    <!--android:id="@+id/fab"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:layout_margin="16dp"-->
+    <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+    <!--android:clickable="true"-->
+    <!--android:src="@drawable/ic_add_black_24dp"-->
+    <!--android:tint="@color/colorPrimary"-->
+    <!--app:background="@color/faveo" />-->
+
+    <!--&lt;!&ndash; Overlay that dims the screen &ndash;&gt;-->
+    <!--<com.gordonwong.materialsheetfab.DimOverlayFrameLayout-->
+    <!--android:id="@+id/overlay1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
+
+    <!--&lt;!&ndash; Circular reveal container for the sheet &ndash;&gt;-->
+    <!--<io.codetail.widget.RevealLinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:gravity="end|bottom"-->
+    <!--android:orientation="vertical">-->
+
+    <!--&lt;!&ndash; Sheet that contains your items &ndash;&gt;-->
+    <!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/fab_sheet"-->
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="170dp">-->
+
+    <!--&lt;!&ndash; Sheet items &ndash;&gt;-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical">-->
+    <!--&lt;!&ndash; Reply &ndash;&gt;-->
+    <!--<LinearLayout-->
+
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/white">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/fab_sheet_item_reply"-->
+    <!--style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="?attr/selectableItemBackground"-->
+    <!--android:drawableLeft="@drawable/ic_reply_black_24dp"-->
+    <!--android:drawableStart="@drawable/ic_reply_black_24dp"-->
+    <!--android:drawableTint="@color/faveo"-->
+    <!--android:text="@string/reply" />-->
+    <!--</LinearLayout>-->
+
+    <!--&lt;!&ndash; Note &ndash;&gt;-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/white">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/fab_sheet_item_note"-->
+    <!--style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="?attr/selectableItemBackground"-->
+    <!--android:drawableLeft="@drawable/ic_note_black_24dp"-->
+    <!--android:drawableStart="@drawable/ic_note_black_24dp"-->
+    <!--android:drawableTint="@color/faveo"-->
+    <!--android:text="@string/internal_note" />-->
+    <!--</LinearLayout>-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/white">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/fab_sheet_exit"-->
+    <!--style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="?attr/selectableItemBackground"-->
+    <!--android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"-->
+    <!--android:drawableStart="@drawable/ic_exit_to_app_black_24dp"-->
+    <!--android:drawableTint="@color/faveo"-->
+    <!--android:text="@string/exit" />-->
+    <!--</LinearLayout>-->
+
+    <!--&lt;!&ndash; Note &ndash;&gt;-->
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/closeFab"&ndash;&gt;-->
+    <!--&lt;!&ndash;style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="?attr/selectableItemBackground"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:drawableStart="@drawable/ic_exit_to_app_black_24dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:drawableTint="@color/faveo"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="@string/closeFab" />&ndash;&gt;-->
+
+
+    <!--</LinearLayout>-->
+    <!--</android.support.v7.widget.CardView>-->
+    <!--</io.codetail.widget.RevealLinearLayout>-->
+    <!--</RelativeLayout>-->
+    <io.github.yavski.fabspeeddial.FabSpeedDial
+        android:id="@+id/fab_speed_dial"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom">
-
-        <LinearLayout
-            android:id="@+id/reveal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/grey_200"
-            android:clickable="true"
-            android:orientation="vertical"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
-            android:paddingTop="24dp"
-            android:visibility="gone">
-
-            <LinearLayout
-                android:id="@+id/section_internal_note"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/internal_note"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:alpha="0.3"
-                    android:text="@string/message"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText_internal_note"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_modified_states"
-                    android:imeOptions="actionDone"
-                    android:inputType="textMultiLine"
-                    android:isScrollContainer="true"
-                    android:maxLength="2000"
-                    android:maxLines="10"
-                    android:paddingBottom="16dp"
-                    android:paddingTop="16dp"
-                    android:textCursorDrawable="@drawable/color_cursor"
-                    android:textSize="14sp" />
-
-                <Button
-                    android:id="@+id/button_create"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_margin="12dp"
-                    android:background="@color/faveo"
-                    android:text="@string/create"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/section_reply"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/reply"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:alpha="0.3"-->
-                <!--android:text="@string/cc"-->
-                <!--android:textColor="@color/black"-->
-                <!--android:textSize="14sp"-->
-                <!--android:textStyle="bold"-->
-                <!--android:visibility="visible" />-->
-
-                <!--<EditText-->
-                <!--android:id="@+id/editText_cc"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:background="@drawable/edittext_modified_states"-->
-                <!--android:imeOptions="actionNext"-->
-                <!--android:maxLines="3"-->
-                <!--android:paddingBottom="16dp"-->
-                <!--android:paddingTop="16dp"-->
-                <!--android:textCursorDrawable="@drawable/color_cursor"-->
-                <!--android:textSize="14sp"-->
-                <!--android:visibility="visible" />-->
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:alpha="0.3"
-                    android:text="@string/message"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText_reply_message"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_modified_states"
-                    android:imeOptions="actionDone"
-                    android:inputType="textMultiLine"
-                    android:isScrollContainer="true"
-                    android:maxLength="2000"
-                    android:maxLines="10"
-                    android:paddingBottom="16dp"
-                    android:paddingTop="16dp"
-                    android:textCursorDrawable="@drawable/color_cursor"
-                    android:textSize="14sp" />
-
-                <Button
-                    android:id="@+id/button_send"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_margin="12dp"
-                    android:background="@color/faveo"
-                    android:text="@string/send"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </io.codetail.widget.RevealLinearLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <!-- Your FAB implementation -->
-        <co.helpdesk.faveo.Fab
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:clickable="true"
-            android:src="@drawable/ic_add_black_24dp"
-            android:tint="@color/colorPrimary"
-            app:background="@color/faveo" />
-
-        <!-- Overlay that dims the screen -->
-        <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
-            android:id="@+id/overlay1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <!-- Circular reveal container for the sheet -->
-        <io.codetail.widget.RevealLinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="end|bottom"
-            android:orientation="vertical">
-
-            <!-- Sheet that contains your items -->
-            <android.support.v7.widget.CardView
-                android:id="@+id/fab_sheet"
-                android:layout_width="200dp"
-                android:layout_height="160dp">
-
-                <!-- Sheet items -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <!-- Reply -->
-                    <LinearLayout
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white">
-
-                        <TextView
-                            android:id="@+id/fab_sheet_item_reply"
-                            style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="?attr/selectableItemBackground"
-                            android:drawableLeft="@drawable/ic_reply_black_24dp"
-                            android:drawableStart="@drawable/ic_reply_black_24dp"
-                            android:drawableTint="@color/faveo"
-                            android:text="@string/reply" />
-                    </LinearLayout>
-
-                    <!-- Note -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white">
-
-                        <TextView
-                            android:id="@+id/fab_sheet_item_note"
-                            style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="?attr/selectableItemBackground"
-                            android:drawableLeft="@drawable/ic_note_black_24dp"
-                            android:drawableStart="@drawable/ic_note_black_24dp"
-                            android:drawableTint="@color/faveo"
-                            android:text="@string/internal_note" />
-                    </LinearLayout>
-                    <!-- Note -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/faveo">
-
-                        <TextView style="@style/TextAppearance.MaterialSheetFab.Sheet.Item" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-        </io.codetail.widget.RevealLinearLayout>
-    </RelativeLayout>
+        android:layout_gravity="bottom|end"
+        app:fabGravity="bottom_end"
+        app:elevation="6dp"
+        app:fabMenu="@menu/fab_menu"
+        app:borderWidth="0dp"
+        app:touchGuardDrawable="#7FFFFFFF"
+        app:miniFabBackgroundTint="@color/faveo"
+        app:miniFabDrawableTint="@color/white"
+        app:itemTextAppearance="@style/MenuItems"
+        app:miniFabTitleBackgroundTint="@color/faveo"
+        app:miniFabTitleTextColor="@color/white"
+        />
 
     <!--<android.support.design.widget.FloatingActionButton-->
     <!--android:id="@+id/fab_add"-->

@@ -3,15 +3,18 @@ package co.helpdesk.faveo.frontend.activities;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.pixplicity.easyprefs.library.Prefs;
 
@@ -35,6 +38,17 @@ public class TicketReplyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_reply);
+        overridePendingTransition(R.anim.slide_in_from_right,R.anim.slide_in_from_right);
+        Window window = TicketReplyActivity.this.getWindow();
+
+        // clear FLAG_TRANSLUCENT_STATUS flag:
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+// finally change the color
+        window.setStatusBarColor(ContextCompat.getColor(TicketReplyActivity.this,R.color.faveo));
         progressDialog = new ProgressDialog(this);
         buttonSave= (Button) findViewById(R.id.button_send);
         toolbar= (Toolbar) findViewById(R.id.toolbarForReply);
@@ -44,7 +58,7 @@ public class TicketReplyActivity extends AppCompatActivity {
         imageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                finish();
             }
         });
 
@@ -77,14 +91,15 @@ public class TicketReplyActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        if (!TicketDetailActivity.isShowing) {
-            Log.d("isShowing", "false");
-            Intent intent = new Intent(this, TicketDetailActivity.class);
-            startActivity(intent);
-        } else Log.d("isShowing", "true");
-
-
-        super.onBackPressed();
+        finish();
+//        if (!TicketDetailActivity.isShowing) {
+//            Log.d("isShowing", "false");
+//            Intent intent = new Intent(this, TicketDetailActivity.class);
+//            startActivity(intent);
+//        } else Log.d("isShowing", "true");
+//
+//
+//        super.onBackPressed();
 
 //        if (fabExpanded)
 //            exitReveal();
@@ -115,58 +130,12 @@ public class TicketReplyActivity extends AppCompatActivity {
                 Toasty.error(TicketReplyActivity.this, getString(R.string.something_went_wrong), Toast.LENGTH_LONG).show();
                 return;
             }
-//            editTextCC.getText().clear();
             editTextSubject.getText().clear();
             Toasty.success(TicketReplyActivity.this, getString(R.string.posted_reply), Toast.LENGTH_LONG).show();
-            Intent intent=new Intent(TicketReplyActivity.this,TicketDetailActivity.class);
+            finish();
+            Intent intent=new Intent(TicketReplyActivity.this,MainActivity.class);
             startActivity(intent);
-            // try {
-//                TicketThread ticketThread;
-//                JSONObject jsonObject = new JSONObject(result);
-//                JSONObject res = jsonObject.getJSONObject("result");
-//                String clientPicture = "";
-//                try {
-//                    clientPicture = res.getString("profile_pic");
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//                String messageTitle = "";
-//                try {
-//                    messageTitle = res.getString("title");
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//                String clientName = "";
-//                try {
-//                    clientName = res.getString("first_name") + " " + res.getString("last_name");
-//                    if (clientName.equals("") || clientName == null)
-//                        clientName = res.getString("user_name");
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//
-//                String messageTime = res.getString("created_at");
-//                String message = res.getString("body");
-//                String isReply = "true";
-//                try {
-//                    isReply = res.getString("is_reply");
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-            // ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message, isReply);
-            //ticketThread = new TicketThread(clientName, messageTime, message, isReply);
 
-//            if (fragmentConversation != null) {
-//                exitReveal();
-//                //fragmentConversation.addThreadAndUpdate(ticketThread);
-//            }
-//            } catch (JSONException e) {
-//                if (fragmentConversation != null) {
-//                    exitReveal();
-//                }
-//                e.printStackTrace();
-//                // Toast.makeText(TicketDetailActivity.this, "Unexpected Error ", Toast.LENGTH_LONG).show();
-//            }
         }
     }
 }

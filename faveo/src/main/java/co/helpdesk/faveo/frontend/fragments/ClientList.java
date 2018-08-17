@@ -111,11 +111,11 @@ public class ClientList extends Fragment implements View.OnClickListener {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
             ButterKnife.bind(this, rootView);
-
+            swipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefresh);
             swipeRefresh.setColorSchemeResources(R.color.faveo_blue);
             if (InternetReceiver.isConnected()) {
                 noInternet_view.setVisibility(View.GONE);
-                //swipeRefresh.setRefreshing(true);
+                swipeRefresh.setRefreshing(true);
                 new FetchClients(getActivity()).execute();
             } else {
                 noInternet_view.setVisibility(View.VISIBLE);
@@ -179,6 +179,7 @@ public class ClientList extends Fragment implements View.OnClickListener {
 
         protected void onPostExecute(String result) {
             textViewTotalCount.setText("" + count + " clients");
+            swipeRefresh.setRefreshing(false);
             if (swipeRefresh.isRefreshing())
                 swipeRefresh.setRefreshing(false);
 

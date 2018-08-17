@@ -16,7 +16,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/faveo">
 
         <ImageView
             android:id="@+id/imageView_default_profile"
@@ -28,8 +29,8 @@
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="54dp"
-            android:src="@drawable/default_pic"
             android:transitionName="@string/blue_name"
+            android:backgroundTint="@color/white"
             android:background="@drawable/rounded_textview"
              />
 
@@ -42,6 +43,7 @@
             android:layout_below="@+id/imageView_default_profile"
             android:layout_marginTop="8dp"
             android:text="sdfghdfh"
+            android:textColor="@color/white"
             android:textSize="14sp" />
 
         <TextView
@@ -54,6 +56,7 @@
             android:layout_marginBottom="16dp"
             android:layout_marginTop="4dp"
             android:text="www.lady"
+            android:textColor="@color/white"
             android:textSize="12sp" />
 
         <TextView
@@ -68,6 +71,7 @@
             android:textAllCaps="true"
             android:text="Agent"
             android:textSize="12sp"
+            android:textColor="@color/white"
             android:textStyle="bold" />
     </RelativeLayout>
 

@@ -1,13 +1,18 @@
 package co.helpdesk.faveo.frontend.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +28,8 @@ import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import co.helpdesk.faveo.Constants;
+import co.helpdesk.faveo.FaveoApplication;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
@@ -40,7 +47,12 @@ public class SplashActivity extends AppCompatActivity {
 
     @BindView(R.id.loading)
     TextView loading;
-    //WelcomeDialog welcomeDialog;
+
+    @BindView(R.id.tryagain)
+    Button buttonTryAgain;
+
+    @BindView(R.id.clear_cache)
+    Button buttonClearCache;
 
     public static String
             keyDepartment = "", valueDepartment = "",
@@ -59,7 +71,18 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        overridePendingTransition(R.anim.slide_in_from_right,R.anim.slide_in_from_right);
         ButterKnife.bind(this);
+        Window window = SplashActivity.this.getWindow();
+
+        // clear FLAG_TRANSLUCENT_STATUS flag:
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+// finally change the color
+        window.setStatusBarColor(ContextCompat.getColor(SplashActivity.this,R.color.faveo));
         //welcomeDialog=new WelcomeDialog();
 
         if (InternetReceiver.isConnected()) {
@@ -69,8 +92,17 @@ public class SplashActivity extends AppCompatActivity {
         } else {
             progressDialog.setVisibility(View.INVISIBLE);
             loading.setText(getString(R.string.oops_no_internet));
-            //Toast.makeText(this, "Oops! No internet", Toast.LENGTH_LONG).show();
+            buttonTryAgain.setVisibility(View.VISIBLE);
         }
+
+        buttonTryAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finishAffinity();
+                Intent intent=new Intent(SplashActivity.this,SplashActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -93,6 +125,31 @@ public class SplashActivity extends AppCompatActivity {
             if (result == null) {
                 loading.setText("Oops! Something went wrong, \nplease try again later.");
                 progressDialog.setVisibility(View.INVISIBLE);
+                buttonClearCache.setVisibility(View.VISIBLE);
+                buttonTryAgain.setVisibility(View.VISIBLE);
+
+                buttonClearCache.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        FaveoApplication.getInstance().clearApplicationData();
+                        String url=Prefs.getString("BASE_URL",null);
+                        Prefs.clear();
+                        Prefs.putString("BASE_URL",url);
+                        SplashActivity.this.getSharedPreferences(Constants.PREFERENCE, Context.MODE_PRIVATE).edit().clear().apply();
+                        Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    }
+                });
+
+                buttonTryAgain.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        finishAffinity();
+                        Intent intent=new Intent(SplashActivity.this,SplashActivity.class);
+                        startActivity(intent);
+                    }
+                });
                 return;
             }
 
@@ -133,7 +190,7 @@ public class SplashActivity extends AppCompatActivity {
                 JSONArray jsonArraySla = jsonObject1.getJSONArray("sla");
                 for (int i = 0; i < jsonArraySla.length(); i++) {
                     keySLA += jsonArraySla.getJSONObject(i).getString("id") + ",";
-                    valueSLA += jsonArraySla.getJSONObject(i).getString("name") + ",";
+                    valueSLA += jsonArraySla.getJSONObject(i).getString("sla_duration") + ",";
                 }
                 Prefs.putString("keySLA", keySLA);
                 Prefs.putString("valueSLA", valueSLA);
@@ -271,22 +328,6 @@ public class SplashActivity extends AppCompatActivity {
 
             Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(intent);
-//            AlertDialog.Builder builder = new AlertDialog.Builder(SplashActivity.this);
-//            builder.setTitle("Welcome to FAVEO");
-//            //builder.setMessage("After 2 second, this dialog will be closed automatically!");
-//            builder.setCancelable(true);
-//
-//            final AlertDialog dlg = builder.create();
-//
-//            dlg.show();
-//
-//            final Timer t = new Timer();
-//            t.schedule(new TimerTask() {
-//                public void run() {
-//                    dlg.dismiss(); // when the task active then close the dialog
-//                    t.cancel(); // also just top the timer thread, otherwise, you may receive a crash report
-//                }
-//            }, 3000);
         }
     }
 
