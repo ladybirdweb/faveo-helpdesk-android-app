@@ -18,7 +18,7 @@ import co.helpdesk.faveo.Constants;
 public class Helpdesk {
 
     static String apiKey;
-    static String token;
+    public static String token;
     static String IP;
 
 

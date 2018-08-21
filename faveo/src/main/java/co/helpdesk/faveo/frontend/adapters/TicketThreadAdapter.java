@@ -52,14 +52,6 @@ public class TicketThreadAdapter extends RecyclerView.Adapter<TicketThreadAdapte
         ticketViewHolder.textViewClientName.setText(ticketThread.clientName);
         ticketViewHolder.textViewTicketCreatedTime.setReferenceTime(Helper.relativeTime(ticketThread.messageTime));
         ticketViewHolder.textViewMessageTime.setReferenceTime(Helper.relativeTime(ticketThread.messageTime));
-        ticketViewHolder.linearLayout.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                TicketThread ticketThread = ticketThreadList.get(i);
-                Toast.makeText(v.getContext(), "Clicked :"+i, Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
 
         String message=ticketThread.message.replaceAll("\n","");
         String message1=message.replaceAll("\t","");

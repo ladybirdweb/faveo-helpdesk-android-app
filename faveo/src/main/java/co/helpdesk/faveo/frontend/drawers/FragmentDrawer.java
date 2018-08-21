@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -37,8 +38,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+
+import javax.net.ssl.HttpsURLConnection;
 
 import agency.tango.android.avatarview.IImageLoader;
 import agency.tango.android.avatarview.loader.PicassoLoader;
@@ -49,6 +61,7 @@ import co.helpdesk.faveo.CircleTransform;
 import co.helpdesk.faveo.Constants;
 import co.helpdesk.faveo.FaveoApplication;
 import co.helpdesk.faveo.R;
+import co.helpdesk.faveo.backend.api.v1.Authenticate;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.activities.CreateTicketActivity;
 import co.helpdesk.faveo.frontend.activities.LoginActivity;
@@ -95,7 +108,8 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
     @BindView(R.id.ticket_list)
     LinearLayout ticketList;
 
-
+    static String token;
+    int responseCodeForShow;
 
 
     public FragmentDrawer() {
@@ -295,6 +309,7 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
                 //progressDialog=new ProgressDialog(getActivity());
 
                 new FetchDependency().execute();
+                new SendPostRequest().execute();
                 drawerItemCustomAdapter.notifyDataSetChanged();
                 getActivity().invalidateOptionsMenu();
 
@@ -429,8 +444,12 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
                 }
             }
             catch (JSONException e) {
-                Toasty.error(getActivity(), "Parsing Error!", Toast.LENGTH_LONG).show();
-                e.printStackTrace();
+                try {
+                    Toasty.error(getActivity(), "Parsing Error!", Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }catch (NullPointerException e1){
+                    e1.printStackTrace();
+                }
             }
 //            AlertDialog.Builder builder = new AlertDialog.Builder(SplashActivity.this);
 //            builder.setTitle("Welcome to FAVEO");
@@ -451,7 +470,228 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
 
         }
     }
+    public class SendPostRequest extends AsyncTask<String, Void, String> {
 
+        protected void onPreExecute(){}
+
+        protected String doInBackground(String... arg0) {
+            try {
+
+                URL url = new URL(Constants.URL + "authenticate"); // here is your URL path
+
+                JSONObject postDataParams = new JSONObject();
+                postDataParams.put("username", Prefs.getString("USERNAME", null));
+                postDataParams.put("password", Prefs.getString("PASSWORD", null));
+                Log.e("params",postDataParams.toString());
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(15000 /* milliseconds */);
+                conn.setConnectTimeout(15000 /* milliseconds */);
+                //MultipartEntity reqEntity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+                OutputStream os = conn.getOutputStream();
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(os, "UTF-8"));
+                writer.write(getPostDataString(postDataParams));
+
+                writer.flush();
+                writer.close();
+                os.close();
+
+                int responseCode=conn.getResponseCode();
+
+                if (responseCode == HttpsURLConnection.HTTP_OK) {
+                    Log.d("ifresponseCode",""+responseCode);
+                    BufferedReader in=new BufferedReader(new
+                            InputStreamReader(
+                            conn.getInputStream()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while((line = in.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+                    in.close();
+                    return sb.toString();
+                }
+                else {
+                    if (responseCode==400){
+                        Log.d("cameInThisBlock","true");
+                        responseCodeForShow=400;
+                    }
+                    else if (responseCode==405){
+                        responseCodeForShow=405;
+                    }
+                    else if (responseCode==302){
+                        responseCodeForShow=302;
+                    }
+                    Log.d("elseresponseCode",""+responseCode);
+                    return new String("false : "+responseCode);
+                }
+            }
+            catch(Exception e){
+                return new String("Exception: " + e.getMessage());
+            }
+
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            Log.d("resultFromNewCall",result);
+            if (isAdded()) {
+
+                if (result == null)
+                    return;
+                try{
+                    JSONObject jsonObject = new JSONObject(result);
+                    String error=jsonObject.getString("error");
+                    if (error.equals("invalid_credentials")){
+                        Prefs.putString("credentialsChanged","true");
+                        final Toast toast = Toasty.info(getActivity(), "your credentials have been changed,you have to log in again to use the app.", Toast.LENGTH_SHORT);
+                    toast.show();
+                    new CountDownTimer(10000, 1000) {
+                        public void onTick(long millisUntilFinished) {
+                            toast.show();
+                        }
+
+                        public void onFinish() {
+                            toast.cancel();
+                        }
+                    }.start();
+                        String url=Prefs.getString("BASE_URL",null);
+                        Prefs.clear();
+                        Prefs.putString("BASE_URL",url);
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+                    startActivity(intent);
+                        return;
+                    }
+
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    String token = jsonObject.getString("token");
+                    Prefs.putString("TOKEN", token);
+                    // Preference.setToken(token);
+                    Authenticate.token = token;
+                    Helpdesk.token = token;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    return ;
+                }
+//                if (responseCodeForShow == 400) {
+//                    final Toast toast = Toasty.info(getActivity(), getString(R.string.urlchange), Toast.LENGTH_SHORT);
+//                    toast.show();
+//                    new CountDownTimer(10000, 1000) {
+//                        public void onTick(long millisUntilFinished) {
+//                            toast.show();
+//                        }
+//
+//                        public void onFinish() {
+//                            toast.cancel();
+//                        }
+//                    }.start();
+//                    Prefs.clear();
+//                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+//                    startActivity(intent);
+//                    return;
+//                }
+//
+//
+//                if (responseCodeForShow == 405) {
+//                    final Toast toast = Toasty.info(getActivity(), getString(R.string.urlchange), Toast.LENGTH_SHORT);
+//                    toast.show();
+//                    new CountDownTimer(10000, 1000) {
+//                        public void onTick(long millisUntilFinished) {
+//                            toast.show();
+//                        }
+//
+//                        public void onFinish() {
+//                            toast.cancel();
+//                        }
+//                    }.start();
+//                    Prefs.clear();
+//                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+//                    startActivity(intent);
+//                    return;
+//                }
+//
+//
+//                if (responseCodeForShow == 302) {
+//                    final Toast toast = Toasty.info(getActivity(), getString(R.string.urlchange), Toast.LENGTH_SHORT);
+//                    toast.show();
+//                    new CountDownTimer(10000, 1000) {
+//                        public void onTick(long millisUntilFinished) {
+//                            toast.show();
+//                        }
+//
+//                        public void onFinish() {
+//                            toast.cancel();
+//                        }
+//                    }.start();
+//                    Prefs.clear();
+//                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+//                    startActivity(intent);
+//                    return;
+//                }
+            }
+
+            try {
+                JSONObject jsonObject=new JSONObject(result);
+                JSONObject jsonObject1=jsonObject.getJSONObject("data");
+                token = jsonObject1.getString("token");
+                JSONObject jsonObject2=jsonObject1.getJSONObject("user");
+                String role=jsonObject2.getString("role");
+                if (role.equals("user")){
+                    final Toast toast = Toasty.info(getActivity(), getString(R.string.roleChanged),Toast.LENGTH_SHORT);
+                    toast.show();
+                    new CountDownTimer(10000, 1000)
+                    {
+                        public void onTick(long millisUntilFinished) {toast.show();}
+                        public void onFinish() {toast.cancel();}
+                    }.start();
+                    Prefs.clear();
+                    //Prefs.putString("role",role);
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+                    //Toasty.info(getActivity(), getString(R.string.roleChanged), Toast.LENGTH_LONG).show();
+                    startActivity(intent);
+                }
+                Prefs.putString("TOKEN", token);
+                Log.d("TOKEN",token);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public String getPostDataString(JSONObject params) throws Exception {
+
+        StringBuilder result = new StringBuilder();
+        boolean first = true;
+
+        Iterator<String> itr = params.keys();
+
+        while(itr.hasNext()){
+
+            String key= itr.next();
+            Object value = params.get(key);
+
+            if (first)
+                first = false;
+            else
+                result.append("&");
+
+            result.append(URLEncoder.encode(key, "UTF-8"));
+            result.append("=");
+            result.append(URLEncoder.encode(value.toString(), "UTF-8"));
+
+        }
+        return result.toString();
+    }
 
 
     @Override

@@ -57,10 +57,11 @@ public class TicketSaveActivity extends AppCompatActivity {
             editTextDueDate, editTextCreatedDate;
 
     Spinner spinnerSLAPlans, spinnerSource,
-            spinnerPriority, spinnerHelpTopics, spinnerAssignTo;
+            spinnerPriority, spinnerHelpTopics, spinnerAssignTo,spinnerStatus;
     ProgressDialog progressDialog;
-    ArrayList<Data> helptopicItems, priorityItems, typeItems, sourceItems,slaItems;
-    ArrayAdapter<Data> spinnerPriArrayAdapter, spinnerHelpArrayAdapter, spinnerTypeArrayAdapter, spinnerSourceArrayAdapter,spinnerSlaArrayAdapter;
+    ArrayList<Data> helptopicItems, priorityItems, typeItems, sourceItems,slaItems,statusItems;
+    ArrayAdapter<Data> spinnerPriArrayAdapter, spinnerHelpArrayAdapter, spinnerTypeArrayAdapter,
+            spinnerSourceArrayAdapter,spinnerSlaArrayAdapter,spinnerStatusAdapter;
     Button buttonSave,refresh;
     Animation rotation;
     String status;
@@ -154,10 +155,16 @@ public class TicketSaveActivity extends AppCompatActivity {
         });
         setSupportActionBar(toolbar);
         editTextSubject.addTextChangedListener(passwordWatcher);
+
+
+
+
         spinnerPriority.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 buttonSave.setVisibility(View.VISIBLE);
+                InputMethodManager imm=(InputMethodManager)getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(editTextSubject.getWindowToken(), 0);
                 return false;
             }
         });
@@ -165,13 +172,18 @@ public class TicketSaveActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 buttonSave.setVisibility(View.VISIBLE);
+                InputMethodManager imm=(InputMethodManager)getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(editTextSubject.getWindowToken(), 0);
                 return false;
+
             }
         });
         spinnerHelpTopics.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 buttonSave.setVisibility(View.VISIBLE);
+                InputMethodManager imm=(InputMethodManager)getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(editTextSubject.getWindowToken(), 0);
                 return false;
             }
         });
@@ -179,6 +191,17 @@ public class TicketSaveActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 buttonSave.setVisibility(View.VISIBLE);
+                InputMethodManager imm=(InputMethodManager)getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(editTextSubject.getWindowToken(), 0);
+                return false;
+            }
+        });
+        spinnerStatus.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                buttonSave.setVisibility(View.VISIBLE);
+                InputMethodManager imm=(InputMethodManager)getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(editTextSubject.getWindowToken(), 0);
                 return false;
             }
         });
@@ -204,7 +227,8 @@ public class TicketSaveActivity extends AppCompatActivity {
                 final Data priority = (Data) spinnerPriority.getSelectedItem();
 //                Data type = (Data) spinnerType.getSelectedItem();
                 final Data sla= (Data) spinnerSLAPlans.getSelectedItem();
-
+                final Data statusId= (Data) spinnerStatus.getSelectedItem();
+                status= String.valueOf(statusId.ID);
 //                spinnerHelpTopics.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //                    @Override
 //                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -349,7 +373,6 @@ public class TicketSaveActivity extends AppCompatActivity {
                 JSONObject jsonObject = new JSONObject(result);
                 JSONObject jsonObject1 = jsonObject.getJSONObject("result");
                 editTextSubject.setText(jsonObject1.getString("title"));
-
                 status=jsonObject1.getString("status");
                 Log.d("statusFromTicket",status);
                 // textViewTicketNumber.setText(ticketNumber);
@@ -376,6 +399,16 @@ public class TicketSaveActivity extends AppCompatActivity {
                         //spinnerPriority.setSelection(getIndex(spinnerPriority, jsonObject1.getString("priority_name")));
                     }
                 } catch (JSONException | NumberFormatException e) {
+                    e.printStackTrace();
+                }
+
+
+
+                try{
+                   if (jsonObject1.getString("status_name")!=null) {
+                     spinnerStatus.setSelection(Integer.parseInt(jsonObject1.getString("status")));
+                    }
+                }catch (JSONException | NumberFormatException e){
                     e.printStackTrace();
                 }
 
@@ -519,6 +552,14 @@ public class TicketSaveActivity extends AppCompatActivity {
                 priorityItems.add(data);
             }
 
+            JSONArray jsonArrayStatus=jsonObject.getJSONArray("status");
+            statusItems=new ArrayList<>();
+            statusItems.add(new Data(0,"--"));
+            for (int i=0;i<jsonArrayStatus.length();i++){
+                Data data=new Data(Integer.parseInt(jsonArrayStatus.getJSONObject(i).getString("id")),jsonArrayStatus.getJSONObject(i).getString("name"));
+                statusItems.add(data);
+            }
+
 //            JSONArray jsonArrayType = jsonObject.getJSONArray("type");
 //            typeItems = new ArrayList<>();
 //            typeItems.add(new Data(0, "--"));
@@ -560,6 +601,12 @@ public class TicketSaveActivity extends AppCompatActivity {
         spinnerSlaArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSLAPlans.setAdapter(spinnerSlaArrayAdapter);
 
+        spinnerStatus= (Spinner) findViewById(R.id.spinner_status);
+        spinnerStatusAdapter=new ArrayAdapter<>(TicketSaveActivity.this,android.R.layout.simple_spinner_item,statusItems);
+        spinnerStatusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerStatus.setAdapter(spinnerStatusAdapter);
+
+
 //        spinnerStatus = (Spinner) rootView.findViewById(R.id.spinner_status);
 //        spinnerStatusArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, Utils.removeDuplicates(SplashActivity.valueStatus.split(","))); //selected item will look like a spinner set from XML
 //        spinnerStatusArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -588,6 +635,8 @@ public class TicketSaveActivity extends AppCompatActivity {
         editTextFirstName = (EditText) findViewById(R.id.editText_ticketDetail_firstname);
         //editTextLastName = (EditText) rootView.findViewById(R.id.editText_ticketDetail_lastname);
         editTextEmail = (EditText) findViewById(R.id.editText_email);
+
+
 //
 //        spinnerSource = (Spinner) rootView.findViewById(R.id.spinner_source);
 //        spinnerSourceArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, sourceItems); //selected item will look like a spinner set from XML
@@ -770,7 +819,6 @@ public class TicketSaveActivity extends AppCompatActivity {
 
 
             }
-            finish();
             Intent intent=new Intent(TicketSaveActivity.this, TicketSaveActivity.class);
             startActivity(intent);
 

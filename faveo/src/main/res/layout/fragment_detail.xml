@@ -55,7 +55,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_modified_states"
             android:imeOptions="actionNext"
-            android:inputType="textEmailAddress"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
             android:text="@string/not_available"
@@ -184,6 +183,39 @@
             android:textSize="14sp"
             android:clickable="false"
             android:alpha="0.5"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/status"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        <Spinner
+            android:id="@+id/spinner_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_modified_states"
+            android:entries="@array/spinnerHelpTopics"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:paddingBottom="24dp"
+            android:paddingTop="24dp"
+            android:textSize="14sp"
+            android:clickable="false"
+            android:alpha="0.5"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -247,7 +279,6 @@
             android:id="@+id/editText_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:clickable="false"
             android:cursorVisible="false"
@@ -319,7 +350,6 @@
             android:id="@+id/editText_due_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:clickable="false"
             android:cursorVisible="false"
@@ -359,7 +389,6 @@
             android:id="@+id/editText_created_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:clickable="false"
             android:cursorVisible="false"

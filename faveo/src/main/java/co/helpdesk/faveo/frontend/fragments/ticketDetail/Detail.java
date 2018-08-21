@@ -39,24 +39,12 @@ import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.activities.MainActivity;
 import co.helpdesk.faveo.frontend.activities.TicketDetailActivity;
+import co.helpdesk.faveo.frontend.activities.TicketSaveActivity;
 import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
 import co.helpdesk.faveo.model.Data;
 import es.dmoral.toasty.Toasty;
 
 public class Detail extends Fragment {
-
-    private InputFilter filter = new InputFilter() {
-
-        @Override
-        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-
-            String blockCharacterSet = "~!@#$%^&*()_-;:<>,.[]{}|/+";
-            if (source != null && blockCharacterSet.contains(("" + source))) {
-                return "";
-            }
-            return null;
-        }
-    };
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     AsyncTask<String, Void, String> task;
@@ -70,8 +58,8 @@ public class Detail extends Fragment {
     Spinner spinnerSLAPlans, spinnerType, spinnerStatus, spinnerSource,
             spinnerPriority, spinnerHelpTopics, spinnerAssignTo;
     ProgressDialog progressDialog;
-    ArrayList<Data> helptopicItems, priorityItems, typeItems, sourceItems,slaItems;
-    ArrayAdapter<Data> spinnerPriArrayAdapter, spinnerHelpArrayAdapter, spinnerTypeArrayAdapter, spinnerSourceArrayAdapter,spinnerSlaArrayAdapter;
+    ArrayList<Data> helptopicItems, priorityItems, typeItems, sourceItems,slaItems,statusItems;
+    ArrayAdapter<Data> spinnerPriArrayAdapter, spinnerHelpArrayAdapter, spinnerStatusAdapter, spinnerSourceArrayAdapter,spinnerSlaArrayAdapter;
     Button buttonSave;
     Animation animation;
     String ticketID;
@@ -124,76 +112,6 @@ public class Detail extends Fragment {
             task = new FetchTicketDetail(Prefs.getString("TICKETid",null));
             task.execute();
         }
-
-//        buttonSave.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                resetViews();
-//
-//                //int helpTopic=1;
-//                boolean allCorrect = true;
-//                String subject = editTextSubject.getText().toString();
-//                // int SLAPlans = spinnerSLAPlans.getSelectedItemPosition();
-//                Data helpTopic = (Data) spinnerHelpTopics.getSelectedItem();
-//                Data source = (Data) spinnerSource.getSelectedItem();
-//                Data priority = (Data) spinnerPriority.getSelectedItem();
-////                Data type = (Data) spinnerType.getSelectedItem();
-//                Data sla= (Data) spinnerSLAPlans.getSelectedItem();
-//
-////                spinnerHelpTopics.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-////                    @Override
-////                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-////
-////                    }
-////                });
-//                //int status = Integer.parseInt(Utils.removeDuplicates(SplashActivity.keyStatus.split(","))[spinnerStatus.getSelectedItemPosition()]);
-//
-////                if (SLAPlans == 0) {
-////                    allCorrect = false;
-////                    Toasty.warning(getContext(), "Please select some SLA plan", Toast.LENGTH_SHORT).show();
-////                } else
-//
-//                if (subject.trim().length() == 0) {
-//                    Toasty.warning(getActivity(), getString(R.string.sub_must_not_be_empty), Toast.LENGTH_SHORT).show();
-//                    allCorrect = false;
-//                } else if (subject.trim().length() < 5) {
-//                    Toasty.warning(getActivity(), getString(R.string.sub_minimum_char), Toast.LENGTH_SHORT).show();
-//                    allCorrect = false;
-//                } else if (helpTopic.ID == 0) {
-//                    allCorrect = false;
-//                    Toasty.warning(getActivity(), getString(R.string.select_some_helptopic), Toast.LENGTH_SHORT).show();
-//                }
-//                else if (sla.ID==0){
-//                    allCorrect=false;
-//                Toasty.warning(getActivity(),getString(R.string.select_some_sla),Toast.LENGTH_SHORT).show();
-//                }
-//                else if (priority.ID == 0) {
-//                    allCorrect = false;
-//                    Toasty.warning(getActivity(), getString(R.string.please_select_some_priority), Toast.LENGTH_SHORT).show();
-//                } else if (source.ID == 0) {
-//                    allCorrect = false;
-//                    Toasty.warning(getContext(), getString(R.string.select_source), Toast.LENGTH_SHORT).show();
-//                }
-//
-//                if (allCorrect) {
-//                    if (InternetReceiver.isConnected()) {
-//                        progressDialog.setMessage(getString(R.string.updating_ticket));
-//                        progressDialog.show();
-//                        try {
-//                            new SaveTicket(getActivity(),
-//                                    Integer.parseInt(TicketDetailActivity.ticketID),
-//                                    URLEncoder.encode(subject.trim(), "utf-8"),
-//                                    helpTopic.ID,sla.ID,
-//                                    source.ID,
-//                                    priority.ID)
-//                                    .execute();
-//                        } catch (UnsupportedEncodingException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }
-//            }
-//        });
         return rootView;
     }
 
@@ -228,14 +146,15 @@ public class Detail extends Fragment {
             try {
                 JSONObject jsonObject = new JSONObject(result);
                 JSONObject jsonObject1 = jsonObject.getJSONObject("result");
-                editTextSubject.setText(jsonObject1.getString("title"));
+                String title=jsonObject1.getString("title");
+                editTextSubject.setText(title);
                 String ticketNumber = jsonObject1.getString("ticket_number");
                 // textViewTicketNumber.setText(ticketNumber);
-                ActionBar actionBar = ((TicketDetailActivity) getActivity()).getSupportActionBar();
-                if (actionBar != null) {
-                    actionBar.setTitle(ticketNumber == null ? "TicketDetail" : ticketNumber);
-
-                }
+//                ActionBar actionBar = ((TicketDetailActivity) getActivity()).getSupportActionBar();
+//                if (actionBar != null) {
+//                    actionBar.setTitle(ticketNumber == null ? "TicketDetail" : ticketNumber);
+//
+//                }
 
 //                try {
 //                    if (jsonObject1.getString("sla_name") != null) {
@@ -266,6 +185,19 @@ public class Detail extends Fragment {
                         //spinnerPriority.setSelection(getIndex(spinnerPriority, jsonObject1.getString("priority_name")));
                     }
                 } catch (JSONException | NumberFormatException e) {
+                    e.printStackTrace();
+                }
+                try{
+                    if (jsonObject1.getString("status_name")!=null) {
+                        spinnerStatus.setSelection(Integer.parseInt(jsonObject1.getString("status")));
+                        spinnerStatus.setOnTouchListener(new View.OnTouchListener() {
+                            @Override
+                            public boolean onTouch(View view, MotionEvent motionEvent) {
+                                return true;
+                            }
+                        });
+                    }
+                }catch (JSONException | NumberFormatException e){
                     e.printStackTrace();
                 }
 
@@ -397,54 +329,6 @@ public class Detail extends Fragment {
         return index;
     }
 
-
-//    private class SaveTicket extends AsyncTask<String, Void, String> {
-//        Context context;
-//        int ticketNumber;
-//        String subject;
-//        int sla;
-//        int helpTopic;
-//        int ticketSource;
-//        int ticketPriority;
-//        int ticketStatus;
-//
-//
-//        SaveTicket(Context context, int ticketNumber, String subject, int helpTopic,int sla, int ticketSource, int ticketPriority) {
-//            this.context = context;
-//            this.ticketNumber = ticketNumber;
-//            this.subject = subject;
-//            this.sla = sla;
-//            this.helpTopic = helpTopic;
-//            this.ticketSource = ticketSource;
-//            this.ticketPriority = ticketPriority;
-//            // this.ticketStatus = ticketStatus;
-//
-//        }
-//
-//        protected String doInBackground(String... urls) {
-//            if (subject.equals("Not available"))
-//                subject = "";
-//            return new Helpdesk().postEditTicket(ticketNumber, subject,
-//                    helpTopic,sla, ticketSource, ticketPriority);
-//        }
-//
-//        protected void onPostExecute(String result) {
-//            if (progressDialog.isShowing())
-//                progressDialog.dismiss();
-//            if (result == null) {
-//                Toasty.error(getActivity(), getString(R.string.something_went_wrong), Toast.LENGTH_LONG).show();
-//                return;
-//            }
-//
-//            if (result.contains("Edited successfully")) {
-//                Toasty.success(getActivity(), getString(R.string.update_success), Toast.LENGTH_LONG).show();
-//                Intent intent=new Intent(getActivity(), MainActivity.class);
-//                startActivity(intent);
-//            } else
-//                Toasty.error(getActivity(), getString(R.string.failed_to_update_ticket), Toast.LENGTH_LONG).show();
-//        }
-//    }
-
     private void setUpViews(View rootView) {
 
         JSONObject jsonObject;
@@ -491,10 +375,19 @@ public class Detail extends Fragment {
                 Data data = new Data(Integer.parseInt(jsonArraySources.getJSONObject(i).getString("id")), jsonArraySources.getJSONObject(i).getString("name"));
                 sourceItems.add(data);
             }
+            JSONArray jsonArrayStatus=jsonObject.getJSONArray("status");
+            statusItems=new ArrayList<>();
+            statusItems.add(new Data(0,"--"));
+            for (int i=0;i<jsonArrayStatus.length();i++){
+                Data data=new Data(Integer.parseInt(jsonArrayStatus.getJSONObject(i).getString("id")),jsonArrayStatus.getJSONObject(i).getString("name"));
+                statusItems.add(data);
+            }
 
         } catch (JSONException | ArrayIndexOutOfBoundsException e) {
             e.printStackTrace();
         }
+
+
 
 
         // textViewTicketNumber = (TextView) rootView.findViewById(R.id.textView_ticket_number);
@@ -509,10 +402,10 @@ public class Detail extends Fragment {
         spinnerSlaArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSLAPlans.setAdapter(spinnerSlaArrayAdapter);
 
-//        spinnerStatus = (Spinner) rootView.findViewById(R.id.spinner_status);
-//        spinnerStatusArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, Utils.removeDuplicates(SplashActivity.valueStatus.split(","))); //selected item will look like a spinner set from XML
-//        spinnerStatusArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnerStatus.setAdapter(spinnerStatusArrayAdapter);
+        spinnerStatus= (Spinner) rootView.findViewById(R.id.spinner_status);
+        spinnerStatusAdapter=new ArrayAdapter<>(getActivity(),android.R.layout.simple_spinner_item,statusItems);
+        spinnerStatusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerStatus.setAdapter(spinnerStatusAdapter);
 
         spinnerPriority = (Spinner) rootView.findViewById(R.id.spinner_priority);
         spinnerPriArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, priorityItems); //selected item will look like a spinner set from XML

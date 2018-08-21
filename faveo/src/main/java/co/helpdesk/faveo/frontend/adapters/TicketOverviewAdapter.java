@@ -49,7 +49,12 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
     @Override
     public void onBindViewHolder(TicketViewHolder ticketViewHolder, int i) {
         final TicketOverview ticketOverview = ticketOverviewList.get(i);
-        String letter = String.valueOf(ticketOverview.clientName.charAt(0)).toUpperCase();
+        String letter="";
+        try {
+             letter = String.valueOf(ticketOverview.clientName.charAt(0)).toUpperCase();
+        }catch (ArrayIndexOutOfBoundsException e){
+            e.printStackTrace();
+        }
 
         TextDrawable.IBuilder mDrawableBuilder;
 //        if (ticketOverview.ticketAttachments.equals("0")) {

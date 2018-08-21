@@ -3,37 +3,67 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\searchablespinnerlibrary-1.3.1.aar\8031b1cd1f83c358650852ec20f5a64f\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\b97111f0072c40cca47d65df4fd56b96\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="dbfaa66636f1fadb6cff4080a3a271e97f288340">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\31\classes.dex" />
+        sha1="8d813c05361147f6f515f749df19223cd6256314">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\77\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\styleabletoast-1.0.6.aar\4eee517e3dc5558828cbee1e80df177f\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.1.aar\bf99032faa7a5009744df8f75e121bb0\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="40b4c3967e7cd13f24a07426a201bf832bbc1c16">
+        sha1="637393020f93f1744e2e325a7da6706b81697efe">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\69\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fabric-1.3.16.aar\3c3109165928314e407a1167c7ae1466\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="263c1c941f603469ecbaf8745f7b2d18ae85c5c0">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\43\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\beta-1.2.4.aar\a5cb32bfa89d2dea77e60ca622f8fe46\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8c8243677105d9c78cfbf553b55e256b3d4bea39">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\40\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\ShimmerRecyclerView-v1.0.aar\69b8e5d5e374d461b106513e65765354\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="420fb486e1b1c20664815985f69923dfe67abe2f">
         <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\9\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\transition-25.4.0.aar\18daf00ed48fe429b03ab67916197848\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.1.aar\51065d538095cbc93c95c1bb75cd835a\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="40a6b8f05124eb9e6012e18b80a6dbd13440e283">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\32\classes.dex" />
+        sha1="651276524a6892465688d2920f28072f4b35c6e7">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\68\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\crashlytics-2.6.7.aar\87e3a016b05ee9acde585942bc6d1b98\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\crashlytics-2.6.7.aar\00422dbdd6e51abfdfd917c4aa33209f\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
@@ -43,83 +73,73 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fresco-0.14.1.aar\27abef231553caed2e5cc40eb5b56e4f\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\butterknife-8.5.1.aar\b17c93a17d084d68ebadb20f479944b2\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="c77602d43223db798b1ca56cf307ab0ee3c0e63f">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\52\classes.dex" />
+        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\26\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\library-1.4.0.aar\c410649a4e9a2b1753449b7735f48ff9\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\0de95d31c774471013ce65c65dae87f1\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="f5237d698ea644e4fe433f30425c92969569dc62">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\23\classes.dex" />
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\49\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-messaging-10.0.1.aar\587a7f142b7ceec071a2828391ef3d91\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\de64e6c98d165befc1d780e244ab36bd\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\17\classes.dex" />
+        sha1="c1e9d140d3260619ce2fa991d30b14b531d61dec">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\72\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\ShimmerRecyclerView-v1.0.aar\21d624f82fc9b7f26efcf579c5330f2b\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.3.1.aar\0c6d5830e801a8fde90872c8d01fbda9\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="420fb486e1b1c20664815985f69923dfe67abe2f">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\8\classes.dex" />
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\48\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.0.1.aar\d149fae94b3b11d7f0b72545e580e177\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\drawee-0.14.1.aar\1ac9299f0881ec1c6241fc2770220e68\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\39\classes.dex" />
+        sha1="cf5e2940501f8f7b9175df6491cebb84f5690f14">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\63\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.4.0.aar\b6d9941b762d56cc126d00196b72cd07\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.3.16.aar\0b1747e2546dd8be2f24f22086e95610\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="b1e0cd070d7cf659ece90e919bff76e7ddc32532">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\14\classes.dex" />
+        sha1="844efef744581e604ea77683555271ebbd61d871">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\41\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-crash-10.0.1.aar\a9722dd6f14aab638129bcb56651003d\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\f6b66e180b46582cea343998e046a7f7\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\33\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\loaderviewlibrary-1.4.1.aar\139da20c675fe1ca9de3a7266d098252\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="cd062c34fb1be62cc5db7e3409a7bbe3c9ae58a3">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\5\classes.dex" />
+        sha1="d8fe6d91310b54734f454dd490c3c869f6290576">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\79\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -129,7 +149,7 @@
         optimize="true"
         revision="27.0.3"
         sha1="7011b4551a8451906759b05814c58b9eb829ea9b">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\29\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\28\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -139,127 +159,117 @@
         optimize="true"
         revision="27.0.3"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\68\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\66\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.4.0.aar\43359df33fdabea29ae3b301f3207eaa\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\29a30e08a4622396a9ba61c1436658ea\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="b77e50b3c31d0fc64148530f7077f79ec114b5b9">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\48\classes.dex" />
+        sha1="63413895dce50f6123807d1db2274a1982a34194">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\75\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-0.14.1.aar\1606b6ab18a6b8b5dfdb0415be1d3d73\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\transition-25.3.1.aar\e67bc8188294f29715c5b2e45b1023f4\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="b881010e06dc39be15b7465cd16492eedbab246f">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\54\classes.dex" />
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\30\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-compat-25.4.0.aar\5fe64b95d337736957091554622955d8\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\e65a0b05ae334f8a4290acae6eb03f5d\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="a64026daf4819a589aea776f5deb19b257a104d1">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\56\classes.dex" />
+        sha1="6ff520d5283b90ff4bb3db6b82298c3f1acd220b">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\80\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\61011e00049aa2fa0f104beb37f59644\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.0.aar\9bf44d081bb6db40dc1ffcb4c99ec4ca\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\40\classes.dex" />
+        sha1="2a69972573cb7e5cc6b8652bacf981e82b68ff71">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\76\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\arcanimator-1.0.0.aar\1e719c81253294277d4c59917f6a94a2\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\ccp-2.0.2.aar\1989bbdf3d7df41fe66dec03f1cfd234\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="31dbe885ef6a9d6a88412750e85784f60b95cb90">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\61\classes.dex" />
+        sha1="2cfb5a2b52bb09fa94a7a0c4c2f2319703cb1f03">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\2\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fbcore-0.14.1.aar\5ba4578c7b8f25c9ace4d4f70b4b0906\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\Toasty-1.1.3.aar\6ca2295d7b28bbefc48b9d6c940c8b16\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="aa13c67643afa4a5f7353095eb7fb985d55a18e1">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\11\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.1.1.aar\378356186173447fa17746c2567d5f3f\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d5c9872f97093326e643dbda4ffea750ecd69ea5">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\70\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fbcore-0.14.1.aar\5102c2df30f44d5fb2aeb177f5c2cf00\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
         sha1="e5bf70f3683146e4875c006624543cb0a13eac91">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\66\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\64\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\filepicker-1.0.8.aar\ec67bc1c6c6ce3977aceb5676a2b51cd\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-0.14.1.aar\32c277ff6bd968d511dda0f26c58c8ae\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="1d1db9e71e9288da45518fef3c20266d4691929e">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\6\classes.dex" />
+        sha1="b881010e06dc39be15b7465cd16492eedbab246f">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\52\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fab-speed-dial-1.0.6.aar\3492b3b55b91ee7bcb391ef24717a086\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\multidex-1.0.1.aar\7681cb15c388d9ff31a9a7cf305f86ac\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="02d0d40b4c5b6b4093af99d696cea903aad9e529">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\4\classes.dex" />
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\21\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.4.0.aar\626f7d34dce53088ab9c35c8340ed32a\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\avatar-view-picasso-0.0.2.aar\0a63cd420f9847ce9c95ad59f16f5be8\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="05e3d15c623cd98f0eb43c8249fb6151fae0786c">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\51\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\com.amulyakhare.textdrawable-1.0.1.aar\71b6620e266e8659f467fdd5ea192d05\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="d237556caead5b93d97e18a071059a2c0045978e">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\9ed0edf935c2f04f851845c88c625723\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\36\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.3.16.aar\0af148993d2beda6c226c47267291d30\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="844efef744581e604ea77683555271ebbd61d871">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\43\classes.dex" />
+        sha1="a62dd320116a3b33f66cf17396147c1fbc2e194e">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\25\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -273,13 +283,33 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\ccp-2.0.2.aar\7572ebed6e3dc7ebdbccd48731a8eee6\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.11.3\36da09a8f68484523fa2aaa100399d612b247d67\jsoup-1.11.3.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="2cfb5a2b52bb09fa94a7a0c4c2f2319703cb1f03">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\2\classes.dex" />
+        sha1="36da09a8f68484523fa2aaa100399d612b247d67">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\com.amulyakhare.textdrawable-1.0.1.aar\cab7515e35fe0687b1a016f5c10713ae\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d237556caead5b93d97e18a071059a2c0045978e">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fresco-0.14.1.aar\7e19fb6366de63b631d2effc9d250539\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c77602d43223db798b1ca56cf307ab0ee3c0e63f">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\50\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -293,33 +323,123 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\25.4.0\f6a2fc748ae3769633dea050563e1613e93c135e\support-annotations-25.4.0.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\f0fd46bb60aa3def1f838241a3db83c3\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="f6a2fc748ae3769633dea050563e1613e93c135e">
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\45\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\library-1.4.0.aar\f1d324f368c22787cf655f2f878bd511\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f5237d698ea644e4fe433f30425c92969569dc62">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\23\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\answers-1.3.12.aar\2494d3e421e3eaea188e15da6d737f08\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="5c812ad0773ab307151802099a33575fa7bb270b">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\42\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\3abd56f90f2d7ff872389f91ecedf2b9\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\39\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\e6a56ef3d2a21db22edd25b657926ff7\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\46\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\88e309359ca008f904c13df831105618\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\arcanimator-1.0.0.aar\29d03827e4b537d2dab228b42f28ad22\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="31dbe885ef6a9d6a88412750e85784f60b95cb90">
         <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\59\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.0.1.aar\85b75a1aac2211da28a749b3d9c8f245\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\filepicker-1.0.8.aar\9f64fd3168dabdf0fd88c674355b03ad\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\38\classes.dex" />
+        sha1="1d1db9e71e9288da45518fef3c20266d4691929e">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\7\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.4.0.aar\1ef9f6e155724eec049788fae914baf9\jars\classes.jar"
+        jar="C:\Users\sayar\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="e04f28ac2dd9bbe48ced6fc87fedf46c2586f5d6">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\55\classes.dex" />
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\57\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.3.1.aar\6ceaf023b90831c0ae9bae04f77ba833\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\53\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\9c1c0b7792f535198463badeeb3d9353\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0fbef528093d3d19b229116b683bd2a66d4aeae1">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\73\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\6240cfdf71ddcb79d539d5ea3c108eed\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="4d4d98a0428b2e620e6b4a228ef9f7cb2f0debd2">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\78\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -329,17 +449,7 @@
         optimize="true"
         revision="27.0.3"
         sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\63\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\multidex-1.0.1.aar\a1879a0d307173a19bc8599166fb7593\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\21\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\61\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -349,191 +459,31 @@
         optimize="true"
         revision="27.0.3"
         sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\28\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\Toasty-1.1.3.aar\4a2bf8f88df432f6c87db882a77ce026\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="aa13c67643afa4a5f7353095eb7fb985d55a18e1">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\10\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.4.0.aar\2024c1cbb05ee1d8b00b76f5f08c2ffd\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="4961be1437163ab598620a3c907c0f3432936f51">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\47\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\beta-1.2.4.aar\646caa84782b79f578633eb1a4371c65\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="8c8243677105d9c78cfbf553b55e256b3d4bea39">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\42\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\ced312e441d06aa238f88a6dde20770b\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="a7a0aa678c3bbadb67fb41df9e107f7ee9087902">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\12\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\avatar-view-0.0.2.aar\7d313ed784de74a6a400c90c8b3addf7\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="9744383e864cd272d30b54848a1c1b5f840d23f2">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\57\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\avatar-view-picasso-0.0.2.aar\fda6e1ca7293d3b16cfbaf499a640715\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="a62dd320116a3b33f66cf17396147c1fbc2e194e">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\26\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\60\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.4.0.aar\aa096c957ad6a7fa229d21fdd6d7483b\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="c2deeac83ffa1304264bc755c2ddb84e7a7fa239">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\50\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\butterknife-8.5.1.aar\f1db9199bf1dfb8099b9133867da0959\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
         <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\27\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\answers-1.3.12.aar\18431d53d490b2283448cd22918abd23\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fastscroll-0.2.5.aar\b9889e0fdad00e476ce7f39046a9dcca\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="5c812ad0773ab307151802099a33575fa7bb270b">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\44\classes.dex" />
+        sha1="1ee075177bd403c333d4843b92c4b6c55db929ed">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\12\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.4.0.aar\3cd67ea6934914fa2008111d6e231698\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\fa0fa76ebe7602b24a991af6ee28d288\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="c879101226d1b2aaf6edae3d7491de6fd56d2659">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\15\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.googlecode.libphonenumber\libphonenumber\8.5.2\4a5b5caed312654f6aa2171d2f24e44785621d3d\libphonenumber-8.5.2.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="4a5b5caed312654f6aa2171d2f24e44785621d3d">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\46\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
         <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\13\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-fragment-25.4.0.aar\5cd0acba759a807013e16b5418e03b40\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="d29e451fd5bcc265989bf80afd4f149d95d72e7d">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\49\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\timber-4.3.0.aar\5730b43088b65d8a9a1a2236c8fd5a40\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="6a11388058c8c82cbdb5e8646f1c37adfc7755d6">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\67\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\design-25.4.0.aar\39dd249acfcf8ea41349b917eac80b63\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="cad1364721fc716a39bdc351d3637edb634c9aa5">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fabric-1.3.16.aar\94861d9ad109480ee88be4c74d9a8cda\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="263c1c941f603469ecbaf8745f7b2d18ae85c5c0">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\45\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.5.1\bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc\butterknife-annotations-8.5.1.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\58\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\bottomsheet-0.9.aar\45149f30a4f6dd2a1cd0bc74779ef857\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\bottomsheet-0.9.aar\727034bf5f52b273c2160f162b1dcb1f\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
@@ -543,43 +493,143 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fastscroll-0.2.5.aar\f69867a84df0f364035124ba29763e60\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\timber-4.3.0.aar\0ab71a1c1fafcc1c34ba69af82bd7b75\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="1ee075177bd403c333d4843b92c4b6c55db929ed">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\11\classes.dex" />
+        sha1="6a11388058c8c82cbdb5e8646f1c37adfc7755d6">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\65\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\circularprogressview-2.4.0.aar\681c842b5c7ef01796ee88fc8744545e\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="9a883402815cf6ab7b526e84bbd1d8752f075cd3">
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\58\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.3.1.aar\13fcf2560bf6773044203794f8a2d186\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
         <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\16\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\library-1.8.1.aar\b88587fd5a3e4816fc41b690f4b20ec8\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\7901342e90ff31ceff2aeca58901a174\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f9148af2391a1288519f4f1d38da060c4a640e85">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\74\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\56056b5f5a58caae204fb0304c8c01ad\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="1e224748cbf54c34eac0bca6376922468b786775">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\71\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-fragment-25.3.1.aar\631d5c377160a4a80d1163c37c997ba3\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\47\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\imagepipeline-0.14.1.aar\89bcbe47d8a0b12a64c04b52c18431ac\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8795af3e130206443f2d5ed45f1b26067aff70dc">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\51\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\library-1.8.1.aar\9f43f675a3d876648de3e897550a87ed\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
         sha1="d3b394848f31ac12c50e0227af889247943b11b2">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\30\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\29\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\8a84f3cfc8da3f967dc4639bd057a15f\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.googlecode.libphonenumber\libphonenumber\8.5.2\4a5b5caed312654f6aa2171d2f24e44785621d3d\libphonenumber-8.5.2.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\41\classes.dex" />
+        sha1="4a5b5caed312654f6aa2171d2f24e44785621d3d">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\44\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\14\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\styleabletoast-1.0.6.aar\cc847181fac4f6b9e2bf69d2cab72436\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="40b4c3967e7cd13f24a07426a201bf832bbc1c16">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\10\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\loaderviewlibrary-1.4.1.aar\b1e2c51969ae8ce54f3d2dbb46fbbc6a\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="cd062c34fb1be62cc5db7e3409a7bbe3c9ae58a3">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.5.1\bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc\butterknife-annotations-8.5.1.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\56\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\avatar-view-0.0.2.aar\52e20459b3a188f2e6939919010cf528\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9744383e864cd272d30b54848a1c1b5f840d23f2">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\55\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -589,17 +639,7 @@
         optimize="true"
         revision="27.0.3"
         sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\64\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\drawee-0.14.1.aar\ec6c9255d3b31c019084670812ea41ba\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="cf5e2940501f8f7b9175df6491cebb84f5690f14">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\65\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\62\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -609,11 +649,41 @@
         optimize="true"
         revision="27.0.3"
         sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\62\classes.dex" />
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\60\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\material-sheet-fab-1.2.1.aar\52d2f9d9968d494d271e683056173e29\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\fab-speed-dial-1.0.6.aar\ef4d0ce75d9bfa4fd54e11044742256b\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="02d0d40b4c5b6b4093af99d696cea903aad9e529">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-compat-25.3.1.aar\6a37d101efd7c721820254d01ff00d91\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\54\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\a2635fddd923dbf5bfefeb905dc8bac6\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\38\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\material-sheet-fab-1.2.1.aar\2b8a6ab1312d2820f703d922d033d8e5\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
@@ -623,53 +693,13 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\faba727dc7e8392b57928109d139c99a\jars\classes.jar"
+        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\4059f4f178bfe496ad1e98da40602ac1\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
         optimize="true"
         revision="27.0.3"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\35\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-common-10.0.1.aar\e432ce0896908aad037ce5fe825e45bf\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\37\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\library-2.1.3.aar\ad9890badfcbd9e04e3b72f684ed1a5e\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="e699699fae0092703de1d02b217f43803d0f7e0a">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\25\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\imagepipeline-0.14.1.aar\24079577b4c2aa8073e559d7fdefbfd1\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="8795af3e130206443f2d5ed45f1b26067aff70dc">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\53\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\sayar\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4e7583a6b1ec7486fb5c31345fafd004\jars\classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="27.0.3"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\34\classes.dex" />
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="D:\Sayar\faveo-helpdesk-android-app-develop1\faveo\build\intermediates\transforms\preDex\release\15\classes.dex" />
     </item>
 
 </items>

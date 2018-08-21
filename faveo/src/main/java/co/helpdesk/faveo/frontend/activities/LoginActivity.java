@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
@@ -300,7 +301,7 @@ public class LoginActivity extends AppCompatActivity {
                     userNameError.setVisibility(View.VISIBLE);
                     userNameError.postDelayed(new Runnable() {
                         public void run() {
-                            userNameError.setVisibility(View.INVISIBLE);
+                            userNameError.setVisibility(View.GONE);
                         }
                     }, 5000);
 //
@@ -317,7 +318,7 @@ public class LoginActivity extends AppCompatActivity {
                     passwordError.setVisibility(View.VISIBLE);
                     passwordError.postDelayed(new Runnable() {
                         public void run() {
-                            passwordError.setVisibility(View.INVISIBLE);
+                            passwordError.setVisibility(View.GONE);
                         }
                     }, 5000);
                     return;
@@ -442,8 +443,15 @@ public class LoginActivity extends AppCompatActivity {
 //                    count--;
 //                    return;
 //                }
+                if (result == null) {
+                    count++;
+                    //progressBar.setVisibility(View.GONE);
+                    buttonVerifyURL.setEnabled(true);
+                    Toasty.warning(context, getString(R.string.invalid_url), Toast.LENGTH_LONG).show();
+                    return;
+                }
 
-                new VerifyURLSecure(LoginActivity.this,companyURL1).execute();
+                //new VerifyURLSecure(LoginActivity.this,companyURL1).execute();
                 return;
             }
                 //String status=jsonObject.getString("status");
@@ -497,92 +505,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
         }
-    private class VerifyURLSecure extends AsyncTask<String, Void, String> {
-        Context context;
-        String companyURL;
-        String baseURL;
-
-        VerifyURLSecure(Context context, String companyURL) {
-            this.context = context;
-            this.companyURL = companyURL;
-            baseURL = companyURL;
-        }
-
-        protected String doInBackground(String... urls) {
-            if (!companyURL.endsWith("/"))
-                companyURL = companyURL.concat("/");
-            return new Helpdesk().getBaseURL(companyURL);
-        }
-
-        protected void onPostExecute(String result) {
-            progressDialogVerifyURL.dismiss();
-            if (result == null) {
-                linearLayout.startAnimation(animation);
-                urlError.setVisibility(View.VISIBLE);
-                urlError.setText(getString(R.string.error_verifying_url));
-                urlError.setTextColor(Color.parseColor("#ff0000"));
-                urlError.postDelayed(new Runnable() {
-                    public void run() {
-                        urlError.setVisibility(View.INVISIBLE);
-                    }
-                }, 9000);
-                //Toasty.warning(context, getString(R.string.invalid_url), Toast.LENGTH_LONG).show();
-                return;
-
-            }
-
-            else if (result.contains("success")) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
-                    dynamicShortcut();
-                }
-//                urlSuggestions.add(baseURL);
-//                Set<String> set = new HashSet<>(urlSuggestions);
-//                Prefs.putStringSet("URL_SUG", set);
-
-                Prefs.putString("BASE_URL", baseURL);
-                Prefs.putString("companyurl",urlGivenByUser);
-                Prefs.putString("COMPANY_URL", companyURL + "api/v1/");
-                Constants.URL = Prefs.getString("COMPANY_URL", "");
-                //Constants.URL1=Prefs.getString("companyurl",null);
-                //Log.d("companyurl",Constants.URL1);
-                if (BuildConfig.DEBUG) {
-                    viewflipper.showNext();
-                    imageBackButton.setVisibility(View.VISIBLE);
-                    url.setText(baseURL);
-                    url.setVisibility(View.VISIBLE);
-                    flipColor.setBackgroundColor(ContextCompat.getColor(LoginActivity.this, R.color.faveo));
-                }
-                else{
-                    viewflipper.showNext();
-                    imageBackButton.setVisibility(View.VISIBLE);
-                    url.setText(baseURL);
-                    url.setVisibility(View.VISIBLE);
-                    flipColor.setBackgroundColor(ContextCompat.getColor(LoginActivity.this, R.color.faveo));
-                }
-
-            } else {
-                linearLayout.startAnimation(animation);
-                urlError.setVisibility(View.VISIBLE);
-                urlError.setText(getString(R.string.error_verifying_url));
-                urlError.setTextColor(Color.parseColor("#ff0000"));
-                urlError.postDelayed(new Runnable() {
-                    public void run() {
-                        urlError.setVisibility(View.INVISIBLE);
-                    }
-                }, 5000);
-//                urlError.setVisibility(View.VISIBLE);
-//                urlError.setText(getString(R.string.error_verifying_url));
-//                urlError.setTextColor(Color.parseColor("#ff0000"));
-//                urlError.postDelayed(new Runnable() {
-//                    public void run() {
-//                        urlError.setVisibility(View.INVISIBLE);
-//                    }
-//                }, 5000);
-
-                //Toasty.error(context, getString(R.string.error_verifying_url), Toast.LENGTH_LONG).show();
-            }
-        }
-    }
 
 
     //N 7.0-> shortcuts
@@ -604,77 +526,6 @@ public class LoginActivity extends AppCompatActivity {
 
         shortcutManager.setDynamicShortcuts(Collections.singletonList(webShortcut));
     }
-
-    /**
-     * This async task is for verifying the url,for paid version only.
-     */
-//    private class VerifyBilling extends AsyncTask<String, Void, String> {
-//        Context context;
-//        String baseURL;
-//
-//        VerifyBilling(Context context, String baseURL) {
-//            this.context = context;
-//            this.baseURL = baseURL;
-//        }
-//
-//        @Override
-//        protected String doInBackground(String... params) {
-//
-//            return new Helpdesk().getCheckBillingURL(baseURL);
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String result) {
-//            progressDialogBilling.dismiss();
-//            Log.d("Response BillingVerfy", result + "");
-//            if (result == null) {
-//                Toasty.error(LoginActivity.this, getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show();
-//                return;
-//            }
-//            if (result.contains("success")) {
-//
-//
-//            } else if (result.contains("fails")) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this)
-//                        .setTitle(R.string.access_denied)
-//                        .setMessage(R.string.please_purchase_faveo)
-//                        .setIcon(R.drawable.ic_warning_black_36dp)
-//                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//                                dialog.dismiss();
-//                                finish();
-//
-//                            }
-//                        });
-//                builder.create();
-//                builder.show();
-//
-//            } else
-//                Toasty.error(context, getString(R.string.error_checking_pro), Toast.LENGTH_LONG).show();
-//        }
-//    }
-
-    /**
-     * This button will work after the url is been verified
-     * it will take the user name and password and it will check
-     * it is valid or not.
-     */
-
-
-//    @OnClick(R.id.button_signin)
-//    public void signIn() {
-//        String username = usernameEdittext.getText().toString();
-//        String password = passwordEdittext.getText().toString();
-//        if (InternetReceiver.isConnected()) {
-//            //progressDialogSignIn.show();
-//            textInputLayoutUsername.setEnabled(false);
-//            textInputLayoutPass.setEnabled(false);
-//            buttonSignIn.setText(R.string.signing_in);
-//            new SignIn(LoginActivity.this, username, password).execute();
-//        } else
-//            Toasty.warning(this, getString(R.string.oops_no_internet), Toast.LENGTH_LONG).show();
-//    }
 
     /**
      * Post the user credentials to server. This will execute after the
@@ -719,7 +570,7 @@ public class LoginActivity extends AppCompatActivity {
                         userNameError.setTextColor(Color.parseColor("#ff0000"));
                         userNameError.postDelayed(new Runnable() {
                             public void run() {
-                                userNameError.setVisibility(View.INVISIBLE);
+                                userNameError.setVisibility(View.GONE);
                             }
                         }, 5000);
                         //StyleableToast st = new StyleableToast(LoginActivity.this, getString(R.string.wrong_credentials), Toast.LENGTH_LONG);
@@ -750,6 +601,19 @@ public class LoginActivity extends AppCompatActivity {
                 String userID = jsonObject1.getString("id");
                 String profile_pic = jsonObject1.getString("profile_pic");
                 String role = jsonObject1.getString("role");
+                if (role.equals("user")){
+                    final Toast toast = Toasty.info(LoginActivity.this, getString(R.string.userRestrict),Toast.LENGTH_SHORT);
+                    toast.show();
+                    new CountDownTimer(10000, 1000)
+                    {
+                        public void onTick(long millisUntilFinished) {toast.show();}
+                        public void onFinish() {toast.cancel();}
+                    }.start();
+                    textInputLayoutUsername.setEnabled(true);
+                    textInputLayoutPass.setEnabled(true);
+                    buttonSignIn.setText(getString(R.string.sign_in));
+                    return;
+                }
                 Prefs.putString("ROLE",role);
                 Prefs.putString("profilePicture",profile_pic);
                 String firstName = jsonObject1.getString("first_name");
@@ -863,10 +727,10 @@ public class LoginActivity extends AppCompatActivity {
 //        Set<String> set = Prefs.getStringSet("URL_SUG", new HashSet<String>());
 //        urlSuggestions = new ArrayList<>(set);
 //
-        ArrayAdapter<String> adapter = new ArrayAdapter<>
-                (this, android.R.layout.simple_dropdown_item_1line, urlSuggestions);
-        editTextCompanyURL.setThreshold(1);
-        editTextCompanyURL.setAdapter(adapter);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>
+//                (this, android.R.layout.simple_dropdown_item_1line, urlSuggestions);
+//        editTextCompanyURL.setThreshold(1);
+//        editTextCompanyURL.setAdapter(adapter);
 
 
         //viewflipper = (ViewFlipper) findViewById(R.id.viewFlipper);

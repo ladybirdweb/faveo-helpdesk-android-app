@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,15 +7,10 @@
     android:overScrollMode="never"
     android:padding="7dp"
     >
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="true"
-        android:overScrollMode="never">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/colorAccent"
         android:orientation="vertical"
         tools:context="com.android.faveo.CreateNewTicketActivity">
@@ -286,6 +281,38 @@
             android:paddingTop="24dp"
             android:textSize="14sp" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/status"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        <Spinner
+            android:id="@+id/spinner_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_modified_states"
+            android:entries="@array/spinnerHelpTopics"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:paddingBottom="24dp"
+            android:paddingTop="24dp"
+            android:textSize="14sp" />
+
         <!--<TextView-->
         <!--android:textColor="@color/black"-->
         <!--android:layout_width="wrap_content"-->
@@ -316,5 +343,4 @@
         <!--android:imeOptions="actionNext" />-->
 
     </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
-</FrameLayout>
+</ScrollView>

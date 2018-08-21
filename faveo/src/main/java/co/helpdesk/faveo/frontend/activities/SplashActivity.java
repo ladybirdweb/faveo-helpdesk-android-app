@@ -145,7 +145,7 @@ public class SplashActivity extends AppCompatActivity {
                 buttonTryAgain.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        finishAffinity();
+                        finish();
                         Intent intent=new Intent(SplashActivity.this,SplashActivity.class);
                         startActivity(intent);
                     }

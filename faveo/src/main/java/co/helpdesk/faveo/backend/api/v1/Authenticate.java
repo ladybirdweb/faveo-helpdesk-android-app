@@ -16,9 +16,9 @@ import co.helpdesk.faveo.Constants;
  */
 public class Authenticate {
 
-    static String apiKey;
-    static String token;
-    static String IP;
+    public static String apiKey;
+   public static String token;
+    public static String IP;
 
     public Authenticate() {
         apiKey = Constants.API_KEY;

@@ -208,6 +208,9 @@
     <string name="sureUpdatre">are you sure you want to make the changes?</string>
     <string name="logoutConfirm">are you sure you want to log out from the app?</string>
     <string name="logOut">logging out</string>
+    <string name="urlchange">your helpdesk url has been changed</string>
+    <string name="roleChanged">your role has been changed,only agent and admin can use the app</string>
+    <string name="userRestrict">sorry! user can not log in to the app</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
