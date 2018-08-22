@@ -1,6 +1,8 @@
 package co.helpdesk.faveo.frontend.activities;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -187,9 +189,13 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
-                            Intent intent = new Intent();
-                            intent.setComponent(new ComponentName("com.miui.securitycenter", "com.miui.permcenter.autostart.AutoStartManagementActivity"));
-                            startActivity(intent);
+                            try {
+                                Intent intent = new Intent();
+                                intent.setComponent(new ComponentName("com.miui.securitycenter", "com.miui.permcenter.autostart.AutoStartManagementActivity"));
+                                startActivity(intent);
+                            }catch (ActivityNotFoundException e){
+                                e.printStackTrace();
+                            }
                         }
                     });
             builder.create();
@@ -566,7 +572,7 @@ public class LoginActivity extends AppCompatActivity {
                         buttonSignIn.setText(getString(R.string.sign_in));
                         //Toast.makeText(LoginActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
                         userNameError.setVisibility(View.VISIBLE);
-                        userNameError.setText("Please check your password and email");
+                        userNameError.setText(R.string.checkPasswordEmail);
                         userNameError.setTextColor(Color.parseColor("#ff0000"));
                         userNameError.postDelayed(new Runnable() {
                             public void run() {

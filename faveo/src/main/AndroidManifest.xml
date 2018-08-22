@@ -65,9 +65,9 @@
             </intent-filter>
         </receiver>
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="3d31c3fca25cb228d17bfa05856d933d97e90db1" />
+        <!--<meta-data-->
+            <!--android:name="io.fabric.ApiKey"-->
+            <!--android:value="3d31c3fca25cb228d17bfa05856d933d97e90db1" />-->
 
         <activity android:name=".frontend.activities.TicketSaveActivity"
             android:label="@string/title_activity_save"

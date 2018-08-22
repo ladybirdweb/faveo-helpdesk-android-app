@@ -320,17 +320,6 @@ class HTTPConnection {
         String result = new Authenticate().postAuthenticateUser(Prefs.getString("USERNAME", null), Prefs.getString("PASSWORD", null));
         if (result == null)
             return null;
-        try{
-            JSONObject jsonObject = new JSONObject(result);
-            String error=jsonObject.getString("error");
-            if (error.equals("invalid_credentials")){
-                Prefs.putString("credentialsChanged","true");
-                return null;
-            }
-
-        }catch (JSONException e){
-            e.printStackTrace();
-        }
         try {
             JSONObject jsonObject = new JSONObject(result);
             String token = jsonObject.getString("token");

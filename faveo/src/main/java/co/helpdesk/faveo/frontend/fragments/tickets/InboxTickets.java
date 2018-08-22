@@ -36,16 +36,12 @@ import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
 import co.helpdesk.faveo.model.TicketOverview;
 import es.dmoral.toasty.Toasty;
 
-//import co.helpdesk.faveo.backend.database.DatabaseHandler;
-
 public class InboxTickets extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     TextView tv;
     RecyclerView recyclerView;
-    int currentPage = 1;
     static String nextPageURL = "";
-    static String firstPageURl = "";
     View rootView;
     SwipeRefreshLayout swipeRefresh;
     TextView textViewTotalCount;
@@ -86,8 +82,6 @@ public class InboxTickets extends Fragment {
                              Bundle savedInstanceState) {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
-//            if (getArguments() != null)
-//                nextPageURL = getArguments().getString("nextPageURL");
             swipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefresh);
             recyclerView = (RecyclerView) rootView.findViewById(R.id.cardList);
             recyclerView.setHasFixedSize(false);
@@ -100,11 +94,6 @@ public class InboxTickets extends Fragment {
                 swipeRefresh.setRefreshing(true);
                 new FetchFirst(getActivity()).execute();
             }
-//            progressDialog = new ProgressDialog(getActivity());
-//            progressDialog.setMessage("Fetching tickets");
-//            progressDialog.show();
-           // new ReadFromDatabase(getActivity()).execute();
-            //new FetchFirst(getActivity()).execute();
 
             swipeRefresh.setColorSchemeResources(R.color.faveo_blue);
             swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -113,56 +102,11 @@ public class InboxTickets extends Fragment {
                     new FetchFirst(getActivity()).execute();
                 }
             });
-
-//            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-//                @Override
-//                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-//                    if (dy > 0) {
-//                        visibleItemCount = linearLayoutManager.getChildCount();
-//                        totalItemCount = linearLayoutManager.getItemCount();
-//                        pastVisibleItems = linearLayoutManager.findFirstVisibleItemPosition();
-//                        if (loading) {
-//                            if ((visibleItemCount + pastVisibleItems) >= totalItemCount) {
-//                                loading = false;
-//                                new FetchNextPage(getActivity()).execute();
-//                                Toast.makeText(getActivity(), "Loading!", Toast.LENGTH_SHORT).show();
-//                            }
-//                        }
-//                    }
-//                }
-//            });
             tv = (TextView) rootView.findViewById(R.id.empty_view);
         }
        // ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.inbox_tickets));
         return rootView;
     }
-
-//    public class ReadFromDatabase extends AsyncTask<String, Void, String> {
-//        Context context;
-//
-//        ReadFromDatabase(Context context) {
-//            this.context = context;
-//        }
-//
-//        protected String doInBackground(String... urls) {
-//            DatabaseHandler databaseHandler = new DatabaseHandler(context);
-//            ticketOverviewList = databaseHandler.getTicketOverview();
-//            databaseHandler.close();
-//            return "success";
-//        }
-//
-//        protected void onPostExecute(String result) {
-//            if (swipeRefresh.isRefreshing())
-//                swipeRefresh.setRefreshing(false);
-//            if (progressDialog.isShowing())
-//                progressDialog.dismiss();
-//            ticketOverviewAdapter = new TicketOverviewAdapter(ticketOverviewList);
-//            recyclerView.setAdapter(ticketOverviewAdapter);
-//            if (ticketOverviewAdapter.getItemCount() == 0) {
-//                tv.setVisibility(View.VISIBLE);
-//            } else tv.setVisibility(View.GONE);
-//        }
-//    }
 
     public class FetchNextPage extends AsyncTask<String, Void, String> {
         Context context;

@@ -11,6 +11,7 @@ import android.graphics.PorterDuff;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -84,9 +85,9 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
-    private View containerView;
+    public View containerView;
     private static String[] titles = null;
-    private FragmentDrawerListener drawerListener;
+    public FragmentDrawerListener drawerListener;
     View layout;
     Context context;
     DataModel[] drawerItem;

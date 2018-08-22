@@ -18,6 +18,9 @@ import com.github.curioustechizen.ago.RelativeTimeTextView;
 import com.pixplicity.easyprefs.library.Prefs;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import agency.tango.android.avatarview.IImageLoader;
@@ -94,29 +97,63 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
 //                ticketViewHolder.textViewOverdue.setVisibility(View.VISIBLE);
 //            } else ticketViewHolder.textViewOverdue.setVisibility(View.GONE);
 
-            if (Helper.compareDates(ticketOverview.dueDate) == 2) {
-                ticketViewHolder.textViewduetoday.setVisibility(View.VISIBLE);
-                ticketViewHolder.textViewduetoday.setText(R.string.due_today);
-                //ticketViewHolder.textViewOverdue.setBackgroundColor(Color.parseColor("#FFD700"));
-                ((GradientDrawable)ticketViewHolder.textViewduetoday.getBackground()).setColor(Color.parseColor("#3da6d7"));
-                ticketViewHolder.textViewduetoday.setTextColor(Color.parseColor("#ffffff"));
-                //ticketViewHolder.textViewOverdue.setBackgroundColor();
+            try {
+                if (!ticketOverview.dueDate.equals(null) || !ticketOverview.dueDate.equals("null"))
+                    Log.d("dueDate", ticketOverview.getDueDate());
+                if (Helper.compareDates(ticketOverview.dueDate) == 2) {
+                    Log.d("duetoday", "yes");
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    Date EndTime = null;
+                    try {
+                        EndTime = dateFormat.parse(ticketOverview.getDueDate());
+                        Date CurrentTime = dateFormat.parse(dateFormat.format(new Date()));
+                        if (CurrentTime.after(EndTime)) {
+                            ticketViewHolder.textViewOverdue.setVisibility(View.VISIBLE);
+                            Log.d("dueFromInbox", "overdue");
+                        } else {
+                            Log.d("dueFromInbox", "duetoday");
+                            ticketViewHolder.textViewduetoday.setVisibility(View.VISIBLE);
+                        }
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
 
+
+                } else if (Helper.compareDates(ticketOverview.dueDate) == 1) {
+                    Log.d("duetoday", "no");
+                    ticketViewHolder.textViewOverdue.setVisibility(View.VISIBLE);
+                } else {
+                    Log.d("duetoday", "novalue");
+                    ticketViewHolder.textViewOverdue.setVisibility(View.GONE);
+                    ticketViewHolder.textViewduetoday.setVisibility(View.GONE);
+                }
+            }catch (NullPointerException e){
+                e.printStackTrace();
             }
-            else  if (Helper.compareDates(ticketOverview.dueDate) == 1) {
-                ticketViewHolder.textViewOverdue.setVisibility(View.VISIBLE);
-                ticketViewHolder.textViewOverdue.setText(R.string.overdue);
-                //ticketViewHolder.textViewOverdue.setBackgroundColor(Color.parseColor("#ef9a9a"));
-//                GradientDrawable drawable = (GradientDrawable) context.getDrawable(ticketViewHolder.textViewOverdue);
+
+//            if (Helper.compareDates(ticketOverview.dueDate) == 2) {
+//                ticketViewHolder.textViewduetoday.setVisibility(View.VISIBLE);
+//                ticketViewHolder.textViewduetoday.setText(R.string.due_today);
+//                //ticketViewHolder.textViewOverdue.setBackgroundColor(Color.parseColor("#FFD700"));
+//                ((GradientDrawable)ticketViewHolder.textViewduetoday.getBackground()).setColor(Color.parseColor("#3da6d7"));
+//                ticketViewHolder.textViewduetoday.setTextColor(Color.parseColor("#ffffff"));
+//                //ticketViewHolder.textViewOverdue.setBackgroundColor();
 //
-////set color
-//                 drawable.setColor(color);
-                ((GradientDrawable)ticketViewHolder.textViewOverdue.getBackground()).setColor(Color.parseColor("#3da6d7"));
-                ticketViewHolder.textViewOverdue.setTextColor(Color.parseColor("#ffffff"));
-            }
-            else {
-                ticketViewHolder.textViewOverdue.setVisibility(View.GONE);
-            }
+//            }
+//            else  if (Helper.compareDates(ticketOverview.dueDate) == 1) {
+//                ticketViewHolder.textViewOverdue.setVisibility(View.VISIBLE);
+//                ticketViewHolder.textViewOverdue.setText(R.string.overdue);
+//                //ticketViewHolder.textViewOverdue.setBackgroundColor(Color.parseColor("#ef9a9a"));
+////                GradientDrawable drawable = (GradientDrawable) context.getDrawable(ticketViewHolder.textViewOverdue);
+////
+//////set color
+////                 drawable.setColor(color);
+//                ((GradientDrawable)ticketViewHolder.textViewOverdue.getBackground()).setColor(Color.parseColor("#3da6d7"));
+//                ticketViewHolder.textViewOverdue.setTextColor(Color.parseColor("#ffffff"));
+//            }
+//            else {
+//                ticketViewHolder.textViewOverdue.setVisibility(View.GONE);
+//            }
 
 
         ticketViewHolder.textViewTicketID.setText(ticketOverview.ticketID + "");
