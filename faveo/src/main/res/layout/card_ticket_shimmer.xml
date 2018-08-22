@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ticket"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="?attr/selectableItemBackground"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/textView_ticket_number"
+            android:layout_width="120dp"
+            android:layout_height="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/imageView_default_profile"
+            android:background="@color/demo_light_transparent" />
+
+        <View
+            android:id="@+id/textView_ticket_subject"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_alignLeft="@+id/textView_ticket_number"
+            android:layout_alignStart="@+id/textView_ticket_number"
+            android:layout_below="@+id/textView_ticket_number"
+            android:layout_marginRight="54dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/demo_light_transparent" />
+
+        <View
+            android:id="@+id/imageView_default_profile"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/circle_shimmer" />
+
+        <View
+            android:id="@+id/priority_view"
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/demo_light_transparent" />
+
+        <View
+            android:id="@+id/textView_ticket_time"
+            android:layout_width="80dp"
+            android:layout_height="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toLeftOf="@+id/priority_view"
+            android:layout_toStartOf="@+id/priority_view"
+            android:background="@color/demo_light_transparent" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/grey_200" />
+
+        <View
+            android:id="@+id/textView_client_name"
+            android:layout_width="120dp"
+            android:layout_height="10dp"
+            android:layout_alignLeft="@+id/textView_ticket_subject"
+            android:layout_alignStart="@+id/textView_ticket_subject"
+            android:layout_below="@+id/textView_ticket_subject"
+            android:layout_marginTop="12dp"
+            android:background="@color/demo_light_transparent" />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="co.helpdesk.faveo.frontend.activities.TicketSaveActivity"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/MyMaterialTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarsave"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/MyMaterialTheme.PopupOverlay">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_arrow_back_black_24dp"
+                    android:id="@+id/imageView"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/titlesave"
+                    android:layout_width="170dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/ticketProperties"
+                    android:textColor="@color/theme"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_alignTop="@+id/imageView"
+                    android:layout_toRightOf="@+id/imageView"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_alignBottom="@+id/imageView" />
+
+                <Button
+                    android:id="@+id/refresh"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="13dp"
+                    android:background="@drawable/ic_refresh_black_24dp"
+                    android:backgroundTint="@color/faveo" />
+
+                <Button
+                    android:id="@+id/button_save"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="53dp"
+                    android:background="@drawable/ic_done_white_24dp"
+                    android:backgroundTint="@color/faveo"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/faveo">
+
+        </View>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_ticket_save" />
+
+
+</LinearLayout>

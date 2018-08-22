@@ -5,8 +5,9 @@
     android:background="@color/colorAccent"
     android:fillViewport="true"
     android:overScrollMode="never"
-    android:padding="16dp"
-    android:scrollbars="none">
+    android:padding="7dp"
+    android:scrollbars="none"
+    android:nestedScrollingEnabled="true">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -16,178 +17,229 @@
         android:orientation="vertical"
         tools:context="com.android.faveo.CreateNewTicketActivity">
 
-        <TextView
-            android:id="@+id/textView_opened_by"
+        <!--<TextView-->
+        <!--android:id="@+id/textView_ticket_number"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="24dp"-->
+        <!--android:gravity="center"-->
+        <!--android:maxLines="1"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:text="Ticket Number"-->
+        <!--android:textCursorDrawable="@drawable/color_cursor"-->
+        <!--android:textSize="14sp"-->
+        <!--android:textStyle="bold" />-->
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:gravity="center"
-            android:maxLines="1"
-            android:paddingBottom="16dp"
-            android:paddingTop="16dp"
-            android:text="Client name"
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="SUBJECT"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:background="#f2f2f2"
+            android:layout_marginTop="-1dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/Subject"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/editText_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_modified_states"
-            android:cursorVisible="true"
             android:imeOptions="actionNext"
-            android:maxLines="3"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:text="Not Available"
+            android:text="@string/not_available"
+            android:paddingLeft="4dp"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:alpha="0.5"/>
 
-        <TextView
-            android:id="@+id/textView_error_subject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginBottom="12dp"
-            android:textColor="@color/error_red"
-            android:textSize="12sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="SLA PLANS"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <Spinner
-            android:id="@+id/spinner_sla_plans"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/edittext_modified_states"
-            android:entries="@array/spinnerSlaPlans"
-            android:imeOptions="actionNext"
-            android:maxLines="1"
-            android:paddingBottom="24dp"
-            android:paddingTop="24dp"
-            android:textSize="14sp" />
+            android:background="#f2f2f2">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="STATUS"
-            android:textColor="@color/black"
-            android:textSize="14sp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="17dp"
+            android:layout_marginStart="17dp"
+            android:text="@string/priority"
+            android:textSize="16sp"
             android:textStyle="bold" />
-
-        <Spinner
-            android:id="@+id/spinner_status"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/edittext_modified_states"
-            android:entries="@array/spinnerPriority"
-            android:imeOptions="actionNext"
-            android:maxLines="1"
-            android:paddingBottom="24dp"
-            android:paddingTop="24dp"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="PRIORITY"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+        </RelativeLayout>
 
         <Spinner
             android:id="@+id/spinner_priority"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:entries="@array/spinnerPriority"
             android:imeOptions="actionNext"
             android:maxLines="1"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/tv_dept"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="DEPARTMENT"
-            android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:clickable="false"
+            android:alpha="0.5"/>
 
-        <Spinner
-            android:id="@+id/spinner_department"
+        <!--<TextView-->
+            <!--android:id="@+id/tv_type"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:alpha="0.3"-->
+            <!--android:text="@string/ticket_type"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="14sp"-->
+            <!--android:textStyle="bold" />-->
+
+        <!--<Spinner-->
+            <!--android:id="@+id/spinner_type"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="24dp"-->
+            <!--android:background="@drawable/edittext_modified_states"-->
+            <!--android:imeOptions="actionNext"-->
+            <!--android:maxLines="1"-->
+            <!--android:paddingBottom="24dp"-->
+            <!--android:paddingTop="24dp"-->
+            <!--android:textSize="14sp" />-->
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/edittext_modified_states"
-            android:imeOptions="actionNext"
-            android:maxLines="1"
-            android:paddingBottom="24dp"
-            android:paddingTop="24dp"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/tv_helpTopic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="HELP TOPIC"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:background="#f2f2f2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/helptopic"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <Spinner
             android:id="@+id/spinner_help_topics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:entries="@array/spinnerHelpTopics"
             android:imeOptions="actionNext"
             android:maxLines="1"
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="FIRST NAME"
-            android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:clickable="false"
+            android:alpha="0.5"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/sla_plans"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <Spinner
+            android:id="@+id/spinner_sla_plans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_modified_states"
+            android:entries="@array/spinnerHelpTopics"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:paddingBottom="24dp"
+            android:paddingTop="24dp"
+            android:textSize="14sp"
+            android:clickable="false"
+            android:alpha="0.5"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/status"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        <Spinner
+            android:id="@+id/spinner_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_modified_states"
+            android:entries="@array/spinnerHelpTopics"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:paddingBottom="24dp"
+            android:paddingTop="24dp"
+            android:textSize="14sp"
+            android:clickable="false"
+            android:alpha="0.5"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/name"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/editText_ticketDetail_firstname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:clickable="false"
             android:cursorVisible="false"
@@ -196,54 +248,37 @@
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
             android:maxLines="1"
-            android:paddingBottom="16dp"
-            android:paddingTop="16dp"
-            android:text="Not Available"
+            android:paddingBottom="24dp"
+            android:paddingLeft="4dp"
+            android:paddingTop="24dp"
+            android:text="@string/not_available"
             android:textCursorDrawable="@drawable/color_cursor"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="LAST NAME"
-            android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:alpha="0.5"/>
 
-        <EditText
-            android:id="@+id/editText_ticketDetail_lastname"
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/edittext_modified_states"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:ems="10"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:imeOptions="actionNext"
-            android:maxLines="1"
-            android:paddingBottom="16dp"
-            android:paddingTop="16dp"
-            android:text="Not Available"
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="EMAIL"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:background="#f2f2f2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/email"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/editText_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:clickable="false"
             android:cursorVisible="false"
@@ -251,78 +286,70 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
+            android:paddingLeft="4dp"
             android:maxLines="1"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
-            android:text="Not Available"
+            android:text="@string/not_available"
             android:textCursorDrawable="@drawable/color_cursor"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="SOURCE"
-            android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:alpha="0.5"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/source"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <Spinner
             android:id="@+id/spinner_source"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:entries="@array/spinnerHelpTopics"
             android:imeOptions="actionNext"
             android:maxLines="1"
             android:paddingBottom="24dp"
-            android:paddingTop="24dp"
-            android:textSize="14sp" />
-
-        <!--<TextView-->
-        <!--android:textColor="@color/black"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="14sp"-->
-        <!--android:text="LAST MESSAGE"-->
-        <!--android:textStyle="bold"-->
-        <!--android:alpha="0.3"/>-->
-
-        <!--<EditText-->
-        <!--android:textCursorDrawable="@drawable/color_cursor"-->
-        <!--android:text="Last message"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:maxLength="20"-->
-        <!--android:ems="10"-->
-        <!--android:id="@+id/editText_last_message"-->
-        <!--android:background="@drawable/edittext_modified_states"-->
-        <!--android:textSize="14sp"-->
-        <!--android:paddingTop="16dp"-->
-        <!--android:paddingBottom="16dp"-->
-        <!--android:layout_marginBottom="24dp"-->
-        <!--android:singleLine="true"-->
-        <!--android:clickable="false"-->
-        <!--android:cursorVisible="false"-->
-        <!--android:focusable="false"-->
-        <!--android:focusableInTouchMode="false"-->
-        <!--android:imeOptions="actionNext" />-->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="DUE DATE"
-            android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:paddingTop="24dp"
+            android:clickable="false"
+            android:alpha="0.5"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/due_date"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/editText_due_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:clickable="false"
             android:cursorVisible="false"
@@ -333,25 +360,35 @@
             android:maxLength="20"
             android:maxLines="1"
             android:paddingBottom="16dp"
+            android:paddingLeft="4dp"
             android:paddingTop="16dp"
-            android:text="Not Available"
+            android:text="@string/not_available"
             android:textCursorDrawable="@drawable/color_cursor"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="CREATED DATE"
-            android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:alpha="0.5"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f2f2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/created_date"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/editText_created_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/edittext_modified_states"
             android:clickable="false"
             android:cursorVisible="false"
@@ -362,79 +399,104 @@
             android:maxLength="20"
             android:maxLines="1"
             android:paddingBottom="16dp"
+            android:paddingLeft="4dp"
             android:paddingTop="16dp"
-            android:text="Not Available"
+            android:text="@string/not_available"
             android:textCursorDrawable="@drawable/color_cursor"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="LAST RESPONSE DATE"
-
-            android:textColor="@color/black"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:alpha="0.5"/>
 
-        <EditText
-            android:id="@+id/editText_last_response_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/edittext_modified_states"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:ems="10"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:imeOptions="actionNext"
-            android:maxLength="20"
-            android:maxLines="1"
-            android:paddingBottom="16dp"
-            android:paddingTop="16dp"
-            android:text="Not Available"
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:textSize="14sp" />
+        <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#f2f2f2">-->
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginLeft="17dp"-->
+        <!--android:layout_marginStart="17dp"-->
+        <!--android:text="@string/last_response_date"-->
+        <!--android:textSize="16sp"-->
+        <!--android:textStyle="bold" />-->
+        <!--</RelativeLayout>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.3"
-            android:text="ASSIGN TO"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:visibility="gone" />
+        <!--<EditText-->
+            <!--android:id="@+id/editText_last_response_date"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="24dp"-->
+            <!--android:background="@drawable/edittext_modified_states"-->
+            <!--android:clickable="false"-->
+            <!--android:cursorVisible="false"-->
+            <!--android:ems="10"-->
+            <!--android:focusable="false"-->
+            <!--android:focusableInTouchMode="false"-->
+            <!--android:imeOptions="actionNext"-->
+            <!--android:maxLength="20"-->
+            <!--android:maxLines="1"-->
+            <!--android:paddingBottom="16dp"-->
+            <!--android:paddingTop="16dp"-->
+            <!--android:text="@string/not_available"-->
+            <!--android:textCursorDrawable="@drawable/color_cursor"-->
+            <!--android:textSize="14sp"-->
+            <!--android:alpha="0.5"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/assign_to"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="14sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:visibility="gone" />-->
 
-        <Spinner
-            android:id="@+id/spinner_assign_to"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/edittext_modified_states"
-            android:ems="10"
-            android:entries="@array/spinnerAssignTo"
-            android:imeOptions="actionNext"
-            android:maxLength="20"
-            android:maxLines="1"
-            android:paddingBottom="24dp"
-            android:paddingTop="24dp"
-            android:textSize="14sp"
-            android:visibility="gone" />
+        <!--<Spinner-->
+            <!--android:id="@+id/spinner_assign_to"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="24dp"-->
+            <!--android:background="@drawable/edittext_modified_states"-->
+            <!--android:ems="10"-->
+            <!--android:entries="@array/spinnerAssignTo"-->
+            <!--android:imeOptions="actionNext"-->
+            <!--android:maxLength="20"-->
+            <!--android:maxLines="1"-->
+            <!--android:paddingBottom="24dp"-->
+            <!--android:paddingTop="24dp"-->
+            <!--android:textSize="14sp"-->
+            <!--android:visibility="gone"-->
+            <!--android:clickable="false"-->
+            <!--android:cursorVisible="false"-->
+            <!--android:focusable="false"-->
+            <!--android:focusableInTouchMode="false"-->
+            <!--android:alpha="0.5 "/>-->
+        <!--<view-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="2dp">-->
+
+        <!--</view>-->
+
+
+
+
 
         <Button
             android:id="@+id/button_save"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="32dp"
-            android:background="@color/blue_300"
-            android:text="Save"
+            android:layout_marginBottom="56dp"
+            android:background="@drawable/button_background"
+            android:text="@string/save"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

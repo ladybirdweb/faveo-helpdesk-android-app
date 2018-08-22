@@ -5,10 +5,12 @@ package co.helpdesk.faveo;
  */
 
 
+import android.content.ContextWrapper;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
 import com.crashlytics.android.Crashlytics;
+import com.pixplicity.easyprefs.library.Prefs;
 
 import java.io.File;
 
@@ -25,6 +27,12 @@ public class FaveoApplication extends MultiDexApplication {
         //AndroidNetworking.initialize(getApplicationContext());
         Fabric.with(this, new Crashlytics());
         instance = this;
+        new Prefs.Builder()
+                .setContext(this)
+                .setMode(ContextWrapper.MODE_PRIVATE)
+                .setPrefsName(getPackageName())
+                .setUseDefaultSharedPreference(true)
+                .build();
     }
 
     public static synchronized FaveoApplication getInstance() {

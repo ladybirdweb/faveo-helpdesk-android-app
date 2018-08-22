@@ -1,6 +1,6 @@
 package co.helpdesk.faveo.frontend.fragments;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -35,7 +35,11 @@ public class About extends Fragment {
 
     public About() {
     }
-
+    /**
+     *
+     * @param savedInstanceState under special circumstances, to restore themselves to a previous
+     * state using the data stored in this bundle.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +48,14 @@ public class About extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    /**
+     *
+     * @param inflater for loading the fragment.
+     * @param container where the fragment is going to be load.
+     * @param savedInstanceState
+     * @return after initializing returning the rootview
+     * which is having the fragment.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,7 +64,7 @@ public class About extends Fragment {
         PackageInfo pInfo;
         try {
             pInfo = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0);
-            String version = pInfo.versionName;
+            String version = "Version :"+pInfo.versionName;
             ((TextView) rootView.findViewById(R.id.textView_version)).setText(version);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
@@ -67,7 +78,7 @@ public class About extends Fragment {
                 startActivity(browserIntent);
             }
         });
-        ((MainActivity) getActivity()).setActionBarTitle("About");
+        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.about));
         return rootView;
     }
 
@@ -76,18 +87,25 @@ public class About extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
-
+    /**
+     * When the fragment is going to be attached
+     * this life cycle method is going to be called.
+     * @param context refers to the current fragment.
+     */
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
     }
-
+    /**
+     * Once the fragment is going to be detached then
+     * this method is going to be called.
+     */
     @Override
     public void onDetach() {
         super.onDetach();
@@ -95,7 +113,7 @@ public class About extends Fragment {
     }
 
     public interface OnFragmentInteractionListener {
-        public void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(Uri uri);
     }
 
 }

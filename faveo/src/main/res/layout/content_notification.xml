@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_notification"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="co.helpdesk.faveo.pro.frontend.activities.NotificationActivity"
+    tools:showIn="@layout/activity_notification">
+
+    <TextView
+        android:id="@+id/noiternet_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:drawableTint="@color/dark_translucent"
+        android:drawableTop="@drawable/ic_signal_wifi_off_black_48dp"
+        android:text="@string/no_internet_connection"
+        android:textColor="@color/dark_translucent"
+        android:textSize="28sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:drawableTint="@color/dark_translucent"
+        android:drawableTop="@drawable/ic_inbox_black_24dp"
+        android:text="@string/no_records"
+        android:textColor="@color/dark_translucent"
+        android:textSize="28sp"
+        android:visibility="gone" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:clickable="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="0dp"
+            android:scrollbars="none">
+
+            <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                app:demo_child_count="10"
+                app:demo_layout="@layout/card_noti_shimmer"
+                tools:context=".MainActivity"
+                tools:listitem="@layout/card_notification" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <TextView
+            android:layout_width="380dp"
+            android:layout_height="50dp"
+            android:text="Total Count"
+            android:id="@+id/totalcount"
+            android:textColor="@color/faveo"
+            android:gravity="center"
+            android:visibility="visible"/>
+
+
+
+
+        <!--<com.cooltechworks.views.shimmer.ShimmerRecyclerView-->
+        <!--android:id="@+id/cardList"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:demo_child_count="10"-->
+        <!--app:demo_layout="@layout/card_ticket_shimmer" />-->
+    </LinearLayout>
+</LinearLayout>

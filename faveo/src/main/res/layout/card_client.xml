@@ -1,9 +1,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/client"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorAccent"
-    android:padding="8dp">
+    android:background="?attr/selectableItemBackground"
+    android:paddingBottom="4dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="4dp">
 
     <TextView
         android:id="@+id/textView_client_id"
@@ -11,16 +15,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true" />
 
-    <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+    <ImageView
         android:id="@+id/imageView_default_profile"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:transitionName="@string/blue_name"
         android:layout_centerVertical="true"
         android:src="@drawable/default_pic"
-        app:riv_corner_radius="30dip"
-        app:riv_mutate_background="true"
-        app:riv_oval="true"
-        app:riv_tile_mode="repeat" />
+        android:background="@drawable/rounded_textview" />
 
     <TextView
         android:id="@+id/textView_client_name"
@@ -28,10 +30,13 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="18dp"
+        android:layout_marginTop="2dp"
         android:layout_toRightOf="@+id/imageView_default_profile"
         android:fontFamily="sans-serif-bold"
-        android:singleLine="true"
-        android:text="Karthik Sen"
+        android:maxLines="1"
+        android:alpha=".54"
+        android:ellipsize="end"
+        android:text="@string/dummy_name"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
@@ -47,9 +52,10 @@
         android:alpha=".54"
         android:drawableLeft="@drawable/email"
         android:drawablePadding="8dp"
+        android:ellipsize="end"
         android:fontFamily="sans-serif-medium"
-        android:singleLine="true"
-        android:text="karthiksen@ladybirdweb.com"
+        android:maxLines="1"
+        android:text="@string/dummy_mail_id"
         android:textColor="@color/black"
         android:textSize="16sp" />
 
@@ -67,16 +73,17 @@
         android:drawableLeft="@drawable/phone"
         android:drawablePadding="8dp"
         android:fontFamily="sans-serif-medium"
-        android:singleLine="true"
-        android:text="9876543210"
+        android:maxLines="1"
         android:textColor="@color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:visibility="gone"/>
+    <!--android:text="@string/dummy_num"-->
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/textView_client_phone"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@color/grey_200" />
 
 </RelativeLayout>

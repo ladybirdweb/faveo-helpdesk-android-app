@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     android:padding="24dp"
-    tools:context="co.helpdesk.faveo.frontend.fragments.Settings">
+    tools:context=".frontend.activities.MainActivity">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="CRASH REPORTS"
+            android:text="@string/crash_reports"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -29,11 +29,11 @@
             android:gravity="center_vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:alpha="0.6"
-                android:text="Send crash reports "
+                android:text="@string/send_crash_reports"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />

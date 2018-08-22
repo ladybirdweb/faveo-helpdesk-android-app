@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="faveo">#3da6d7</color>
+
+    <color name="actionbar">#3da6d7</color>
+
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="textColorPrimary">#FFFFFF</color>
@@ -8,17 +13,15 @@
     <color name="colorAccent">#FFFFFF</color>
 
     <color name="error_red">#b71c1c</color>
-    <color name="faveo_blu">#00B3EB</color>
-    <color name="faveo_blue">#3AA7D9</color>
-    <color name="theme">#3AA7D9</color>
-    <color name="blue">#2196F3</color>
-    <color name="blue_300">#64B5F6</color>
-    <color name="theme1_50">#e0f2f1</color>
-    <color name="theme1_900">#004d40</color>
-    <color name="theme2">#f44336</color>
-    <color name="theme2_50">#ffebee</color>
-    <color name="theme3">#33691e</color>
-    <color name="theme4">#2196f3</color>
+
+
+    <!--<color name="faveo_blu">#00B3EB</color>-->
+    <color name="faveo_blue">#3da6d7</color>
+    <!--<color name="theme">#3AA7D9</color>-->
+    <color name="blue">#3da6d7</color>
+    <!--<color name="blue_300">#64B5F6</color>-->
+
+    <color name="theme">#3da6d7</color>
 
     <color name="shuffle">#3f51b5</color>
     <color name="share">#43609c</color>
@@ -40,4 +43,10 @@
 
     <color name="text_black_87">#de000000</color>
     <color name="text_white_87">#deFFFFFF</color>
+    <color name="low">#388E3C</color>
+    <color name="high">#E64A19</color>
+    <color name="normal">#1976D2</color>
+    <color name="emergency">#D32F2F</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="faveo_200">#B2EBF2</color>
 </resources>

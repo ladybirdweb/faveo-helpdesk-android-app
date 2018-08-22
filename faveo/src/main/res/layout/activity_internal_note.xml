@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorAccent"
+        >
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppThemeOverlay.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbarForInternalNote"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppThemeOverlay.ActionBar">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Create Ticket"-->
+                <!--android:textColor="@color/faveo"-->
+                <!--android:textSize="16sp"-->
+                <!--android:textStyle="bold"-->
+                <!--android:layout_marginLeft="20dp"/>-->
+
+                <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_marginLeft="40dp"-->
+                <!--android:text="submit"-->
+                <!--android:background="@color/faveo"-->
+                <!--android:id="@+id/buttonSubmit"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="#ffffff"/>-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <ImageView
+                        android:id="@+id/imageViewBackTicketInternalNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_arrow_back_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/titlesave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignTop="@+id/imageViewBackTicketInternalNote"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_toEndOf="@+id/imageViewBackTicketInternalNote"
+                        android:layout_toRightOf="@+id/imageViewBackTicketInternalNote"
+                        android:text="@string/internal_note"
+                        android:textAllCaps="true"
+                        android:textColor="@color/theme"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/button_create"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="18dp"
+                        android:background="@drawable/ic_done_white_24dp"
+                        android:drawableTint="@color/faveo"
+                        android:textAllCaps="false"
+                        android:backgroundTint="@color/faveo"/>
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/faveo">
+
+            </View>
+
+        </android.support.design.widget.AppBarLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="#EEEEEE">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp"
+                android:text="@string/interNalNote"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/section_reply"
+            android:layout_width="match_parent"
+            android:layout_height="490dp"
+            android:padding="7dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editText_internal_note"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/rectanglenew"
+                android:imeOptions="actionDone"
+                android:hint="@string/leaveYourMessage"
+                android:gravity="top"
+                android:overScrollMode="ifContentScrolls"
+                android:inputType="textMultiLine"
+                android:paddingTop="16dp"
+                android:paddingBottom="10dp"
+                android:isScrollContainer="true"
+                android:padding="9dp"
+                android:nestedScrollingEnabled="true"
+                android:cursorVisible="true"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:id="@+id/client4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <agency.tango.android.avatarview.views.AvatarView
+            android:id="@+id/imageView_default_profile"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/default_pic"
+            android:transitionName="@string/blue_name"
+            app:av_border_color="@color/faveo"
+            app:av_border_width="2dp"
+            app:av_text_size_percentage="35" />
+
+        <TextView
+            android:id="@+id/textView_client_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView_client_phone"
+            android:layout_alignRight="@+id/textView_client_phone"
+            android:layout_below="@+id/imageView_default_profile"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-bold"
+            android:maxLines="1"
+            android:text="@string/dummy_name"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView_client_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_client_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:alpha=".54"
+            android:drawableLeft="@drawable/email"
+            android:drawablePadding="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text="@string/dummy_mail_id"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView_client_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_client_email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:alpha=".54"
+            android:drawableLeft="@drawable/phone"
+            android:drawablePadding="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text="@string/dummy_num"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/textView_client_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.3"
+            android:text="@string/company"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView_client_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.3"
+            android:gravity="end"
+            android:text="@string/status"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

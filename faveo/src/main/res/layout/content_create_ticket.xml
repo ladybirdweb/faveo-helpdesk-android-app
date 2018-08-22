@@ -1,0 +1,826 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="co.helpdesk.faveo.frontend.activities.CreateTicketActivity"
+    tools:showIn="@layout/activity_create_ticket">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:id="@+id/nestedScroll">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/windowBackground"
+            android:orientation="vertical"
+            android:id="@+id/scrollLinearLayout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#EEEEEE"
+                android:id="@+id/relativefname">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginStart="17dp"
+                    android:text="@string/first_name"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/required"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:id="@+id/fname_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@android:color/transparent"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#EEEEEE">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginStart="17dp"
+                    android:text="@string/last_name"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginEnd="8dp"-->
+                    <!--android:layout_marginRight="8dp"-->
+                    <!--android:text="@string/required"-->
+                    <!--android:textSize="12sp" />-->
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:id="@+id/lname_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@android:color/transparent"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#EEEEEE"
+                android:id="@+id/relativeEmaill">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginStart="17dp"
+                    android:text="@string/email"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/required"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:id="@+id/email_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@android:color/transparent"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#EEEEEE">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginEnd="8dp"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--android:text="Required"-->
+                <!--android:textSize="12sp" />-->
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/mobile"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+
+                <!--<com.toptoche.searchablespinnerlibrary.SearchableSpinner-->
+                    <!--android:id="@+id/spinner_code"-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="50dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:drawSelectorOnTop="true"-->
+                    <!--android:entries="@array/codes"-->
+                    <!--android:imeOptions="actionNext"-->
+                    <!--android:textSize="14sp" />-->
+                <com.hbb20.CountryCodePicker
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/countrycoode">
+
+                </com.hbb20.CountryCodePicker>
+                <EditText
+                    android:id="@+id/phone_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@android:color/transparent"
+                    android:digits="0123456789"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#EEEEEE">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginEnd="8dp"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--android:text="Required"-->
+                <!--android:textSize="12sp" />-->
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/phone"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:id="@+id/phone_edittext10"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@android:color/transparent"
+                    android:digits="0123456789"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="36dp"-->
+            <!--android:background="#EEEEEE">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginLeft="17dp"-->
+            <!--android:layout_marginStart="17dp"-->
+            <!--android:text="Requester"-->
+            <!--android:textSize="16sp"-->
+            <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:text="Required"-->
+            <!--android:textSize="12sp" />-->
+            <!--</RelativeLayout>-->
+
+            <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:focusable="true"-->
+            <!--android:focusableInTouchMode="true"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<android.support.v7.widget.SearchView-->
+            <!--android:id="@+id/requester_searchview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginLeft="2dp"-->
+            <!--android:layout_marginRight="2dp"-->
+            <!--android:layout_toLeftOf="@+id/addrequester_button"-->
+            <!--android:layout_toStartOf="@+id/addrequester_button"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:imeOptions="actionNext"-->
+            <!--android:textCursorDrawable="@drawable/color_cursor"-->
+            <!--app:iconifiedByDefault="false"-->
+            <!--app:queryHint="Search requester"-->
+            <!--app:searchIcon="@null"-->
+            <!--app:showDividers="none" />-->
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/addrequester_button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginEnd="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--android:background="@drawable/ic_action_add_circle_outline" />-->
+            <!--</RelativeLayout>-->
+
+            <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="36dp"-->
+            <!--android:background="#EEEEEE">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginLeft="17dp"-->
+            <!--android:layout_marginStart="17dp"-->
+            <!--android:text="Cc"-->
+            <!--android:textSize="16sp"-->
+            <!--android:textStyle="bold" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:focusable="true"-->
+            <!--android:focusableInTouchMode="true">-->
+
+            <!--<android.support.v7.widget.SearchView-->
+            <!--android:id="@+id/cc_searchview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginEnd="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:imeOptions="actionNext"-->
+            <!--android:inputType="text"-->
+            <!--android:textCursorDrawable="@drawable/color_cursor"-->
+            <!--android:textSize="16sp"-->
+            <!--app:iconifiedByDefault="false"-->
+            <!--app:searchIcon="@null" />-->
+            <!--</LinearLayout>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#EEEEEE"
+                android:id="@+id/relativeSubject">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginStart="17dp"
+                    android:text="@string/subject"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/required"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:id="@+id/sub_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@android:color/transparent"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#EEEEEE"
+                android:id="@+id/relativepriority">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginStart="17dp"
+                    android:text="@string/priority"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/required"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/spinner_pri"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:entries="@array/spinnerAssignTo"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="36dp"-->
+            <!--android:background="#EEEEEE">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginLeft="17dp"-->
+            <!--android:layout_marginStart="17dp"-->
+            <!--android:text="@string/deparment"-->
+            <!--android:textSize="16sp"-->
+            <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:text="@string/required"-->
+            <!--android:textSize="12sp" />-->
+            <!--</RelativeLayout>-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<Spinner-->
+            <!--android:id="@+id/spinner_dept"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginStart="16dp"-->
+            <!--android:entries="@array/spinnerAssignTo"-->
+            <!--android:textSize="14sp" />-->
+            <!--</LinearLayout>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#EEEEEE"
+                android:id="@+id/relativehelp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginStart="17dp"
+                    android:text="@string/helptopic"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/required"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/spinner_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:entries="@array/spinnerAssignTo"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#EEEEEE"
+                android:id="@+id/relativesla">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginStart="17dp"
+                    android:text="@string/sla_plans"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/required"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/spinner_sla_plans"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:entries="@array/spinnerAssignTo"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="36dp"-->
+                <!--android:background="#EEEEEE">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentStart="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginLeft="17dp"-->
+                    <!--android:layout_marginStart="17dp"-->
+                    <!--android:text="@string/assignedto"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:textStyle="bold" />-->
+                <!--/>-->
+            <!--</RelativeLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<Spinner-->
+                    <!--android:id="@+id/assignedto"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="50dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:entries="@array/spinnerAssignTo"-->
+                    <!--android:nextFocusForward="@+id/msg_edittext"-->
+                    <!--android:textSize="14sp" />-->
+            <!--</LinearLayout>-->
+
+            <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="36dp"-->
+            <!--android:background="#EEEEEE">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginLeft="17dp"-->
+            <!--android:layout_marginStart="17dp"-->
+            <!--android:text="@string/sla_plans"-->
+            <!--android:textSize="16sp"-->
+            <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:text="@string/required"-->
+            <!--android:textSize="12sp" />-->
+            <!--</RelativeLayout>-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<Spinner-->
+            <!--android:id="@+id/spinner_assign_to"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginStart="16dp"-->
+            <!--android:entries="@array/spinnerAssignTo"-->
+            <!--android:textSize="14sp" />-->
+
+            <!--</LinearLayout>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#EEEEEE"
+                android:id="@+id/relativemessage">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginStart="17dp"
+                    android:text="@string/message"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/required"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:id="@+id/msgLinearLayout"
+                >
+
+                <EditText
+                    android:id="@+id/msg_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:gravity="top"
+                    android:imeOptions="actionDone"
+                    android:inputType="textMultiLine"
+                    android:isScrollContainer="true"
+                    android:maxLines="14"
+                    android:minLines="8"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/attachment_layout"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/attachment_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/attach_fileimgview"
+                    android:layout_toLeftOf="@+id/attachment_close"
+                    android:layout_toStartOf="@+id/attachment_close"
+                    android:background="@color/grey_200"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/img_name"
+                    android:textAlignment="center"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/attach_fileimgview"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_txt" />
+
+                <TextView
+                    android:id="@+id/attachment_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/attachment_name"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="@string/_300_kb"
+                    android:textSize="12sp" />
+
+                <ImageButton
+                    android:id="@+id/attachment_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/attach_fileimgview"
+                    android:layout_marginRight="2dp"
+                    android:background="@color/grey_200"
+                    android:src="@drawable/ic_clear_black_18dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</FrameLayout>

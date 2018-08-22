@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_gallery"
+        android:icon="@drawable/ic_action_photo"
+        android:orderInCategory="1"
+        android:title="@string/gallery"
+        app:showAsAction="ifRoom" />
+    <!--<item-->
+        <!--android:id="@+id/action_docx"-->
+        <!--android:icon="@drawable/ic_action_insert_drive_file"-->
+        <!--android:orderInCategory="99"-->
+        <!--android:title="Doc files"-->
+        <!--app:showAsAction="ifRoom" />-->
+</menu>

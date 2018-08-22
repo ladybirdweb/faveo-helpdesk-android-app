@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:alpha="0.8"
-            android:text="Faveo HELPDESK"
+            android:text="@string/faveo_helpdesk"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:alpha="0.5"
-            android:text="Version: 2.0"
+            android:text="@string/version_2_0"
             android:textColor="@color/black" />
 
         <TextView
@@ -44,7 +44,7 @@
             android:fontFamily="sans-serif-light"
             android:gravity="center"
             android:lineSpacingExtra="5dp"
-            android:text="Headquartered in Bangalore, Faveo HELPDESK provides Businesses with an automated Helpdesk system to manage customer support.\n\nThe word Faveo comes from Latin which means to be favourable. Which truly highlights vision and the scope as well as the functionality of the product that Faveo is. It is specifically designed to cater the needs of startups and SME’s empowering them with state of art, ticket based support system. In today’s competitive startup scenario customer retention is one of the major challenges. Handling client query diligently is all the difference between retaining or losing a long lasting relationship. The company is driven with passion of providing tools for managing consumer queries for strategic insights and helping companies take those decisive decisions."
+            android:text="@string/faveo_content"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -53,8 +53,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="18dp"
-            android:background="@color/theme"
-            android:text="Website"
+            android:background="@drawable/button_background"
+            android:text="@string/website"
             android:textColor="@color/white" />
 
         <TextView
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp"
             android:alpha="0.5"
-            android:text="www.faveohelpdesk.com"
+            android:text="@string/faveo_url"
             android:textColor="@color/black" />
 
     </LinearLayout>

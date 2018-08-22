@@ -1,25 +1,32 @@
 package co.helpdesk.faveo.frontend.activities;
 
-import android.content.SharedPreferences;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.crashlytics.android.Crashlytics;
 
-import co.helpdesk.faveo.FaveoApplication;
-import co.helpdesk.faveo.Preference;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.ArrayList;
+
+import butterknife.ButterKnife;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.frontend.drawers.FragmentDrawer;
 import co.helpdesk.faveo.frontend.fragments.About;
@@ -32,6 +39,7 @@ import co.helpdesk.faveo.frontend.fragments.tickets.MyTickets;
 import co.helpdesk.faveo.frontend.fragments.tickets.TrashTickets;
 import co.helpdesk.faveo.frontend.fragments.tickets.UnassignedTickets;
 import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
+import co.helpdesk.faveo.model.MessageEvent;
 import io.fabric.sdk.android.Fabric;
 
 
@@ -44,28 +52,40 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         About.OnFragmentInteractionListener,
         ClientList.OnFragmentInteractionListener,
         CreateTicket.OnFragmentInteractionListener,
-        Settings.OnFragmentInteractionListener,
-        InternetReceiver.InternetReceiverListener {
+        Settings.OnFragmentInteractionListener {
+
+    // The BroadcastReceiver that tracks network connectivity changes.
+    private InternetReceiver receiver = new InternetReceiver();
 
     protected boolean doubleBackToExitPressedOnce = false;
+    public static boolean isShowing = false;
+    private ArrayList<String> mList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO: Move this to where you establish a user session
-        logUser();
-
+        isShowing = true;
         setContentView(R.layout.activity_main);
+        overridePendingTransition(R.anim.slide_in_from_right,R.anim.slide_in_from_right);
+        Window window = MainActivity.this.getWindow();
 
-        String nextPageURL = getIntent().getStringExtra("nextPageURL");
-        Bundle bundle = new Bundle();
-        bundle.putString("nextPageURL", nextPageURL);
+        // clear FLAG_TRANSLUCENT_STATUS flag:
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+// finally change the color
+        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.faveo));
+        ButterKnife.bind(this);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
+
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
         FragmentDrawer drawerFragment = (FragmentDrawer)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
@@ -73,31 +93,26 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         drawerFragment.setDrawerListener(this);
 
         InboxTickets inboxTickets = new InboxTickets();
-        inboxTickets.setArguments(bundle);
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container_body, inboxTickets);
         fragmentTransaction.commit();
-        setActionBarTitle(getResources().getString(R.string.inbox_tickets));
-
-        SharedPreferences.Editor editor = getApplicationContext().getSharedPreferences("FAVEO", MODE_PRIVATE).edit();
-        editor.putBoolean("LOGIN_COMPLETE", true);
-        editor.apply();
+        setActionBarTitle(getResources().getString(R.string.inbox));
 
     }
 
-    private void logUser() {
-        // TODO: Use the current user's information
-        // You can call any combination of these three methods
-        if (Preference.getUserID() != null) {
-            Crashlytics.setUserIdentifier(Preference.getUserID());
-            Log.d("user id", Preference.getUserID());
-        }
-//        Crashlytics.setUserEmail("user@fabric.io");
-//        Crashlytics.setUserName("Test User");
+    @Override
+    protected void onDestroy() {
+        isShowing = false;
+        super.onDestroy();
+
     }
 
-
+    /**
+     * This will handle the drawer item.
+     * @param view
+     * @param position
+     */
     @Override
     public void onDrawerItemSelected(View view, int position) {
     }
@@ -107,33 +122,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         TextView mTitle = (TextView) toolbarTop.findViewById(R.id.title);
         mTitle.setText(title.toUpperCase());
 
-        View mCreateTicket = toolbarTop.findViewById(R.id.button_create_ticket);
-
-        switch (title) {
-            case "Inbox":
-            case "My tickets":
-            case "Unassigned tickets":
-            case "Closed tickets":
-            case "Trash":
-                mCreateTicket.setVisibility(View.VISIBLE);
-                break;
-            default:
-                mCreateTicket.setVisibility(View.GONE);
-                break;
-        }
-        mCreateTicket.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Fragment fragment = getSupportFragmentManager().findFragmentByTag(getString(R.string.create_ticket));
-                // if (fragment == null)
-                Fragment fragment = new CreateTicket();
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.container_body, fragment);
-                //fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
     }
 
     @Override
@@ -142,10 +130,40 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+
+        return true;
+    }
+
+    /**
+     * Handle action bar item clicks here. The action bar will
+     * automatically handle clicks on the Home/Up button, so long
+     * as you specify a parent activity in AndroidManifest.xml.
+     * @param item items refer to the menu items.
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * While resuming it will check if the internet
+     * is available or not.
+     */
+    @Override
     protected void onResume() {
         super.onResume();
         // register connection status listener
-        FaveoApplication.getInstance().setInternetListener(this);
+        //FaveoApplication.getInstance().setInternetListener(this);
         checkConnection();
     }
 
@@ -154,10 +172,15 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         showSnackIfNoInternet(isConnected);
     }
 
+    /**
+     * Display the snackbar if network connection is not there.
+     *
+     * @param isConnected is a boolean value of network connection.
+     */
     private void showSnackIfNoInternet(boolean isConnected) {
         if (!isConnected) {
             final Snackbar snackbar = Snackbar
-                    .make(findViewById(android.R.id.content), "Sorry! Not connected to internet", Snackbar.LENGTH_INDEFINITE);
+                    .make(findViewById(android.R.id.content), R.string.sry_not_connected_to_internet, Snackbar.LENGTH_INDEFINITE);
 
             View sbView = snackbar.getView();
             TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
@@ -173,12 +196,16 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     }
 
+    /**
+     * Display the snackbar if network connection is there.
+     *
+     * @param isConnected is a boolean value of network connection.
+     */
     private void showSnack(boolean isConnected) {
 
         if (isConnected) {
-
             Snackbar snackbar = Snackbar
-                    .make(findViewById(android.R.id.content), "Connected to Internet", Snackbar.LENGTH_LONG);
+                    .make(findViewById(android.R.id.content), R.string.connected_to_internet, Snackbar.LENGTH_LONG);
 
             View sbView = snackbar.getView();
             TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
@@ -191,46 +218,66 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     }
 
     /**
-     * Callback will be triggered when there is change in
-     * network connection
+     * Handling the back button here.
+     * As if we clicking twice then it will
+     * ask press one more time to exit,we are handling
+     * the double back button pressing here.
      */
     @Override
-    public void onNetworkConnectionChanged(boolean isConnected) {
-        showSnack(isConnected);
+    public void onBackPressed() {
+        android.support.v7.app.AlertDialog.Builder alertDialog = new android.support.v7.app.AlertDialog.Builder(MainActivity.this);
+
+        // Setting Dialog Title
+        alertDialog.setTitle(R.string.logOut);
+
+        // Setting Dialog Message
+        alertDialog.setMessage(R.string.logoutConfirm);
+
+        // Setting Icon to Dialog
+        alertDialog.setIcon(R.mipmap.ic_launcher);
+
+        // Setting Positive "Yes" Button
+        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // Write your code here to invoke YES event
+                //Toast.makeText(getApplicationContext(), "You clicked on YES", Toast.LENGTH_SHORT).show();
+                finishAffinity();
+                System.exit(0);
+
+            }
+        });
+
+        // Setting Negative "NO" Button
+        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // Write your code here to invoke NO event
+                //Toast.makeText(getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
+                dialog.cancel();
+            }
+        });
+
+        // Showing Alert Message
+        alertDialog.show();
+
+    }
+
+    // This method will be called when a MessageEvent is posted (in the UI thread for Toast)
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(MessageEvent event) {
+        //Toast.makeText(this, event.message, Toast.LENGTH_SHORT).show();
+//        Snackbar.make(findViewById(android.R.id.content), event.message, Snackbar.LENGTH_LONG).show();
+        showSnack(event.message);
     }
 
     @Override
-    public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-        Snackbar.make(findViewById(android.R.id.content), "Press again to EXIT!", Snackbar.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 2500);
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        Fragment fragment = this.getSupportFragmentManager().findFragmentByTag(getString(R.string.inbox_tickets));
-//        if (fragment == null) {
-//            fragment = new InboxTickets();
-//        }
-//        FragmentManager fragmentManager = this.getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.container_body, fragment);
-//        // fragmentTransaction.addToBackStack(null);
-//        fragmentTransaction.commit();
-//        this.setActionBarTitle(getString(R.string.inbox_tickets));
-//
-//       // super.onBackPressed();
-//    }
+    @Override
+    public void onStop() {
+        EventBus.getDefault().unregister(this);
+        super.onStop();
+    }
 }

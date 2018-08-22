@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sort_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:alpha=".6"
+    android:background="@color/faveo"
+    android:clickable="true"
+    android:visibility="visible">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="18dp"
+        android:text="@string/sort"
+        android:textAllCaps="false"
+        android:textColor="@color/shade_white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/sorting_type_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/arrow_imgView"
+        android:layout_toStartOf="@+id/arrow_imgView"
+        android:text="@string/sorting_type"
+        android:textColor="@color/shade_white"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/arrow_imgView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+</RelativeLayout>

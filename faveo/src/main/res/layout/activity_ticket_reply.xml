@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorAccent"
+            >
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppThemeOverlay.ActionBar">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbarForReply"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:popupTheme="@style/AppThemeOverlay.ActionBar">
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Create Ticket"-->
+                    <!--android:textColor="@color/faveo"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:layout_marginLeft="20dp"/>-->
+
+                    <!--<Button-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:text="submit"-->
+                    <!--android:background="@color/faveo"-->
+                    <!--android:id="@+id/buttonSubmit"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textColor="#ffffff"/>-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize">
+
+                        <ImageView
+                            android:id="@+id/imageViewBackTicketReply"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/ic_arrow_back_black_24dp" />
+
+                        <TextView
+                            android:id="@+id/titlesave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignTop="@+id/imageViewBackTicketReply"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_toEndOf="@+id/imageViewBackTicketReply"
+                            android:layout_toRightOf="@+id/imageViewBackTicketReply"
+                            android:text="@string/ticketReply"
+                            android:textAllCaps="true"
+                            android:textColor="@color/theme"
+                            android:textSize="19sp"
+                            android:textStyle="bold" />
+
+
+                        <Button
+                            android:id="@+id/button_send"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="14dp"
+                            android:background="@drawable/ic_done_white_24dp"
+                            android:backgroundTint="@color/faveo"
+                            android:textColor="@color/white" />
+
+
+
+                    </RelativeLayout>
+                </android.support.v7.widget.Toolbar>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/faveo">
+
+                </View>
+                <!--<android.support.design.widget.BottomNavigationView-->
+                <!--android:id="@+id/navigation"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="bottom"-->
+                <!--android:background="?android:attr/windowBackground"-->
+                <!--app:itemBackground="@color/white"-->
+                <!--android:foreground="?attr/selectableItemBackground"-->
+                <!--app:itemIconTint="@color/faveo"-->
+                <!--android:visibility="gone"-->
+                <!--app:itemTextColor="@color/faveo"-->
+                <!--app:menu="@menu/navigation" />-->
+
+            </android.support.design.widget.AppBarLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/faveo">
+
+            </View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#EEEEEE">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginStart="17dp"
+                    android:text="@string/subject"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/section_reply"
+                android:layout_width="match_parent"
+                android:layout_height="590dp"
+                android:padding="7dp"
+                android:orientation="vertical">
+                <EditText
+                    android:id="@+id/editText_reply_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@drawable/rectanglenew"
+                    android:imeOptions="actionDone"
+                    android:gravity="top"
+                    android:overScrollMode="always"
+                    android:inputType="textMultiLine"
+                    android:isScrollContainer="true"
+                    android:cursorVisible="true"
+                    android:nestedScrollingEnabled="true"
+                    android:padding="9dp"
+                    android:paddingLeft="5dp"
+                    android:hint="@string/leaveYourMessage"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="16dp"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+
+
+            <!--<FrameLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--&gt;-->
+
+            <!--&lt;!&ndash;<io.codetail.widget.RevealFrameLayout&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:visibility="visible"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_gravity="bottom">&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<include layout="@layout/media_attach_menu" />&ndash;&gt;-->
+
+            <!--&lt;!&ndash;</io.codetail.widget.RevealFrameLayout>&ndash;&gt;-->
+            <!--</FrameLayout>-->
+
+
+        </LinearLayout>
+
+
+    </ScrollView>

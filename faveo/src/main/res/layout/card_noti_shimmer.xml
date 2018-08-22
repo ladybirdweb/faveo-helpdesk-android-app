@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/notification_cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardCornerRadius="3dp"
+    card_view:cardElevation="2dp"
+    card_view:contentPadding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+
+        <View
+            android:id="@+id/noti_subject"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/dthumbnail"
+            android:layout_toRightOf="@+id/dthumbnail"
+            android:background="@color/demo_light_transparent" />
+
+        <View
+            android:id="@+id/dthumbnail"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circle_shimmer" />
+
+
+        <View
+            android:id="@+id/noti_time"
+            android:layout_width="120dp"
+            android:layout_height="10dp"
+            android:layout_below="@+id/noti_subject"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/dthumbnail"
+            android:layout_toRightOf="@+id/dthumbnail"
+            android:background="@color/demo_light_transparent" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
+
+
+

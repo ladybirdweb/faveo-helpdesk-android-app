@@ -7,45 +7,55 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name="co.helpdesk.faveo.FaveoApplication"
+        android:name=".FaveoApplication"
         android:allowBackup="true"
-        tools:replace="android:icon"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/MyMaterialTheme">
+        android:theme="@style/MyMaterialTheme"
+        tools:replace="android:icon">
         <activity
-            android:name="co.helpdesk.faveo.frontend.activities.LoginActivity"
+            android:name=".frontend.activities.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="co.helpdesk.faveo.frontend.activities.ClientDetailActivity"
+            android:name=".frontend.activities.ClientDetailActivity"
             android:label="@string/title_activity_client_profile"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+        <!-- <activity -->
+        <!-- android:name="co.helpdesk.faveo.frontend.activities.ForgotPasswordActivity" -->
+        <!-- android:label="@string/title_activity_forgot_password" -->
+        <!-- android:screenOrientation="portrait"></activity> -->
         <activity
-            android:name="co.helpdesk.faveo.frontend.activities.ForgotPasswordActivity"
-            android:label="@string/title_activity_forgot_password"
-            android:screenOrientation="portrait"></activity>
+            android:name=".frontend.activities.CreateTicketActivity"
+            android:label="@string/title_activity_create_ticket"
+            android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name="co.helpdesk.faveo.frontend.activities.SplashActivity"
+            android:name=".frontend.activities.SplashActivity"
             android:label="@string/title_activity_splash"
             android:noHistory="true"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="co.helpdesk.faveo.frontend.activities.TicketDetailActivity"
+            android:name=".frontend.activities.TicketDetailActivity"
             android:label="@string/title_activity_ticket_detail"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="co.helpdesk.faveo.frontend.activities.MainActivity"
+            android:name=".frontend.activities.MainActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_main"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".frontend.receivers.InternetReceiver"
@@ -54,9 +64,17 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="3d31c3fca25cb228d17bfa05856d933d97e90db1" />
+
+        <!--<meta-data-->
+            <!--android:name="io.fabric.ApiKey"-->
+            <!--android:value="3d31c3fca25cb228d17bfa05856d933d97e90db1" />-->
+
+        <activity android:name=".frontend.activities.TicketSaveActivity"
+            android:label="@string/title_activity_save"
+            android:theme="@style/MyMaterialTheme"
+            ></activity>
+        <activity android:name=".frontend.activities.TicketReplyActivity" />
+        <activity android:name=".frontend.activities.InternalNoteActivity"></activity>
     </application>
 
 </manifest>

@@ -1,59 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
 
-        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/thread"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:clickable="true"
             android:focusable="true">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:animateLayoutChanges="true"
-                android:padding="18dp">
+                android:paddingBottom="2dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="2dp">
 
-                <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                <ImageView
                     android:id="@+id/imageView_default_profile"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/default_pic"
-                    app:riv_corner_radius="30dip"
-                    app:riv_mutate_background="true"
-                    app:riv_oval="true"
-                    app:riv_tile_mode="repeat" />
+                    android:background="@drawable/rounded_textview" />
 
                 <TextView
                     android:id="@+id/textView_client_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="18dp"
-                    android:layout_toLeftOf="@+id/textView_ticket_time"
-                    android:layout_toRightOf="@+id/imageView_default_profile"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="66dp"
+                    android:layout_marginTop="21dp"
                     android:alpha="0.54"
                     android:ellipsize="end"
                     android:fontFamily="sans-serif-bold"
-                    android:text="Karthik Sen"
-                    android:textAllCaps="true"
+                    android:maxLines="1"
+                    android:text="@string/dummy_name"
+                    android:textAllCaps="false"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/showingSome"
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"
+                    android:layout_alignStart="@+id/textView_client_name"
+                    android:layout_below="@+id/textView_client_name"
+                    android:alpha=".7"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif"
+                    android:maxLines="2"
+                    android:text="Hello i saw a vintage table lamp last night on your site"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/reported"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView_client_name"
+                    android:layout_centerVertical="true"
+                    android:text="updated "
+                    android:fontFamily="sans-thin"
+                    android:alpha=".86"
+                    android:textSize="12sp"
+                    android:visibility="gone"/>
+
+                <com.github.curioustechizen.ago.RelativeTimeTextView
+                    android:id="@+id/textView_ticket_related"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/reported"
+                    android:alpha=".86"
+                    android:fontFamily="sans-thin"
+                    android:text="@string/dummy_date"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
 
                 <com.github.curioustechizen.ago.RelativeTimeTextView
                     android:id="@+id/textView_ticket_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginTop="12dp"
                     android:alpha=".86"
                     android:fontFamily="sans-serif-medium"
-                    android:text="6th Dec 2016"
+                    android:text="@string/dummy_date"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
@@ -61,30 +112,37 @@
                     android:id="@+id/textView_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@+id/textView_ticket_time"
-                    android:text="INTERNAL NOTE"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/internal_note"
                     android:textColor="@color/error_red"
                     android:textSize="12sp" />
 
 
             </RelativeLayout>
-        </android.support.v7.widget.CardView>
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/textView_client_message_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:alpha=".67"
-            android:fontFamily="sans-serif-medium"
-            android:text="Dummy title"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:visibility="gone" />
+        <LinearLayout
+            android:id="@+id/linearWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+        <!--<TextView-->
+            <!--android:id="@+id/textView_client_message_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="4dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:alpha=".67"-->
+            <!--android:fontFamily="sans-serif-medium"-->
+            <!--android:text="@string/dummy_title"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="12sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:visibility="visible" />-->
 
         <WebView
             android:id="@+id/webView"
@@ -93,14 +151,18 @@
             android:layout_marginLeft="8dp"
             android:background="@color/grey_200"
             android:textSize="16sp"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="@color/grey_200" />
+        </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_200" />
     </LinearLayout>
-
 
 </LinearLayout>

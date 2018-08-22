@@ -6,24 +6,23 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="24dp"
-    tools:context="co.helpdesk.faveo.frontend.activities.SplashActivity">
+    tools:context=".frontend.activities.SplashActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:alpha="0.5"
-        android:text="Welcome!"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="12dp"-->
+    <!--android:alpha="0.5"-->
+    <!--android:text="@string/welcome"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="20sp"-->
+    <!--android:textStyle="bold" />-->
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="9"
         android:padding="40dp"
-        android:scaleType="center"
         android:src="@drawable/community" />
 
     <ProgressBar
@@ -36,17 +35,46 @@
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:indeterminateOnly="true" />
-
     <TextView
         android:id="@+id/loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:alpha="0.5"
-        android:text="LOADING..."
+        android:text="@string/loading"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
+        <Button
+            android:id="@+id/tryagain"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rectanglereachout"
+            android:text="clear cache"
+            android:drawablePadding="-1sp"
+            android:drawableLeft="@drawable/ic_refresh_black_24dp"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:drawableTint="@color/white"/>
 
-
+        <Button
+            android:id="@+id/clear_cache"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rectanglereachout"
+            android:text="clear cache"
+            android:drawablePadding="-1sp"
+            android:drawableLeft="@drawable/clearcache"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:drawableTint="@color/white"/>
+    </RelativeLayout>
 </LinearLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="co.helpdesk.faveo.frontend.activities.CreateTicketActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppThemeOverlay.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarCreateTicket"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppThemeOverlay.ActionBar">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <Button
+                    android:id="@+id/buttonSubmit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:textSize="12sp"
+                    android:textColor="#ffffff"
+                    android:gravity="center"
+                    android:backgroundTint="@color/faveo"
+                    android:background="@drawable/ic_done_white_24dp"
+                    android:layout_alignBottom="@+id/titlesave"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_alignTop="@+id/titlesave" />
+
+                <Button
+                    android:id="@+id/refresh"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="52dp"
+                    android:background="@drawable/ic_refresh_black_24dp"
+                    android:backgroundTint="@color/faveo" />
+
+                <ImageView
+                    android:id="@+id/imageViewBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_arrow_back_black_24dp" />
+
+                <TextView
+                    android:id="@+id/titlesave"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/create_ticket"
+                    android:textAllCaps="true"
+                    android:textColor="@color/theme"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_alignTop="@+id/imageViewBack"
+                    android:layout_toRightOf="@+id/imageViewBack"
+                    android:layout_toEndOf="@+id/imageViewBack" />
+
+            </RelativeLayout>
+
+
+            <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="200dp"-->
+                <!--android:text="submit"-->
+                <!--android:id="@+id/buttonSubmit"/>-->
+        </android.support.v7.widget.Toolbar>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/faveo"
+            />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_create_ticket" />
+
+    <!--<Button-->
+        <!--android:id="@+id/buttonsubmit"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:background="@color/faveo"-->
+        <!--android:text="Submit"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textStyle="bold" />-->
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+    <!--android:id="@+id/fab"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:layout_margin="@dimen/fab_margin"-->
+    <!--app:srcCompat="@drawable/ic_done_white_24dp" />-->
+
+</android.support.design.widget.CoordinatorLayout>
