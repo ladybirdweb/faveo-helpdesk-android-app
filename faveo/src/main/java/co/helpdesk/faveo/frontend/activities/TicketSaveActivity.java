@@ -229,6 +229,7 @@ public class TicketSaveActivity extends AppCompatActivity {
                 final Data sla= (Data) spinnerSLAPlans.getSelectedItem();
                 final Data statusId= (Data) spinnerStatus.getSelectedItem();
                 status= String.valueOf(statusId.ID);
+                Log.d("helptopicId", String.valueOf(helpTopic.ID));
 //                spinnerHelpTopics.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //                    @Override
 //                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -299,8 +300,6 @@ public class TicketSaveActivity extends AppCompatActivity {
                                     } catch (UnsupportedEncodingException e) {
                                         e.printStackTrace();
                                     }
-//                            progressDialog.setMessage(getString(R.string.refreshing));
-//                            progressDialog.show();
 
 
                                 }
@@ -424,6 +423,7 @@ public class TicketSaveActivity extends AppCompatActivity {
 
                 try {
                     if (jsonObject1.getString("helptopic_name") != null) {
+                        Log.d("helptopic_id",jsonObject1.getString("helptopic_id"));
                         //spinnerHelpTopics.setSelection(Integer.parseInt(jsonObject1.getString("priority_id")));
                         spinnerHelpTopics.setSelection(getIndex(spinnerHelpTopics, jsonObject1.getString("helptopic_name")));
                     }
@@ -509,8 +509,8 @@ public class TicketSaveActivity extends AppCompatActivity {
         protected String doInBackground(String... urls) {
             if (subject.equals("Not available"))
                 subject = "";
-            return new Helpdesk().postEditTicket(ticketNumber, subject,
-                    helpTopic,sla, ticketSource, ticketPriority, Integer.parseInt(status));
+            return new Helpdesk().postEditTicket(ticketNumber, subject,sla,
+                    helpTopic, ticketSource, ticketPriority, Integer.parseInt(status));
         }
 
         protected void onPostExecute(String result) {

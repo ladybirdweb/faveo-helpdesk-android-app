@@ -18,8 +18,8 @@ android {
         applicationId "co.helpdesk.faveo"
         minSdkVersion 21
         targetSdkVersion 25
-        versionCode 20
-        versionName "1.8.2"
+        versionCode 21
+        versionName "1.8.3"
         multiDexEnabled true
     }
     dexOptions {
