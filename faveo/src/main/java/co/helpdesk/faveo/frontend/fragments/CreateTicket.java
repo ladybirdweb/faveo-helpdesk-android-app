@@ -224,7 +224,7 @@ public class CreateTicket extends Fragment {
         }
 
         protected String doInBackground(String... urls) {
-            return new Helpdesk().postCreateTicket(userID, subject, body, helpTopic,SLA, priority, fname, lname, phone, email, code,"");
+            return new Helpdesk().postCreateTicket(userID, subject, body, helpTopic,SLA, priority, fname, lname, phone, email, code);
         }
 
         protected void onPostExecute(String result) {

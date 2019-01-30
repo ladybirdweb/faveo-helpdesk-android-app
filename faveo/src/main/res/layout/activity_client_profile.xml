@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".frontend.activities.ClientDetailActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -10,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="4dp"
-        android:background="@color/faveo"
+        android:background="#154c66"
         android:theme="@style/AppThemeOverlay.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
@@ -24,14 +25,14 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/faveo"
+                android:background="#154c66"
                 android:orientation="vertical">
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="@color/faveo"
+                    android:background="#154c66"
                     app:layout_collapseMode="pin"
                     app:layout_scrollFlags="scroll|enterAlways"
                     >
@@ -59,9 +60,11 @@
                             android:layout_gravity="left"
                             android:layout_marginStart="65dp"
                             android:gravity="center"
+                            android:fontFamily="monospace"
                             android:text="@string/profile"
                             android:textColor="@color/white"
                             android:textSize="18sp"
+                            android:visibility="gone"
                             android:textStyle="bold" />
                     </RelativeLayout>
                 </android.support.v7.widget.Toolbar>
@@ -74,8 +77,8 @@
 
                     <ImageView
                         android:id="@+id/imageView_default_profile"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
                         android:layout_centerHorizontal="true"
                         android:transitionName="@string/blue_name"
                         android:backgroundTint="@color/white"
@@ -90,9 +93,9 @@
                         android:layout_below="@+id/imageView_default_profile"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:fontFamily="sans-serif-bold"
+                        android:fontFamily="monospace"
                         android:maxLines="1"
-                        android:text=""
+                        android:text="Demo Admin"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         app:use_gradient="true"/>
@@ -104,15 +107,17 @@
                         android:layout_below="@+id/textView_client_name"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="6dp"
-                        android:drawableLeft="@drawable/email"
+                        android:drawableLeft="@drawable/mail"
                         android:drawableTint="@color/white"
                         android:drawablePadding="8dp"
-                        android:fontFamily="sans-serif-medium"
+                        android:fontFamily="monospace"
                         android:maxLines="1"
-                        android:text=""
+                        android:visibility="visible"
+                        android:text="@string/dummy_mail_id"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         app:use_gradient="true"/>
+                    // android:alpha=".54"
                     <com.elyeproj.loaderviewlibrary.LoaderTextView
                         android:id="@+id/textView_client_phone"
                         android:layout_width="wrap_content"
@@ -122,14 +127,37 @@
                         android:layout_marginTop="6dp"
                         android:drawableLeft="@drawable/landphone"
                         android:drawablePadding="8dp"
-                        android:fontFamily="sans-serif-medium"
+                        android:fontFamily="monospace"
                         android:maxLines="1"
                         android:drawableTint="@color/white"
                         android:text="@string/dummy_num"
                         android:textColor="@color/white"
                         android:textSize="16sp"
+                        android:visibility="gone"
                         app:use_gradient="true"
                         />
+                    <com.elyeproj.loaderviewlibrary.LoaderTextView
+                        android:id="@+id/textView_client_mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_client_phone"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="6dp"
+                        android:drawableLeft="@drawable/mobile"
+                        android:drawableTint="@color/white"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="monospace"
+                        android:maxLines="1"
+                        android:text="@string/dummy_num"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        app:use_gradient="true"
+                        />
+
+
+
+
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -166,12 +194,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabGravity="fill"
-            app:tabTextColor="#808080"
-            app:tabMode=    "fixed"
-            android:background="@color/faveo"
-            app:tabIndicatorColor="@color/grey_500"
-            app:tabIndicatorHeight="4dp"
-            app:tabSelectedTextColor="@color/white"/>
+            app:tabTextColor="@color/grey_500"
+            app:tabMode="fixed"
+            android:background="@color/appBarColor"
+            app:tabIndicatorColor="@color/faveo"
+            app:tabIndicatorHeight="2dp"
+            app:tabSelectedTextColor="@color/colorAccent"/>
         <!--app:tabIndicatorColor="@color/faveo"-->
 
     </android.support.design.widget.AppBarLayout>

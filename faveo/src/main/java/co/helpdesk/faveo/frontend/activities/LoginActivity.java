@@ -119,6 +119,7 @@ public class LoginActivity extends AppCompatActivity {
     LinearLayout linearLayout;
     String urlGivenByUser;
      int count;
+    private TextView findHelp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
 // finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(LoginActivity.this,R.color.faveo));
+        window.setStatusBarColor(ContextCompat.getColor(LoginActivity.this,R.color.windowColor));
 
         try {
             if (!Prefs.getString("BASE_URL", null).equals("") || !Prefs.getString("BASE_URL", null).equals(null)) {
@@ -168,7 +169,14 @@ public class LoginActivity extends AppCompatActivity {
         urlSuggestions=new ArrayList<>();
         usernameEdittext.addTextChangedListener(mTextWatcher);
         passwordEdittext.addTextChangedListener(mTextWatcher);
-
+        findHelp= (TextView) findViewById(R.id.helpUrl);
+        findHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(LoginActivity.this,HelpingActivity.class);
+                startActivity(intent);
+            }
+        });
         //View init
         setUpViews();
         animation= AnimationUtils.loadAnimation(LoginActivity.this,R.anim.shake_error);
@@ -490,7 +498,7 @@ public class LoginActivity extends AppCompatActivity {
                     urlError.setTextColor(Color.parseColor("#ff0000"));
                     urlError.postDelayed(new Runnable() {
                         public void run() {
-                            urlError.setVisibility(View.INVISIBLE);
+                            urlError.setVisibility(View.GONE);
                         }
                     }, 5000);
 

@@ -36,7 +36,7 @@ public class Helpdesk {
     }
 
     public String postCreateTicket(int userID, String subject, String body, int helpTopic,int sla,
-                                   int priority, String fname, String lname, String phone, String email, String code, String mobile) {
+                                   int priority, String fname, String phone, String email, String code, String mobile) {
         Log.d("postCreateTicketAPI", Constants.URL + "helpdesk/create?" +
                 "api_key=" + apiKey +
                 "&ip=" + IP +
@@ -48,7 +48,6 @@ public class Helpdesk {
                 "&priority=" + priority +
                 //"&dept=" + dept +
                 "&first_name=" + fname +
-                "&last_name=" + lname +
                 "&phone=" + phone +
                 "&code=" + code +
                 "&mobile=" + mobile +
@@ -66,7 +65,6 @@ public class Helpdesk {
                 "&priority=" + priority +
                 // "&dept=" + dept +
                 "&first_name=" + fname +
-                "&last_name=" + lname +
                 "&phone=" + phone +
                 "&mobile=" + mobile +
                 "&code=" + code +
@@ -85,7 +83,6 @@ public class Helpdesk {
                     "&priority=" + priority +
                     //  "&dept=" + dept +
                     "&first_name=" + fname +
-                    "&last_name=" + lname +
                     "&phone=" + phone +
                     "&mobile=" + mobile +
                     "&code=" + code +

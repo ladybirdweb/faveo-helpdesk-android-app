@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
     android:id="@+id/ticket"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="90dp"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
-    android:background="@color/colorAccent"
-    android:paddingTop="8dp">
+    android:layout_height="150dp"
+    android:elevation="3dp"
+    android:layout_margin="7dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    card_view:cardCornerRadius="6dp"
+    card_view:cardElevation="5dp"
+    card_view:contentPadding="1dp"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        >
 
         <TextView
             android:id="@+id/textView_ticket_id"
@@ -36,125 +46,257 @@
 
         <TextView
             android:id="@+id/textView_ticket_number"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/imageView_default_profile"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="75dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="62dp"
             android:alpha=".54"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/hintedlainesansregular"
             android:maxLines="1"
             android:text="@string/aaaa_0001_0000001"
             android:textColor="@color/black"
-            android:textSize="10sp" />
+            android:textSize="12sp" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/textViewagentName"-->
+        <!--android:layout_width="76dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/textView_ticket_number"-->
+        <!--android:layout_marginTop="7dp"-->
+        <!--android:layout_marginEnd="-74dp"-->
+        <!--android:layout_toStartOf="@+id/agentassigned"-->
+        <!--android:fontFamily="sans-serif-bold"-->
+        <!--android:maxLines="1"-->
+        <!--android:paddingLeft="3dp"-->
+        <!--android:text="Support"-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="15sp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:alpha=".68"/>-->
 
         <TextView
             android:id="@+id/textView_ticket_subject"
-            android:layout_width="250dp"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
             android:layout_alignStart="@+id/textView_ticket_number"
-            android:layout_below="@+id/textView_ticket_number"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="33dp"
             android:ellipsize="end"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/hintedlainesansregular"
             android:maxLines="1"
-            android:text="@string/dummy_sub"
+            android:alpha=".7"
+            android:text="Using full width cards"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
+
 
         <TextView
             android:id="@+id/textView_client_name"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/textView_ticket_number"
-            android:layout_marginBottom="11dp"
+            android:layout_alignTop="@+id/textView_ticket_number"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-58dp"
             android:alpha=".68"
             android:ellipsize="end"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/hintedlainesansregular"
             android:maxLines="1"
-            android:text="@string/dummy_name"
+            android:text="Matthias Robbers"
             android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textSize="15sp" />
 
-        <!--<com.makeramen.roundedimageview.RoundedImageView-->
+        <ImageButton
+            android:id="@+id/selectedTicket"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/circle"
+            android:visibility="gone"
+            android:src="@drawable/ic_done_white_24dp"/>
 
 
-        <!--app:riv_corner_radius="30dp"-->
-        <!--app:riv_mutate_background="true"-->
-        <!--app:riv_oval="true"-->
-        <!--app:riv_tile_mode="repeat" />-->
+        <!--<ImageView-->
+        <!--android:id="@+id/user"-->
+        <!--android:layout_width="16dp"-->
+        <!--android:layout_height="16dp"-->
+        <!--android:layout_alignTop="@+id/textView_client_name"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginStart="113dp"-->
+        <!--android:layout_marginTop="0dp"-->
+        <!--android:visibility="visible"-->
+        <!--app:srcCompat="@drawable/userpic"-->
+        <!--tools:ignore="ContentDescription" />-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp">
+
+            <RelativeLayout
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="-2dp"
+                android:alpha=".7"
+                android:background="@drawable/rectangle3"
+                android:backgroundTint="@color/grey_200">
+
+                <ImageView
+                    android:id="@+id/priority_view"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_alignBottom="@+id/priority_viewText"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/icons8newmoon24" />
+
+                <TextView
+                    android:id="@+id/priority_viewText"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="3dp"
+                    android:paddingLeft="2dp"
+                    android:backgroundTint="@color/grey_200"
+                    android:fontFamily="@font/hintedlainesansregular"
+                    android:gravity="left"
+                    android:text="Low"
+                    android:layout_marginBottom="2dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="235dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/icons8newmoon24"
+                android:tint="@color/grey_500" />
+
+            <TextView
+                android:id="@+id/textViewDepartmentName"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="125dp"
+                android:layout_marginTop="0dp"
+                android:alpha=".7"
+                android:background="@drawable/rectangle3"
+                android:backgroundTint="@color/grey_200"
+                android:fontFamily="@font/hintedlainesansregular"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Support"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="96dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/icons8newmoon24"
+                android:tint="@color/grey_500" />
+
+            <RelativeLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/textViewagentName"
+                android:layout_marginLeft="262dp"
+                android:layout_marginTop="-2dp"
+                android:alpha=".7"
+                android:background="@drawable/rectangle3"
+                android:backgroundTint="@color/grey_200">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_alignBottom="@+id/agentassigned"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/ic_person_outline_black_24dp" />
+
+
+                <TextView
+                    android:id="@+id/agentassigned"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rectangle3"
+                    android:backgroundTint="@color/grey_200"
+                    android:fontFamily="@font/hintedlainesansregular"
+                    android:singleLine="true"
+                    android:gravity="left"
+                    android:text="Unassigned"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
 
         <ImageView
             android:id="@+id/imageView_default_profile"
-            android:layout_width="46dp"
-            android:layout_height="46dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/textView_ticket_time"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="-69dp"
             android:layout_toEndOf="@+id/textView_ticket_id"
             android:layout_toRightOf="@+id/textView_ticket_id"
+            android:backgroundTint="@color/faveo"
             android:src="@drawable/default_pic"
-            android:background="@drawable/rounded_textview"/>
+            android:transitionName="@string/blue_name"
+            android:visibility="visible" />
 
-        <!--<TextView-->
-            <!--android:id="@+id/agentassigned"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignStart="@+id/textView_client_name"-->
-            <!--android:layout_below="@+id/imageView_default_profile"-->
-            <!--android:fontFamily="sans-serif-smallcaps"-->
-            <!--android:text="Sayar@ladybirdweb.com"-->
-            <!--android:maxLines="1"-->
-            <!--android:alpha=".88"-->
-            <!--android:textStyle="bold"-->
-            <!--android:layout_marginTop="5dp"-->
-            <!--android:textSize="14sp" />-->
-
-        <View
-            android:id="@+id/priority_view"
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginBottom="1dp"
-            android:layout_marginTop="1dp"
-            android:background="@color/background_dim_overlay" />
 
         <com.github.curioustechizen.ago.RelativeTimeTextView
             android:id="@+id/textView_ticket_time"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@id/textView_ticket_number"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="6dp"
-            android:layout_marginTop="8dp"
-            android:layout_toLeftOf="@+id/priority_view"
-            android:layout_toStartOf="@+id/priority_view"
-            android:alpha=".54"
-            android:fontFamily="sans-serif-medium"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="84dp"
+            android:alpha=".50"
+            android:fontFamily="@font/hintedlainesansregular"
             android:maxLines="1"
             android:text="@string/dummy_date"
             android:textColor="@color/black"
             android:textSize="12sp" />
-
 
         <TextView
             android:id="@+id/overdue_view"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/textView_client_name"
-            android:layout_toStartOf="@+id/priority_view"
-            android:alpha=".6"
+            android:layout_alignParentEnd="true"
+            android:alpha=".8"
             android:background="@drawable/rectangle"
             android:backgroundTint="#ff6666"
             android:gravity="center"
+            android:paddingBottom="2dp"
             android:text="@string/overdue"
             android:textColor="@color/white"
             android:textSize="12sp"
             android:textStyle="bold"
-            android:layout_marginRight="7dp"
             android:visibility="gone" />
 
         <TextView
@@ -162,35 +304,61 @@
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/textView_client_name"
-            android:layout_toStartOf="@+id/priority_view"
-            android:alpha=".6"
+            android:layout_alignParentEnd="true"
+            android:alpha=".8"
             android:background="@drawable/rectangle"
             android:backgroundTint="#ff9933"
             android:gravity="center"
-            android:layout_marginRight="7dp"
+            android:paddingBottom="2dp"
             android:text="@string/due_today"
             android:textColor="@color/white"
             android:textSize="12sp"
             android:textStyle="bold"
             android:visibility="gone" />
 
-        <!--<ImageView-->
-            <!--android:id="@+id/attachment_icon"-->
-            <!--android:layout_width="20dp"-->
-            <!--android:layout_height="20dp"-->
-            <!--android:layout_alignParentEnd="true"-->
-            <!--android:layout_alignTop="@+id/textView_ticket_number"-->
-            <!--android:layout_marginEnd="110dp"-->
-            <!--android:background="@drawable/ic_attach_file_black_24dp"-->
-            <!--android:visibility="visible" />-->
+        <TextView
+            android:id="@+id/countthread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView_ticket_subject"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="23dp"
+            android:layout_toEndOf="@+id/textView_ticket_number"
+            android:text="(2)"
+            android:textColor="#606060"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/source"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignStart="@+id/textView_ticket_number"
+            android:layout_alignTop="@+id/textView_client_name"
+            android:src="@drawable/mail"
+            android:visibility="visible" />
+
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_ticket_id"
+            android:layout_toEndOf="@+id/textView_ticket_id"
+            android:visibility="gone" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/textView_ticket_id"
-            android:layout_toRightOf="@+id/textView_ticket_id"
-            android:background="@color/grey_200" />
+            android:layout_below="@+id/textView_ticket_subject"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="48dp"
+            android:alpha=".2"
+            android:background="@color/grey_500" />
+
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>

@@ -39,8 +39,8 @@ public class InternalNoteActivity extends AppCompatActivity {
         Window window = InternalNoteActivity.this.getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(InternalNoteActivity.this,R.color.faveo));
-        toolbar= (Toolbar) findViewById(R.id.toolbarForInternalNote);
+        window.setStatusBarColor(ContextCompat.getColor(InternalNoteActivity.this,R.color.windowColor));
+        toolbar= (Toolbar) findViewById(R.id.toolbar);
         imageView= (ImageView) toolbar.findViewById(R.id.imageViewBackTicketInternalNote);
         editTextInternalNote = (EditText) findViewById(R.id.editText_internal_note);
         buttonCreate = (Button) findViewById(R.id.button_create);

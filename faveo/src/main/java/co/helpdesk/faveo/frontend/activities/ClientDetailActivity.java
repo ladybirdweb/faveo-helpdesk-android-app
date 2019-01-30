@@ -42,17 +42,14 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import agency.tango.android.avatarview.IImageLoader;
-import agency.tango.android.avatarview.loader.PicassoLoader;
-import agency.tango.android.avatarview.views.AvatarView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import co.helpdesk.faveo.CircleTransform;
 import co.helpdesk.faveo.Constants;
 import co.helpdesk.faveo.R;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
-import co.helpdesk.faveo.frontend.fragments.client.ClosedTickets;
-import co.helpdesk.faveo.frontend.fragments.client.OpenTickets;
+import co.helpdesk.faveo.frontend.fragments.client.Profile;
+import co.helpdesk.faveo.frontend.fragments.client.Tickets;
 import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
 import co.helpdesk.faveo.model.MessageEvent;
 import co.helpdesk.faveo.model.TicketGlimpse;
@@ -60,8 +57,8 @@ import es.dmoral.toasty.Toasty;
 
 
 public class ClientDetailActivity extends AppCompatActivity implements
-        OpenTickets.OnFragmentInteractionListener,
-        ClosedTickets.OnFragmentInteractionListener {
+        Tickets.OnFragmentInteractionListener,
+        Profile.OnFragmentInteractionListener {
 
     AsyncTask<String, Void, String> task;
 
@@ -90,12 +87,11 @@ public class ClientDetailActivity extends AppCompatActivity implements
             ImageView imageViewBack;
 
     ViewPagerAdapter adapter;
-    OpenTickets fragmentOpenTickets;
-    ClosedTickets fragmentClosedTickets;
+    Tickets fragmentOpenTickets;
+    Profile fragmentClosedTickets;
     String clientID, clientName;
     List<TicketGlimpse> listTicketGlimpse;
     ProgressDialog progressDialog;
-
     @Override
     public void onPause() {
         if (task != null && task.getStatus() == AsyncTask.Status.RUNNING) {
@@ -118,7 +114,7 @@ public class ClientDetailActivity extends AppCompatActivity implements
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
 // finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(ClientDetailActivity.this,R.color.faveo));
+        window.setStatusBarColor(ContextCompat.getColor(ClientDetailActivity.this,R.color.windowColor));
         ButterKnife.bind(this);
         Constants.URL = Prefs.getString("COMPANY_URL", "");
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -139,7 +135,6 @@ public class ClientDetailActivity extends AppCompatActivity implements
         setUpViews();
         Intent intent = getIntent();
         clientID = intent.getStringExtra("CLIENT_ID");
-
         if (InternetReceiver.isConnected()) {
             progressDialog.show();
             task = new FetchClientTickets(ClientDetailActivity.this);
@@ -273,16 +268,11 @@ public class ClientDetailActivity extends AppCompatActivity implements
                     boolean isOpen = true;
                     String ticketNumber = jsonArray.getJSONObject(i).getString("ticket_number");
                     String ticketSubject = jsonArray.getJSONObject(i).getString("title");
+                    String ticketStatus=jsonArray.getJSONObject(i).getString("ticket_status_name");
                     try {
-                        isOpen = jsonArray.getJSONObject(i).getString("ticket_status_name").equals("Open");
-                        if (isOpen)
-                            listOpenTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, true));
-                        else
-                            listClosedTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, false));
+                        listOpenTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, ticketStatus));
                     } catch (Exception e) {
-                        listOpenTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, true));
                     }
-                    listTicketGlimpse.add(new TicketGlimpse(ticketID, ticketNumber, ticketSubject, isOpen));
                 }
             } catch (JSONException e) {
                 Toasty.error(ClientDetailActivity.this, getString(R.string.unexpected_error), Toast.LENGTH_LONG).show();
@@ -290,7 +280,6 @@ public class ClientDetailActivity extends AppCompatActivity implements
             }
 
             fragmentOpenTickets.populateData(listOpenTicketGlimpse, clientName);
-            fragmentClosedTickets.populateData(listClosedTicketGlimpse, clientName);
         }
     }
 
@@ -300,13 +289,18 @@ public class ClientDetailActivity extends AppCompatActivity implements
      */
     private void setupViewPager() {
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        fragmentOpenTickets = new OpenTickets();
-        fragmentClosedTickets = new ClosedTickets();
-        adapter.addFragment(fragmentOpenTickets, getString(R.string.open_ticket));
-        adapter.addFragment(fragmentClosedTickets, getString(R.string.closed_ticket));
+        fragmentOpenTickets = new Tickets();
+        fragmentClosedTickets = new Profile();
+        Bundle myBundle = new Bundle();
+        myBundle .putString("userId", clientID);
+        fragmentClosedTickets.setArguments( myBundle  );
+        adapter.addFragment(fragmentOpenTickets, getString(R.string.tickets));
+        adapter.addFragment(fragmentClosedTickets, getString(R.string.profile));
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(onPageChangeListener);
     }
+
+
 
     TabLayout.OnTabSelectedListener onTabSelectedListener = new TabLayout.OnTabSelectedListener() {
         @Override
@@ -357,6 +351,8 @@ public class ClientDetailActivity extends AppCompatActivity implements
 
         @Override
         public Fragment getItem(int position) {
+
+
             return mFragmentList.get(position);
         }
 
@@ -468,6 +464,7 @@ public class ClientDetailActivity extends AppCompatActivity implements
         EventBus.getDefault().unregister(this);
         super.onStop();
     }
+
 
 //    /**
 //     * Callback will be triggered when there is change in

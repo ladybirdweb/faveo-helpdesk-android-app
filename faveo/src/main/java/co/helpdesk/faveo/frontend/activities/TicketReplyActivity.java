@@ -48,10 +48,10 @@ public class TicketReplyActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
 // finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(TicketReplyActivity.this,R.color.faveo));
+        window.setStatusBarColor(ContextCompat.getColor(TicketReplyActivity.this,R.color.windowColor));
         progressDialog = new ProgressDialog(this);
         buttonSave= (Button) findViewById(R.id.button_send);
-        toolbar= (Toolbar) findViewById(R.id.toolbarForReply);
+        toolbar= (Toolbar) findViewById(R.id.toolbar);
         imageViewBack= (ImageView) toolbar.findViewById(R.id.imageViewBackTicketReply);
         editTextSubject= (EditText) findViewById(R.id.editText_reply_message);
         ticketID=Prefs.getString("TICKETid",null);

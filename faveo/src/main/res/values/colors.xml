@@ -49,4 +49,7 @@
     <color name="emergency">#D32F2F</color>
     <color name="grey_500">#9E9E9E</color>
     <color name="faveo_200">#B2EBF2</color>
+
+    <color name="appBarColor">#154c66</color>
+    <color name="windowColor">#081d27</color>
 </resources>

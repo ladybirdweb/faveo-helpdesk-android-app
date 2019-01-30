@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,6 +6,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="24dp"
+    android:backgroundTint="@color/faveo"
     tools:context=".frontend.activities.SplashActivity">
 
     <!--<TextView-->
@@ -19,49 +20,91 @@
     <!--android:textStyle="bold" />-->
 
     <ImageView
+        android:id="@+id/faveoImage"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="9"
-        android:padding="40dp"
-        android:src="@drawable/community" />
+        android:layout_height="500dp"
+        android:layout_above="@+id/faveotag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="-15dp"
+        android:src="@drawable/faveonewlogo" />
+
+    <TextView
+        android:id="@+id/faveotag"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="206dp"
+        android:fontFamily="mo"
+        android:gravity="center"
+        android:shadowColor="@color/colorAccent"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="1"
+        android:text="Simplifying Customer Support"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp" />
 
     <ProgressBar
         android:id="@+id/progressBar1"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
+        android:indeterminateTint="@android:color/white"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="109dp"
         android:indeterminateOnly="true" />
+
     <TextView
         android:id="@+id/loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar1"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:alpha="0.5"
+        android:layout_marginTop="-109dp"
         android:text="@string/loading"
-        android:textColor="@color/black"
+        android:fontFamily="@font/hintedlainesansregular"
+        android:textColor="@color/colorAccent"
         android:textSize="14sp"
         android:textStyle="bold" />
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5">
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp">
+
+        <TextView
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tryagain"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="60dp"
+            android:alpha="0.5"
+            android:background="@drawable/ic_refresh_black_24dp"
+            android:visibility="gone" />
+
         <Button
             android:id="@+id/tryagain"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/rectanglereachout"
-            android:text="clear cache"
-            android:drawablePadding="-1sp"
-            android:drawableLeft="@drawable/ic_refresh_black_24dp"
-            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:alpha="0.5"
+            android:text="@string/retry"
+            android:fontFamily="@font/hintedlainesansregular"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:visibility="gone"
-            android:drawableTint="@color/white"/>
+            />
 
         <Button
             android:id="@+id/clear_cache"
@@ -70,11 +113,10 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:background="@drawable/rectanglereachout"
-            android:text="clear cache"
-            android:drawablePadding="-1sp"
             android:drawableLeft="@drawable/clearcache"
+            android:drawablePadding="-1sp"
+            android:text="clear cache"
             android:textColor="@color/white"
-            android:visibility="gone"
-            android:drawableTint="@color/white"/>
+            android:visibility="gone" />
     </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>

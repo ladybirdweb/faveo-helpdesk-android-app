@@ -17,15 +17,15 @@
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:elevation="4dp"
             android:theme="@style/AppThemeOverlay.ActionBar">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
+                android:layout_height="60dp"
+                android:background="@color/appBarColor"
                 android:minHeight="?attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:popupTheme="@style/AppThemeOverlay.ActionBar">
@@ -35,7 +35,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="@string/inbox"
-                    android:textColor="@color/theme"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/hintedlainesansregular"
+                    android:textColor="@color/colorAccent"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 

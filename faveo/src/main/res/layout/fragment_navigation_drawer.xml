@@ -1,175 +1,187 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorAccent"
-    android:orientation="vertical"
-    tools:context=".frontend.activities.MainActivity">
-
-    <!--<ImageView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="160dp"-->
-    <!--android:layout_marginTop="12dp"-->
-    <!--android:padding="12dp"-->
-    <!--android:src="@drawable/pro" />-->
-
-    <RelativeLayout
+    android:layout_height="match_parent">
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/faveo">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView_default_profile"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="54dp"
-            android:transitionName="@string/blue_name"
-            android:backgroundTint="@color/white"
-            android:background="@drawable/rounded_textview"
-             />
-
-        <TextView
-            android:id="@+id/usernametv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/imageView_default_profile"
-            android:layout_alignStart="@+id/imageView_default_profile"
-            android:layout_below="@+id/imageView_default_profile"
-            android:layout_marginTop="8dp"
-            android:text="sdfghdfh"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/domaintv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/usernametv"
-            android:layout_alignStart="@+id/usernametv"
-            android:layout_below="@+id/usernametv"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="4dp"
-            android:text="www.lady"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/roleTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/imageView_default_profile"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:textAllCaps="true"
-            android:text="Agent"
-            android:textSize="12sp"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/grey_200" />
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:overScrollMode="always"
-        android:scrollbars="none">
-
-        <LinearLayout
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:backgroundTint="#154c66"
+            android:orientation="vertical"
+            tools:context=".frontend.activities.MainActivity">
 
-            <LinearLayout
-                android:id="@+id/create_ticket"
+            <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="160dp"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:padding="12dp"-->
+            <!--android:src="@drawable/pro" />-->
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:background="@color/colorAccent">
+                android:layout_height="180dp"
+                android:background="#154c66">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="22dp"
-                    android:src="@drawable/create_ticket" />
+                    android:id="@+id/imageView_default_profile"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="44dp"
+                    android:background="@drawable/rounded_textview"
+                    android:backgroundTint="@color/white" />
 
                 <TextView
+                    android:id="@+id/usernametv"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="sans-serif-bold"
-                    android:gravity="center"
-                    android:text="@string/create_ticket"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey_200" />
-
-            <LinearLayout
-                android:id="@+id/ticket_list"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:background="@color/colorAccent">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="22dp"
-                    android:src="@drawable/ticket_list" />
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/imageView_default_profile"
+                    android:layout_alignStart="@+id/imageView_default_profile"
+                    android:layout_below="@+id/imageView_default_profile"
+                    android:layout_marginTop="8dp"
+                    android:text="Roger Federer"
+                    android:fontFamily="@font/hintedlainesansregular"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"/>
 
                 <TextView
+                    android:id="@+id/domaintv"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="sans-serif-bold"
-                    android:gravity="center"
-                    android:text="@string/ticket_list"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/usernametv"
+                    android:layout_alignStart="@+id/usernametv"
+                    android:layout_below="@+id/usernametv"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/hintedlainesansregular"
+                    android:layout_marginTop="4dp"
+                    android:singleLine="true"
+                    android:text="www.support.faveohelpdesk.com"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"/>
 
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey_200" />
+                <TextView
+                    android:id="@+id/roleTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/imageView_default_profile"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/hintedlainesansregular"
+                    android:textAllCaps="true"
+                    android:text="Agent"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+            </RelativeLayout>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-            <ListView
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="@color/grey_200" />-->
+
+            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/listviewNavigation"
-                android:nestedScrollingEnabled="true"
-                >
+                android:fillViewport="true"
+                android:overScrollMode="always"
+                android:scrollbars="none">
 
-            </ListView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/create_ticket"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        >
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_margin="22dp"
+                            android:src="@drawable/create_ticket"
+                            android:tint="@color/grey_500"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/hintedlainesansregular"
+                            android:gravity="center"
+                            android:text="@string/create_ticket"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey_200" />
+
+                    <LinearLayout
+                        android:id="@+id/ticket_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@color/colorAccent">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_margin="22dp"
+                            android:src="@drawable/ticket_list"
+                            android:tint="@color/grey_500"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/hintedlainesansregular"
+                            android:gravity="center"
+                            android:text="@string/ticket_list"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/grey_200" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ListView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/listviewNavigation"
+                            android:nestedScrollingEnabled="true"
+                            android:visibility="gone"
+                            >
+
+                        </ListView>
 
 
-</LinearLayout>
-            <!--<RelativeLayout-->
-                <!--android:id="@+id/inbox_tickets"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="64dp"-->
-                <!--android:background="@color/colorAccent">-->
+                    </LinearLayout>
+                    <!--<RelativeLayout-->
+                    <!--android:id="@+id/inbox_tickets"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="64dp"-->
+                    <!--android:background="@color/colorAccent">-->
 
-                <!--<ImageView-->
+                    <!--<ImageView-->
                     <!--android:id="@+id/imageView2"-->
                     <!--android:layout_width="20dp"-->
                     <!--android:layout_height="20dp"-->
@@ -180,7 +192,7 @@
                     <!--android:maxLines="2"-->
                     <!--android:src="@drawable/inbox_tickets" />-->
 
-                <!--<TextView-->
+                    <!--<TextView-->
                     <!--android:id="@+id/inbox_count"-->
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="wrap_content"-->
@@ -199,7 +211,7 @@
                     <!--android:textSize="14sp"-->
                     <!--tools:ignore="HardcodedText" />-->
 
-                <!--<TextView-->
+                    <!--<TextView-->
                     <!--android:id="@+id/inboxtv"-->
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="match_parent"-->
@@ -214,15 +226,15 @@
                     <!--android:textColor="@color/black"-->
                     <!--android:textSize="16sp" />-->
 
-            <!--</RelativeLayout>-->
+                    <!--</RelativeLayout>-->
 
-            <!--<RelativeLayout-->
-                <!--android:id="@+id/my_tickets"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="64dp"-->
-                <!--android:background="@color/colorAccent">-->
+                    <!--<RelativeLayout-->
+                    <!--android:id="@+id/my_tickets"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="64dp"-->
+                    <!--android:background="@color/colorAccent">-->
 
-                <!--<ImageView-->
+                    <!--<ImageView-->
                     <!--android:id="@+id/imageView3"-->
                     <!--android:layout_width="20dp"-->
                     <!--android:layout_height="20dp"-->
@@ -232,7 +244,7 @@
                     <!--android:layout_marginTop="22dp"-->
                     <!--android:src="@drawable/my_ticket" />-->
 
-                <!--<TextView-->
+                    <!--<TextView-->
                     <!--android:id="@+id/my_tickets_count"-->
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="wrap_content"-->
@@ -251,7 +263,7 @@
                     <!--android:textSize="14sp"-->
                     <!--tools:ignore="HardcodedText" />-->
 
-                <!--<TextView-->
+                    <!--<TextView-->
                     <!--android:id="@+id/my_ticketstv"-->
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="match_parent"-->
@@ -265,15 +277,15 @@
                     <!--android:text="@string/my_tickets"-->
                     <!--android:textColor="@color/black"-->
                     <!--android:textSize="16sp" />-->
-            <!--</RelativeLayout>-->
+                    <!--</RelativeLayout>-->
 
-            <!--<RelativeLayout-->
-                <!--android:id="@+id/unassigned_tickets"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="64dp"-->
-                <!--android:background="@color/colorAccent">-->
+                    <!--<RelativeLayout-->
+                    <!--android:id="@+id/unassigned_tickets"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="64dp"-->
+                    <!--android:background="@color/colorAccent">-->
 
-                <!--<ImageView-->
+                    <!--<ImageView-->
                     <!--android:id="@+id/imageView4"-->
                     <!--android:layout_width="20dp"-->
                     <!--android:layout_height="20dp"-->
@@ -285,7 +297,7 @@
                     <!--android:layout_marginTop="22dp"-->
                     <!--android:src="@drawable/unassigned_ticket" />-->
 
-                <!--<TextView-->
+                    <!--<TextView-->
                     <!--android:id="@+id/unassigned_ticketstv"-->
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="match_parent"-->
@@ -300,7 +312,7 @@
                     <!--android:textColor="@color/black"-->
                     <!--android:textSize="16sp" />-->
 
-                <!--<TextView-->
+                    <!--<TextView-->
                     <!--android:id="@+id/unassigned_tickets_count"-->
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="wrap_content"-->
@@ -318,15 +330,15 @@
                     <!--android:textColor="@android:color/white"-->
                     <!--android:textSize="14sp"-->
                     <!--tools:ignore="HardcodedText" />-->
-            <!--</RelativeLayout>-->
+                    <!--</RelativeLayout>-->
 
-            <!--<RelativeLayout-->
-                <!--android:id="@+id/closed_tickets"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="64dp"-->
-                <!--android:background="@color/colorAccent">-->
+                    <!--<RelativeLayout-->
+                    <!--android:id="@+id/closed_tickets"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="64dp"-->
+                    <!--android:background="@color/colorAccent">-->
 
-                <!--<ImageView-->
+                    <!--<ImageView-->
                     <!--android:id="@+id/imageView5"-->
                     <!--android:layout_width="20dp"-->
                     <!--android:layout_height="20dp"-->
@@ -336,7 +348,7 @@
                     <!--android:layout_marginTop="22dp"-->
                     <!--android:src="@drawable/closed_ticket" />-->
 
-                <!--<TextView-->
+                    <!--<TextView-->
                     <!--android:id="@+id/closed_tickets_count"-->
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="wrap_content"-->
@@ -355,7 +367,7 @@
                     <!--android:textSize="14sp"-->
                     <!--tools:ignore="HardcodedText" />-->
 
-                <!--<TextView-->
+                    <!--<TextView-->
                     <!--android:id="@+id/closed_ticketstv"-->
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="match_parent"-->
@@ -369,15 +381,15 @@
                     <!--android:textColor="@color/black"-->
                     <!--android:textSize="16sp" />-->
 
-            <!--</RelativeLayout>-->
+                    <!--</RelativeLayout>-->
 
-            <!--<RelativeLayout-->
-                <!--android:id="@+id/trash_tickets"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="64dp"-->
-                <!--android:background="@color/colorAccent">-->
+                    <!--<RelativeLayout-->
+                    <!--android:id="@+id/trash_tickets"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="64dp"-->
+                    <!--android:background="@color/colorAccent">-->
 
-                <!--<TextView-->
+                    <!--<TextView-->
                     <!--android:id="@+id/trash_tickets_count"-->
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="wrap_content"-->
@@ -396,7 +408,7 @@
                     <!--android:textSize="14sp"-->
                     <!--tools:ignore="HardcodedText" />-->
 
-                <!--<ImageView-->
+                    <!--<ImageView-->
                     <!--android:id="@+id/imageView6"-->
                     <!--android:layout_width="20dp"-->
                     <!--android:layout_height="20dp"-->
@@ -406,7 +418,7 @@
                     <!--android:layout_marginTop="22dp"-->
                     <!--android:src="@drawable/trash_ticket" />-->
 
-                <!--<TextView-->
+                    <!--<TextView-->
                     <!--android:id="@+id/trashtv"-->
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="match_parent"-->
@@ -421,125 +433,148 @@
                     <!--android:textColor="@color/black"-->
                     <!--android:textSize="16sp" />-->
 
-            <!--</RelativeLayout>-->
+                    <!--</RelativeLayout>-->
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey_200" />
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/grey_200" />-->
 
-            <LinearLayout
-                android:id="@+id/client_list"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:background="@color/colorAccent">
+                    <LinearLayout
+                        android:id="@+id/client_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@color/colorAccent">
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="22dp"
-                    android:src="@drawable/client_list" />
+                        <ImageView
+                            android:id="@+id/clientImage"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_margin="22dp"
+                            android:src="@drawable/client_list"
+                            android:tint="@color/grey_500"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="sans-serif-bold"
-                    android:gravity="center"
-                    android:text="@string/client_list"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                        <TextView
+                            android:id="@+id/clientList"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/hintedlainesansregular"
+                            android:gravity="center"
+                            android:text="@string/client_list"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
 
-            </LinearLayout>
+                    </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey_200" />
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/grey_200" />-->
+                    <!--<LinearLayout-->
+                    <!--android:id="@+id/supportHelpSection"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="64dp"-->
+                    <!--android:background="@color/colorAccent">-->
 
-            <LinearLayout
-                android:id="@+id/settings"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:background="@color/colorAccent">
+                    <!--<ImageView-->
+                    <!--android:layout_width="20dp"-->
+                    <!--android:layout_height="20dp"-->
+                    <!--android:layout_margin="22dp"-->
+                    <!--android:src="@drawable/helpsection"-->
+                    <!--android:tint="@color/faveo"-->
+                    <!--android:id="@+id/imageView5" />-->
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="22dp"
-                    android:src="@drawable/settings" />
+                    <!--<TextView-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="sans-serif-bold"
-                    android:gravity="center"
-                    android:text="@string/settings"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_toEndOf="@+id/imageView5"-->
+                    <!--android:fontFamily="sans-serif-bold"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="@string/helpsection"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="14sp" />-->
 
-            </LinearLayout>
+                    <!--</LinearLayout>-->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey_200" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey_200" />
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/grey_200" />-->
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/grey_200" />-->
+                    <LinearLayout
+                        android:id="@+id/about"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@color/colorAccent">
 
-            <LinearLayout
-                android:id="@+id/about"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:background="@color/colorAccent">
+                        <ImageView
+                            android:id="@+id/aboutimage"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_margin="22dp"
+                            android:src="@drawable/about"
+                            android:tint="@color/grey_500"/>
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="22dp"
-                    android:src="@drawable/about" />
+                        <TextView
+                            android:id="@+id/abouttext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/hintedlainesansregular"
+                            android:gravity="center"
+                            android:text="@string/about"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="sans-serif-bold"
-                    android:gravity="center"
-                    android:text="@string/about"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    </LinearLayout>
 
-            </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey_200" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey_200" />
+                    <LinearLayout
+                        android:id="@+id/logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@color/colorAccent"
+                        >
 
-            <LinearLayout
-                android:id="@+id/logout"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:background="@color/colorAccent">
+                        <ImageView
+                            android:id="@+id/logoutimage"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_margin="22dp"
+                            android:src="@drawable/organisation_list"
+                            android:tint="@color/grey_500"
+                            />
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="22dp"
-                    android:src="@drawable/organisation_list" />
+                        <TextView
+                            android:id="@+id/logouttext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/hintedlainesansregular"
+                            android:gravity="center"
+                            android:text="@string/logout"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="sans-serif-bold"
-                    android:gravity="center"
-                    android:text="@string/logout"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    </LinearLayout>
 
-            </LinearLayout>
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="1dp"-->
-                <!--android:background="@color/grey_200" />-->
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/grey_200" />-->
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
-
+    </FrameLayout>
+</android.support.v4.widget.DrawerLayout>

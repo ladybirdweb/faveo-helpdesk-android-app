@@ -96,8 +96,6 @@ public class CreateTicketActivity extends AppCompatActivity {
     EditText editTextFirstName;
     @BindView(R.id.email_edittext)
     EditText editTextEmail;
-    @BindView(R.id.lname_edittext)
-    EditText editTextLastName;
     @BindView(R.id.phone_edittext)
     EditText editTextPhone;
 //    @BindView(R.id.spinner_code)
@@ -185,7 +183,7 @@ public class CreateTicketActivity extends AppCompatActivity {
         Window window = CreateTicketActivity.this.getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(CreateTicketActivity.this,R.color.faveo));
+        window.setStatusBarColor(ContextCompat.getColor(CreateTicketActivity.this,R.color.windowColor));
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
@@ -216,7 +214,7 @@ public class CreateTicketActivity extends AppCompatActivity {
         String json = Prefs.getString("DEPENDENCY", "");
         try {
             helptopicItems = new ArrayList<>();
-            helptopicItems.add(new Data(0, "Please select help topic"));
+            helptopicItems.add(new Data(0, "--"));
             jsonObject = new JSONObject(json);
             JSONArray jsonArrayHelpTopics = jsonObject.getJSONArray("helptopics");
             for (int i = 0; i < jsonArrayHelpTopics.length(); i++) {
@@ -226,14 +224,14 @@ public class CreateTicketActivity extends AppCompatActivity {
 
             JSONArray jsonArrayPriorities = jsonObject.getJSONArray("priorities");
             priorityItems = new ArrayList<>();
-            priorityItems.add(new Data(0, "Please select the priority"));
+            priorityItems.add(new Data(0, "--"));
             for (int i = 0; i < jsonArrayPriorities.length(); i++) {
                 Data data = new Data(Integer.parseInt(jsonArrayPriorities.getJSONObject(i).getString("priority_id")), jsonArrayPriorities.getJSONObject(i).getString("priority"));
                 priorityItems.add(data);
             }
             JSONArray jsonArraySLA=jsonObject.getJSONArray("sla");
             slaItems=new ArrayList<>();
-            slaItems.add(new Data(0,"Please select SLA"));
+            slaItems.add(new Data(0,"--"));
             for (int i = 0; i < jsonArraySLA.length(); i++) {
                 Data data = new Data(Integer.parseInt(jsonArraySLA.getJSONObject(i).getString("id")), jsonArraySLA.getJSONObject(i).getString("sla_duration"));
                 slaItems.add(data);
@@ -442,7 +440,7 @@ public class CreateTicketActivity extends AppCompatActivity {
         spinnerPriArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPriority.setAdapter(spinnerPriArrayAdapter);
 
-        editTextLastName.setFilters(new InputFilter[]{filter});
+        //editTextLastName.setFilters(new InputFilter[]{filter});
         editTextFirstName.setFilters(new InputFilter[]{filter});
         subEdittext.setFilters(new InputFilter[]{filter});
 
@@ -465,7 +463,7 @@ public class CreateTicketActivity extends AppCompatActivity {
         String message = msgEdittext.getText().toString();
         String email = editTextEmail.getText().toString();
         String fname = editTextFirstName.getText().toString();
-        String lname = editTextLastName.getText().toString();
+        //String lname = editTextLastName.getText().toString();
         String phone = editTextPhone.getText().toString();
         mobile = editTextMobile.getText().toString();
 
@@ -570,7 +568,6 @@ public class CreateTicketActivity extends AppCompatActivity {
 
                 try {
                     fname = URLEncoder.encode(fname.trim(), "utf-8");
-                    lname = URLEncoder.encode(lname.trim(), "utf-8");
                     subject = URLEncoder.encode(subject.trim(), "utf-8");
                     message = URLEncoder.encode(message.trim(), "utf-8");
                     email = URLEncoder.encode(email.trim(), "utf-8");
@@ -597,7 +594,6 @@ public class CreateTicketActivity extends AppCompatActivity {
                 final String finalMessage = message;
                 final String finalPhone = phone;
                 final String finalFname = fname;
-                final String finalLname = lname;
                 final String finalEmail = email;
                 alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -606,7 +602,7 @@ public class CreateTicketActivity extends AppCompatActivity {
                         if (InternetReceiver.isConnected()){
 
                             progressDialog.show();
-                            new CreateNewTicket(Integer.parseInt(Prefs.getString("ID", null)), finalSubject, finalMessage, helpTopic.ID,sla.ID, priority.ID, finalPhone, finalFname, finalLname, finalEmail, countrycode, mobile).execute();
+                            new CreateNewTicket(Integer.parseInt(Prefs.getString("ID", null)), finalSubject, finalMessage, helpTopic.ID,sla.ID, priority.ID, finalPhone, finalFname, finalEmail, countrycode, mobile).execute();
 //                            progressDialog=new ProgressDialog(CreateTicketActivity.this);
 //                            progressDialog.setMessage(getString(R.string.refreshing));
 //                            progressDialog.show();
@@ -647,7 +643,7 @@ public class CreateTicketActivity extends AppCompatActivity {
      * Async task for creating the ticket.
      */
     private class CreateNewTicket extends AsyncTask<String, Void, String> {
-        String fname, lname, email, code;
+        String fname, email, code;
         String subject;
         String body;
         String phone;
@@ -659,7 +655,7 @@ public class CreateTicketActivity extends AppCompatActivity {
         int userID;
 
         CreateNewTicket(int userID, String subject, String body,
-                        int helpTopic,int SLA, int priority, String phone, String fname, String lname, String email, String code, String mobile) {
+                        int helpTopic,int SLA, int priority, String phone, String fname, String email, String code, String mobile) {
 
             this.subject = subject;
             this.body = body;
@@ -669,7 +665,6 @@ public class CreateTicketActivity extends AppCompatActivity {
             //this.dept = dept;
             this.userID = userID;
             this.phone = phone;
-            this.lname = lname;
             this.fname = fname;
             this.email = email;
             this.code = code;
@@ -678,7 +673,7 @@ public class CreateTicketActivity extends AppCompatActivity {
         }
 
         protected String doInBackground(String... urls) {
-            return new Helpdesk().postCreateTicket(userID, subject, body, helpTopic,SLA, priority, fname, lname, phone, email, code, mobile);
+            return new Helpdesk().postCreateTicket(userID, subject, body, helpTopic,SLA, priority, fname, phone, email, code, mobile);
         }
 
         protected void onPostExecute(String result) {

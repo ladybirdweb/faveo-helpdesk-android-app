@@ -9,13 +9,20 @@ public class TicketGlimpse {
     public int ticketID;
     public String ticketNumber;
     public String ticketSubject;
-    public boolean isTicketOpen;
-
-    public TicketGlimpse(int ticketID, String ticketNumber, String ticketSubject, boolean isTicketOpen) {
+    public String ticketStatusName;
+    public TicketGlimpse(int ticketID, String ticketNumber, String ticketSubject,String ticketStatusName) {
         this.ticketID = ticketID;
         this.ticketNumber = ticketNumber;
         this.ticketSubject = ticketSubject;
-        this.isTicketOpen = isTicketOpen;
+        this.ticketStatusName=ticketStatusName;
+    }
+
+    public String getTicketStatusName() {
+        return ticketStatusName;
+    }
+
+    public void setTicketStatusName(String ticketStatusName) {
+        this.ticketStatusName = ticketStatusName;
     }
 
     public int getTicketID() {
@@ -40,14 +47,6 @@ public class TicketGlimpse {
 
     public void setTicketSubject(String ticketSubject) {
         this.ticketSubject = ticketSubject;
-    }
-
-    public boolean isTicketOpen() {
-        return isTicketOpen;
-    }
-
-    public void setIsTicketOpen(boolean isTicketOpen) {
-        this.isTicketOpen = isTicketOpen;
     }
 
 }

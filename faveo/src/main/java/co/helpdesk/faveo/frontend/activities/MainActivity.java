@@ -77,12 +77,11 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
 // finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.faveo));
+        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.windowColor));
         ButterKnife.bind(this);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 

@@ -37,7 +37,6 @@
     <string name="internal_note">Internal Notes</string>
     <string name="dummy_title" translatable="false">Dummy title</string>
     <string name="dummy_name" translatable="false">Client Name</string>
-    <string name="profile">Profile</string>
     <string name="dummy_mail_id" translatable="false">example@gmail.com</string>
     <string name="company" translatable="false">Company</string>
     <string name="status">Status</string>
@@ -131,7 +130,6 @@
     <string name="all_clients_loaded">All clients are loaded</string>
     <string name="enter_valid_email">Enter a valid Mail ID</string>
     <string name="updating_ticket">Updating ticket</string>
-    <string name="tickets">Tickets</string>
     <string name="customers">Customers</string>
     <string name="restart_app">To apply the changes in settings, you must restart the app!</string>
     <string name="restarting">Restarting…</string>
@@ -212,6 +210,13 @@
     <string name="roleChanged">your role has been changed,only agent and admin can use the app</string>
     <string name="userRestrict">sorry! user can not log in to the app</string>
     <string name="checkPasswordEmail">Please check your password and email</string>
+    <string name="need_help_with_your_servicedesk_url">Need help with your helpdesk URL?</string>
+    <string name="pleasewait">please wait</string>
+    <string name="wondering_what_will_be_your_helpdesk_url">Wondering what will be your helpdesk URL?</string>
+    <string name="this_is_the_url">This is the URL where your help desk is installed.You can reach out to your IT admin to know more.</string>
+    <string name="for_more_information_please_drop_a_mail_to_support_ladybirdweb_com">For more information please drop a mail to support@ladybirdweb.com</string>
+    <string name="tickets">Tickets</string>
+    <string name="profile">Profile</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

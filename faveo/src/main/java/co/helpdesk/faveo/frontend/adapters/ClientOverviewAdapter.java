@@ -51,7 +51,7 @@ public class ClientOverviewAdapter extends RecyclerView.Adapter<ClientOverviewAd
 //                return true;
 //            }
 //        });
-        clientViewHolder.textViewClientID.setText(clientOverview.clientID + "");
+        //clientViewHolder.textViewClientID.setText(clientOverview.clientID + "");
         clientViewHolder.textViewClientName.setText(clientOverview.clientName);
         clientViewHolder.textViewClientEmail.setText(clientOverview.clientEmail);
 //        if ((clientOverview.clientPhone.equals("") || clientOverview.clientPhone.equals("null"))
@@ -62,20 +62,20 @@ public class ClientOverviewAdapter extends RecyclerView.Adapter<ClientOverviewAd
 //            //clientViewHolder.textViewClientPhone.setText(clientOverview.clientMobile);
 //
 //        }
-        if ((!clientOverview.clientPhone.equals("") || !clientOverview.clientPhone.equals("null"))
-                &&(clientOverview.clientMobile.equals("Not available"))||clientOverview.clientMobile.equals("null")){
-            clientViewHolder.textViewClientPhone.setVisibility(View.VISIBLE);
-            clientViewHolder.textViewClientPhone.setText(clientOverview.clientPhone);
-        }
-        else if ((clientOverview.clientPhone.equals("") || clientOverview.clientPhone.equals("null"))
-                &&(!clientOverview.clientMobile.equals("Not available"))||!clientOverview.clientMobile.equals("null")){
-            clientViewHolder.textViewClientPhone.setVisibility(View.VISIBLE);
-            clientViewHolder.textViewClientPhone.setText(clientOverview.clientMobile);
-        }
-        else if ((clientOverview.clientPhone.equals("") || clientOverview.clientPhone.equals("null"))
-                &&(clientOverview.clientMobile.equals("Not available"))){
-            clientViewHolder.textViewClientPhone.setVisibility(View.GONE);
-        }
+//        if ((!clientOverview.clientPhone.equals("") || !clientOverview.clientPhone.equals("null"))
+//                &&(clientOverview.clientMobile.equals("Not available"))||clientOverview.clientMobile.equals("null")){
+//            clientViewHolder.textViewClientPhone.setVisibility(View.VISIBLE);
+//            clientViewHolder.textViewClientPhone.setText(clientOverview.clientPhone);
+//        }
+//        else if ((clientOverview.clientPhone.equals("") || clientOverview.clientPhone.equals("null"))
+//                &&(!clientOverview.clientMobile.equals("Not available"))||!clientOverview.clientMobile.equals("null")){
+//            clientViewHolder.textViewClientPhone.setVisibility(View.VISIBLE);
+//            clientViewHolder.textViewClientPhone.setText(clientOverview.clientMobile);
+//        }
+//        else if ((clientOverview.clientPhone.equals("") || clientOverview.clientPhone.equals("null"))
+//                &&(clientOverview.clientMobile.equals("Not available"))){
+//            clientViewHolder.textViewClientPhone.setVisibility(View.GONE);
+//        }
         if (clientOverview.clientPicture.equals("")){
             clientViewHolder.roundedImageViewProfilePic.setVisibility(View.GONE);
             }
@@ -136,20 +136,16 @@ public class ClientOverviewAdapter extends RecyclerView.Adapter<ClientOverviewAd
 
     static class ClientViewHolder extends RecyclerView.ViewHolder {
         protected View client;
-        TextView textViewClientID;
         ImageView roundedImageViewProfilePic;
         TextView textViewClientName;
         TextView textViewClientEmail;
-        TextView textViewClientPhone;
 
         ClientViewHolder(View v) {
             super(v);
             client = v.findViewById(R.id.client);
-            textViewClientID = (TextView) v.findViewById(R.id.textView_client_id);
             roundedImageViewProfilePic = (ImageView) v.findViewById(R.id.imageView_default_profile);
             textViewClientName = (TextView) v.findViewById(R.id.textView_client_name);
             textViewClientEmail = (TextView) v.findViewById(R.id.textView_client_email);
-            textViewClientPhone = (TextView) v.findViewById(R.id.textView_client_phone);
         }
 
     }

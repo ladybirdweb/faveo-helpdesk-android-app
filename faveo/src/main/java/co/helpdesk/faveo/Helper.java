@@ -49,6 +49,8 @@ public class Helper {
             String updatedAt = jsonArray.getJSONObject(i).getString("updated_at");
             String dueDate = jsonArray.getJSONObject(i).getString("overdue_date");
             String priorityColor = jsonArray.getJSONObject(i).getString("priority_color");
+            String priorityName=jsonArray.getJSONObject(i).getString("priotity_name");
+            String departmentName=jsonArray.getJSONObject(i).getString("department_name");
             String attachment = jsonArray.getJSONObject(i).getString("attachment");
             String clientname;
             if (firstName == null || firstName.equals(""))
@@ -56,7 +58,8 @@ public class Helper {
             else
                 clientname = firstName + " " + lastName;
             return new TicketOverview(Integer.parseInt(ID), profilePic,
-                    ticketNumber, clientname, title, updatedAt, priorityColor, ticketStatusName, i + "", attachment, dueDate, clientname);
+                    ticketNumber, clientname, title, updatedAt, priorityColor, ticketStatusName, i + "", attachment, dueDate,
+                    clientname,departmentName,priorityName);
         } catch (JSONException e) {
             e.printStackTrace();
         }

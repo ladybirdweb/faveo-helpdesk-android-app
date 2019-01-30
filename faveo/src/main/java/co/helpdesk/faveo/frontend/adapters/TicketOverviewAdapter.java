@@ -66,6 +66,18 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
 //            ticketViewHolder.attachementView.setVisibility(View.VISIBLE);
 //        }
 
+        if (!ticketOverview.priorityName.equals("")){
+            ticketViewHolder.textViewpriorityName.setText(ticketOverview.priorityName);
+        }
+        else{
+            ticketViewHolder.textViewpriorityName.setText(R.string.not_available);
+        }
+
+        if (!ticketOverview.departmentname.equals("")){
+            ticketViewHolder.textViewDepartment.setText(ticketOverview.getDepartmentname());
+        }
+
+
         if (ticketOverview.clientPicture.equals("")){
             ticketViewHolder.roundedImageViewProfilePic.setVisibility(View.GONE);
 
@@ -86,7 +98,6 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
             ColorGenerator generator = ColorGenerator.MATERIAL;
             TextDrawable drawable = TextDrawable.builder()
                     .buildRound(letter, generator.getRandomColor());
-            ticketViewHolder.roundedImageViewProfilePic.setAlpha(0.6f);
             ticketViewHolder.roundedImageViewProfilePic.setImageDrawable(drawable);
         }
         //if (ticketOverview.dueDate != null && !ticketOverview.dueDate.equals("null"))
@@ -167,7 +178,7 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
 //        shape.setCornerRadii(new float[]{10f,10f});
 //        ticketViewHolder.ticketPriority.setBackground(shape);
         if (ticketOverview.ticketPriorityColor != null) {
-            ticketViewHolder.ticketPriority.setBackgroundColor(Color.parseColor(ticketOverview.ticketPriorityColor));
+            ticketViewHolder.ticketPriority.setColorFilter(Color.parseColor(ticketOverview.ticketPriorityColor));
         }
         if (ticketOverview.ticketTime.equals("null")||ticketOverview.ticketTime.equals("")) {
             ticketViewHolder.textViewTime.setText("not available");
@@ -226,10 +237,11 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
         TextView textViewSubject;
         RelativeTimeTextView textViewTime;
         TextView textViewOverdue;
-        View ticketPriority;
+        ImageView ticketPriority;
         // TextView ticketStatus;
-
+        TextView textViewDepartment;
         public TextView textViewduetoday;
+        TextView textViewpriorityName;
 //        ImageView attachementView;
 
 
@@ -248,6 +260,8 @@ public class TicketOverviewAdapter extends RecyclerView.Adapter<TicketOverviewAd
             textViewTime = (RelativeTimeTextView) v.findViewById(R.id.textView_ticket_time);
             textViewOverdue = (TextView) v.findViewById(R.id.overdue_view);
             textViewduetoday= (TextView) v.findViewById(R.id.duetoday);
+            textViewpriorityName=v.findViewById(R.id.priority_viewText);
+            textViewDepartment=v.findViewById(R.id.textViewDepartmentName);
         }
 
     }

@@ -151,7 +151,6 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
 //        layout.findViewById(R.id.closed_tickets).setOnClickListener(this);
 //        layout.findViewById(R.id.trash_tickets).setOnClickListener(this);
         layout.findViewById(R.id.client_list).setOnClickListener(this);
-        layout.findViewById(R.id.settings).setOnClickListener(this);
         layout.findViewById(R.id.about).setOnClickListener(this);
         layout.findViewById(R.id.logout).setOnClickListener(this);
         drawerItem = new DataModel[5];
@@ -286,7 +285,12 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 count++;
-                listView.setVisibility(View.VISIBLE);
+                if (listView.getVisibility()==View.VISIBLE){
+                    listView.setVisibility(View.GONE);
+                }
+                else{
+                    listView.setVisibility(View.VISIBLE);
+                }
             }
         });
         return layout;
@@ -734,7 +738,7 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
 //                title = getString(R.string.closed_tickets);
 //                fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
 //                if (fragment == null)
-//                    fragment = new ClosedTickets();
+//                    fragment = new Profile();
 //                break;
 //            case R.id.trash_tickets:
 //                title = getString(R.string.trash);
@@ -747,12 +751,6 @@ public class FragmentDrawer extends Fragment implements View.OnClickListener {
                 fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
                 if (fragment == null)
                     fragment = new ClientList();
-                break;
-            case R.id.settings:
-                title = getString(R.string.settings);
-                fragment = getActivity().getSupportFragmentManager().findFragmentByTag(title);
-                if (fragment == null)
-                    fragment = new Settings();
                 break;
             case R.id.about:
                 title = getString(R.string.about);

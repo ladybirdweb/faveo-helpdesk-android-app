@@ -2,6 +2,7 @@ package co.helpdesk.faveo.frontend.adapters;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,10 +40,13 @@ public class TicketGlimpseAdapter extends RecyclerView.Adapter<TicketGlimpseAdap
         ticketViewHolder.textViewTicketID.setText(ticketGlimpse.ticketID + "");
         ticketViewHolder.textViewTicketNumber.setText(ticketGlimpse.ticketNumber);
         ticketViewHolder.textViewSubject.setText(ticketGlimpse.ticketSubject);
-        if (ticketGlimpse.isTicketOpen)
-            ticketViewHolder.color.setBackgroundColor(Color.parseColor("#4CD964"));
-        else
-            ticketViewHolder.color.setBackgroundColor(Color.parseColor("#d50000"));
+
+        if (ticketGlimpse.ticketStatusName.equals("Open")){
+            ticketViewHolder.textViewStatus.setText(ticketGlimpse.ticketStatusName);
+        }
+        else if (ticketGlimpse.ticketStatusName.equals("Closed")){
+            ticketViewHolder.textViewStatus.setText(ticketGlimpse.ticketStatusName);
+        }
     }
 
     @Override
@@ -59,12 +63,14 @@ public class TicketGlimpseAdapter extends RecyclerView.Adapter<TicketGlimpseAdap
         TextView textViewTicketNumber;
         TextView textViewSubject;
         View color;
+        TextView textViewStatus;
 
         TicketViewHolder(View v, final String clientName) {
             super(v);
             textViewTicketID = (TextView) v.findViewById(R.id.textView_ticket_id);
             textViewTicketNumber = (TextView) v.findViewById(R.id.textView_ticket_number);
             textViewSubject = (TextView) v.findViewById(R.id.textView_ticket_subject);
+            textViewStatus=v.findViewById(R.id.textViewstatusname);
             color = v.findViewById(R.id.color);
             v.setOnClickListener(new View.OnClickListener() {
                 @Override

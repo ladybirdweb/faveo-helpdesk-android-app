@@ -18,8 +18,11 @@ public class TicketOverview {
     public String ticketAttachments;
     public String dueDate;
     public String placeholder;
+    public String departmentname;
+    public String priorityName;
+    public String agentName;
 
-    public TicketOverview(int ticketID, String clientPicture, String ticketNumber, String clientName, String ticketSubject, String ticketTime, String ticketPriorityColor, String ticketStatus, String ticketBubble, String ticketAttachments, String dueDate, String placeholder) {
+    public TicketOverview(int ticketID, String clientPicture, String ticketNumber, String clientName, String ticketSubject, String ticketTime, String ticketPriorityColor, String ticketStatus, String ticketBubble, String ticketAttachments, String dueDate, String placeholder,String departmentname,String priorityName) {
         this.ticketID = ticketID;
         this.clientPicture = clientPicture;
         this.ticketNumber = ticketNumber;
@@ -32,9 +35,43 @@ public class TicketOverview {
         this.ticketAttachments = ticketAttachments;
         this.dueDate = dueDate;
         this.placeholder = placeholder;
+        this.departmentname=departmentname;
+        this.priorityName=priorityName;
 
     }
 
+
+    public String getTicketPriorityColor() {
+        return ticketPriorityColor;
+    }
+
+    public void setTicketPriorityColor(String ticketPriorityColor) {
+        this.ticketPriorityColor = ticketPriorityColor;
+    }
+
+    public String getDepartmentname() {
+        return departmentname;
+    }
+
+    public void setDepartmentname(String departmentname) {
+        this.departmentname = departmentname;
+    }
+
+    public String getPriorityName() {
+        return priorityName;
+    }
+
+    public void setPriorityName(String priorityName) {
+        this.priorityName = priorityName;
+    }
+
+    public String getAgentName() {
+        return agentName;
+    }
+
+    public void setAgentName(String agentName) {
+        this.agentName = agentName;
+    }
 
     public String getPlaceholder() {
         return placeholder;

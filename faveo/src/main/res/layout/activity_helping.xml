@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.ppamorim.dragger.DraggerView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:dragger_layout="http://schemas.android.com/apk/res-auto"
+    dragger_layout:drag_view_id="@+id/drag_view"
+    dragger_layout:shadow_view_id="@+id/shadow_view"
+    dragger_layout:drag_position="top"
+    android:background="@color/faveo"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:id="@+id/shadow_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:visibility="invisible"/>
+
+    <RelativeLayout
+        android:id="@+id/drag_view"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/closeButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="35dp"
+            android:tint="@color/colorAccent"
+            android:src="@drawable/ic_close_black_24dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="77dp"
+            android:fontFamily="@font/hintedlainesansregular"
+            android:padding="20dp"
+            android:text="@string/wondering_what_will_be_your_helpdesk_url"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="191dp"
+            android:text="@string/this_is_the_url"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            android:fontFamily="@font/hintedlainesansregular"
+            android:padding="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:padding="30dp"
+            android:fontFamily="@font/hintedlainesansregular"
+            android:textColor="@color/colorAccent"
+            android:text="@string/for_more_information_please_drop_a_mail_to_support_ladybirdweb_com" />
+
+    </RelativeLayout>
+
+</com.github.ppamorim.dragger.DraggerView>

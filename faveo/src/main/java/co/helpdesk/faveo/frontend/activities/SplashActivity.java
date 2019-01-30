@@ -12,7 +12,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +34,7 @@ import butterknife.ButterKnife;
 import co.helpdesk.faveo.Constants;
 import co.helpdesk.faveo.FaveoApplication;
 import co.helpdesk.faveo.R;
+import co.helpdesk.faveo.SharedPreference;
 import co.helpdesk.faveo.backend.api.v1.Helpdesk;
 import co.helpdesk.faveo.frontend.receivers.InternetReceiver;
 import co.helpdesk.faveo.model.MessageEvent;
@@ -53,7 +57,11 @@ public class SplashActivity extends AppCompatActivity {
 
     @BindView(R.id.clear_cache)
     Button buttonClearCache;
-
+    TextView textViewTag;
+    Animation uptodown,downtoup;
+    ImageView imageViewFaveo;
+    Button button;
+    SharedPreference sharedPreferenceObj;
     public static String
             keyDepartment = "", valueDepartment = "",
             keySLA = "", valueSLA = "",
@@ -70,6 +78,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPreferenceObj = new SharedPreference(SplashActivity.this);
         setContentView(R.layout.activity_splash);
         overridePendingTransition(R.anim.slide_in_from_right,R.anim.slide_in_from_right);
         ButterKnife.bind(this);
@@ -82,18 +91,66 @@ public class SplashActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
 // finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(SplashActivity.this,R.color.faveo));
+        window.setStatusBarColor(ContextCompat.getColor(SplashActivity.this,R.color.windowColor));
+
+        uptodown = AnimationUtils.loadAnimation(this,R.anim.uptodown);
+        downtoup = AnimationUtils.loadAnimation(this,R.anim.downtoup);
+        button= (Button) findViewById(R.id.clear_cache);
+        imageViewFaveo=findViewById(R.id.faveoImage);
+        textViewTag=findViewById(R.id.faveotag);
+        imageViewFaveo.setAnimation(uptodown);
+        textViewTag.setAnimation(downtoup);
         //welcomeDialog=new WelcomeDialog();
 
-        if (InternetReceiver.isConnected()) {
-            progressDialog.setVisibility(View.VISIBLE);
-            new FetchDependency().execute();
-            //new FetchData(this).execute();
-        } else {
-            progressDialog.setVisibility(View.INVISIBLE);
-            loading.setText(getString(R.string.oops_no_internet));
-            buttonTryAgain.setVisibility(View.VISIBLE);
-        }
+
+        uptodown.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                progressDialog.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                if (InternetReceiver.isConnected()) {
+                    progressDialog.setVisibility(View.VISIBLE);
+                    new FetchDependency().execute();
+                    Prefs.putString("came from filter", "false");
+
+                }else
+                {
+                    progressDialog.setVisibility(View.INVISIBLE);
+                    loading.setText(getString(R.string.oops_no_internet));
+                    buttonTryAgain.setVisibility(View.VISIBLE);
+                    //textViewrefresh.setVisibility(View.VISIBLE);
+                    buttonTryAgain.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            finish();
+                            Intent intent=new Intent(SplashActivity.this,SplashActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    //Toast.makeText(this, "Oops! No internet", Toast.LENGTH_LONG).show();
+                    Prefs.putString("querry","null");
+
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+//        if (InternetReceiver.isConnected()) {
+//            progressDialog.setVisibility(View.VISIBLE);
+//            new FetchDependency().execute();
+//            //new FetchData(this).execute();
+//        } else {
+//            progressDialog.setVisibility(View.INVISIBLE);
+//            loading.setText(getString(R.string.oops_no_internet));
+//            buttonTryAgain.setVisibility(View.VISIBLE);
+//        }
 
         buttonTryAgain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -324,8 +381,11 @@ public class SplashActivity extends AppCompatActivity {
 
             }
 
-            loading.setText(R.string.done_loading);
-
+            if (sharedPreferenceObj.getApp_runFirst().equals("FIRST")) {
+                loading.setText("Welcome to FAVEO");
+            }else{
+                loading.setText("Welcome back "+Prefs.getString("PROFILE_NAME",""));
+            }
             Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(intent);
         }
