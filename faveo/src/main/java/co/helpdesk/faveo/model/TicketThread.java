@@ -13,6 +13,7 @@ public class TicketThread {
     public String message;
     public String isReply;
     public String placeholder;
+    public String ticketId;
 
 //    public TicketThread(String clientName, String messageTime, String message, String isReply) {
 //        this.messageTime = messageTime;
@@ -21,7 +22,7 @@ public class TicketThread {
 //        this.clientName = clientName;
 //    }
 
-    public TicketThread(String clientPicture, String clientName, String messageTime, String messageTitle, String message, String isReply, String placeholder) {
+    public TicketThread(String clientPicture, String clientName, String messageTime, String messageTitle, String message, String isReply, String placeholder,String ticketId) {
         this.clientPicture = clientPicture;
         this.clientName = clientName;
         this.messageTime = messageTime;
@@ -29,8 +30,17 @@ public class TicketThread {
         this.message = message;
         this.isReply = isReply;
         this.placeholder = placeholder;
+        this.ticketId=ticketId;
     }
 
+
+    public String getTicketId() {
+        return ticketId;
+    }
+
+    public void setTicketId(String ticketId) {
+        this.ticketId = ticketId;
+    }
 
     public String getPlaceholder() {
         return placeholder;

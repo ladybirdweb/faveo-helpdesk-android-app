@@ -32,7 +32,7 @@
     <item
         android:id="@+id/buttonsave"
         android:icon="@drawable/ic_edit_black_24dp"
-        android:tint="@color/faveo"
+        android:tint="@color/colorAccent"
         app:showAsAction="always"
         android:enabled="true"
         />

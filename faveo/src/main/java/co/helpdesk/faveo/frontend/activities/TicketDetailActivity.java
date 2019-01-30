@@ -30,6 +30,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -72,27 +73,26 @@ public class TicketDetailActivity extends AppCompatActivity implements
     ViewPagerAdapter adapter;
     Conversation fragmentConversation;
     Detail fragmentDetail;
-    Boolean fabExpanded = false;
-    FloatingActionButton fabAdd;
-    int cx, cy;
-    Fab fab;
-    private MaterialSheetFab materialSheetFab;
     View overlay;
-    EditText editTextInternalNote, editTextCC, editTextReplyMessage;
+    EditText editTextInternalNote, editTextReplyMessage;
     Button buttonCreate, buttonSend;
     ProgressDialog progressDialog;
     private int statusBarColor;
-    ImageView imgaeviewBack;
+    ImageView imgaeviewBack,imageViewSource;
     public static String ticketID;
     public static boolean isShowing = false;
-    FabSpeedDial fabSpeedDial;
     private boolean isFabOpen;
     View view;
     View viewpriority,viewCollapsePriority;
+    TextView textViewreply;
+    ImageView imageViewReply,imageViewInternalNote;
+    RelativeLayout relativeLayoutToolbar;
+
 //    public static String ticketNumber;
 //    public static String ticketOpenedBy;
 //    public static String ticketSubject;
-    LoaderTextView textViewStatus, textviewAgentName, textViewTitle, textViewSubject,textViewDepartment;
+    LoaderTextView textViewStatus, textViewTitle, textViewSubject,textViewDepartment;
+    TextView textviewAgentName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,18 +107,21 @@ public class TicketDetailActivity extends AppCompatActivity implements
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
 // finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(TicketDetailActivity.this,R.color.faveo));
-        //setupFab();
+        window.setStatusBarColor(ContextCompat.getColor(TicketDetailActivity.this,R.color.windowColor));
         AppBarLayout mAppBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbarTicketDetail);
         textViewStatus = (LoaderTextView) mAppBarLayout.findViewById(R.id.status);
-        textviewAgentName = (LoaderTextView) mAppBarLayout.findViewById(R.id.textViewagentName);
+        textviewAgentName = (TextView) mAppBarLayout.findViewById(R.id.agentassigned);
         textViewTitle = (LoaderTextView) mAppBarLayout.findViewById(R.id.title);
         textViewSubject = (LoaderTextView) mToolbar.findViewById(R.id.subject);
         viewpriority=mToolbar.findViewById(R.id.viewPriority);
         textViewDepartment= (LoaderTextView) mAppBarLayout.findViewById(R.id.department);
         viewCollapsePriority=mAppBarLayout.findViewById(R.id.viewPriority1);
-        fabSpeedDial = (FabSpeedDial) findViewById(R.id.fab_speed_dial);
+        relativeLayoutToolbar=findViewById(R.id.toolbarmenucontainer);
+        textViewreply=relativeLayoutToolbar.findViewById(R.id.tapForReply);
+        imageViewReply=relativeLayoutToolbar.findViewById(R.id.replyImage);
+        imageViewInternalNote=relativeLayoutToolbar.findViewById(R.id.internalNote);
+        imageViewSource=findViewById(R.id.imageView_default_profile);
         setSupportActionBar(mToolbar);
         isShowing=true;
 //        if (getSupportActionBar() != null) {
@@ -153,22 +156,31 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 finish();
             }
         });
-        fabSpeedDial.setMenuListener(new SimpleMenuListenerAdapter() {
+
+        imageViewReply.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onMenuItemSelected(MenuItem menuItem) {
-                int id=menuItem.getItemId();
-                if (id==R.id.fab_reply){
-                    Intent intent=new Intent(TicketDetailActivity.this,TicketReplyActivity.class);
-                    intent.putExtra("ticket_id", ticketID);
-                    startActivity(intent);
-                }
-                else if (id==R.id.fab_internalnote){
-                    Intent intent=new Intent(TicketDetailActivity.this,InternalNoteActivity.class);
-                    intent.putExtra("ticket_id", ticketID);
-                    startActivity(intent);
-                }
-                //TODO: Start some activity
-                return false;
+            public void onClick(View view) {
+                Intent intent=new Intent(TicketDetailActivity.this,TicketReplyActivity.class);
+                intent.putExtra("ticket_id", ticketID);
+                startActivity(intent);
+            }
+        });
+
+        imageViewInternalNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(TicketDetailActivity.this,InternalNoteActivity.class);
+                intent.putExtra("ticket_id", ticketID);
+                startActivity(intent);
+            }
+        });
+
+        textViewreply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(TicketDetailActivity.this,TicketReplyActivity.class);
+                intent.putExtra("ticket_id", ticketID);
+                startActivity(intent);
             }
         });
 
@@ -243,7 +255,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
     ViewPager.OnPageChangeListener onPageChangeListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            fabSpeedDial.setRotation(positionOffset * 180.0f);
+            //fabSpeedDial.setRotation(positionOffset * 180.0f);
         }
 
         /**
@@ -254,11 +266,11 @@ public class TicketDetailActivity extends AppCompatActivity implements
         public void onPageSelected(int position) {
             switch (position) {
                 case 0:
-                    fabSpeedDial.show();
+                    //fabSpeedDial.show();
                     break;
 
                 default:
-                    fabSpeedDial.hide();
+                    //fabSpeedDial.hide();
                     break;
             }
         }
@@ -415,6 +427,54 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 String assigneeName=jsonObject1.getString("assignee");
                 String first_name,last_name;
                 String prioritycolor=jsonObject1.getString("priority_color");
+                String source=jsonObject1.getString("source_name");
+                switch (source) {
+                    case "Chat": {
+                        int color = Color.parseColor(prioritycolor);
+                        imageViewSource.setImageResource(R.drawable.ic_chat_bubble_outline_black_24dp);
+                        imageViewSource.setColorFilter(color);
+                        break;
+                    }
+                    case "Web": {
+                        int color = Color.parseColor(prioritycolor);
+                        imageViewSource.setImageResource(R.drawable.web_design);
+                        imageViewSource.setColorFilter(color);
+                        break;
+                    }
+                    case "Agent": {
+                        int color = Color.parseColor(prioritycolor);
+                        imageViewSource.setImageResource(R.drawable.agent);
+                        imageViewSource.setColorFilter(color);
+                        break;
+                    }
+                    case "Email": {
+                        int color = Color.parseColor(prioritycolor);
+                        imageViewSource.setImageResource(R.drawable.mail);
+                        imageViewSource.setColorFilter(color);
+                        break;
+                    }
+                    case "Facebook": {
+                        int color = Color.parseColor(prioritycolor);
+                        imageViewSource.setImageResource(R.drawable.facebook);
+                        imageViewSource.setColorFilter(color);
+                        break;
+                    }
+                    case "Twitter": {
+                        int color = Color.parseColor(prioritycolor);
+                        imageViewSource.setImageResource(R.drawable.twitter);
+                        imageViewSource.setColorFilter(color);
+                        break;
+                    }
+                    case "Call": {
+                        int color = Color.parseColor(prioritycolor);
+                        imageViewSource.setImageResource(R.drawable.phone);
+                        imageViewSource.setColorFilter(color);
+                        break;
+                    }
+                    default:
+                        imageViewSource.setVisibility(View.GONE);
+                        break;
+                }
 
                 if (!prioritycolor.equals("")||!prioritycolor.equals("null")){
                     viewpriority.setBackgroundColor(Color.parseColor(prioritycolor));
@@ -444,7 +504,7 @@ public class TicketDetailActivity extends AppCompatActivity implements
                 else{
                     textViewStatus.setVisibility(View.GONE);
                 }
-                textViewTitle.setText(ticketNumber);
+                textViewSubject.setText(ticketNumber);
                 if (subject.startsWith("=?")){
                     title=subject.replaceAll("=?UTF-8?Q?","");
                     String newTitle=title.replaceAll("=E2=80=99","");
@@ -452,13 +512,13 @@ public class TicketDetailActivity extends AppCompatActivity implements
                     String newTitle1=finalTitle.replace("?=","");
                     String newTitle2=newTitle1.replace("_"," ");
                     Log.d("new name",newTitle2);
-                    textViewSubject.setText(newTitle2);
+                    textViewTitle.setText(newTitle2);
                 }
                 else if (!subject.equals("null")){
-                    textViewSubject.setText(subject);
+                    textViewTitle.setText(subject);
                 }
                 else if (subject.equals("null")){
-                    textViewSubject.setText("");
+                    textViewTitle.setText("");
                 }
 
                 if (!department.equals("")||!department.equals("null")){

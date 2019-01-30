@@ -55,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="18dp"
+            android:fontFamily="@font/hintedlaineansedium"
             android:background="@drawable/button_background"
             android:text="@string/website"
             android:textColor="@color/white" />
@@ -64,6 +65,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp"
             android:alpha="0.5"
+            android:layout_gravity="center"
+            android:fontFamily="@font/hintedlaineansedium"
             android:text="@string/faveo_url"
             android:textColor="@color/black" />
 

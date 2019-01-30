@@ -8,10 +8,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -204,13 +207,13 @@ public class Conversation extends Fragment {
 
 
 
-
+                        String ticketId=jsonArray.getJSONObject(i).getString("ticket_id");
                         String messageTime = jsonArray.getJSONObject(i).getString("created_at");
                         String messageTitle = jsonArray.getJSONObject(i).getString("title");
                         String message = jsonArray.getJSONObject(i).getString("body");
                         Log.d("body:", message);
                         String isReply = jsonArray.getJSONObject(i).getString("is_internal").equals("0") ? "false" : "true";
-                        ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message, isReply, f + l);
+                        ticketThread = new TicketThread(clientPicture, clientName, messageTime, messageTitle, message, isReply, f + l,ticketId);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -226,11 +229,20 @@ public class Conversation extends Fragment {
             linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
             recyclerView.setLayoutManager(linearLayoutManager);
             //Collections.reverse(ticketThreadList);
-            ticketThreadAdapter = new TicketThreadAdapter(ticketThreadList);
+            ticketThreadAdapter = new TicketThreadAdapter(context,ticketThreadList);
+            runLayoutAnimation(recyclerView);
             recyclerView.setAdapter(ticketThreadAdapter);
         }
     }
+    private void runLayoutAnimation(final RecyclerView recyclerView) {
+        final Context context = recyclerView.getContext();
+        final LayoutAnimationController controller =
+                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_from_bottom);
 
+        recyclerView.setLayoutAnimation(controller);
+        ticketThreadAdapter.notifyDataSetChanged();
+        recyclerView.scheduleLayoutAnimation();
+    }
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);

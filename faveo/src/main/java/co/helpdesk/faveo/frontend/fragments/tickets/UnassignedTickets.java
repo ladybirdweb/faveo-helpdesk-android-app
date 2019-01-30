@@ -14,6 +14,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -187,6 +189,7 @@ public class UnassignedTickets extends Fragment {
             });
 
             ticketOverviewAdapter = new TicketOverviewAdapter(getContext(),ticketOverviewList);
+            runLayoutAnimation(recyclerView);
             recyclerView.setAdapter(ticketOverviewAdapter);
             if (ticketOverviewAdapter.getItemCount() == 0) {
                 tv.setVisibility(View.VISIBLE);
@@ -239,6 +242,15 @@ public class UnassignedTickets extends Fragment {
             ticketOverviewAdapter.notifyDataSetChanged();
             loading = true;
         }
+    }
+    private void runLayoutAnimation(final RecyclerView recyclerView) {
+        final Context context = recyclerView.getContext();
+        final LayoutAnimationController controller =
+                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_from_bottom);
+
+        recyclerView.setLayoutAnimation(controller);
+        ticketOverviewAdapter.notifyDataSetChanged();
+        recyclerView.scheduleLayoutAnimation();
     }
 
     public void onButtonPressed(Uri uri) {

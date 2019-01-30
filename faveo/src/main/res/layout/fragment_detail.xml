@@ -33,7 +33,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f2f2f2"
+            android:background="@color/colorAccent"
             android:layout_marginTop="-1dp">
             <TextView
                 android:layout_width="wrap_content"
@@ -45,7 +45,8 @@
                 android:layout_marginLeft="17dp"
                 android:layout_marginStart="17dp"
                 android:text="@string/Subject"
-                android:textSize="16sp"
+                android:textSize="12sp"
+                android:fontFamily="@font/hintedlaineansedium"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -58,9 +59,10 @@
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
             android:text="@string/not_available"
-            android:paddingLeft="4dp"
+            android:paddingLeft="7dp"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="14sp"
+            android:fontFamily="@font/hintedlaineansedium"
             android:clickable="false"
             android:cursorVisible="false"
             android:focusable="false"
@@ -70,7 +72,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f2f2f2">
+            android:background="@color/colorAccent">
 
         <TextView
             android:layout_width="wrap_content"
@@ -82,7 +84,8 @@
             android:layout_marginLeft="17dp"
             android:layout_marginStart="17dp"
             android:text="@string/priority"
-            android:textSize="16sp"
+            android:textSize="12sp"
+            android:fontFamily="@font/hintedlaineansedium"
             android:textStyle="bold" />
         </RelativeLayout>
 
@@ -125,7 +128,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f2f2f2">
+            android:background="@color/colorAccent">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -136,7 +139,8 @@
                 android:layout_marginLeft="17dp"
                 android:layout_marginStart="17dp"
                 android:text="@string/helptopic"
-                android:textSize="16sp"
+                android:textSize="12sp"
+                android:fontFamily="@font/hintedlaineansedium"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -156,7 +160,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f2f2f2">
+            android:background="@color/colorAccent">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -167,7 +171,8 @@
                 android:layout_marginLeft="17dp"
                 android:layout_marginStart="17dp"
                 android:text="@string/sla_plans"
-                android:textSize="16sp"
+                android:fontFamily="@font/hintedlaineansedium"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </RelativeLayout>
         <Spinner
@@ -186,7 +191,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f2f2f2">
+            android:background="@color/colorAccent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -198,7 +203,7 @@
                 android:layout_marginLeft="17dp"
                 android:layout_marginStart="17dp"
                 android:text="@string/status"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -220,7 +225,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f2f2f2">
+            android:background="@color/colorAccent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -232,7 +237,8 @@
                 android:layout_marginLeft="17dp"
                 android:layout_marginStart="17dp"
                 android:text="@string/name"
-                android:textSize="16sp"
+                android:fontFamily="@font/hintedlaineansedium"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -248,8 +254,9 @@
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
             android:maxLines="1"
+            android:fontFamily="@font/hintedlaineansedium"
             android:paddingBottom="24dp"
-            android:paddingLeft="4dp"
+            android:paddingLeft="7dp"
             android:paddingTop="24dp"
             android:text="@string/not_available"
             android:textCursorDrawable="@drawable/color_cursor"
@@ -260,7 +267,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f2f2f2">
+            android:background="@color/colorAccent">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -271,7 +278,8 @@
                 android:layout_marginLeft="17dp"
                 android:layout_marginStart="17dp"
                 android:text="@string/email"
-                android:textSize="16sp"
+                android:fontFamily="@font/hintedlaineansedium"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -286,8 +294,9 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
-            android:paddingLeft="4dp"
+            android:paddingLeft="7dp"
             android:maxLines="1"
+            android:fontFamily="@font/hintedlaineansedium"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
             android:text="@string/not_available"
@@ -298,7 +307,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f2f2f2">
+            android:background="@color/colorAccent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -310,7 +319,8 @@
                 android:layout_marginLeft="17dp"
                 android:layout_marginStart="17dp"
                 android:text="@string/source"
-                android:textSize="16sp"
+                android:textSize="12sp"
+                android:fontFamily="@font/hintedlaineansedium"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -331,7 +341,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f2f2f2">
+            android:background="@color/colorAccent">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -342,7 +352,8 @@
                 android:layout_marginLeft="17dp"
                 android:layout_marginStart="17dp"
                 android:text="@string/due_date"
-                android:textSize="16sp"
+                android:textSize="12sp"
+                android:fontFamily="@font/hintedlaineansedium"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -358,9 +369,10 @@
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
             android:maxLength="20"
+            android:fontFamily="@font/hintedlaineansedium"
             android:maxLines="1"
             android:paddingBottom="16dp"
-            android:paddingLeft="4dp"
+            android:paddingLeft="7dp"
             android:paddingTop="16dp"
             android:text="@string/not_available"
             android:textCursorDrawable="@drawable/color_cursor"
@@ -370,7 +382,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f2f2f2">
+            android:background="@color/colorAccent">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -381,7 +393,8 @@
                 android:layout_marginLeft="17dp"
                 android:layout_marginStart="17dp"
                 android:text="@string/created_date"
-                android:textSize="16sp"
+                android:textSize="12sp"
+                android:fontFamily="@font/hintedlaineansedium"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -394,12 +407,13 @@
             android:cursorVisible="false"
             android:ems="10"
             android:focusable="false"
+            android:fontFamily="@font/hintedlaineansedium"
             android:focusableInTouchMode="false"
             android:imeOptions="actionNext"
             android:maxLength="20"
             android:maxLines="1"
             android:paddingBottom="16dp"
-            android:paddingLeft="4dp"
+            android:paddingLeft="7dp"
             android:paddingTop="16dp"
             android:text="@string/not_available"
             android:textCursorDrawable="@drawable/color_cursor"
@@ -479,24 +493,6 @@
             <!--android:layout_height="2dp">-->
 
         <!--</view>-->
-
-
-
-
-
-        <Button
-            android:id="@+id/button_save"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="56dp"
-            android:background="@drawable/button_background"
-            android:text="@string/save"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:visibility="gone"/>
 
     </LinearLayout>
 
